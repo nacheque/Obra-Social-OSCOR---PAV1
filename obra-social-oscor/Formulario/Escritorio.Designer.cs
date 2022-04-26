@@ -34,6 +34,7 @@
             this.btn_Centro = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCorazon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_afiliado
@@ -96,6 +97,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "OSCOR";
             // 
+            // btnCorazon
+            // 
+            this.btnCorazon.BackColor = System.Drawing.Color.Silver;
+            this.btnCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorazon.ForeColor = System.Drawing.Color.Red;
+            this.btnCorazon.Location = new System.Drawing.Point(330, 307);
+            this.btnCorazon.Name = "btnCorazon";
+            this.btnCorazon.Size = new System.Drawing.Size(70, 47);
+            this.btnCorazon.TabIndex = 6;
+            this.btnCorazon.Text = "???";
+            this.btnCorazon.UseVisualStyleBackColor = false;
+            this.btnCorazon.Click += new System.EventHandler(this.btnCorazon_Click);
+            // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +118,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1304, 702);
+            this.Controls.Add(this.btnCorazon);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Centro);
@@ -125,6 +140,7 @@
         private System.Windows.Forms.Button btn_Centro;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCorazon;
     }
 }
 

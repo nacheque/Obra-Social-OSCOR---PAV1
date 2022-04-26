@@ -45,5 +45,10 @@ namespace obra_social_oscor
         {
             this.Close();
         }
+
+        private void btnCorazon_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
+        }
     }
 }
