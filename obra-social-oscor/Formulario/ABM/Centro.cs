@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace obra_social_oscor.Formulario.ABM
 {
-    public partial class Centro : Form
+    public partial class frm_Centro : Form
     {
-        public Centro()
+        public frm_Centro()
         {
             InitializeComponent();
         }
