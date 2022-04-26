@@ -73,6 +73,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\ABM\Afiliado.resx">
+      <DependentUpon>Afiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM\Centro.resx">
+      <DependentUpon>Centro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM\Profesional.resx">
+      <DependentUpon>Profesional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </EmbeddedResource>
