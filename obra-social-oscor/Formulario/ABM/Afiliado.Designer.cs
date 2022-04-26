@@ -1,6 +1,6 @@
 ﻿namespace obra_social_oscor.Formulario.ABM
 {
-    partial class Afiliado
+    partial class frm_Afiliado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frm_Afiliado
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frm_Afiliado";
             this.Text = "Afiliado";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
