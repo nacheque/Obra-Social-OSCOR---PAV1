@@ -25,19 +25,19 @@ namespace obra_social_oscor
 
         private void btn_afiliado_Click(object sender, EventArgs e)
         {
-            Afiliado ventana = new Afiliado();
+            frm_Afiliado ventana = new frm_Afiliado();
             ventana.ShowDialog();
         }
 
         private void btn_Centro_Click(object sender, EventArgs e)
         {
-            Centro ventana = new Centro();
+            frm_Centro ventana = new frm_Centro();
             ventana.ShowDialog();
         }
 
         private void btn_Profesional_Click(object sender, EventArgs e)
         {
-            Profesional ventana = new Profesional();
+            frm_Profesional ventana = new frm_Profesional();
             ventana.ShowDialog();
         }
 
