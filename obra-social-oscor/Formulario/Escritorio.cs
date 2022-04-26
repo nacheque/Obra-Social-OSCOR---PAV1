@@ -1,0 +1,49 @@
+﻿using obra_social_oscor.Formulario.ABM;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace obra_social_oscor
+{
+    public partial class frm_Escritorio : Form
+    {
+        public frm_Escritorio()
+        {
+            InitializeComponent();
+        }
+
+        private void frm_Escritorio_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btn_afiliado_Click(object sender, EventArgs e)
+        {
+            Afiliado ventana = new Afiliado();
+            ventana.ShowDialog();
+        }
+
+        private void btn_Centro_Click(object sender, EventArgs e)
+        {
+            Centro ventana = new Centro();
+            ventana.ShowDialog();
+        }
+
+        private void btn_Profesional_Click(object sender, EventArgs e)
+        {
+            Profesional ventana = new Profesional();
+            ventana.ShowDialog();
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
