@@ -34,4 +34,5 @@ namespace obra_social_oscor.Clases
             Desconectar();
             return tabla;
         }
+    }
 }
