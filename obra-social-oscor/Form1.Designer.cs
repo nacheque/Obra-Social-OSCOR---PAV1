@@ -38,9 +38,10 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(460, 396);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(511, 31);
+            this.label1.Size = new System.Drawing.Size(596, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenido a OSCOR wachines locos!";
+            this.label1.Text = "Bienvenido a OSCOR wachines locos lindos!";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
