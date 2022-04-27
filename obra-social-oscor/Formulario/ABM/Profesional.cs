@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace obra_social_oscor
+namespace obra_social_oscor.Formulario.ABM
 {
-    public partial class Form1 : Form
+    public partial class frm_Profesional : Form
     {
-        public Form1()
+        public frm_Profesional()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
