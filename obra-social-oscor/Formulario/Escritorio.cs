@@ -1,4 +1,6 @@
 ﻿using obra_social_oscor.Formulario.ABM;
+using obra_social_oscor.Formulario.ABM_Comunes;
+using obra_social_oscor.Formulario.ABM_Procesos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +22,12 @@ namespace obra_social_oscor
 
         private void frm_Escritorio_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void btn_afiliado_Click(object sender, EventArgs e)
         {
-            frm_Afiliado ventana = new frm_Afiliado();
+            frm_Atenciones ventana = new frm_Atenciones();
             ventana.ShowDialog();
         }
 
@@ -46,5 +48,21 @@ namespace obra_social_oscor
             this.Close();
         }
 
+        private void lbl_Centros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Pagos_Click(object sender, EventArgs e)
+        {
+            frm_Pagos ventana = new frm_Pagos();
+            ventana.ShowDialog();
+        }
+
+        private void gestionDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Especialidades ventana = new frm_Especialidades();
+            ventana.ShowDialog();
+        }
     }
 }

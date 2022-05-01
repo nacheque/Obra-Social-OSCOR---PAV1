@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace obra_social_oscor.Formulario.ABM
+namespace obra_social_oscor.Formulario.ABM_Procesos
 {
-    public partial class frm_Afiliado : Form
+    public partial class frm_Pagos : Form
     {
-        public frm_Afiliado()
+        public frm_Pagos()
         {
             InitializeComponent();
         }

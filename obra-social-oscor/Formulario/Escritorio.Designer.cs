@@ -28,47 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Escritorio));
-            this.btn_afiliado = new System.Windows.Forms.Button();
-            this.btn_Profesional = new System.Windows.Forms.Button();
+            this.btn_Atenciones = new System.Windows.Forms.Button();
+            this.btn_Asignar_Profesional = new System.Windows.Forms.Button();
             this.btn_Centro = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tt_Form_Principal = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_Pagos = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_afiliado
+            // btn_Atenciones
             // 
-            this.btn_afiliado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_afiliado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_afiliado.BackgroundImage")));
-            this.btn_afiliado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_afiliado.Location = new System.Drawing.Point(642, 80);
-            this.btn_afiliado.Name = "btn_afiliado";
-            this.btn_afiliado.Size = new System.Drawing.Size(250, 250);
-            this.btn_afiliado.TabIndex = 1;
-            this.btn_afiliado.UseVisualStyleBackColor = true;
-            this.btn_afiliado.Click += new System.EventHandler(this.btn_afiliado_Click);
+            this.btn_Atenciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Atenciones.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_Atenciones;
+            this.btn_Atenciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Atenciones.Location = new System.Drawing.Point(218, 106);
+            this.btn_Atenciones.Name = "btn_Atenciones";
+            this.btn_Atenciones.Size = new System.Drawing.Size(206, 195);
+            this.btn_Atenciones.TabIndex = 1;
+            this.tt_Form_Principal.SetToolTip(this.btn_Atenciones, "Gestionar Atenciones");
+            this.btn_Atenciones.UseVisualStyleBackColor = true;
+            this.btn_Atenciones.Click += new System.EventHandler(this.btn_afiliado_Click);
             // 
-            // btn_Profesional
+            // btn_Asignar_Profesional
             // 
-            this.btn_Profesional.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Profesional.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Profesional.BackgroundImage")));
-            this.btn_Profesional.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Profesional.Location = new System.Drawing.Point(987, 80);
-            this.btn_Profesional.Name = "btn_Profesional";
-            this.btn_Profesional.Size = new System.Drawing.Size(250, 250);
-            this.btn_Profesional.TabIndex = 2;
-            this.btn_Profesional.UseVisualStyleBackColor = true;
-            this.btn_Profesional.Click += new System.EventHandler(this.btn_Profesional_Click);
+            this.btn_Asignar_Profesional.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Asignar_Profesional.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_Profesionales;
+            this.btn_Asignar_Profesional.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Asignar_Profesional.Location = new System.Drawing.Point(592, 106);
+            this.btn_Asignar_Profesional.Name = "btn_Asignar_Profesional";
+            this.btn_Asignar_Profesional.Size = new System.Drawing.Size(206, 195);
+            this.btn_Asignar_Profesional.TabIndex = 2;
+            this.tt_Form_Principal.SetToolTip(this.btn_Asignar_Profesional, "Asignar Profesionales a un Centro\r\n\r\n");
+            this.btn_Asignar_Profesional.UseVisualStyleBackColor = true;
+            this.btn_Asignar_Profesional.Click += new System.EventHandler(this.btn_Profesional_Click);
             // 
             // btn_Centro
             // 
             this.btn_Centro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Centro.BackgroundImage")));
+            this.btn_Centro.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_Centros;
             this.btn_Centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Centro.Location = new System.Drawing.Point(642, 377);
+            this.btn_Centro.Location = new System.Drawing.Point(218, 407);
             this.btn_Centro.Name = "btn_Centro";
-            this.btn_Centro.Size = new System.Drawing.Size(250, 250);
+            this.btn_Centro.Size = new System.Drawing.Size(206, 195);
             this.btn_Centro.TabIndex = 3;
+            this.tt_Form_Principal.SetToolTip(this.btn_Centro, "Gestionar Centros");
             this.btn_Centro.UseVisualStyleBackColor = true;
             this.btn_Centro.Click += new System.EventHandler(this.btn_Centro_Click);
             // 
@@ -77,54 +86,93 @@
             this.btn_Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Salir.BackgroundImage")));
             this.btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Salir.Location = new System.Drawing.Point(987, 377);
+            this.btn_Salir.Location = new System.Drawing.Point(1236, 577);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(250, 250);
+            this.btn_Salir.Size = new System.Drawing.Size(119, 113);
             this.btn_Salir.TabIndex = 4;
+            this.tt_Form_Principal.SetToolTip(this.btn_Salir, "Salir de la Aplicación");
             this.btn_Salir.UseVisualStyleBackColor = true;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
-            // label1
+            // btn_Pagos
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(590, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 46);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "OSCOR";
+            this.btn_Pagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Pagos.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_Pagos;
+            this.btn_Pagos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pagos.Location = new System.Drawing.Point(942, 106);
+            this.btn_Pagos.Name = "btn_Pagos";
+            this.btn_Pagos.Size = new System.Drawing.Size(206, 195);
+            this.btn_Pagos.TabIndex = 6;
+            this.tt_Form_Principal.SetToolTip(this.btn_Pagos, "Cargar un Pago");
+            this.btn_Pagos.UseVisualStyleBackColor = true;
+            this.btn_Pagos.Click += new System.EventHandler(this.btn_Pagos_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.especialidadesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // especialidadesToolStripMenuItem
+            // 
+            this.especialidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeEspecialidadesToolStripMenuItem});
+            this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
+            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.especialidadesToolStripMenuItem.Text = "Especialidades";
+            // 
+            // gestionDeEspecialidadesToolStripMenuItem
+            // 
+            this.gestionDeEspecialidadesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
+            this.gestionDeEspecialidadesToolStripMenuItem.Name = "gestionDeEspecialidadesToolStripMenuItem";
+            this.gestionDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.gestionDeEspecialidadesToolStripMenuItem.Text = "Gestion de Especialidades";
+            this.gestionDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEspecialidadesToolStripMenuItem_Click);
             // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::obra_social_oscor.Properties.Resources.fondo_escritorio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1304, 702);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1367, 702);
+            this.Controls.Add(this.btn_Pagos);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Centro);
-            this.Controls.Add(this.btn_Profesional);
-            this.Controls.Add(this.btn_afiliado);
+            this.Controls.Add(this.btn_Asignar_Profesional);
+            this.Controls.Add(this.btn_Atenciones);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_Escritorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Escritorio del Sistema";
+            this.Text = "Bienvenido a OSCOR";
             this.Load += new System.EventHandler(this.frm_Escritorio_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_afiliado;
-        private System.Windows.Forms.Button btn_Profesional;
+        private System.Windows.Forms.Button btn_Atenciones;
+        private System.Windows.Forms.Button btn_Asignar_Profesional;
         private System.Windows.Forms.Button btn_Centro;
         private System.Windows.Forms.Button btn_Salir;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip tt_Form_Principal;
+        private System.Windows.Forms.Button btn_Pagos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeEspecialidadesToolStripMenuItem;
     }
 }
 
