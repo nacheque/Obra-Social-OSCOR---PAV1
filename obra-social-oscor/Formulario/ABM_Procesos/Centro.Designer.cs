@@ -1,6 +1,6 @@
 ﻿namespace obra_social_oscor.Formulario.ABM
 {
-    partial class frm_Profesional
+    partial class frm_Centro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Centro));
             this.SuspendLayout();
             // 
-            // frm_Profesional
+            // frm_Centro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frm_Profesional";
-            this.Text = "Profesional";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frm_Centro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Centros";
             this.ResumeLayout(false);
 
         }

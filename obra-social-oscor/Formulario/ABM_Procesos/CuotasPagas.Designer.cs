@@ -1,6 +1,6 @@
-﻿namespace obra_social_oscor.Formulario.ABM
+﻿namespace obra_social_oscor.Formulario.ABM_Procesos
 {
-    partial class frm_Centro
+    partial class frm_Pagos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Pagos));
             this.SuspendLayout();
             // 
-            // frm_Centro
+            // frm_Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frm_Centro";
-            this.Text = "Centro";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frm_Pagos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gestion de Pagos";
             this.ResumeLayout(false);
 
         }

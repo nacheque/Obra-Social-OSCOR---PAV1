@@ -47,22 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\BD_acceso_datos.cs" />
-    <Compile Include="Formulario\ABM\Afiliado.cs">
+    <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM\Afiliado.Designer.cs">
-      <DependentUpon>Afiliado.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\Especialidades.Designer.cs">
+      <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM\Centro.cs">
+    <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM\Centro.Designer.cs">
+    <Compile Include="Formulario\ABM_Procesos\Atencion.Designer.cs">
+      <DependentUpon>Atencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Procesos\Centro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Procesos\Centro.Designer.cs">
       <DependentUpon>Centro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM\Profesional.cs">
+    <Compile Include="Formulario\ABM_Procesos\CuotasPagas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM\Profesional.Designer.cs">
+    <Compile Include="Formulario\ABM_Procesos\CuotasPagas.Designer.cs">
+      <DependentUpon>CuotasPagas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Procesos\Profesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Procesos\Profesional.Designer.cs">
       <DependentUpon>Profesional.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Escritorio.cs">
@@ -73,13 +85,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formulario\ABM\Afiliado.resx">
-      <DependentUpon>Afiliado.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\Especialidades.resx">
+      <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM\Centro.resx">
+    <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
+      <DependentUpon>Atencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\Centro.resx">
       <DependentUpon>Centro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM\Profesional.resx">
+    <EmbeddedResource Include="Formulario\ABM_Procesos\CuotasPagas.resx">
+      <DependentUpon>CuotasPagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\Profesional.resx">
       <DependentUpon>Profesional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Escritorio.resx">
@@ -87,17 +105,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -108,7 +127,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\Imagen_Atenciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_escritorio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_Profesionales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_Pagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_Centros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_Especialidades.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
