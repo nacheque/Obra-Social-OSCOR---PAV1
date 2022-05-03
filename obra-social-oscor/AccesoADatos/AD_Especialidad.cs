@@ -45,5 +45,103 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void AgregarEspecialidad(Especialidad especialidad)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "INSERT INTO ESPECIALIDADES (NOMBRE) VALUES (@nombre)";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", especialidad.NombreEspecialidad);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void ActualizarEspecialidad(Especialidad especialidad, int codigoEspecialidad)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE ESPECIALIDADES SET NOMBRE = @nombre WHERE COD_ESPECIALIDAD = @codigo";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", especialidad.NombreEspecialidad);
+                cmd.Parameters.AddWithValue("@codigo", codigoEspecialidad);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void EliminarEspecialidad(int codigoEspecialidad)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM ESPECIALIDADES WHERE COD_ESPECIALIDAD = @codigo";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codigo", codigoEspecialidad);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
+    
 }
