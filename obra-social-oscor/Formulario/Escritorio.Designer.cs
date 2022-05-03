@@ -84,7 +84,7 @@
             // btn_Salir
             // 
             this.btn_Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Salir.BackgroundImage")));
+            this.btn_Salir.BackgroundImage = global::obra_social_oscor.Properties.Resources.salir;
             this.btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Salir.Location = new System.Drawing.Point(1236, 577);
             this.btn_Salir.Name = "btn_Salir";
@@ -97,6 +97,7 @@
             // btn_Pagos
             // 
             this.btn_Pagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Pagos.BackColor = System.Drawing.Color.Transparent;
             this.btn_Pagos.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_Pagos;
             this.btn_Pagos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Pagos.Location = new System.Drawing.Point(942, 106);
@@ -104,7 +105,7 @@
             this.btn_Pagos.Size = new System.Drawing.Size(206, 195);
             this.btn_Pagos.TabIndex = 6;
             this.tt_Form_Principal.SetToolTip(this.btn_Pagos, "Cargar un Pago");
-            this.btn_Pagos.UseVisualStyleBackColor = true;
+            this.btn_Pagos.UseVisualStyleBackColor = false;
             this.btn_Pagos.Click += new System.EventHandler(this.btn_Pagos_Click);
             // 
             // menuStrip1
