@@ -80,6 +80,7 @@
             this.grd_Esp.ReadOnly = true;
             this.grd_Esp.Size = new System.Drawing.Size(332, 183);
             this.grd_Esp.TabIndex = 3;
+            this.grd_Esp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Esp_CellClick);
             // 
             // btn_Salir_Esp
             // 
@@ -97,11 +98,12 @@
             // 
             this.btn_Limpiar_Esp.Location = new System.Drawing.Point(12, 339);
             this.btn_Limpiar_Esp.Name = "btn_Limpiar_Esp";
-            this.btn_Limpiar_Esp.Size = new System.Drawing.Size(94, 23);
+            this.btn_Limpiar_Esp.Size = new System.Drawing.Size(112, 23);
             this.btn_Limpiar_Esp.TabIndex = 6;
-            this.btn_Limpiar_Esp.Text = "Limpiar Campos";
+            this.btn_Limpiar_Esp.Text = "Reiniciar Formulario";
             this.tt_Esp.SetToolTip(this.btn_Limpiar_Esp, "Limpiar los campos de datos");
             this.btn_Limpiar_Esp.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_Esp.Click += new System.EventHandler(this.btn_Limpiar_Esp_Click);
             // 
             // btn_Eliminar_Esp
             // 
@@ -113,6 +115,7 @@
             this.btn_Eliminar_Esp.TabIndex = 4;
             this.tt_Esp.SetToolTip(this.btn_Eliminar_Esp, "Eliminar Especialidad");
             this.btn_Eliminar_Esp.UseVisualStyleBackColor = true;
+            this.btn_Eliminar_Esp.Click += new System.EventHandler(this.btn_Eliminar_Esp_Click);
             // 
             // btn_Editar_Esp
             // 
@@ -124,6 +127,7 @@
             this.btn_Editar_Esp.TabIndex = 3;
             this.tt_Esp.SetToolTip(this.btn_Editar_Esp, "Editar Especialidad");
             this.btn_Editar_Esp.UseVisualStyleBackColor = true;
+            this.btn_Editar_Esp.Click += new System.EventHandler(this.btn_Editar_Esp_Click);
             // 
             // btn_Agregar_Esp
             // 
@@ -135,6 +139,7 @@
             this.btn_Agregar_Esp.TabIndex = 2;
             this.tt_Esp.SetToolTip(this.btn_Agregar_Esp, "Agregar Especialidad");
             this.btn_Agregar_Esp.UseVisualStyleBackColor = true;
+            this.btn_Agregar_Esp.Click += new System.EventHandler(this.btn_Agregar_Esp_Click);
             // 
             // txt_Nombre_Esp
             // 
