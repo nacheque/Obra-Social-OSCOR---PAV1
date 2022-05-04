@@ -1,6 +1,6 @@
 ﻿namespace obra_social_oscor.Formulario.ABM_Comunes
 {
-    partial class Afiliado
+    partial class frm_Afiliado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Afiliado));
-            this.dtp_fecha_inscripcion = new System.Windows.Forms.DateTimePicker();
-            this.dtp_fecha_nacimiento_afiliado = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Afiliado));
             this.txt_monto_afiliado = new System.Windows.Forms.TextBox();
             this.lbl_monto_inscripcion = new System.Windows.Forms.Label();
             this.lbl_fecha_inscripcion = new System.Windows.Forms.Label();
@@ -49,26 +47,10 @@
             this.lbl_apellido_afiliado = new System.Windows.Forms.Label();
             this.txt_nro_afiliado = new System.Windows.Forms.TextBox();
             this.lbl_nro_afiliado = new System.Windows.Forms.Label();
+            this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fecha_inscripcion = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtp_fecha_inscripcion
-            // 
-            this.dtp_fecha_inscripcion.CustomFormat = "dd/mm/yyyy h:m";
-            this.dtp_fecha_inscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fecha_inscripcion.Location = new System.Drawing.Point(391, 66);
-            this.dtp_fecha_inscripcion.Name = "dtp_fecha_inscripcion";
-            this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(121, 20);
-            this.dtp_fecha_inscripcion.TabIndex = 91;
-            // 
-            // dtp_fecha_nacimiento_afiliado
-            // 
-            this.dtp_fecha_nacimiento_afiliado.CustomFormat = "dd/mm/yyyy";
-            this.dtp_fecha_nacimiento_afiliado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fecha_nacimiento_afiliado.Location = new System.Drawing.Point(132, 93);
-            this.dtp_fecha_nacimiento_afiliado.Name = "dtp_fecha_nacimiento_afiliado";
-            this.dtp_fecha_nacimiento_afiliado.Size = new System.Drawing.Size(120, 20);
-            this.dtp_fecha_nacimiento_afiliado.TabIndex = 90;
             // 
             // txt_monto_afiliado
             // 
@@ -112,6 +94,7 @@
             this.btn_salir_afiliado.Size = new System.Drawing.Size(50, 50);
             this.btn_salir_afiliado.TabIndex = 85;
             this.btn_salir_afiliado.UseVisualStyleBackColor = true;
+            this.btn_salir_afiliado.Click += new System.EventHandler(this.btn_salir_afiliado_Click);
             // 
             // btn_limpiar_afiliado
             // 
@@ -122,6 +105,7 @@
             this.btn_limpiar_afiliado.Size = new System.Drawing.Size(50, 50);
             this.btn_limpiar_afiliado.TabIndex = 84;
             this.btn_limpiar_afiliado.UseVisualStyleBackColor = true;
+            this.btn_limpiar_afiliado.Click += new System.EventHandler(this.btn_limpiar_afiliado_Click);
             // 
             // btn_agregar_afiliado
             // 
@@ -158,7 +142,7 @@
             this.cmb_tipo_afiliado.FormattingEnabled = true;
             this.cmb_tipo_afiliado.Location = new System.Drawing.Point(391, 40);
             this.cmb_tipo_afiliado.Name = "cmb_tipo_afiliado";
-            this.cmb_tipo_afiliado.Size = new System.Drawing.Size(121, 21);
+            this.cmb_tipo_afiliado.Size = new System.Drawing.Size(139, 21);
             this.cmb_tipo_afiliado.TabIndex = 80;
             // 
             // lbl_tipo_afiliado
@@ -227,13 +211,31 @@
             this.lbl_nro_afiliado.TabIndex = 72;
             this.lbl_nro_afiliado.Text = "Numero de  Afiliado";
             // 
-            // Afiliado
+            // dtp_fecha_nacimiento
+            // 
+            this.dtp_fecha_nacimiento.CustomFormat = "";
+            this.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fecha_nacimiento.Location = new System.Drawing.Point(131, 90);
+            this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
+            this.dtp_fecha_nacimiento.Size = new System.Drawing.Size(121, 20);
+            this.dtp_fecha_nacimiento.TabIndex = 90;
+            this.dtp_fecha_nacimiento.Value = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            // 
+            // dtp_fecha_inscripcion
+            // 
+            this.dtp_fecha_inscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fecha_inscripcion.Location = new System.Drawing.Point(392, 66);
+            this.dtp_fecha_inscripcion.Name = "dtp_fecha_inscripcion";
+            this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(138, 20);
+            this.dtp_fecha_inscripcion.TabIndex = 91;
+            // 
+            // frm_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dtp_fecha_inscripcion);
-            this.Controls.Add(this.dtp_fecha_nacimiento_afiliado);
+            this.Controls.Add(this.dtp_fecha_nacimiento);
             this.Controls.Add(this.txt_monto_afiliado);
             this.Controls.Add(this.lbl_monto_inscripcion);
             this.Controls.Add(this.lbl_fecha_inscripcion);
@@ -252,8 +254,9 @@
             this.Controls.Add(this.lbl_apellido_afiliado);
             this.Controls.Add(this.txt_nro_afiliado);
             this.Controls.Add(this.lbl_nro_afiliado);
-            this.Name = "Afiliado";
+            this.Name = "frm_Afiliado";
             this.Text = "Afiliado";
+            this.Load += new System.EventHandler(this.frm_Afiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -261,9 +264,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtp_fecha_inscripcion;
-        private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento_afiliado;
         private System.Windows.Forms.TextBox txt_monto_afiliado;
         private System.Windows.Forms.Label lbl_monto_inscripcion;
         private System.Windows.Forms.Label lbl_fecha_inscripcion;
@@ -282,5 +282,7 @@
         private System.Windows.Forms.Label lbl_apellido_afiliado;
         private System.Windows.Forms.TextBox txt_nro_afiliado;
         private System.Windows.Forms.Label lbl_nro_afiliado;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_inscripcion;
     }
 }
