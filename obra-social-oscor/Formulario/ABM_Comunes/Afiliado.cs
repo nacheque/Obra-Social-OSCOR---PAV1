@@ -26,7 +26,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             btn_editar_afiliado.Enabled = false;
             btn_borrar_afiliado.Enabled = false;
-
+            //cmb_tipo_afiliado
         }
 
         private void btn_limpiar_afiliado_Click(object sender, EventArgs e)
@@ -36,9 +36,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
         private void ReiniciarFormulario()
         {
-            txt_nro_afiliado.Text = "";
-            txt_nro_afiliado.Focus();
             txt_apellido_afiliado.Text = "";
+            txt_apellido_afiliado.Focus();
             txt_nombre_afiliado.Text = "";
             dtp_fecha_nacimiento.Value = DateTime.Today;
             //tipoAfiliado
