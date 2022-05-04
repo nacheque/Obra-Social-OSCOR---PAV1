@@ -40,9 +40,9 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             txt_nro_afiliado.Focus();
             txt_apellido_afiliado.Text = "";
             txt_nombre_afiliado.Text = "";
-            //fechaNac
+            dtp_fecha_nacimiento.Value = DateTime.Today;
             //tipoAfiliado
-            //fechaInscrip
+            dtp_fecha_inscripcion.Value = DateTime.Today;
             txt_monto_afiliado.Text = "";
             btn_editar_afiliado.Enabled = false;
             btn_borrar_afiliado.Enabled = false;
