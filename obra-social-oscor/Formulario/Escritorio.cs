@@ -64,5 +64,11 @@ namespace obra_social_oscor
             frm_Especialidades ventana = new frm_Especialidades();
             ventana.ShowDialog();
         }
+
+        private void gestionDeAfliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Afiliado ventana = new frm_Afiliado();
+            ventana.ShowDialog();
+        }
     }
 }

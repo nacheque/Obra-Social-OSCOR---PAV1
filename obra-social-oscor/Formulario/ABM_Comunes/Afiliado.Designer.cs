@@ -58,7 +58,7 @@
             this.dtp_fecha_inscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_fecha_inscripcion.Location = new System.Drawing.Point(391, 66);
             this.dtp_fecha_inscripcion.Name = "dtp_fecha_inscripcion";
-            this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(120, 20);
+            this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(121, 20);
             this.dtp_fecha_inscripcion.TabIndex = 91;
             // 
             // dtp_fecha_nacimiento_afiliado
