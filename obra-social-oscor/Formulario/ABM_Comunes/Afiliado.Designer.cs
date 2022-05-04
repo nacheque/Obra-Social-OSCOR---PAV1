@@ -213,7 +213,7 @@
             // 
             // dtp_fecha_nacimiento
             // 
-            this.dtp_fecha_nacimiento.CustomFormat = "";
+            this.dtp_fecha_nacimiento.CustomFormat = "dd/MM/yyyy";
             this.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_fecha_nacimiento.Location = new System.Drawing.Point(131, 90);
             this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
@@ -223,6 +223,7 @@
             // 
             // dtp_fecha_inscripcion
             // 
+            this.dtp_fecha_inscripcion.CustomFormat = "dd/MM/yyyy hh:mm";
             this.dtp_fecha_inscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_fecha_inscripcion.Location = new System.Drawing.Point(392, 66);
             this.dtp_fecha_inscripcion.Name = "dtp_fecha_inscripcion";
