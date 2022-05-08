@@ -32,7 +32,7 @@
             this.txt_monto_afiliado = new System.Windows.Forms.TextBox();
             this.lbl_monto_inscripcion = new System.Windows.Forms.Label();
             this.lbl_fecha_inscripcion = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grd_Afi = new System.Windows.Forms.DataGridView();
             this.btn_salir_afiliado = new System.Windows.Forms.Button();
             this.btn_limpiar_afiliado = new System.Windows.Forms.Button();
             this.btn_agregar_afiliado = new System.Windows.Forms.Button();
@@ -47,7 +47,14 @@
             this.lbl_apellido_afiliado = new System.Windows.Forms.Label();
             this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.dtp_fecha_inscripcion = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_Afi)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_monto_afiliado
@@ -75,13 +82,25 @@
             this.lbl_fecha_inscripcion.TabIndex = 87;
             this.lbl_fecha_inscripcion.Text = "Fecha de Inscripcion";
             // 
-            // dataGridView1
+            // grd_Afi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(765, 290);
-            this.dataGridView1.TabIndex = 86;
+            this.grd_Afi.AllowUserToAddRows = false;
+            this.grd_Afi.AllowUserToDeleteRows = false;
+            this.grd_Afi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_Afi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro_afiliado,
+            this.apellido,
+            this.nombre,
+            this.fecha_nacimiento,
+            this.tipo_afiliado,
+            this.fecha_inscripcion,
+            this.monto_inscripcion});
+            this.grd_Afi.Location = new System.Drawing.Point(19, 91);
+            this.grd_Afi.Name = "grd_Afi";
+            this.grd_Afi.ReadOnly = true;
+            this.grd_Afi.Size = new System.Drawing.Size(765, 290);
+            this.grd_Afi.TabIndex = 86;
+            this.grd_Afi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Afi_CellClick);
             // 
             // btn_salir_afiliado
             // 
@@ -114,6 +133,7 @@
             this.btn_agregar_afiliado.Size = new System.Drawing.Size(50, 50);
             this.btn_agregar_afiliado.TabIndex = 83;
             this.btn_agregar_afiliado.UseVisualStyleBackColor = true;
+            this.btn_agregar_afiliado.Click += new System.EventHandler(this.btn_agregar_afiliado_Click);
             // 
             // btn_editar_afiliado
             // 
@@ -137,6 +157,7 @@
             // 
             // cmb_tipo_afiliado
             // 
+            this.cmb_tipo_afiliado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo_afiliado.FormattingEnabled = true;
             this.cmb_tipo_afiliado.Location = new System.Drawing.Point(391, 15);
             this.cmb_tipo_afiliado.Name = "cmb_tipo_afiliado";
@@ -212,6 +233,57 @@
             this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(138, 20);
             this.dtp_fecha_inscripcion.TabIndex = 91;
             // 
+            // nro_afiliado
+            // 
+            this.nro_afiliado.HeaderText = "Nro Afiliado";
+            this.nro_afiliado.Name = "nro_afiliado";
+            this.nro_afiliado.ReadOnly = true;
+            this.nro_afiliado.Visible = false;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "APELLIDO";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "NOMBRE";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.DataPropertyName = "FECHA_NACIMIENTO";
+            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            this.fecha_nacimiento.ReadOnly = true;
+            // 
+            // tipo_afiliado
+            // 
+            this.tipo_afiliado.DataPropertyName = "ID_TIPO_AFILIADO";
+            this.tipo_afiliado.HeaderText = "Tipo Afiliado";
+            this.tipo_afiliado.Name = "tipo_afiliado";
+            this.tipo_afiliado.ReadOnly = true;
+            // 
+            // fecha_inscripcion
+            // 
+            this.fecha_inscripcion.DataPropertyName = "FECHA_INSCRIPCION";
+            this.fecha_inscripcion.HeaderText = "Fecha de Inscripcion";
+            this.fecha_inscripcion.Name = "fecha_inscripcion";
+            this.fecha_inscripcion.ReadOnly = true;
+            // 
+            // monto_inscripcion
+            // 
+            this.monto_inscripcion.DataPropertyName = "MONTO_INSCRIPCION";
+            this.monto_inscripcion.HeaderText = "Monto Inscripcion";
+            this.monto_inscripcion.Name = "monto_inscripcion";
+            this.monto_inscripcion.ReadOnly = true;
+            this.monto_inscripcion.Width = 60;
+            // 
             // frm_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,7 +294,7 @@
             this.Controls.Add(this.txt_monto_afiliado);
             this.Controls.Add(this.lbl_monto_inscripcion);
             this.Controls.Add(this.lbl_fecha_inscripcion);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grd_Afi);
             this.Controls.Add(this.btn_salir_afiliado);
             this.Controls.Add(this.btn_limpiar_afiliado);
             this.Controls.Add(this.btn_agregar_afiliado);
@@ -238,7 +310,7 @@
             this.Name = "frm_Afiliado";
             this.Text = "Afiliado";
             this.Load += new System.EventHandler(this.frm_Afiliado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_Afi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +320,7 @@
         private System.Windows.Forms.TextBox txt_monto_afiliado;
         private System.Windows.Forms.Label lbl_monto_inscripcion;
         private System.Windows.Forms.Label lbl_fecha_inscripcion;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grd_Afi;
         private System.Windows.Forms.Button btn_salir_afiliado;
         private System.Windows.Forms.Button btn_limpiar_afiliado;
         private System.Windows.Forms.Button btn_agregar_afiliado;
@@ -263,5 +335,12 @@
         private System.Windows.Forms.Label lbl_apellido_afiliado;
         private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento;
         private System.Windows.Forms.DateTimePicker dtp_fecha_inscripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inscripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_inscripcion;
     }
 }

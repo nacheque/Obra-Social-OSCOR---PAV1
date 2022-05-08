@@ -70,5 +70,11 @@ namespace obra_social_oscor
             frm_Afiliado ventana = new frm_Afiliado();
             ventana.ShowDialog();
         }
+
+        private void gestionDeTipoDeAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Tipo_Afiliado ventana = new frm_Tipo_Afiliado();
+            ventana.ShowDialog();
+        }
     }
 }

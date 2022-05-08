@@ -42,6 +42,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.afiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeAfliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,7 +148,8 @@
             // afiliadoToolStripMenuItem
             // 
             this.afiliadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDeAfliadoToolStripMenuItem});
+            this.gestionDeAfliadoToolStripMenuItem,
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem});
             this.afiliadoToolStripMenuItem.Name = "afiliadoToolStripMenuItem";
             this.afiliadoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.afiliadoToolStripMenuItem.Text = "Afiliado";
@@ -155,9 +157,16 @@
             // gestionDeAfliadoToolStripMenuItem
             // 
             this.gestionDeAfliadoToolStripMenuItem.Name = "gestionDeAfliadoToolStripMenuItem";
-            this.gestionDeAfliadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDeAfliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.gestionDeAfliadoToolStripMenuItem.Text = "Gestion de Afliado";
             this.gestionDeAfliadoToolStripMenuItem.Click += new System.EventHandler(this.gestionDeAfliadoToolStripMenuItem_Click);
+            // 
+            // gestionDeTipoDeAfiliadoToolStripMenuItem
+            // 
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Name = "gestionDeTipoDeAfiliadoToolStripMenuItem";
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Text = "Gestion de Tipo de Afiliado";
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.gestionDeTipoDeAfiliadoToolStripMenuItem_Click);
             // 
             // frm_Escritorio
             // 
@@ -202,6 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem afiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeAfliadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeTipoDeAfiliadoToolStripMenuItem;
     }
 }
 
