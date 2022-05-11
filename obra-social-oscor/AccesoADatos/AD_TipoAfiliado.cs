@@ -94,7 +94,7 @@ namespace obra_social_oscor.AccesoADatos
                 string consulta = "INSERT INTO TIPOS_AFILIADO (DESCRIPCION) VALUES (@descripcion)";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@descripciom", tipoAfiliado.DescripcionTipoAfiliado);
+                cmd.Parameters.AddWithValue("@descripcion", tipoAfiliado.DescripcionTipoAfiliado);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

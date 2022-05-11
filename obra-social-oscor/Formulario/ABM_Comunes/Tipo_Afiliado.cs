@@ -131,7 +131,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     try
                     {
                         Ne_TipoAfiliado.AgregarTipoAfiliado(tipoAfiliado);
-                        MessageBox.Show("Tipo de afiliado agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Tipo de afiliado agregado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReiniciarFormulario();
                         CargarGrilla();
                     }
@@ -143,7 +143,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe una tipo afiliado con ese nombre...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ya existe un tipo afiliado con ese nombre...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -162,7 +162,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     try
                     {
                         Ne_TipoAfiliado.ActualizarTipoAfiliado(tipoAfiliado, global_codigoTipo);
-                        MessageBox.Show("Tipo de afiliado actualizada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Tipo de afiliado actualizado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReiniciarFormulario();
                         CargarGrilla();
                     }
@@ -185,25 +185,30 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
         private void btn_Eliminar_Tipo_Afiliado_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro que desea eliminar la tipo de afiliado seleccionada?", "Advertencia",
+            if (MessageBox.Show("Esta seguro que desea eliminar el tipo de afiliado seleccionado?", "Advertencia",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    NE_Especialidad.EliminarEspecialidad(global_codigoTipo);
-                    MessageBox.Show("Tipo de afiliado eliminada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Ne_TipoAfiliado.EliminarTipoAfiliado(global_codigoTipo);
+                    MessageBox.Show("Tipo de afiliado eliminado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ReiniciarFormulario();
                     CargarGrilla();
                 }
                 catch (InvalidOperationException)
                 {
-                    MessageBox.Show("Error al eliminar tipo de afiliado.\nLa especialidad esta asociada a un Centro...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al eliminar tipo de afiliado.\nEl tipo afiliado esta asociado a un afiliado o a una cobertura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Error al eliminar tipo de afiliado...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void grd_Tipo_Afiliado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

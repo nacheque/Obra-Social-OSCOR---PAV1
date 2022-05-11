@@ -30,8 +30,6 @@
         {
             this.btn_Limpiar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.grd_Tipo_Afiliado = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Tipo_Afiliado_Descripcion = new System.Windows.Forms.Label();
             this.txt_Nombre_Tipo_Afiliado = new System.Windows.Forms.TextBox();
@@ -39,6 +37,8 @@
             this.btn_Eliminar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Editar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Agregar_Tipo_Afiliado = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Tipo_Afiliado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,28 +60,14 @@
             this.grd_Tipo_Afiliado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_Tipo_Afiliado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
-            this.Nombre});
+            this.Descripcion});
             this.grd_Tipo_Afiliado.Location = new System.Drawing.Point(12, 105);
             this.grd_Tipo_Afiliado.Name = "grd_Tipo_Afiliado";
             this.grd_Tipo_Afiliado.ReadOnly = true;
             this.grd_Tipo_Afiliado.Size = new System.Drawing.Size(332, 183);
             this.grd_Tipo_Afiliado.TabIndex = 10;
             this.grd_Tipo_Afiliado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 200;
+            this.grd_Tipo_Afiliado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellContentClick);
             // 
             // groupBox1
             // 
@@ -156,6 +142,21 @@
             this.btn_Agregar_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Agregar_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Agregar_Tipo_Afiliado_Click);
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
             // frm_Tipo_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,10 +187,10 @@
         private System.Windows.Forms.Button btn_Editar_Tipo_Afiliado;
         private System.Windows.Forms.Button btn_Agregar_Tipo_Afiliado;
         private System.Windows.Forms.DataGridView grd_Tipo_Afiliado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_Tipo_Afiliado_Descripcion;
         private System.Windows.Forms.TextBox txt_Nombre_Tipo_Afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
