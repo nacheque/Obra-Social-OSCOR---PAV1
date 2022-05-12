@@ -39,6 +39,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +113,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.especialidadesToolStripMenuItem});
+            this.especialidadesToolStripMenuItem,
+            this.barriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
@@ -133,6 +136,22 @@
             this.gestionDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.gestionDeEspecialidadesToolStripMenuItem.Text = "Gestion de Especialidades";
             this.gestionDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEspecialidadesToolStripMenuItem_Click);
+            // 
+            // barriosToolStripMenuItem
+            // 
+            this.barriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeBarriosToolStripMenuItem});
+            this.barriosToolStripMenuItem.Name = "barriosToolStripMenuItem";
+            this.barriosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.barriosToolStripMenuItem.Text = "Barrios";
+            // 
+            // gestionDeBarriosToolStripMenuItem
+            // 
+            this.gestionDeBarriosToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
+            this.gestionDeBarriosToolStripMenuItem.Name = "gestionDeBarriosToolStripMenuItem";
+            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
+            this.gestionDeBarriosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeBarriosToolStripMenuItem_Click);
             // 
             // frm_Escritorio
             // 
@@ -174,6 +193,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem barriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeBarriosToolStripMenuItem;
     }
 }
 

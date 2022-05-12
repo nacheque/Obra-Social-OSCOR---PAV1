@@ -48,12 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
+    <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Barrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Barrios.Designer.cs">
+      <DependentUpon>Barrios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -89,6 +96,9 @@
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\ABM_Comunes\Barrios.resx">
+      <DependentUpon>Barrios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>

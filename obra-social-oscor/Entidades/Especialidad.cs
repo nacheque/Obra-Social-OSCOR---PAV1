@@ -11,15 +11,15 @@ namespace obra_social_oscor.Entidades
         private int codEspecialidad;
         private string nombre;
 
-        public Especialidad(string nombre)
-        {
-            this.nombre = nombre;
-        }
+        //public Especialidad(string nombre)
+        //{
+        //    this.nombre = nombre;
+        //}
 
-        public Especialidad()
-        {
+        //public Especialidad()
+        //{
 
-        }
+        //}
 
         public string NombreEspecialidad
         {
