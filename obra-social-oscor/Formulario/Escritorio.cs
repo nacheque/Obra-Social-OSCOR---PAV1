@@ -64,5 +64,11 @@ namespace obra_social_oscor
             frm_Especialidades ventana = new frm_Especialidades();
             ventana.ShowDialog();
         }
+
+        private void gestionDeBarriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Barrios ventana = new frm_Barrios();
+            ventana.ShowDialog();
+        }
     }
 }
