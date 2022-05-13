@@ -29,8 +29,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             btnEditarBarrio.Enabled = false;
             btnEliminarBarrio.Enabled = false;
-            //CargarGrilla();  //Genera problemas al cargar
-            CargarGrillaH(); //toma directamente los datos el DataTable desde el AD_Barrio (es como lo hace Horestein)
+            CargarGrilla();
         }
 
         private void CargarGrilla()
@@ -53,17 +52,5 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private void CargarGrillaH()
-        {
-            try
-            {
-                gdrBarrios.DataSource = AD_Barrio.ObtenerBarrios();
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Error al obtener los barrios");
-            }
-        }
     }
 }

@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_Barrios = new System.Windows.Forms.Label();
             this.txtNombreBarrio = new System.Windows.Forms.TextBox();
+            this.lbl_Barrios = new System.Windows.Forms.Label();
             this.gdrBarrios = new System.Windows.Forms.DataGridView();
             this.btnAgregarBarrio = new System.Windows.Forms.Button();
             this.btnEditarBarrio = new System.Windows.Forms.Button();
             this.btnEliminarBarrio = new System.Windows.Forms.Button();
             this.btnSalirBarrios = new System.Windows.Forms.Button();
             this.ttBarrios = new System.Windows.Forms.ToolTip(this.components);
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdrBarrios)).BeginInit();
@@ -54,6 +55,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // txtNombreBarrio
+            // 
+            this.txtNombreBarrio.Location = new System.Drawing.Point(83, 33);
+            this.txtNombreBarrio.Name = "txtNombreBarrio";
+            this.txtNombreBarrio.Size = new System.Drawing.Size(267, 20);
+            this.txtNombreBarrio.TabIndex = 1;
+            // 
             // lbl_Barrios
             // 
             this.lbl_Barrios.AutoSize = true;
@@ -64,19 +72,13 @@
             this.lbl_Barrios.TabIndex = 0;
             this.lbl_Barrios.Text = "Nombre:";
             // 
-            // txtNombreBarrio
-            // 
-            this.txtNombreBarrio.Location = new System.Drawing.Point(83, 33);
-            this.txtNombreBarrio.Name = "txtNombreBarrio";
-            this.txtNombreBarrio.Size = new System.Drawing.Size(267, 20);
-            this.txtNombreBarrio.TabIndex = 1;
-            // 
             // gdrBarrios
             // 
             this.gdrBarrios.AllowUserToAddRows = false;
             this.gdrBarrios.AllowUserToDeleteRows = false;
             this.gdrBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
             this.NombreBarrio});
             this.gdrBarrios.Location = new System.Drawing.Point(12, 111);
             this.gdrBarrios.Name = "gdrBarrios";
@@ -129,6 +131,13 @@
             this.btnSalirBarrios.UseVisualStyleBackColor = true;
             this.btnSalirBarrios.Click += new System.EventHandler(this.btnSalirBarrios_Click);
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
             // NombreBarrio
             // 
             this.NombreBarrio.DataPropertyName = "BARRIO";
@@ -172,6 +181,7 @@
         private System.Windows.Forms.Button btnEliminarBarrio;
         private System.Windows.Forms.Button btnSalirBarrios;
         private System.Windows.Forms.ToolTip ttBarrios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreBarrio;
     }
 }
