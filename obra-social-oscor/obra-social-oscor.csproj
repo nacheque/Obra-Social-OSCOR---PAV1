@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
@@ -93,6 +94,7 @@
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Validar.cs" />
+    <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
