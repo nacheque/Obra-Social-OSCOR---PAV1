@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Barrios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombreBarrio = new System.Windows.Forms.TextBox();
             this.lbl_Barrios = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.txtNombreBarrio.Name = "txtNombreBarrio";
             this.txtNombreBarrio.Size = new System.Drawing.Size(267, 20);
             this.txtNombreBarrio.TabIndex = 1;
+            this.txtNombreBarrio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreBarrio_KeyPress);
             // 
             // lbl_Barrios
             // 
@@ -96,6 +98,7 @@
             this.btnAgregarBarrio.TabIndex = 2;
             this.ttBarrios.SetToolTip(this.btnAgregarBarrio, "Agregar Nuevo Barrio");
             this.btnAgregarBarrio.UseVisualStyleBackColor = true;
+            this.btnAgregarBarrio.Click += new System.EventHandler(this.btnAgregarBarrio_Click);
             // 
             // btnEditarBarrio
             // 
@@ -141,10 +144,10 @@
             // NombreBarrio
             // 
             this.NombreBarrio.DataPropertyName = "BARRIO";
-            this.NombreBarrio.HeaderText = "Nombre del Barrio";
+            this.NombreBarrio.HeaderText = "Nombre";
             this.NombreBarrio.Name = "NombreBarrio";
             this.NombreBarrio.ReadOnly = true;
-            this.NombreBarrio.Width = 150;
+            this.NombreBarrio.Width = 200;
             // 
             // frm_Barrios
             // 
@@ -157,6 +160,7 @@
             this.Controls.Add(this.btnAgregarBarrio);
             this.Controls.Add(this.gdrBarrios);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Barrios";

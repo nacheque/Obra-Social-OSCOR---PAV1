@@ -35,5 +35,18 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static void AgregarBarrio(Barrio barrio)
+        {
+            try
+            {
+                AD_Barrio.AgregarBarrio(barrio);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

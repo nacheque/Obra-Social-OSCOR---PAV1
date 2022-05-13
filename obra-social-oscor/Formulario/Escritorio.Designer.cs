@@ -147,7 +147,7 @@
             // 
             // gestionDeBarriosToolStripMenuItem
             // 
-            this.gestionDeBarriosToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
+            this.gestionDeBarriosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gestionDeBarriosToolStripMenuItem.Image")));
             this.gestionDeBarriosToolStripMenuItem.Name = "gestionDeBarriosToolStripMenuItem";
             this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
