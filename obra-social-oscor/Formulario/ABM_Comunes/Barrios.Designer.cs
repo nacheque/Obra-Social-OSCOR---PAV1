@@ -38,6 +38,7 @@
             this.btnEliminarBarrio = new System.Windows.Forms.Button();
             this.btnSalirBarrios = new System.Windows.Forms.Button();
             this.ttBarrios = new System.Windows.Forms.ToolTip(this.components);
+            this.NombreBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdrBarrios)).BeginInit();
             this.SuspendLayout();
@@ -72,9 +73,14 @@
             // 
             // gdrBarrios
             // 
+            this.gdrBarrios.AllowUserToAddRows = false;
+            this.gdrBarrios.AllowUserToDeleteRows = false;
             this.gdrBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdrBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreBarrio});
             this.gdrBarrios.Location = new System.Drawing.Point(12, 111);
             this.gdrBarrios.Name = "gdrBarrios";
+            this.gdrBarrios.ReadOnly = true;
             this.gdrBarrios.Size = new System.Drawing.Size(371, 197);
             this.gdrBarrios.TabIndex = 1;
             // 
@@ -123,6 +129,14 @@
             this.btnSalirBarrios.UseVisualStyleBackColor = true;
             this.btnSalirBarrios.Click += new System.EventHandler(this.btnSalirBarrios_Click);
             // 
+            // NombreBarrio
+            // 
+            this.NombreBarrio.DataPropertyName = "BARRIO";
+            this.NombreBarrio.HeaderText = "Nombre del Barrio";
+            this.NombreBarrio.Name = "NombreBarrio";
+            this.NombreBarrio.ReadOnly = true;
+            this.NombreBarrio.Width = 150;
+            // 
             // frm_Barrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +172,6 @@
         private System.Windows.Forms.Button btnEliminarBarrio;
         private System.Windows.Forms.Button btnSalirBarrios;
         private System.Windows.Forms.ToolTip ttBarrios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBarrio;
     }
 }
