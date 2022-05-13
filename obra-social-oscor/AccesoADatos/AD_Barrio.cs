@@ -110,5 +110,37 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void ActualizarBarrio(Barrio barrio, int idBarrio)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE BARRIOS SET BARRIO = @nombreBarrio WHERE ID_BARRIO = @idBarrio";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombreBarrio", barrio.NombreBarrio);
+                cmd.Parameters.AddWithValue("@idBarrio", idBarrio);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

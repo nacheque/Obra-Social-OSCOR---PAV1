@@ -83,7 +83,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     try
                     {
                         NE_Barrio.AgregarBarrio(barrio);
-                        MessageBox.Show("Persona Agregada con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Barrio agregado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReiniciarFormulario();
                         CargarGrilla();
                     }
@@ -180,6 +180,36 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void CargarCampos(Barrio barrio)
         {
             txtNombreBarrio.Text = barrio.NombreBarrio;
+        }
+
+        private void btnEditarBarrio_Click(object sender, EventArgs e)
+        {
+            if (!txtNombreBarrio.Text.Equals(""))
+            {
+                if (!ExisteEnGrilla(txtNombreBarrio.Text))
+                {
+                    Barrio barrio = ObtenerDatosBarrio();
+                    try
+                    {
+                        NE_Barrio.ActualizarBarrio(barrio, globalCodigoBarrio);
+                        MessageBox.Show("Barrio actualizado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+
+                        //throw;
+                        MessageBox.Show("Erro al actualizar el barrio");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe ese barrio en la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            
         }
     }
 }
