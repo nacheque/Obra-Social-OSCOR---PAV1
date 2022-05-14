@@ -33,6 +33,13 @@
             this.lbl_monto_inscripcion = new System.Windows.Forms.Label();
             this.lbl_fecha_inscripcion = new System.Windows.Forms.Label();
             this.grd_Afi = new System.Windows.Forms.DataGridView();
+            this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_salir_afiliado = new System.Windows.Forms.Button();
             this.btn_limpiar_afiliado = new System.Windows.Forms.Button();
             this.btn_agregar_afiliado = new System.Windows.Forms.Button();
@@ -47,13 +54,6 @@
             this.lbl_apellido_afiliado = new System.Windows.Forms.Label();
             this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.dtp_fecha_inscripcion = new System.Windows.Forms.DateTimePicker();
-            this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Afi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +101,57 @@
             this.grd_Afi.Size = new System.Drawing.Size(765, 290);
             this.grd_Afi.TabIndex = 86;
             this.grd_Afi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Afi_CellClick);
+            // 
+            // nro_afiliado
+            // 
+            this.nro_afiliado.HeaderText = "Nro Afiliado";
+            this.nro_afiliado.Name = "nro_afiliado";
+            this.nro_afiliado.ReadOnly = true;
+            this.nro_afiliado.Visible = false;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "APELLIDO";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "NOMBRE";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.DataPropertyName = "FECHA_NACIMIENTO";
+            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            this.fecha_nacimiento.ReadOnly = true;
+            // 
+            // tipo_afiliado
+            // 
+            this.tipo_afiliado.DataPropertyName = "ID_TIPO_AFILIADO";
+            this.tipo_afiliado.HeaderText = "Tipo Afiliado";
+            this.tipo_afiliado.Name = "tipo_afiliado";
+            this.tipo_afiliado.ReadOnly = true;
+            // 
+            // fecha_inscripcion
+            // 
+            this.fecha_inscripcion.DataPropertyName = "FECHA_INSCRIPCION";
+            this.fecha_inscripcion.HeaderText = "Fecha de Inscripcion";
+            this.fecha_inscripcion.Name = "fecha_inscripcion";
+            this.fecha_inscripcion.ReadOnly = true;
+            // 
+            // monto_inscripcion
+            // 
+            this.monto_inscripcion.DataPropertyName = "MONTO_INSCRIPCION";
+            this.monto_inscripcion.HeaderText = "Monto Inscripcion";
+            this.monto_inscripcion.Name = "monto_inscripcion";
+            this.monto_inscripcion.ReadOnly = true;
+            this.monto_inscripcion.Width = 60;
             // 
             // btn_salir_afiliado
             // 
@@ -233,57 +284,6 @@
             this.dtp_fecha_inscripcion.Size = new System.Drawing.Size(138, 20);
             this.dtp_fecha_inscripcion.TabIndex = 91;
             // 
-            // nro_afiliado
-            // 
-            this.nro_afiliado.HeaderText = "Nro Afiliado";
-            this.nro_afiliado.Name = "nro_afiliado";
-            this.nro_afiliado.ReadOnly = true;
-            this.nro_afiliado.Visible = false;
-            // 
-            // apellido
-            // 
-            this.apellido.DataPropertyName = "APELLIDO";
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "NOMBRE";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // fecha_nacimiento
-            // 
-            this.fecha_nacimiento.DataPropertyName = "FECHA_NACIMIENTO";
-            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fecha_nacimiento.Name = "fecha_nacimiento";
-            this.fecha_nacimiento.ReadOnly = true;
-            // 
-            // tipo_afiliado
-            // 
-            this.tipo_afiliado.DataPropertyName = "ID_TIPO_AFILIADO";
-            this.tipo_afiliado.HeaderText = "Tipo Afiliado";
-            this.tipo_afiliado.Name = "tipo_afiliado";
-            this.tipo_afiliado.ReadOnly = true;
-            // 
-            // fecha_inscripcion
-            // 
-            this.fecha_inscripcion.DataPropertyName = "FECHA_INSCRIPCION";
-            this.fecha_inscripcion.HeaderText = "Fecha de Inscripcion";
-            this.fecha_inscripcion.Name = "fecha_inscripcion";
-            this.fecha_inscripcion.ReadOnly = true;
-            // 
-            // monto_inscripcion
-            // 
-            this.monto_inscripcion.DataPropertyName = "MONTO_INSCRIPCION";
-            this.monto_inscripcion.HeaderText = "Monto Inscripcion";
-            this.monto_inscripcion.Name = "monto_inscripcion";
-            this.monto_inscripcion.ReadOnly = true;
-            this.monto_inscripcion.Width = 60;
-            // 
             // frm_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +307,7 @@
             this.Controls.Add(this.lbl_nombre_afiliado);
             this.Controls.Add(this.txt_apellido_afiliado);
             this.Controls.Add(this.lbl_apellido_afiliado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Afiliado";
             this.Text = "Afiliado";
             this.Load += new System.EventHandler(this.frm_Afiliado_Load);

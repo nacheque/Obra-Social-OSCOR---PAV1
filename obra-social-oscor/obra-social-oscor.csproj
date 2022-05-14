@@ -55,29 +55,29 @@
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
-    <Compile Include="Formulario\ABM_Comunes\Afiliado.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Afiliado.Designer.cs">
-      <DependentUpon>Afiliado.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
+      <DependentUpon>FrmAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Especialidades.Designer.cs">
-      <DependentUpon>Especialidades.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.Designer.cs">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Tipo_Afiliado.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmTipoAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Tipo_Afiliado.Designer.cs">
-      <DependentUpon>Tipo_Afiliado.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmTipoAfiliado.Designer.cs">
+      <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Barrios.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmBarrio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Barrios.Designer.cs">
-      <DependentUpon>Barrios.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmBarrio.Designer.cs">
+      <DependentUpon>FrmBarrio.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -116,17 +116,17 @@
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Afiliado.resx">
-      <DependentUpon>Afiliado.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
+      <DependentUpon>FrmAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Barrios.resx">
-      <DependentUpon>Barrios.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmBarrio.resx">
+      <DependentUpon>FrmBarrio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Especialidades.resx">
-      <DependentUpon>Especialidades.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmEspecialidades.resx">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Tipo_Afiliado.resx">
-      <DependentUpon>Tipo_Afiliado.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmTipoAfiliado.resx">
+      <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
@@ -198,6 +198,8 @@
   <ItemGroup>
     <None Include="Resources\salir.jpeg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Icono_Afiliados.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

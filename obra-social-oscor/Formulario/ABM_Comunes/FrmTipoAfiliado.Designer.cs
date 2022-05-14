@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Tipo_Afiliado));
             this.btn_Limpiar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.grd_Tipo_Afiliado = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Tipo_Afiliado_Descripcion = new System.Windows.Forms.Label();
             this.txt_Nombre_Tipo_Afiliado = new System.Windows.Forms.TextBox();
@@ -37,8 +40,6 @@
             this.btn_Eliminar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Editar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Agregar_Tipo_Afiliado = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Tipo_Afiliado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,21 @@
             this.grd_Tipo_Afiliado.TabIndex = 10;
             this.grd_Tipo_Afiliado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellClick);
             this.grd_Tipo_Afiliado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
             // 
             // groupBox1
             // 
@@ -142,21 +158,6 @@
             this.btn_Agregar_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Agregar_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Agregar_Tipo_Afiliado_Click);
             // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
             // frm_Tipo_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,8 +170,10 @@
             this.Controls.Add(this.btn_Agregar_Tipo_Afiliado);
             this.Controls.Add(this.grd_Tipo_Afiliado);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Tipo_Afiliado";
-            this.Text = "Tipo_Afiliado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tipos de Afiliado";
             this.Load += new System.EventHandler(this.frm_Tipo_Afiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grd_Tipo_Afiliado)).EndInit();
             this.groupBox1.ResumeLayout(false);

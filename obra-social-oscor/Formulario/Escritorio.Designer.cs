@@ -37,12 +37,12 @@
             this.tt_Form_Principal = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Pagos = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.afiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeAfliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeTipoDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -117,7 +117,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.especialidadesToolStripMenuItem,
             this.toolStripMenuItem1,
             this.afiliadoToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
@@ -127,22 +126,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // especialidadesToolStripMenuItem
-            // 
-            this.especialidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDeEspecialidadesToolStripMenuItem});
-            this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
-            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.especialidadesToolStripMenuItem.Text = "Especialidades";
-            // 
-            // gestionDeEspecialidadesToolStripMenuItem
-            // 
-            this.gestionDeEspecialidadesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
-            this.gestionDeEspecialidadesToolStripMenuItem.Name = "gestionDeEspecialidadesToolStripMenuItem";
-            this.gestionDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.gestionDeEspecialidadesToolStripMenuItem.Text = "Gestion de Especialidades";
-            this.gestionDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEspecialidadesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -160,6 +143,7 @@
             // 
             // gestionDeAfliadoToolStripMenuItem
             // 
+            this.gestionDeAfliadoToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Icono_Afiliados;
             this.gestionDeAfliadoToolStripMenuItem.Name = "gestionDeAfliadoToolStripMenuItem";
             this.gestionDeAfliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.gestionDeAfliadoToolStripMenuItem.Text = "Gestion de Afliado";
@@ -167,10 +151,27 @@
             // 
             // gestionDeTipoDeAfiliadoToolStripMenuItem
             // 
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Icono_Afiliados;
             this.gestionDeTipoDeAfiliadoToolStripMenuItem.Name = "gestionDeTipoDeAfiliadoToolStripMenuItem";
             this.gestionDeTipoDeAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.gestionDeTipoDeAfiliadoToolStripMenuItem.Text = "Gestion de Tipo de Afiliado";
             this.gestionDeTipoDeAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.gestionDeTipoDeAfiliadoToolStripMenuItem_Click);
+            // 
+            // especialidadesToolStripMenuItem
+            // 
+            this.especialidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeEspecialidadesToolStripMenuItem});
+            this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
+            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.especialidadesToolStripMenuItem.Text = "Especialidades";
+            // 
+            // gestionDeEspecialidadesToolStripMenuItem
+            // 
+            this.gestionDeEspecialidadesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
+            this.gestionDeEspecialidadesToolStripMenuItem.Name = "gestionDeEspecialidadesToolStripMenuItem";
+            this.gestionDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.gestionDeEspecialidadesToolStripMenuItem.Text = "Gestion de Especialidades";
+            this.gestionDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEspecialidadesToolStripMenuItem_Click);
             // 
             // barriosToolStripMenuItem
             // 
@@ -184,7 +185,7 @@
             // 
             this.gestionDeBarriosToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Imagen_Especialidades;
             this.gestionDeBarriosToolStripMenuItem.Name = "gestionDeBarriosToolStripMenuItem";
-            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
             this.gestionDeBarriosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeBarriosToolStripMenuItem_Click);
             // 

@@ -30,7 +30,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             btn_editar_afiliado.Enabled = false;
             btn_borrar_afiliado.Enabled = false;
-            //cmb_tipo_afiliado
             CargarGrilla();
             CargarCombo();
         }
