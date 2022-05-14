@@ -1,6 +1,7 @@
 ﻿using obra_social_oscor.AccesoADatos;
 using obra_social_oscor.Entidades;
 using obra_social_oscor.Negocio;
+using obra_social_oscor.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,5 +53,76 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
+        private bool ExisteEnGrilla(string criterioABuscar)
+        {
+            bool resultado = false;
+
+            for (int i = 0; i < gdrBarrios.RowCount; i++)
+            {
+                if (gdrBarrios.Rows[i].Cells["NombreBarrio"].Value.ToString().Equals(criterioABuscar, StringComparison.OrdinalIgnoreCase))
+                {
+                    // la comparacion del if devuelve true o false si el criterio esta en alguna celda de la grilla ignorando maysc y minsc
+                    resultado = true;
+                    break;
+                }
+            }
+
+
+            return resultado;
+        }
+
+        private void btnAgregarBarrio_Click(object sender, EventArgs e)
+        {
+            if (!txtNombreBarrio.Text.Equals(""))
+            {
+                if (!ExisteEnGrilla(txtNombreBarrio.Text))
+                {
+                    Barrio barrio = ObtenerDatosBarrio();
+                    try
+                    {
+                        NE_Barrio.AgregarBarrio(barrio);
+                        MessageBox.Show("Barrio Agregado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ya hay un barrio con el nombre que intenta agregar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un nombre del barrio a agregar", "Adertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private Barrio ObtenerDatosBarrio()
+        {
+            Barrio barrio = new Barrio();
+
+            barrio.NombreBarrio = txtNombreBarrio.Text;
+
+            return barrio;
+        }
+
+        private void ReiniciarFormulario()
+        {
+            txtNombreBarrio.Text = "";
+            txtNombreBarrio.Focus();
+            btnEditarBarrio.Enabled = false;
+            btnEliminarBarrio.Enabled = false;
+            btnAgregarBarrio.Enabled = true;
+        }
+
+        private void txtNombreBarrio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloLetras(e);
+        }
     }
 }

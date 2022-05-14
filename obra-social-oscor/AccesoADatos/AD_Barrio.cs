@@ -1,4 +1,5 @@
-﻿using System;
+﻿using obra_social_oscor.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -34,6 +35,38 @@ namespace obra_social_oscor.AccesoADatos
                 da.Fill(tabla);
 
                 return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void AgregarBarrio(Barrio barrio)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "INSERT INTO BARRIOS (BARRIO) VALUES (@nombreBarrio)";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("nombreBarrio", barrio.NombreBarrio);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
