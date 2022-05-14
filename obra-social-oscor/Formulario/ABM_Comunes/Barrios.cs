@@ -116,11 +116,13 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     ReiniciarFormulario();
                     CargarGrilla();
                 }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Error al eliminar barrio.\nEl barrio esta asociado a un Profesional o un Centro...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 catch (Exception)
                 {
-
-                    //MessageBox.Show("Error al dar de baja el barrio");
-                    throw;
+                    MessageBox.Show("Error al dar de baja el barrio");
                 }
             }
             else
