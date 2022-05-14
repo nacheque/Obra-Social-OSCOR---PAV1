@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Barrios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombreBarrio = new System.Windows.Forms.TextBox();
             this.lbl_Barrios = new System.Windows.Forms.Label();
@@ -38,7 +39,8 @@
             this.btnEliminarBarrio = new System.Windows.Forms.Button();
             this.btnSalirBarrios = new System.Windows.Forms.Button();
             this.ttBarrios = new System.Windows.Forms.ToolTip(this.components);
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiarCamposBarrio = new System.Windows.Forms.Button();
+            this.CodigoBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdrBarrios)).BeginInit();
@@ -61,6 +63,7 @@
             this.txtNombreBarrio.Name = "txtNombreBarrio";
             this.txtNombreBarrio.Size = new System.Drawing.Size(267, 20);
             this.txtNombreBarrio.TabIndex = 1;
+            this.txtNombreBarrio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreBarrio_KeyPress);
             // 
             // lbl_Barrios
             // 
@@ -78,13 +81,14 @@
             this.gdrBarrios.AllowUserToDeleteRows = false;
             this.gdrBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
+            this.CodigoBarrio,
             this.NombreBarrio});
             this.gdrBarrios.Location = new System.Drawing.Point(12, 111);
             this.gdrBarrios.Name = "gdrBarrios";
             this.gdrBarrios.ReadOnly = true;
             this.gdrBarrios.Size = new System.Drawing.Size(371, 197);
             this.gdrBarrios.TabIndex = 1;
+            this.gdrBarrios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrBarrios_CellClick);
             // 
             // btnAgregarBarrio
             // 
@@ -96,6 +100,7 @@
             this.btnAgregarBarrio.TabIndex = 2;
             this.ttBarrios.SetToolTip(this.btnAgregarBarrio, "Agregar Nuevo Barrio");
             this.btnAgregarBarrio.UseVisualStyleBackColor = true;
+            this.btnAgregarBarrio.Click += new System.EventHandler(this.btnAgregarBarrio_Click);
             // 
             // btnEditarBarrio
             // 
@@ -107,6 +112,7 @@
             this.btnEditarBarrio.TabIndex = 3;
             this.ttBarrios.SetToolTip(this.btnEditarBarrio, "Editar Un Barrio");
             this.btnEditarBarrio.UseVisualStyleBackColor = true;
+            this.btnEditarBarrio.Click += new System.EventHandler(this.btnEditarBarrio_Click);
             // 
             // btnEliminarBarrio
             // 
@@ -118,6 +124,7 @@
             this.btnEliminarBarrio.TabIndex = 4;
             this.ttBarrios.SetToolTip(this.btnEliminarBarrio, "Eliminar un Barrio");
             this.btnEliminarBarrio.UseVisualStyleBackColor = true;
+            this.btnEliminarBarrio.Click += new System.EventHandler(this.btnEliminarBarrio_Click);
             // 
             // btnSalirBarrios
             // 
@@ -131,32 +138,44 @@
             this.btnSalirBarrios.UseVisualStyleBackColor = true;
             this.btnSalirBarrios.Click += new System.EventHandler(this.btnSalirBarrios_Click);
             // 
-            // Codigo
+            // btnLimpiarCamposBarrio
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
+            this.btnLimpiarCamposBarrio.Location = new System.Drawing.Point(13, 368);
+            this.btnLimpiarCamposBarrio.Name = "btnLimpiarCamposBarrio";
+            this.btnLimpiarCamposBarrio.Size = new System.Drawing.Size(108, 23);
+            this.btnLimpiarCamposBarrio.TabIndex = 6;
+            this.btnLimpiarCamposBarrio.Text = "Reiniciar Formulario";
+            this.btnLimpiarCamposBarrio.UseVisualStyleBackColor = true;
+            this.btnLimpiarCamposBarrio.Click += new System.EventHandler(this.btnLimpiarCamposBarrio_Click);
+            // 
+            // CodigoBarrio
+            // 
+            this.CodigoBarrio.HeaderText = "Codigo";
+            this.CodigoBarrio.Name = "CodigoBarrio";
+            this.CodigoBarrio.ReadOnly = true;
+            this.CodigoBarrio.Visible = false;
             // 
             // NombreBarrio
             // 
             this.NombreBarrio.DataPropertyName = "BARRIO";
-            this.NombreBarrio.HeaderText = "Nombre del Barrio";
+            this.NombreBarrio.HeaderText = "Nombre";
             this.NombreBarrio.Name = "NombreBarrio";
             this.NombreBarrio.ReadOnly = true;
-            this.NombreBarrio.Width = 150;
+            this.NombreBarrio.Width = 200;
             // 
             // frm_Barrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 450);
+            this.Controls.Add(this.btnLimpiarCamposBarrio);
             this.Controls.Add(this.btnSalirBarrios);
             this.Controls.Add(this.btnEliminarBarrio);
             this.Controls.Add(this.btnEditarBarrio);
             this.Controls.Add(this.btnAgregarBarrio);
             this.Controls.Add(this.gdrBarrios);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Barrios";
@@ -181,7 +200,8 @@
         private System.Windows.Forms.Button btnEliminarBarrio;
         private System.Windows.Forms.Button btnSalirBarrios;
         private System.Windows.Forms.ToolTip ttBarrios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.Button btnLimpiarCamposBarrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreBarrio;
     }
 }
