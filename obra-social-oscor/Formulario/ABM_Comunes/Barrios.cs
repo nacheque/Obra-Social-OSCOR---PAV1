@@ -16,6 +16,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 {
     public partial class frm_Barrios : Form
     {
+        int globalCodigoBarrio;
+
         public frm_Barrios()
         {
             InitializeComponent();
@@ -102,6 +104,31 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
+        private void btnEliminarBarrio_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que quiere eliminar este barrio?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    NE_Barrio.EliminarBarrio(globalCodigoBarrio);
+                    MessageBox.Show("Barrio dado de Baja con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReiniciarFormulario();
+                    CargarGrilla();
+                }
+                catch (Exception)
+                {
+
+                    //MessageBox.Show("Error al dar de baja el barrio");
+                    throw;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se dara de baja al barrio", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private Barrio ObtenerDatosBarrio()
         {
             Barrio barrio = new Barrio();
@@ -123,6 +150,36 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void txtNombreBarrio_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validar.SoloLetras(e);
+        }
+
+        private void btnLimpiarCamposBarrio_Click(object sender, EventArgs e)
+        {
+            ReiniciarFormulario();
+        }
+
+
+        private void gdrBarrios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = gdrBarrios.Rows[indice];
+
+            string nombreBarrio = filaSeleccionada.Cells["NombreBarrio"].Value.ToString();
+            globalCodigoBarrio = int.Parse(filaSeleccionada.Cells["CodigoBarrio"].Value.ToString());
+            ReiniciarFormulario();
+
+            btnAgregarBarrio.Enabled = false;
+            btnEditarBarrio.Enabled = true;
+            btnEliminarBarrio.Enabled = true;
+
+            Barrio barrio = new Barrio();
+            barrio.NombreBarrio = nombreBarrio;
+
+            CargarCampos(barrio);
+        }
+
+        private void CargarCampos(Barrio barrio)
+        {
+            txtNombreBarrio.Text = barrio.NombreBarrio;
         }
     }
 }

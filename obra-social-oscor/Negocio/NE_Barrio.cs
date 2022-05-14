@@ -48,5 +48,27 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static void EliminarBarrio(int idBarrio)
+        {
+            try
+            {
+                AD_Barrio.EliminarBarrio(idBarrio);
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Errors.Count > 0)
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547:
+                            throw new InvalidOperationException("Foreign Key Violation", ex);
+                        default:
+                            throw ex;
+                    }
+                }
+            }
+        }
+
     }
 }
