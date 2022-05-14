@@ -181,5 +181,37 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             txtNombreBarrio.Text = barrio.NombreBarrio;
         }
+
+        private void btnEditarBarrio_Click(object sender, EventArgs e)
+        {
+            if (!txtNombreBarrio.Text.Equals(""))
+            {
+                if (!ExisteEnGrilla(txtNombreBarrio.Text))
+                {
+                    Barrio barrio = ObtenerDatosBarrio();
+                    try
+                    {
+                        NE_Barrio.ActualizarBarrio(barrio, globalCodigoBarrio);
+                        MessageBox.Show("Barrio actualizado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error al actualizar barrio...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe ese barrio en la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un nombre de barrio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
     }
 }

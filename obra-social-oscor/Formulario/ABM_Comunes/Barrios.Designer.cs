@@ -112,6 +112,7 @@
             this.btnEditarBarrio.TabIndex = 3;
             this.ttBarrios.SetToolTip(this.btnEditarBarrio, "Editar Un Barrio");
             this.btnEditarBarrio.UseVisualStyleBackColor = true;
+            this.btnEditarBarrio.Click += new System.EventHandler(this.btnEditarBarrio_Click);
             // 
             // btnEliminarBarrio
             // 
