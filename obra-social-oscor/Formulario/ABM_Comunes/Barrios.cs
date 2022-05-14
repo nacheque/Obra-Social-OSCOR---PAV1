@@ -50,7 +50,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Error al obtener listado de barrios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -89,8 +88,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     }
                     catch (Exception)
                     {
-
-                        throw;
+                        MessageBox.Show("Error al dar de alta barrio...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -122,7 +120,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al dar de baja el barrio");
+                    MessageBox.Show("Error al dar de baja barrio...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
