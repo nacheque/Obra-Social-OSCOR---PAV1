@@ -81,7 +81,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     try
                     {
                         NE_Barrio.AgregarBarrio(barrio);
-                        MessageBox.Show("Persona Agregada con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Barrio Agregado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReiniciarFormulario();
                         CargarGrilla();
                     }
