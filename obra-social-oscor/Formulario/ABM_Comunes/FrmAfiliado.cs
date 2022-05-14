@@ -1,5 +1,6 @@
 ﻿using obra_social_oscor.AccesoADatos;
 using obra_social_oscor.Entidades;
+using obra_social_oscor.Helpers;
 using obra_social_oscor.Negocio;
 using System;
 using System.Collections.Generic;
@@ -31,13 +32,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             btn_editar_afiliado.Enabled = false;
             btn_borrar_afiliado.Enabled = false;
             CargarGrilla();
-            CargarCombo();
-        }
-
-        private void btn_limpiar_afiliado_Click(object sender, EventArgs e)
-        {
-            ReiniciarFormulario();
-        }
+            CargarComboTipoAfiliados();
+        }        
 
         private void ReiniciarFormulario()
         {
@@ -62,19 +58,19 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             //txt_monto_afiliado.Text = afiliado.MontoInscripcionAfiliado.ToString();
         }
 
-        private void CargarCombo()
+        private void CargarComboTipoAfiliados()
         {
             try
             {
                 cmb_tipo_afiliado.DataSource = AD_TipoAfiliado.ObtenerTipoAfiliado();
-                cmb_tipo_afiliado.DisplayMember = "Descripcion";
-                cmb_tipo_afiliado.ValueMember = "Id";
-                cmb_tipo_afiliado.SelectedIndex = -1;
+                cmb_tipo_afiliado.DisplayMember = "DESCRIPCION";
+                cmb_tipo_afiliado.ValueMember = "COD_TIPO";
+                cmb_tipo_afiliado.SelectedIndex = 0;
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al obtener listado de afiliados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener listado de tipos de afiliados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,10 +87,10 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     grd_Afi.Rows[i].Cells[0].Value = afiliados[i].NumeroAfiliado;
                     grd_Afi.Rows[i].Cells[1].Value = afiliados[i].ApellidoAfiliado;
                     grd_Afi.Rows[i].Cells[2].Value = afiliados[i].NombreAfiliado;
-                    grd_Afi.Rows[i].Cells[3].Value = afiliados[i].FechaNacimientoAfiliado;
-                    grd_Afi.Rows[i].Cells[4].Value = afiliados[i].TipoAfiliadoAfiliado;
-                    grd_Afi.Rows[i].Cells[5].Value = afiliados[i].FechaInscripcionAfiliado;
-                    grd_Afi.Rows[i].Cells[6].Value = afiliados[i].MontoInscripcionAfiliado;
+                    grd_Afi.Rows[i].Cells[3].Value = afiliados[i].FechaNacimientoAfiliado.Date.ToShortDateString();
+                    grd_Afi.Rows[i].Cells[4].Value = afiliados[i].FechaInscripcionAfiliado.Date.ToShortDateString();
+                    grd_Afi.Rows[i].Cells[5].Value = afiliados[i].MontoInscripcionAfiliado;
+                    grd_Afi.Rows[i].Cells[6].Value = afiliados[i].TipoAfiliado.DescripcionTipoAfiliado;
                 }
             }
             catch (Exception)
@@ -150,7 +146,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
         private void btn_agregar_afiliado_Click(object sender, EventArgs e)
         {
-            if(!txt_apellido_afiliado.Text.Equals(""))
+            if(!txt_apellido_afiliado.Text.Equals("") && !txt_nombre_afiliado.Text.Equals("") && 
+                !txt_monto_afiliado.Text.Equals("") && !dtp_fecha_nacimiento.Text.Equals("") && cmb_tipo_afiliado.SelectedIndex != -1)
             {
                 if(!ExisteEnGrilla(txt_apellido_afiliado.Text))
                 {
@@ -176,8 +173,33 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
             else
             {
-                MessageBox.Show("Debe ingresar un apellido de afiliado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar todos los datos para dar de alta un afiliado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btn_limpiar_afiliado_Click_1(object sender, EventArgs e)
+        {
+            ReiniciarFormulario();
+        }
+
+        private void txt_apellido_afiliado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_apellido_afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloLetras(e);
+        }
+
+        private void txt_nombre_afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloLetras(e);
+        }
+
+        private void txt_monto_afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
         }
     }
 }

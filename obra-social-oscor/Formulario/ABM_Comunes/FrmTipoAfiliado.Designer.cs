@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Tipo_Afiliado));
             this.btn_Limpiar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.grd_Tipo_Afiliado = new System.Windows.Forms.DataGridView();
@@ -40,6 +41,7 @@
             this.btn_Eliminar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Editar_Tipo_Afiliado = new System.Windows.Forms.Button();
             this.btn_Agregar_Tipo_Afiliado = new System.Windows.Forms.Button();
+            this.tt_tipo_afiliado = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grd_Tipo_Afiliado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -113,6 +115,7 @@
             this.txt_Nombre_Tipo_Afiliado.Size = new System.Drawing.Size(225, 20);
             this.txt_Nombre_Tipo_Afiliado.TabIndex = 1;
             this.txt_Nombre_Tipo_Afiliado.TextChanged += new System.EventHandler(this.txt_Nombre_Tipo_Afiliado_TextChanged);
+            this.txt_Nombre_Tipo_Afiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_Tipo_Afiliado_KeyPress);
             // 
             // btn_Salir_Tipo_Afiliado
             // 
@@ -122,6 +125,7 @@
             this.btn_Salir_Tipo_Afiliado.Name = "btn_Salir_Tipo_Afiliado";
             this.btn_Salir_Tipo_Afiliado.Size = new System.Drawing.Size(44, 38);
             this.btn_Salir_Tipo_Afiliado.TabIndex = 12;
+            this.tt_tipo_afiliado.SetToolTip(this.btn_Salir_Tipo_Afiliado, "Salir");
             this.btn_Salir_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Salir_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Salir_Tipo_Afiliado_Click);
             // 
@@ -133,6 +137,7 @@
             this.btn_Eliminar_Tipo_Afiliado.Name = "btn_Eliminar_Tipo_Afiliado";
             this.btn_Eliminar_Tipo_Afiliado.Size = new System.Drawing.Size(44, 38);
             this.btn_Eliminar_Tipo_Afiliado.TabIndex = 11;
+            this.tt_tipo_afiliado.SetToolTip(this.btn_Eliminar_Tipo_Afiliado, "Eliminar tipo de afiliado");
             this.btn_Eliminar_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Eliminar_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Eliminar_Tipo_Afiliado_Click);
             // 
@@ -144,6 +149,7 @@
             this.btn_Editar_Tipo_Afiliado.Name = "btn_Editar_Tipo_Afiliado";
             this.btn_Editar_Tipo_Afiliado.Size = new System.Drawing.Size(44, 38);
             this.btn_Editar_Tipo_Afiliado.TabIndex = 9;
+            this.tt_tipo_afiliado.SetToolTip(this.btn_Editar_Tipo_Afiliado, "Editar tipo de afiliado");
             this.btn_Editar_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Editar_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Editar_Tipo_Afiliado_Click);
             // 
@@ -155,6 +161,7 @@
             this.btn_Agregar_Tipo_Afiliado.Name = "btn_Agregar_Tipo_Afiliado";
             this.btn_Agregar_Tipo_Afiliado.Size = new System.Drawing.Size(44, 38);
             this.btn_Agregar_Tipo_Afiliado.TabIndex = 7;
+            this.tt_tipo_afiliado.SetToolTip(this.btn_Agregar_Tipo_Afiliado, "Agregar tipo de afiliado");
             this.btn_Agregar_Tipo_Afiliado.UseVisualStyleBackColor = true;
             this.btn_Agregar_Tipo_Afiliado.Click += new System.EventHandler(this.btn_Agregar_Tipo_Afiliado_Click);
             // 
@@ -195,5 +202,6 @@
         private System.Windows.Forms.TextBox txt_Nombre_Tipo_Afiliado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.ToolTip tt_tipo_afiliado;
     }
 }

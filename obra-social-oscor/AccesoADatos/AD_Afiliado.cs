@@ -21,7 +21,11 @@ namespace obra_social_oscor.AccesoADatos
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT * FROM AFILIADOS";
+                string consulta = "SELECT A.NRO_AFILIADO, A.APELLIDO, A.NOMBRE, A.FECHA_NACIMIENTO,\n" +
+                    "                     A.FECHA_INSCRIPCION, A.MONTO_INSCRIPCION, A.ID_TIPO_AFILIADO, TP.DESCRIPCION\n" +
+                    "              FROM AFILIADOS A\n" +
+                    "              JOIN TIPOS_AFILIADO TP\n" +
+                    "              ON A.ID_TIPO_AFILIADO = TP.COD_TIPO;";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
@@ -64,7 +68,7 @@ namespace obra_social_oscor.AccesoADatos
                 cmd.Parameters.AddWithValue("@apellido", afiliado.ApellidoAfiliado);
                 cmd.Parameters.AddWithValue("@nombre", afiliado.NombreAfiliado);
                 cmd.Parameters.AddWithValue("@fechaDeNacimiento", afiliado.FechaNacimientoAfiliado);
-                cmd.Parameters.AddWithValue("@tipoAfiliado", afiliado.TipoAfiliadoAfiliado);
+                cmd.Parameters.AddWithValue("@tipoAfiliado", afiliado.TipoAfiliado);
                 cmd.Parameters.AddWithValue("@monto", afiliado.MontoInscripcionAfiliado);
 
                 cmd.CommandType = CommandType.Text;

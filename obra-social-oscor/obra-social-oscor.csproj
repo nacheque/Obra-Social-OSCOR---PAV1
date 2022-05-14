@@ -201,5 +201,11 @@
   <ItemGroup>
     <None Include="Resources\Icono_Afiliados.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen estadisticas.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

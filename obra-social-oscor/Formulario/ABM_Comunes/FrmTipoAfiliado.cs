@@ -210,5 +210,10 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
 
         }
+
+        private void txt_Nombre_Tipo_Afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloLetras(e);
+        }
     }
 }
