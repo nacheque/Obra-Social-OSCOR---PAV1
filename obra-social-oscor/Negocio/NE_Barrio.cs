@@ -70,5 +70,18 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static void ActualizarBarrio(Barrio barrio, int idBarrio)
+        {
+            try
+            {
+                AD_Barrio.ActualizarBarrio(barrio, idBarrio);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
