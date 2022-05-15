@@ -36,7 +36,13 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.tt_Form_Principal = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Pagos = new System.Windows.Forms.Button();
+            this.btn_reportes = new System.Windows.Forms.Button();
+            this.btn_estadisticas = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.afiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeAfliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,9 +118,35 @@
             this.btn_Pagos.UseVisualStyleBackColor = false;
             this.btn_Pagos.Click += new System.EventHandler(this.btn_Pagos_Click);
             // 
+            // btn_reportes
+            // 
+            this.btn_reportes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reportes.BackgroundImage = global::obra_social_oscor.Properties.Resources.imagen_reportes;
+            this.btn_reportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_reportes.Location = new System.Drawing.Point(592, 407);
+            this.btn_reportes.Name = "btn_reportes";
+            this.btn_reportes.Size = new System.Drawing.Size(206, 195);
+            this.btn_reportes.TabIndex = 8;
+            this.tt_Form_Principal.SetToolTip(this.btn_reportes, "Ver Reportes");
+            this.btn_reportes.UseVisualStyleBackColor = true;
+            // 
+            // btn_estadisticas
+            // 
+            this.btn_estadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_estadisticas.BackgroundImage = global::obra_social_oscor.Properties.Resources.Imagen_estadisticas;
+            this.btn_estadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_estadisticas.Location = new System.Drawing.Point(942, 407);
+            this.btn_estadisticas.Name = "btn_estadisticas";
+            this.btn_estadisticas.Size = new System.Drawing.Size(206, 195);
+            this.btn_estadisticas.TabIndex = 9;
+            this.tt_Form_Principal.SetToolTip(this.btn_estadisticas, "Ver Estadisticas");
+            this.btn_estadisticas.UseVisualStyleBackColor = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.afiliadoToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
             this.localidadesToolStripMenuItem});
@@ -123,6 +155,36 @@
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
+            // afiliadoToolStripMenuItem
+            // 
+            this.afiliadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeAfliadoToolStripMenuItem,
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem});
+            this.afiliadoToolStripMenuItem.Name = "afiliadoToolStripMenuItem";
+            this.afiliadoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.afiliadoToolStripMenuItem.Text = "Afiliado";
+            // 
+            // gestionDeAfliadoToolStripMenuItem
+            // 
+            this.gestionDeAfliadoToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Icono_Afiliados;
+            this.gestionDeAfliadoToolStripMenuItem.Name = "gestionDeAfliadoToolStripMenuItem";
+            this.gestionDeAfliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.gestionDeAfliadoToolStripMenuItem.Text = "Gestion de Afliado";
+            this.gestionDeAfliadoToolStripMenuItem.Click += new System.EventHandler(this.gestionDeAfliadoToolStripMenuItem_Click);
+            // 
+            // gestionDeTipoDeAfiliadoToolStripMenuItem
+            // 
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.Icono_Afiliados;
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Name = "gestionDeTipoDeAfiliadoToolStripMenuItem";
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Text = "Gestion de Tipo de Afiliado";
+            this.gestionDeTipoDeAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.gestionDeTipoDeAfiliadoToolStripMenuItem_Click);
             // 
             // especialidadesToolStripMenuItem
             // 
@@ -180,6 +242,8 @@
             this.BackgroundImage = global::obra_social_oscor.Properties.Resources.fondo_escritorio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1367, 702);
+            this.Controls.Add(this.btn_estadisticas);
+            this.Controls.Add(this.btn_reportes);
             this.Controls.Add(this.btn_Pagos);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Centro);
@@ -212,10 +276,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem afiliadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeAfliadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeTipoDeAfiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
+        private System.Windows.Forms.Button btn_reportes;
+        private System.Windows.Forms.Button btn_estadisticas;
     }
 }
 
