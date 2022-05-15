@@ -1,4 +1,6 @@
-﻿using System;
+﻿using obra_social_oscor.Entidades;
+using obra_social_oscor.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +33,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
         private void CargarGrilla()
         {
-            // pendiente
+            try
+            {
+                gdrLocalidades.Rows.Clear();
+                List<Localidad> localidades = NE_Localidades.ObtenerListadoLocalidades();
+                for (int i = 0; i < localidades.Count; i++)
+                {
+                    gdrLocalidades.Rows.Add();
+                    gdrLocalidades.Rows[i].Cells[0].Value = localidades[i].IdLocalidad;
+                    gdrLocalidades.Rows[i].Cells[1].Value = localidades[i].NombreLocalidad;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+                //MessageBox.Show("Error al obtener el listado de localidades");
+            }
         }
     }
 }

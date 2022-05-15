@@ -49,8 +49,10 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
+    <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
+    <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +104,7 @@
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
+    <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\Barrios.resx">
