@@ -52,10 +52,13 @@
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
+    <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
+    <Compile Include="Entidades\Localidad.cs" />
+    <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
@@ -78,6 +81,12 @@
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmBarrio.Designer.cs">
       <DependentUpon>FrmBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Localidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Localidades.Designer.cs">
+      <DependentUpon>Localidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -114,6 +123,7 @@
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
+    <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
@@ -127,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmTipoAfiliado.resx">
       <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\Localidades.resx">
+      <DependentUpon>Localidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
@@ -206,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagen estadisticas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
