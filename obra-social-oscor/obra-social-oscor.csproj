@@ -63,6 +63,12 @@
     <Compile Include="Formulario\ABM_Comunes\Barrios.Designer.cs">
       <DependentUpon>Barrios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Localidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Localidades.Designer.cs">
+      <DependentUpon>Localidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\Localidades.resx">
+      <DependentUpon>Localidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
@@ -174,6 +183,8 @@
   <ItemGroup>
     <None Include="Resources\salir.jpeg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\287695_location_icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
