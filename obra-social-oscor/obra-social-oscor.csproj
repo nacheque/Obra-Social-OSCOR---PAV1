@@ -56,11 +56,10 @@
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
-    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs" />
-    <Compile Include="Entidades\Localidad.cs" />
-    <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
       <DependentUpon>FrmAfiliado.cs</DependentUpon>
     </Compile>
@@ -82,11 +81,11 @@
     <Compile Include="Formulario\ABM_Comunes\FrmBarrio.Designer.cs">
       <DependentUpon>FrmBarrio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Localidades.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Localidades.Designer.cs">
-      <DependentUpon>Localidades.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.Designer.cs">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -138,8 +137,8 @@
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmTipoAfiliado.resx">
       <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Localidades.resx">
-      <DependentUpon>Localidades.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmLocalidades.resx">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>

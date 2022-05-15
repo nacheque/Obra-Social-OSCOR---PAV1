@@ -62,13 +62,13 @@ namespace obra_social_oscor.AccesoADatos
                 SqlCommand cmd = new SqlCommand();
                 
                 string consulta = "INSERT INTO AFILIADOS (APELLIDO, NOMBRE, FECHA_NACIMIENTO, ID_TIPO_AFILIADO, MONTO_INSCRIPCION)" +
-                                " VALUES (@apellido,@nombre,@fechaDeNacimiento,@tipoAfiliado,@Monto)";
+                                " VALUES (@apellido, @nombre, @fechaDeNacimiento, @tipoAfiliado, @monto)";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@apellido", afiliado.ApellidoAfiliado);
                 cmd.Parameters.AddWithValue("@nombre", afiliado.NombreAfiliado);
                 cmd.Parameters.AddWithValue("@fechaDeNacimiento", afiliado.FechaNacimientoAfiliado);
-                cmd.Parameters.AddWithValue("@tipoAfiliado", afiliado.TipoAfiliado);
+                cmd.Parameters.AddWithValue("@tipoAfiliado", afiliado.TipoAfiliado.CodigoTipoAfiliado);
                 cmd.Parameters.AddWithValue("@monto", afiliado.MontoInscripcionAfiliado);
 
                 cmd.CommandType = CommandType.Text;
@@ -81,7 +81,6 @@ namespace obra_social_oscor.AccesoADatos
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -98,11 +97,17 @@ namespace obra_social_oscor.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE AFILIADOS SET APELLIDO = @apellido WHERE NRO_AFILIADO = @codigo";
+                string consulta = "UPDATE AFILIADOS SET APELLIDO = @apellido, NOMBRE = @nombre, FECHA_NACIMIENTO = @fecha_nacimiento,\n" +
+                    "              ID_TIPO_AFILIADO = @id_tipo_afiliado, MONTO_INSCRIPCION = @monto_inscripcion\n" +
+                    "              WHERE NRO_AFILIADO = @nro_afiliado";
 
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nro_afiliado", codigoAfiliado);
                 cmd.Parameters.AddWithValue("@apellido", afiliado.ApellidoAfiliado);
-                cmd.Parameters.AddWithValue("@codigo", codigoAfiliado);
+                cmd.Parameters.AddWithValue("@nombre", afiliado.NombreAfiliado);
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", afiliado.FechaNacimientoAfiliado);
+                cmd.Parameters.AddWithValue("@id_tipo_afiliado", afiliado.TipoAfiliado.CodigoTipoAfiliado);
+                cmd.Parameters.AddWithValue("@monto_inscripcion", afiliado.MontoInscripcionAfiliado);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -114,7 +119,6 @@ namespace obra_social_oscor.AccesoADatos
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

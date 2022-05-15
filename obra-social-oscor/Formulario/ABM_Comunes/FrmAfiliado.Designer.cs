@@ -36,7 +36,6 @@
             this.btn_salir_afiliado = new System.Windows.Forms.Button();
             this.btn_agregar_afiliado = new System.Windows.Forms.Button();
             this.btn_editar_afiliado = new System.Windows.Forms.Button();
-            this.btn_borrar_afiliado = new System.Windows.Forms.Button();
             this.cmb_tipo_afiliado = new System.Windows.Forms.ComboBox();
             this.lbl_tipo_afiliado = new System.Windows.Forms.Label();
             this.lbl_fecha_nacimiento_afiliado = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.lbl_apellido_afiliado = new System.Windows.Forms.Label();
             this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.btn_limpiar_afiliado = new System.Windows.Forms.Button();
+            this.tt_afiliado = new System.Windows.Forms.ToolTip(this.components);
             this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,8 @@
             this.fecha_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto_inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tt_afiliado = new System.Windows.Forms.ToolTip(this.components);
+            this.CodigoTipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_borrar_afiliado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Afi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +90,8 @@
             this.fecha_nacimiento,
             this.fecha_inscripcion,
             this.monto_inscripcion,
-            this.tipo_afiliado});
+            this.tipo_afiliado,
+            this.CodigoTipoAfiliado});
             this.grd_Afi.Location = new System.Drawing.Point(12, 119);
             this.grd_Afi.Name = "grd_Afi";
             this.grd_Afi.ReadOnly = true;
@@ -131,17 +133,7 @@
             this.btn_editar_afiliado.TabIndex = 82;
             this.tt_afiliado.SetToolTip(this.btn_editar_afiliado, "Editar un afiliado");
             this.btn_editar_afiliado.UseVisualStyleBackColor = true;
-            // 
-            // btn_borrar_afiliado
-            // 
-            this.btn_borrar_afiliado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_borrar_afiliado.BackgroundImage")));
-            this.btn_borrar_afiliado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_borrar_afiliado.Location = new System.Drawing.Point(131, 415);
-            this.btn_borrar_afiliado.Name = "btn_borrar_afiliado";
-            this.btn_borrar_afiliado.Size = new System.Drawing.Size(50, 50);
-            this.btn_borrar_afiliado.TabIndex = 81;
-            this.tt_afiliado.SetToolTip(this.btn_borrar_afiliado, "Eliminar un afiliado");
-            this.btn_borrar_afiliado.UseVisualStyleBackColor = true;
+            this.btn_editar_afiliado.Click += new System.EventHandler(this.btn_editar_afiliado_Click);
             // 
             // cmb_tipo_afiliado
             // 
@@ -199,7 +191,6 @@
             this.txt_apellido_afiliado.Name = "txt_apellido_afiliado";
             this.txt_apellido_afiliado.Size = new System.Drawing.Size(167, 23);
             this.txt_apellido_afiliado.TabIndex = 75;
-            this.txt_apellido_afiliado.TextChanged += new System.EventHandler(this.txt_apellido_afiliado_TextChanged);
             this.txt_apellido_afiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_afiliado_KeyPress);
             // 
             // lbl_apellido_afiliado
@@ -288,6 +279,25 @@
             this.tipo_afiliado.ReadOnly = true;
             this.tipo_afiliado.Width = 150;
             // 
+            // CodigoTipoAfiliado
+            // 
+            this.CodigoTipoAfiliado.HeaderText = "Codigo Tipo Afiliado";
+            this.CodigoTipoAfiliado.Name = "CodigoTipoAfiliado";
+            this.CodigoTipoAfiliado.ReadOnly = true;
+            this.CodigoTipoAfiliado.Visible = false;
+            // 
+            // btn_borrar_afiliado
+            // 
+            this.btn_borrar_afiliado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_borrar_afiliado.BackgroundImage")));
+            this.btn_borrar_afiliado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_borrar_afiliado.Location = new System.Drawing.Point(131, 415);
+            this.btn_borrar_afiliado.Name = "btn_borrar_afiliado";
+            this.btn_borrar_afiliado.Size = new System.Drawing.Size(50, 50);
+            this.btn_borrar_afiliado.TabIndex = 81;
+            this.tt_afiliado.SetToolTip(this.btn_borrar_afiliado, "Eliminar un afiliado");
+            this.btn_borrar_afiliado.UseVisualStyleBackColor = true;
+            this.btn_borrar_afiliado.Click += new System.EventHandler(this.btn_borrar_afiliado_Click);
+            // 
             // frm_Afiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +337,6 @@
         private System.Windows.Forms.Button btn_salir_afiliado;
         private System.Windows.Forms.Button btn_agregar_afiliado;
         private System.Windows.Forms.Button btn_editar_afiliado;
-        private System.Windows.Forms.Button btn_borrar_afiliado;
         private System.Windows.Forms.ComboBox cmb_tipo_afiliado;
         private System.Windows.Forms.Label lbl_tipo_afiliado;
         private System.Windows.Forms.Label lbl_fecha_nacimiento_afiliado;
@@ -337,6 +346,7 @@
         private System.Windows.Forms.Label lbl_apellido_afiliado;
         private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento;
         private System.Windows.Forms.Button btn_limpiar_afiliado;
+        private System.Windows.Forms.ToolTip tt_afiliado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_afiliado;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -344,6 +354,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inscripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_inscripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_afiliado;
-        private System.Windows.Forms.ToolTip tt_afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoAfiliado;
+        private System.Windows.Forms.Button btn_borrar_afiliado;
     }
 }

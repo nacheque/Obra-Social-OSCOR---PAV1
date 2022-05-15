@@ -30,7 +30,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void frm_Afiliado_Load(object sender, EventArgs e)
         {
             btn_editar_afiliado.Enabled = false;
-            btn_borrar_afiliado.Enabled = false;
             CargarGrilla();
             CargarComboTipoAfiliados();
         }        
@@ -38,24 +37,22 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void ReiniciarFormulario()
         {
             txt_apellido_afiliado.Text = "";
-            txt_apellido_afiliado.Focus();
-            //txt_nombre_afiliado.Text = "";
-            //dtp_fecha_nacimiento.Value = DateTime.Today;
-            //cmb_tipo_afiliado.Enabled = false;
-            //dtp_fecha_inscripcion.Value = DateTime.Today;
-            //txt_monto_afiliado.Text = "";
-            //btn_editar_afiliado.Enabled = false;
-            //btn_borrar_afiliado.Enabled = false;
+            txt_nombre_afiliado.Text = "";
+            txt_monto_afiliado.Text = "";
+            txt_apellido_afiliado.Focus();            
+            dtp_fecha_nacimiento.Value = new DateTime(1990, 01, 01);
+            cmb_tipo_afiliado.SelectedIndex = 0;           
+            btn_editar_afiliado.Enabled = false;
+            btn_agregar_afiliado.Enabled = true;
         }
 
         private void CargarCampos(Afiliado afiliado)
         {
             txt_apellido_afiliado.Text = afiliado.ApellidoAfiliado;
             txt_nombre_afiliado.Text = afiliado.NombreAfiliado;
-            //dtp_fecha_nacimiento.Value = afiliado.FechaNacimientoAfiliado;
-            //cmb_tipo_afiliado.SelectedIndex = afiliado.TipoAfiliadoAfiliado;
-            //dtp_fecha_inscripcion.Value = afiliado.FechaInscripcionAfiliado;
-            //txt_monto_afiliado.Text = afiliado.MontoInscripcionAfiliado.ToString();
+            dtp_fecha_nacimiento.Value = afiliado.FechaNacimientoAfiliado;
+            cmb_tipo_afiliado.SelectedValue = afiliado.TipoAfiliado.CodigoTipoAfiliado;
+            txt_monto_afiliado.Text = afiliado.MontoInscripcionAfiliado.ToString();
         }
 
         private void CargarComboTipoAfiliados()
@@ -91,6 +88,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     grd_Afi.Rows[i].Cells[4].Value = afiliados[i].FechaInscripcionAfiliado.Date.ToShortDateString();
                     grd_Afi.Rows[i].Cells[5].Value = afiliados[i].MontoInscripcionAfiliado;
                     grd_Afi.Rows[i].Cells[6].Value = afiliados[i].TipoAfiliado.DescripcionTipoAfiliado;
+                    grd_Afi.Rows[i].Cells[7].Value = afiliados[i].TipoAfiliado.CodigoTipoAfiliado;
                 }
             }
             catch (Exception)
@@ -99,13 +97,35 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private bool ExisteEnGrilla(string criterioABuscar)
+        private bool ExisteEnGrilla(string nombre, string apellido, string fechaNacimiento)
         {
             bool resultado = false;
 
             for (int i = 0; i < grd_Afi.Rows.Count; i++)
             {
-                if (grd_Afi.Rows[i].Cells["Apellido"].Value.ToString().Equals(criterioABuscar, StringComparison.OrdinalIgnoreCase))
+                if (grd_Afi.Rows[i].Cells["Nombre"].Value.ToString().Equals(nombre, StringComparison.OrdinalIgnoreCase) 
+                    && grd_Afi.Rows[i].Cells["Apellido"].Value.ToString().Equals(apellido, StringComparison.OrdinalIgnoreCase)
+                    && grd_Afi.Rows[i].Cells["fecha_nacimiento"].Value.ToString().Equals(fechaNacimiento, StringComparison.OrdinalIgnoreCase))
+                {
+                    resultado = true;
+                    break;
+                }
+            }
+
+            return resultado;
+        }
+
+        private bool ExisteEnGrillaEditar(string nombre, string apellido, string fechaNacimiento, float monto, int id_tipo_afiliado)
+        {
+            bool resultado = false;
+
+            for (int i = 0; i < grd_Afi.Rows.Count; i++)
+            {
+                if (grd_Afi.Rows[i].Cells["Nombre"].Value.ToString().Equals(nombre, StringComparison.OrdinalIgnoreCase)
+                    && grd_Afi.Rows[i].Cells["Apellido"].Value.ToString().Equals(apellido, StringComparison.OrdinalIgnoreCase)
+                    && grd_Afi.Rows[i].Cells["fecha_nacimiento"].Value.ToString().Equals(fechaNacimiento, StringComparison.OrdinalIgnoreCase)
+                    && float.Parse(grd_Afi.Rows[i].Cells["monto_inscripcion"].Value.ToString()) == monto
+                    && int.Parse(grd_Afi.Rows[i].Cells["CodigoTipoAfiliado"].Value.ToString()) == id_tipo_afiliado)
                 {
                     resultado = true;
                     break;
@@ -118,9 +138,16 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private Afiliado ObtenerDatosAfiliado()
         {
             Afiliado afiliado = new Afiliado();
-
             afiliado.ApellidoAfiliado = txt_apellido_afiliado.Text;
-            //afiliado.NombreAfiliado = txt_nombre_afiliado.Text;
+            afiliado.NombreAfiliado = txt_nombre_afiliado.Text;
+            afiliado.FechaNacimientoAfiliado = dtp_fecha_nacimiento.Value;
+            afiliado.MontoInscripcionAfiliado = float.Parse(txt_monto_afiliado.Text);
+
+            TipoAfiliado tipoAfiliado = new TipoAfiliado();
+            tipoAfiliado.CodigoTipoAfiliado = (int) cmb_tipo_afiliado.SelectedValue;
+            tipoAfiliado.DescripcionTipoAfiliado = cmb_tipo_afiliado.SelectedText;
+
+            afiliado.TipoAfiliado = tipoAfiliado;
             
             return afiliado;
         }
@@ -130,16 +157,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = grd_Afi.Rows[indice];
 
-            string apellidoAfiliado = filaSeleccionada.Cells["Apellido"].Value.ToString();
             global_numeroAfiliado = int.Parse(filaSeleccionada.Cells["Nro_Afiliado"].Value.ToString());
             ReiniciarFormulario();
 
             btn_editar_afiliado.Enabled = true;
-            btn_borrar_afiliado.Enabled = true;
             btn_agregar_afiliado.Enabled = false;
 
             Afiliado afiliado = new Afiliado();
-            afiliado.ApellidoAfiliado = apellidoAfiliado;            
+            afiliado.ApellidoAfiliado = filaSeleccionada.Cells["Apellido"].Value.ToString();
+            afiliado.NombreAfiliado = filaSeleccionada.Cells["nombre"].Value.ToString();
+            afiliado.FechaNacimientoAfiliado = DateTime.Parse(filaSeleccionada.Cells["fecha_nacimiento"].Value.ToString());
+            afiliado.MontoInscripcionAfiliado = float.Parse(filaSeleccionada.Cells["monto_inscripcion"].Value.ToString());
+
+            TipoAfiliado tipoAfiliado = new TipoAfiliado();
+            tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
+            tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["tipo_afiliado"].Value.ToString();
+
+            afiliado.TipoAfiliado = tipoAfiliado;
 
             CargarCampos(afiliado);
         }
@@ -149,7 +183,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             if(!txt_apellido_afiliado.Text.Equals("") && !txt_nombre_afiliado.Text.Equals("") && 
                 !txt_monto_afiliado.Text.Equals("") && !dtp_fecha_nacimiento.Text.Equals("") && cmb_tipo_afiliado.SelectedIndex != -1)
             {
-                if(!ExisteEnGrilla(txt_apellido_afiliado.Text))
+                if(!ExisteEnGrilla(txt_nombre_afiliado.Text, txt_apellido_afiliado.Text, dtp_fecha_nacimiento.Value.Date.ToShortDateString()))
                 {
                     Afiliado afiliado = ObtenerDatosAfiliado();
                     
@@ -168,7 +202,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe un afiliado con ese apellido...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ya existe un afiliado con el mismo nombre, apellido y fecha de nacimiento...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -180,11 +214,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void btn_limpiar_afiliado_Click_1(object sender, EventArgs e)
         {
             ReiniciarFormulario();
-        }
-
-        private void txt_apellido_afiliado_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txt_apellido_afiliado_KeyPress(object sender, KeyPressEventArgs e)
@@ -200,6 +229,62 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void txt_monto_afiliado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validar.SoloNumeros(e);
+        }
+
+        private void btn_editar_afiliado_Click(object sender, EventArgs e)
+        {
+            if (!txt_apellido_afiliado.Text.Equals("") && !txt_nombre_afiliado.Text.Equals("") &&
+                !txt_monto_afiliado.Text.Equals("") && !dtp_fecha_nacimiento.Text.Equals("") && cmb_tipo_afiliado.SelectedIndex != -1)
+            {
+                if (!ExisteEnGrillaEditar(txt_nombre_afiliado.Text, txt_apellido_afiliado.Text, dtp_fecha_nacimiento.Value.Date.ToShortDateString(),
+                    float.Parse(txt_monto_afiliado.Text), (int) cmb_tipo_afiliado.SelectedValue))
+                {
+                    Afiliado afiliado = ObtenerDatosAfiliado();
+
+                    try
+                    {
+                        Ne_Afiliado.ActualizarAfiliado(afiliado, global_numeroAfiliado);
+                        MessageBox.Show("Afiliado actualizado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error al actualizar Afiliado...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe un afiliado con el mismo nombre, apellido y fecha de nacimiento...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos para dar de alta un afiliado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_borrar_afiliado_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea eliminar el afiliado seleccionado?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    Ne_Afiliado.EliminarAfiliado(global_numeroAfiliado);
+                    MessageBox.Show("Afiliado eliminado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReiniciarFormulario();
+                    CargarGrilla();
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Error al eliminar afiliado.\nEl mismo se encuentra asociado a atenciones o cuotas pagas...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al eliminar afiliado...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
