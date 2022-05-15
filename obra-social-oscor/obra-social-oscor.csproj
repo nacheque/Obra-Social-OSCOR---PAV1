@@ -56,7 +56,7 @@
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
-    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs" />
     <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
