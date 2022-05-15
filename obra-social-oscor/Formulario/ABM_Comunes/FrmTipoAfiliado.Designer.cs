@@ -70,7 +70,6 @@
             this.grd_Tipo_Afiliado.Size = new System.Drawing.Size(332, 183);
             this.grd_Tipo_Afiliado.TabIndex = 10;
             this.grd_Tipo_Afiliado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellClick);
-            this.grd_Tipo_Afiliado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Tipo_Afiliado_CellContentClick);
             // 
             // Codigo
             // 
@@ -114,7 +113,6 @@
             this.txt_Nombre_Tipo_Afiliado.Name = "txt_Nombre_Tipo_Afiliado";
             this.txt_Nombre_Tipo_Afiliado.Size = new System.Drawing.Size(225, 20);
             this.txt_Nombre_Tipo_Afiliado.TabIndex = 1;
-            this.txt_Nombre_Tipo_Afiliado.TextChanged += new System.EventHandler(this.txt_Nombre_Tipo_Afiliado_TextChanged);
             this.txt_Nombre_Tipo_Afiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_Tipo_Afiliado_KeyPress);
             // 
             // btn_Salir_Tipo_Afiliado

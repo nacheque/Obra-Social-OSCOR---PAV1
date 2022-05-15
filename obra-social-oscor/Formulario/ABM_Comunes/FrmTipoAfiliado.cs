@@ -40,11 +40,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             ReiniciarFormulario();
         }
 
-        private void txt_Nombre_Tipo_Afiliado_TextChanged(object sender, EventArgs e)
-        {
-            //Validar.SoloLetras(e);
-        }
-
         private void CargarGrilla()
         {
             try
@@ -204,11 +199,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     MessageBox.Show("Error al eliminar tipo de afiliado...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void grd_Tipo_Afiliado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void txt_Nombre_Tipo_Afiliado_KeyPress(object sender, KeyPressEventArgs e)
