@@ -9,10 +9,10 @@ namespace obra_social_oscor.Entidades
     public class Practica
     {
         private string descripcion;
-        private string precio; //Modificar tipo de dato una vez verificada la funcionalidad
+        private float precio; //Modificar tipo de dato una vez verificada la funcionalidad
 
 
-        public Practica(string descripcionPractica, string precioPractica)
+        public Practica(string descripcionPractica, float precioPractica)
         {
             this.descripcion = descripcionPractica;
             this.precio = precioPractica;
@@ -24,7 +24,7 @@ namespace obra_social_oscor.Entidades
             set => descripcion = value;
         }
 
-        public string PrecioPractica
+        public float PrecioPractica
         {
             get => precio;
             set => precio = value;
