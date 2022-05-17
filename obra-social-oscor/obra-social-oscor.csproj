@@ -50,9 +50,11 @@
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
+    <Compile Include="AccesoADatos\AD_Practica.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\Localidad.cs" />
+    <Compile Include="Entidades\Practica.cs" />
     <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +72,12 @@
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\Localidades.Designer.cs">
       <DependentUpon>Localidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Practicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\Practicas.Designer.cs">
+      <DependentUpon>Practicas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -105,6 +113,7 @@
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
+    <Compile Include="Negocio\NE_Practica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\Barrios.resx">
@@ -115,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\Localidades.resx">
       <DependentUpon>Localidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\Practicas.resx">
+      <DependentUpon>Practicas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>

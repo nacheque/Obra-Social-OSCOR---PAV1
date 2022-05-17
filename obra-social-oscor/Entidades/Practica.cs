@@ -8,6 +8,7 @@ namespace obra_social_oscor.Entidades
 {
     public class Practica
     {
+        private int codigoPractica;
         private string descripcion;
         private float precio; //Modificar tipo de dato una vez verificada la funcionalidad
 
@@ -18,6 +19,16 @@ namespace obra_social_oscor.Entidades
             this.precio = precioPractica;
         }
 
+        public Practica() 
+        {
+
+        }
+
+        public int CodigoPractica 
+        {
+            get => codigoPractica;
+            set => codigoPractica = value;
+        }
         public string DescripcionPractica
         {
             get => descripcion;

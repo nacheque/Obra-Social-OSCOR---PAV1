@@ -76,5 +76,12 @@ namespace obra_social_oscor
             frm_Localidades ventana = new frm_Localidades();
             ventana.ShowDialog();
         }
+
+        private void gestionDePracticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Practicas ventana = new Practicas();
+            ventana.ShowDialog();
+
+        }
     }
 }

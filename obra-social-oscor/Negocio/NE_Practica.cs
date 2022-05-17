@@ -21,8 +21,9 @@ namespace obra_social_oscor.Negocio
                 foreach (DataRow fila in tabla.Rows) //voy CARGANDO mi lista con objetos del tipo PRACTICA
                 {
                     Practica practica = new Practica();
-                    practica.DescripcionPractica = fila[0].ToString();
-                    practica.PrecioPractica = float.Parse(fila[1].ToString());
+                    practica.CodigoPractica = int.Parse(fila[0].ToString());
+                    practica.DescripcionPractica = fila[1].ToString();
+                    practica.PrecioPractica = float.Parse(fila[2].ToString());
                     practicas.Add(practica); 
                    
                 }
@@ -78,7 +79,7 @@ namespace obra_social_oscor.Negocio
                         case 547:
                             throw new InvalidOperationException("Foreign Key violation", ex);
                         default:
-                            throw ex;
+                            throw ex; 
                     }
                 }
             }            

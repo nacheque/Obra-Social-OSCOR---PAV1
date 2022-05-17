@@ -104,9 +104,6 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Open();
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
-
-
-
             }
             catch (Exception)
             {
