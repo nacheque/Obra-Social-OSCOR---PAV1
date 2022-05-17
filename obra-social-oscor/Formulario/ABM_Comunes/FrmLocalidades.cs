@@ -95,8 +95,12 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("Error al agregar Localidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Esta Localidad ya existe...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -161,7 +165,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("Error al editar Localidad...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -194,13 +198,10 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 }
                 catch(Exception)
                 {
-                    throw;
+                    MessageBox.Show("Error al eliminar Localidad...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
-            {
-                MessageBox.Show("No se eliminara la localidad");
-            }
+            
         }
     }
 }
