@@ -3,6 +3,7 @@ using obra_social_oscor.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,54 @@ namespace obra_social_oscor.Negocio
             {
 
                 throw;
+            }
+        }
+
+        public static void AgregarLocalidad(Localidad localidad)
+        {
+            try
+            {
+                AD_Localidad.AgregarLocalidad(localidad);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static void EditarLocalidad(Localidad localidad, int codigoLoc)
+        {
+            try
+            {
+                AD_Localidad.EditarLocalidad(localidad, codigoLoc);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static void EliminarLocalidad(int codigoLoc)
+        {
+            try
+            {
+                AD_Localidad.EliminarLocalidad(codigoLoc);
+            }
+            catch(SqlException ex)
+            {
+
+                if (ex.Errors.Count > 0)
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547:
+                            throw new InvalidOperationException("Foreign Key Violation", ex);
+                        default:
+                            throw ex;
+                    }
+                }
             }
         }
     }

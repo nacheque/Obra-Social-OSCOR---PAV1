@@ -63,6 +63,7 @@
             this.txtNombreLocalidad.Name = "txtNombreLocalidad";
             this.txtNombreLocalidad.Size = new System.Drawing.Size(274, 20);
             this.txtNombreLocalidad.TabIndex = 1;
+            this.txtNombreLocalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreLocalidad_KeyPress);
             // 
             // lblNombreLocalidad
             // 
@@ -87,6 +88,7 @@
             this.gdrLocalidades.ReadOnly = true;
             this.gdrLocalidades.Size = new System.Drawing.Size(384, 223);
             this.gdrLocalidades.TabIndex = 1;
+            this.gdrLocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrLocalidades_CellClick);
             // 
             // Codigo
             // 
@@ -113,6 +115,7 @@
             this.btnAgregarLocalidad.TabIndex = 2;
             this.ttLocalidades.SetToolTip(this.btnAgregarLocalidad, "Agregar Localidad");
             this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
+            this.btnAgregarLocalidad.Click += new System.EventHandler(this.btnAgregarLocalidad_Click);
             // 
             // btnEditarLocalidad
             // 
@@ -124,6 +127,7 @@
             this.btnEditarLocalidad.TabIndex = 3;
             this.ttLocalidades.SetToolTip(this.btnEditarLocalidad, "Editar Localidad");
             this.btnEditarLocalidad.UseVisualStyleBackColor = true;
+            this.btnEditarLocalidad.Click += new System.EventHandler(this.btnEditarLocalidad_Click);
             // 
             // btnEliminarLocalidad
             // 
@@ -135,6 +139,7 @@
             this.btnEliminarLocalidad.TabIndex = 4;
             this.ttLocalidades.SetToolTip(this.btnEliminarLocalidad, "Borrar Localidad");
             this.btnEliminarLocalidad.UseVisualStyleBackColor = true;
+            this.btnEliminarLocalidad.Click += new System.EventHandler(this.btnEliminarLocalidad_Click);
             // 
             // btnSalir
             // 
