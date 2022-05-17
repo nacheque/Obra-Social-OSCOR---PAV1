@@ -53,10 +53,10 @@ namespace obra_social_oscor.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSET INTO PRACTICAS (DESCRIPCION, PRECIO) VALUES (@descripcionPract, @precioPract)";
+                string consulta = "INSERT INTO PRACTICAS (DESCRIPCION, PRECIO) VALUES (@descripcion, @precioPract)";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@descripcionPract", practica.DescripcionPractica);
+                cmd.Parameters.AddWithValue("@descripcion", practica.DescripcionPractica);
                 cmd.Parameters.AddWithValue("@precioPract", practica.PrecioPractica);
                
                 cmd.CommandType = CommandType.Text;

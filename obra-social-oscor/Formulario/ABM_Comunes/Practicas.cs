@@ -112,10 +112,11 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                         reiniciarFormulario();
                         cargarGrilla();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
                         MessageBox.Show("Error al agregar Practica...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
