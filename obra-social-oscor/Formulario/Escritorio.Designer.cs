@@ -49,6 +49,8 @@
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeCoberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +151,8 @@
             this.afiliadoToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
-            this.localidadesToolStripMenuItem});
+            this.localidadesToolStripMenuItem,
+            this.coberturaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
@@ -234,6 +237,21 @@
             this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
             this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
             // 
+            // coberturaToolStripMenuItem
+            // 
+            this.coberturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeCoberturaToolStripMenuItem});
+            this.coberturaToolStripMenuItem.Name = "coberturaToolStripMenuItem";
+            this.coberturaToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.coberturaToolStripMenuItem.Text = "Cobertura";
+            // 
+            // gestionDeCoberturaToolStripMenuItem
+            // 
+            this.gestionDeCoberturaToolStripMenuItem.Name = "gestionDeCoberturaToolStripMenuItem";
+            this.gestionDeCoberturaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.gestionDeCoberturaToolStripMenuItem.Text = "Gestion de Cobertura";
+            this.gestionDeCoberturaToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCoberturaToolStripMenuItem_Click);
+            // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +304,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_estadisticas;
+        private System.Windows.Forms.ToolStripMenuItem coberturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeCoberturaToolStripMenuItem;
     }
 }
 
