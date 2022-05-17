@@ -47,31 +47,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\AD_Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
+    <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
+    <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="AccesoADatos\AD_Practica.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
+    <Compile Include="Entidades\TipoAfiliado.cs" />
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Entidades\Localidad.cs" />
-    <Compile Include="Entidades\Practica.cs" />
-    <Compile Include="Formulario\ABM_Comunes\Especialidades.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
+      <DependentUpon>FrmAfiliado.cs</DependentUpon>
+    </Compile>
+	  <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+    <Compile Include="Entidades\Practica.cs" />  
+      
+    <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.Designer.cs">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmTipoAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Especialidades.Designer.cs">
-      <DependentUpon>Especialidades.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmTipoAfiliado.Designer.cs">
+      <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Barrios.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmBarrio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Barrios.Designer.cs">
-      <DependentUpon>Barrios.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmBarrio.Designer.cs">
+      <DependentUpon>FrmBarrio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Localidades.cs">
+    <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Comunes\Localidades.Designer.cs">
-      <DependentUpon>Localidades.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.Designer.cs">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\Practicas.cs">
       <SubType>Form</SubType>
@@ -110,20 +127,28 @@
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Validar.cs" />
+    <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
+    <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Negocio\NE_Practica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Barrios.resx">
-      <DependentUpon>Barrios.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
+      <DependentUpon>FrmAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Especialidades.resx">
-      <DependentUpon>Especialidades.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmBarrio.resx">
+      <DependentUpon>FrmBarrio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Comunes\Localidades.resx">
-      <DependentUpon>Localidades.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmEspecialidades.resx">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmTipoAfiliado.resx">
+      <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmLocalidades.resx">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\Practicas.resx">
       <DependentUpon>Practicas.cs</DependentUpon>
@@ -197,6 +222,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\salir.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono_Afiliados.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen estadisticas.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\287695_location_icon.ico" />

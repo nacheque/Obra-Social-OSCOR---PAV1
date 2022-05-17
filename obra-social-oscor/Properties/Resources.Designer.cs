@@ -113,6 +113,16 @@ namespace obra_social_oscor.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_Afiliados {
+            get {
+                object obj = ResourceManager.GetObject("Icono_Afiliados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagen_Atenciones {
             get {
                 object obj = ResourceManager.GetObject("Imagen_Atenciones", resourceCulture);
@@ -143,6 +153,16 @@ namespace obra_social_oscor.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagen_estadisticas {
+            get {
+                object obj = ResourceManager.GetObject("Imagen estadisticas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagen_Pagos {
             get {
                 object obj = ResourceManager.GetObject("Imagen_Pagos", resourceCulture);
@@ -156,6 +176,16 @@ namespace obra_social_oscor.Properties {
         internal static System.Drawing.Bitmap Imagen_Profesionales {
             get {
                 object obj = ResourceManager.GetObject("Imagen_Profesionales", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagen_reportes {
+            get {
+                object obj = ResourceManager.GetObject("imagen_reportes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
