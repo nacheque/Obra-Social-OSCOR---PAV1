@@ -247,6 +247,7 @@
             // 
             // valorDeCuotaToolStripMenuItem
             // 
+            this.valorDeCuotaToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources._2203534_cash_coin_money_value_icon;
             this.valorDeCuotaToolStripMenuItem.Name = "valorDeCuotaToolStripMenuItem";
             this.valorDeCuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.valorDeCuotaToolStripMenuItem.Text = "Valor de Cuota";

@@ -234,5 +234,8 @@
   <ItemGroup>
     <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2203534_cash_coin_money_value_icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

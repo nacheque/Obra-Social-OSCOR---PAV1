@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmValorCuota));
             this.lblVCEdadDesde = new System.Windows.Forms.Label();
             this.lblVCEdadHasta = new System.Windows.Forms.Label();
             this.lblVCTipoAfiliado = new System.Windows.Forms.Label();
@@ -228,6 +229,7 @@
             this.Controls.Add(this.lblVCTipoAfiliado);
             this.Controls.Add(this.lblVCEdadHasta);
             this.Controls.Add(this.lblVCEdadDesde);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmValorCuota";
