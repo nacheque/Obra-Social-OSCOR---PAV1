@@ -234,5 +234,8 @@
   <ItemGroup>
     <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icono_practicas.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

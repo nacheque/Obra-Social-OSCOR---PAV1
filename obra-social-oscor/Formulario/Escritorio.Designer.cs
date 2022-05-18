@@ -247,6 +247,7 @@
             // 
             // gestionDePracticasToolStripMenuItem
             // 
+            this.gestionDePracticasToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.icono_practicas;
             this.gestionDePracticasToolStripMenuItem.Name = "gestionDePracticasToolStripMenuItem";
             this.gestionDePracticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDePracticasToolStripMenuItem.Text = "Gestion de Practicas";
