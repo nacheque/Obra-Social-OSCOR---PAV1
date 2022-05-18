@@ -30,6 +30,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void frm_Afiliado_Load(object sender, EventArgs e)
         {
             btn_editar_afiliado.Enabled = false;
+            btn_borrar_afiliado.Enabled = false;
             CargarGrilla();
             CargarComboTipoAfiliados();
         }        
@@ -43,6 +44,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             dtp_fecha_nacimiento.Value = new DateTime(1990, 01, 01);
             cmb_tipo_afiliado.SelectedIndex = 0;           
             btn_editar_afiliado.Enabled = false;
+            btn_borrar_afiliado.Enabled = false;
             btn_agregar_afiliado.Enabled = true;
         }
 
@@ -145,7 +147,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
             TipoAfiliado tipoAfiliado = new TipoAfiliado();
             tipoAfiliado.CodigoTipoAfiliado = (int) cmb_tipo_afiliado.SelectedValue;
-            tipoAfiliado.DescripcionTipoAfiliado = cmb_tipo_afiliado.SelectedText;
+            tipoAfiliado.DescripcionTipoAfiliado = cmb_tipo_afiliado.SelectedItem.ToString();
 
             afiliado.TipoAfiliado = tipoAfiliado;
             
@@ -161,6 +163,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             ReiniciarFormulario();
 
             btn_editar_afiliado.Enabled = true;
+            btn_borrar_afiliado.Enabled = true;
             btn_agregar_afiliado.Enabled = false;
 
             Afiliado afiliado = new Afiliado();
