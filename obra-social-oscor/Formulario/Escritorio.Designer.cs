@@ -49,6 +49,8 @@
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valorDeCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +151,8 @@
             this.afiliadoToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
-            this.localidadesToolStripMenuItem});
+            this.localidadesToolStripMenuItem,
+            this.cuotasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
@@ -234,6 +237,21 @@
             this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
             this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
             // 
+            // cuotasToolStripMenuItem
+            // 
+            this.cuotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.valorDeCuotaToolStripMenuItem});
+            this.cuotasToolStripMenuItem.Name = "cuotasToolStripMenuItem";
+            this.cuotasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.cuotasToolStripMenuItem.Text = "Cuotas";
+            // 
+            // valorDeCuotaToolStripMenuItem
+            // 
+            this.valorDeCuotaToolStripMenuItem.Name = "valorDeCuotaToolStripMenuItem";
+            this.valorDeCuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.valorDeCuotaToolStripMenuItem.Text = "Valor de Cuota";
+            this.valorDeCuotaToolStripMenuItem.Click += new System.EventHandler(this.valorDeCuotaToolStripMenuItem_Click);
+            // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +304,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_estadisticas;
+        private System.Windows.Forms.ToolStripMenuItem cuotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valorDeCuotaToolStripMenuItem;
     }
 }
 

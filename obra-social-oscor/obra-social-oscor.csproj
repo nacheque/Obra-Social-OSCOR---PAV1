@@ -51,11 +51,13 @@
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
+    <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
+    <Compile Include="Entidades\ValorCuota.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +88,12 @@
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.Designer.cs">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.Designer.cs">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -123,6 +131,7 @@
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
+    <Compile Include="Negocio\NE_ValorCuota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
@@ -139,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmLocalidades.resx">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmValorCuota.resx">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>

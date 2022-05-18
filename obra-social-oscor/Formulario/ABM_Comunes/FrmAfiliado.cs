@@ -55,7 +55,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             txt_monto_afiliado.Text = afiliado.MontoInscripcionAfiliado.ToString();
         }
 
-        private void CargarComboTipoAfiliados()
+        public void CargarComboTipoAfiliados()
         {
             try
             {
