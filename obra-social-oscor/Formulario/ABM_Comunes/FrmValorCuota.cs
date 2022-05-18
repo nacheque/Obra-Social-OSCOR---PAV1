@@ -50,10 +50,10 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 for (int i = 0; i < valoresCuotas.Count; i++)
                 {
                     gdrValoresC.Rows.Add();
-                    gdrValoresC.Rows[i].Cells[0].Value = valoresCuotas[i].TipoAfiliado.DescripcionTipoAfiliado;
-                    gdrValoresC.Rows[i].Cells[1].Value = valoresCuotas[i].EdadDesde;
-                    gdrValoresC.Rows[i].Cells[2].Value = valoresCuotas[i].EdadHasta;
-                    gdrValoresC.Rows[i].Cells[3].Value = valoresCuotas[i].Monto;
+                    gdrValoresC.Rows[i].Cells[1].Value = valoresCuotas[i].TipoAfiliado.DescripcionTipoAfiliado;
+                    gdrValoresC.Rows[i].Cells[2].Value = valoresCuotas[i].EdadDesde;
+                    gdrValoresC.Rows[i].Cells[3].Value = valoresCuotas[i].EdadHasta;
+                    gdrValoresC.Rows[i].Cells[4].Value = valoresCuotas[i].Monto;
                 }
             }
             catch (Exception)
@@ -63,6 +63,97 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        
+        private void btnReiniciarFormVC_Click(object sender, EventArgs e)
+        {
+            ReiniciarFormulario();
+        }
+
+        private void ReiniciarFormulario()
+        {
+            txtEdadDesde.Text = "";
+            txtEdadHasta.Text = "";
+            cmbTipoAfiliado.SelectedIndex = -1;
+            txtMonto.Text = "";
+            txtEdadDesde.Focus();
+        }
+
+        private bool ExisteEnGrilla(string edadDesde, string edadHasta, string tipoAfiliado)
+        {
+            bool resultado = false;
+
+            for (int i = 0; i < gdrValoresC.Rows.Count; i++)
+            {
+                if (int.Parse(gdrValoresC.Rows[i].Cells["EdadDesde"].Value.ToString()) == int.Parse(edadDesde)
+                    && int.Parse(gdrValoresC.Rows[i].Cells["EdadHasta"].Value.ToString()) == int.Parse(edadHasta)
+                    && gdrValoresC.Rows[i].Cells["TipoAfiliado"].Value.ToString().Equals(tipoAfiliado, StringComparison.OrdinalIgnoreCase))
+                {
+                    resultado = true;
+                    break;
+                }
+            }
+
+            return resultado;
+        }
+
+        private bool ValidarCamposVacios()
+        {
+            bool resultado = false;
+            if (txtEdadDesde.Text.Equals("") || txtEdadHasta.Text.Equals("")
+                || cmbTipoAfiliado.SelectedIndex == -1 || txtMonto.Text.Equals(""))
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        private ValorCuota ObtenerDatosVC()
+        {
+            TipoAfiliado tipoAfiliado = new TipoAfiliado();
+            //tipoAfiliado.CodigoTipoAfiliado = cmbTipoAfiliado.SelectedIndex + 1;
+            tipoAfiliado.CodigoTipoAfiliado = (int) cmbTipoAfiliado.SelectedValue;
+            tipoAfiliado.DescripcionTipoAfiliado = cmbTipoAfiliado.SelectedItem.ToString();
+
+            ValorCuota valorCuota = new ValorCuota();
+            valorCuota.EdadDesde = int.Parse(txtEdadDesde.Text);
+            valorCuota.EdadHasta = int.Parse(txtEdadHasta.Text);
+            valorCuota.TipoAfiliado = tipoAfiliado;
+            valorCuota.Monto = int.Parse(txtMonto.Text);
+
+            return valorCuota;
+
+        }
+
+        private void btnAgregarVC_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCamposVacios())
+            {
+                if (!ExisteEnGrilla(txtEdadDesde.Text, txtEdadHasta.Text, cmbTipoAfiliado.SelectedItem.ToString()))
+                {
+                    ValorCuota valorCuota = ObtenerDatosVC();
+
+                    try
+                    {
+                        NE_ValorCuota.AgregarVC(valorCuota);
+                        MessageBox.Show("Valor de Cuota agregado con exito", "Infrmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ya hay una couta asignada a ese rango de edades...");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos...");
+            }
+        }
     }
 }

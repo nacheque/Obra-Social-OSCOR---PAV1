@@ -33,20 +33,21 @@
             this.lblVCEdadHasta = new System.Windows.Forms.Label();
             this.lblVCTipoAfiliado = new System.Windows.Forms.Label();
             this.lblVCMonto = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEdadDesde = new System.Windows.Forms.TextBox();
+            this.txtEdadHasta = new System.Windows.Forms.TextBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
             this.cmbTipoAfiliado = new System.Windows.Forms.ComboBox();
             this.gdrValoresC = new System.Windows.Forms.DataGridView();
+            this.btnReiniciarFormVC = new System.Windows.Forms.Button();
+            this.btnSalirVC = new System.Windows.Forms.Button();
+            this.btnEliminarVC = new System.Windows.Forms.Button();
+            this.btnEditarVC = new System.Windows.Forms.Button();
+            this.btnAgregarVC = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregarVC = new System.Windows.Forms.Button();
-            this.btnEditarVC = new System.Windows.Forms.Button();
-            this.btnEliminarVC = new System.Windows.Forms.Button();
-            this.btnSalirVC = new System.Windows.Forms.Button();
-            this.btnReiniciarFormVC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gdrValoresC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,26 +91,26 @@
             this.lblVCMonto.TabIndex = 3;
             this.lblVCMonto.Text = "Monto a Cobrar:";
             // 
-            // textBox1
+            // txtEdadDesde
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtEdadDesde.Location = new System.Drawing.Point(122, 13);
+            this.txtEdadDesde.Name = "txtEdadDesde";
+            this.txtEdadDesde.Size = new System.Drawing.Size(106, 20);
+            this.txtEdadDesde.TabIndex = 4;
             // 
-            // textBox2
+            // txtEdadHasta
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtEdadHasta.Location = new System.Drawing.Point(122, 63);
+            this.txtEdadHasta.Name = "txtEdadHasta";
+            this.txtEdadHasta.Size = new System.Drawing.Size(106, 20);
+            this.txtEdadHasta.TabIndex = 5;
             // 
-            // textBox3
+            // txtMonto
             // 
-            this.textBox3.Location = new System.Drawing.Point(440, 65);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtMonto.Location = new System.Drawing.Point(440, 65);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(121, 20);
+            this.txtMonto.TabIndex = 6;
             // 
             // cmbTipoAfiliado
             // 
@@ -125,6 +126,7 @@
             this.gdrValoresC.AllowUserToDeleteRows = false;
             this.gdrValoresC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrValoresC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
             this.TipoAfiliado,
             this.EdadDesde,
             this.EdadHasta,
@@ -135,60 +137,15 @@
             this.gdrValoresC.Size = new System.Drawing.Size(544, 232);
             this.gdrValoresC.TabIndex = 8;
             // 
-            // TipoAfiliado
+            // btnReiniciarFormVC
             // 
-            this.TipoAfiliado.HeaderText = "Tipo de Afiliado";
-            this.TipoAfiliado.Name = "TipoAfiliado";
-            this.TipoAfiliado.ReadOnly = true;
-            this.TipoAfiliado.Width = 200;
-            // 
-            // EdadDesde
-            // 
-            this.EdadDesde.HeaderText = "Edad Desde";
-            this.EdadDesde.Name = "EdadDesde";
-            this.EdadDesde.ReadOnly = true;
-            // 
-            // EdadHasta
-            // 
-            this.EdadHasta.HeaderText = "Edad Hasta";
-            this.EdadHasta.Name = "EdadHasta";
-            this.EdadHasta.ReadOnly = true;
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            // 
-            // btnAgregarVC
-            // 
-            this.btnAgregarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.agregar;
-            this.btnAgregarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarVC.Location = new System.Drawing.Point(17, 342);
-            this.btnAgregarVC.Name = "btnAgregarVC";
-            this.btnAgregarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnAgregarVC.TabIndex = 9;
-            this.btnAgregarVC.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarVC
-            // 
-            this.btnEditarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.Editar;
-            this.btnEditarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditarVC.Location = new System.Drawing.Point(82, 342);
-            this.btnEditarVC.Name = "btnEditarVC";
-            this.btnEditarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnEditarVC.TabIndex = 10;
-            this.btnEditarVC.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarVC
-            // 
-            this.btnEliminarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.eliminar;
-            this.btnEliminarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminarVC.Location = new System.Drawing.Point(147, 342);
-            this.btnEliminarVC.Name = "btnEliminarVC";
-            this.btnEliminarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnEliminarVC.TabIndex = 11;
-            this.btnEliminarVC.UseVisualStyleBackColor = true;
+            this.btnReiniciarFormVC.Location = new System.Drawing.Point(12, 401);
+            this.btnReiniciarFormVC.Name = "btnReiniciarFormVC";
+            this.btnReiniciarFormVC.Size = new System.Drawing.Size(129, 37);
+            this.btnReiniciarFormVC.TabIndex = 13;
+            this.btnReiniciarFormVC.Text = "Reiniciar Formulario";
+            this.btnReiniciarFormVC.UseVisualStyleBackColor = true;
+            this.btnReiniciarFormVC.Click += new System.EventHandler(this.btnReiniciarFormVC_Click);
             // 
             // btnSalirVC
             // 
@@ -201,14 +158,72 @@
             this.btnSalirVC.UseVisualStyleBackColor = true;
             this.btnSalirVC.Click += new System.EventHandler(this.btnSalirVC_Click);
             // 
-            // btnReiniciarFormVC
+            // btnEliminarVC
             // 
-            this.btnReiniciarFormVC.Location = new System.Drawing.Point(12, 401);
-            this.btnReiniciarFormVC.Name = "btnReiniciarFormVC";
-            this.btnReiniciarFormVC.Size = new System.Drawing.Size(129, 37);
-            this.btnReiniciarFormVC.TabIndex = 13;
-            this.btnReiniciarFormVC.Text = "Reiniciar Formulario";
-            this.btnReiniciarFormVC.UseVisualStyleBackColor = true;
+            this.btnEliminarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.eliminar;
+            this.btnEliminarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarVC.Location = new System.Drawing.Point(147, 342);
+            this.btnEliminarVC.Name = "btnEliminarVC";
+            this.btnEliminarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnEliminarVC.TabIndex = 11;
+            this.btnEliminarVC.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarVC
+            // 
+            this.btnEditarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.Editar;
+            this.btnEditarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarVC.Location = new System.Drawing.Point(82, 342);
+            this.btnEditarVC.Name = "btnEditarVC";
+            this.btnEditarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnEditarVC.TabIndex = 10;
+            this.btnEditarVC.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarVC
+            // 
+            this.btnAgregarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.agregar;
+            this.btnAgregarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregarVC.Location = new System.Drawing.Point(17, 342);
+            this.btnAgregarVC.Name = "btnAgregarVC";
+            this.btnAgregarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnAgregarVC.TabIndex = 9;
+            this.btnAgregarVC.UseVisualStyleBackColor = true;
+            this.btnAgregarVC.Click += new System.EventHandler(this.btnAgregarVC_Click);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // TipoAfiliado
+            // 
+            this.TipoAfiliado.DataPropertyName = "ID_TIPO_AFILIADO";
+            this.TipoAfiliado.HeaderText = "Tipo de Afiliado";
+            this.TipoAfiliado.Name = "TipoAfiliado";
+            this.TipoAfiliado.ReadOnly = true;
+            this.TipoAfiliado.Width = 200;
+            // 
+            // EdadDesde
+            // 
+            this.EdadDesde.DataPropertyName = "EDAD_DESDE";
+            this.EdadDesde.HeaderText = "Edad Desde";
+            this.EdadDesde.Name = "EdadDesde";
+            this.EdadDesde.ReadOnly = true;
+            // 
+            // EdadHasta
+            // 
+            this.EdadHasta.DataPropertyName = "EDAD_HASTA";
+            this.EdadHasta.HeaderText = "Edad Hasta";
+            this.EdadHasta.Name = "EdadHasta";
+            this.EdadHasta.ReadOnly = true;
+            // 
+            // Monto
+            // 
+            this.Monto.DataPropertyName = "MONTO";
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
             // 
             // FrmValorCuota
             // 
@@ -222,9 +237,9 @@
             this.Controls.Add(this.btnAgregarVC);
             this.Controls.Add(this.gdrValoresC);
             this.Controls.Add(this.cmbTipoAfiliado);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.txtEdadHasta);
+            this.Controls.Add(this.txtEdadDesde);
             this.Controls.Add(this.lblVCMonto);
             this.Controls.Add(this.lblVCTipoAfiliado);
             this.Controls.Add(this.lblVCEdadHasta);
@@ -248,19 +263,20 @@
         private System.Windows.Forms.Label lblVCEdadHasta;
         private System.Windows.Forms.Label lblVCTipoAfiliado;
         private System.Windows.Forms.Label lblVCMonto;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEdadDesde;
+        private System.Windows.Forms.TextBox txtEdadHasta;
+        private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.ComboBox cmbTipoAfiliado;
         private System.Windows.Forms.DataGridView gdrValoresC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoAfiliado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EdadDesde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EdadHasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.Button btnAgregarVC;
         private System.Windows.Forms.Button btnEditarVC;
         private System.Windows.Forms.Button btnEliminarVC;
         private System.Windows.Forms.Button btnSalirVC;
         private System.Windows.Forms.Button btnReiniciarFormVC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoAfiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EdadDesde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EdadHasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
     }
 }

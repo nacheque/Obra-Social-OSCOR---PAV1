@@ -41,5 +41,18 @@ namespace obra_social_oscor.Negocio
                 throw;
             }
         }
+
+        public static void AgregarVC(ValorCuota valorCuota)
+        {
+            try
+            {
+                AD_ValorCuota.AgregarVC(valorCuota);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
