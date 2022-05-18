@@ -59,7 +59,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Erro al obtener listado de valores de cuotas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
