@@ -91,7 +91,7 @@ namespace obra_social_oscor
 
         private void gestionDePracticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Practicas ventana = new Practicas();
+            FrmPracticas ventana = new FrmPracticas();
             ventana.ShowDialog();
 
         }

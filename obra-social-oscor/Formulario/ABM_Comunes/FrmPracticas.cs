@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace obra_social_oscor.Formulario.ABM_Comunes
 {
-    public partial class Practicas : Form
+    public partial class FrmPracticas : Form
     {
         //variable global
         int global_codigoPractica;
 
-        public Practicas()
+        public FrmPracticas()
         {
             InitializeComponent();
         }
@@ -146,6 +146,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             DataGridViewRow filaSeleccionada = dgv_Pract.Rows[indice];
 
             string nombrePractica = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+            string precioPractica = filaSeleccionada.Cells["PrecioPract"].Value.ToString();
             global_codigoPractica = int.Parse(filaSeleccionada.Cells["IdPractica"].Value.ToString());
             reiniciarFormulario();
 
@@ -155,11 +156,13 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
             Practica practica = new Practica();
             practica.DescripcionPractica = nombrePractica;
+            practica.PrecioPractica = float.Parse(precioPractica);
             cargarCampos(practica);             
         }
         private void cargarCampos(Practica practica)
         {
             txt_Nombre_Pract.Text = practica.DescripcionPractica;
+            txt_Precio_Pract.Text = practica.PrecioPractica.ToString();
         }
 
         private void btn_Eliminar_Pract_Click(object sender, EventArgs e)
@@ -215,6 +218,11 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             {
                 MessageBox.Show("Debe ingresar un nombre de Práctica", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

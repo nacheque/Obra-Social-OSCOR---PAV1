@@ -1,7 +1,7 @@
 ﻿
 namespace obra_social_oscor.Formulario.ABM_Comunes
 {
-    partial class Practicas
+    partial class FrmPracticas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPracticas));
             this.grpBox_Pract = new System.Windows.Forms.GroupBox();
             this.txt_Precio_Pract = new System.Windows.Forms.TextBox();
             this.lbl_Precio_Pract = new System.Windows.Forms.Label();
@@ -43,6 +45,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Eliminar_Pract = new System.Windows.Forms.Button();
             this.btn_Limpiar_Pract = new System.Windows.Forms.Button();
             this.btn_Salir_Pract = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpBox_Pract.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pract)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +144,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Agregar_Pract.Name = "btn_Agregar_Pract";
             this.btn_Agregar_Pract.Size = new System.Drawing.Size(44, 38);
             this.btn_Agregar_Pract.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btn_Agregar_Pract, "Agregar Practica");
             this.btn_Agregar_Pract.UseVisualStyleBackColor = true;
             this.btn_Agregar_Pract.Click += new System.EventHandler(this.btn_Agregar_Pract_Click);
             // 
@@ -152,6 +156,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Editar_Pract.Name = "btn_Editar_Pract";
             this.btn_Editar_Pract.Size = new System.Drawing.Size(44, 38);
             this.btn_Editar_Pract.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btn_Editar_Pract, "Modificar Practica");
             this.btn_Editar_Pract.UseVisualStyleBackColor = true;
             this.btn_Editar_Pract.Click += new System.EventHandler(this.btn_Editar_Pract_Click);
             // 
@@ -163,6 +168,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Eliminar_Pract.Name = "btn_Eliminar_Pract";
             this.btn_Eliminar_Pract.Size = new System.Drawing.Size(44, 38);
             this.btn_Eliminar_Pract.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btn_Eliminar_Pract, "Eliminar Practica");
             this.btn_Eliminar_Pract.UseVisualStyleBackColor = true;
             this.btn_Eliminar_Pract.Click += new System.EventHandler(this.btn_Eliminar_Pract_Click);
             // 
@@ -173,6 +179,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Limpiar_Pract.Size = new System.Drawing.Size(112, 23);
             this.btn_Limpiar_Pract.TabIndex = 8;
             this.btn_Limpiar_Pract.Text = "Reiniciar Formulario";
+            this.toolTip1.SetToolTip(this.btn_Limpiar_Pract, "Reiniciar campos");
             this.btn_Limpiar_Pract.UseVisualStyleBackColor = true;
             this.btn_Limpiar_Pract.Click += new System.EventHandler(this.btn_Limpiar_Pract_Click);
             // 
@@ -184,10 +191,15 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.btn_Salir_Pract.Name = "btn_Salir_Pract";
             this.btn_Salir_Pract.Size = new System.Drawing.Size(44, 38);
             this.btn_Salir_Pract.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btn_Salir_Pract, "Salir");
             this.btn_Salir_Pract.UseVisualStyleBackColor = true;
             this.btn_Salir_Pract.Click += new System.EventHandler(this.btn_Salir_Pract_Click);
             // 
-            // Practicas
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // FrmPracticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,7 +211,8 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             this.Controls.Add(this.btn_Agregar_Pract);
             this.Controls.Add(this.dgv_Pract);
             this.Controls.Add(this.grpBox_Pract);
-            this.Name = "Practicas";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmPracticas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Practicas";
             this.Load += new System.EventHandler(this.Practicas_Load);
@@ -226,5 +239,6 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioPract;
         private System.Windows.Forms.TextBox txt_Precio_Pract;
         private System.Windows.Forms.Label lbl_Precio_Pract;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
