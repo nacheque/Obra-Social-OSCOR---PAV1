@@ -89,6 +89,13 @@ namespace obra_social_oscor
             ventana.ShowDialog();
         }
 
+        private void gestionDePracticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPracticas ventana = new FrmPracticas();
+            ventana.ShowDialog();
+
+        }
+
         private void valorDeCuotaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmValorCuota ventana = new FrmValorCuota();

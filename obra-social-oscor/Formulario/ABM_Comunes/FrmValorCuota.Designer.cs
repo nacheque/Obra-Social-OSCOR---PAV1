@@ -43,11 +43,12 @@
             this.btnEliminarVC = new System.Windows.Forms.Button();
             this.btnEditarVC = new System.Windows.Forms.Button();
             this.btnAgregarVC = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoTipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gdrValoresC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@
             this.txtEdadDesde.Name = "txtEdadDesde";
             this.txtEdadDesde.Size = new System.Drawing.Size(106, 20);
             this.txtEdadDesde.TabIndex = 4;
+            this.txtEdadDesde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdadDesde_KeyPress);
             // 
             // txtEdadHasta
             // 
@@ -104,6 +106,7 @@
             this.txtEdadHasta.Name = "txtEdadHasta";
             this.txtEdadHasta.Size = new System.Drawing.Size(106, 20);
             this.txtEdadHasta.TabIndex = 5;
+            this.txtEdadHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdadHasta_KeyPress);
             // 
             // txtMonto
             // 
@@ -111,6 +114,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(121, 20);
             this.txtMonto.TabIndex = 6;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // cmbTipoAfiliado
             // 
@@ -126,16 +130,18 @@
             this.gdrValoresC.AllowUserToDeleteRows = false;
             this.gdrValoresC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrValoresC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
+            this.CodigoTipoAfiliado,
             this.TipoAfiliado,
             this.EdadDesde,
             this.EdadHasta,
-            this.Monto});
+            this.Monto,
+            this.Codigo});
             this.gdrValoresC.Location = new System.Drawing.Point(16, 104);
             this.gdrValoresC.Name = "gdrValoresC";
             this.gdrValoresC.ReadOnly = true;
             this.gdrValoresC.Size = new System.Drawing.Size(544, 232);
             this.gdrValoresC.TabIndex = 8;
+            this.gdrValoresC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrValoresC_CellClick);
             // 
             // btnReiniciarFormVC
             // 
@@ -177,6 +183,7 @@
             this.btnEditarVC.Size = new System.Drawing.Size(59, 53);
             this.btnEditarVC.TabIndex = 10;
             this.btnEditarVC.UseVisualStyleBackColor = true;
+            this.btnEditarVC.Click += new System.EventHandler(this.btnEditarVC_Click);
             // 
             // btnAgregarVC
             // 
@@ -189,12 +196,12 @@
             this.btnAgregarVC.UseVisualStyleBackColor = true;
             this.btnAgregarVC.Click += new System.EventHandler(this.btnAgregarVC_Click);
             // 
-            // Codigo
+            // CodigoTipoAfiliado
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
+            this.CodigoTipoAfiliado.HeaderText = "Codigo Tipo Afiliado";
+            this.CodigoTipoAfiliado.Name = "CodigoTipoAfiliado";
+            this.CodigoTipoAfiliado.ReadOnly = true;
+            this.CodigoTipoAfiliado.Visible = false;
             // 
             // TipoAfiliado
             // 
@@ -224,6 +231,13 @@
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
             // 
             // FrmValorCuota
             // 
@@ -273,10 +287,11 @@
         private System.Windows.Forms.Button btnEliminarVC;
         private System.Windows.Forms.Button btnSalirVC;
         private System.Windows.Forms.Button btnReiniciarFormVC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoAfiliado;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoAfiliado;
         private System.Windows.Forms.DataGridViewTextBoxColumn EdadDesde;
         private System.Windows.Forms.DataGridViewTextBoxColumn EdadHasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
     }
 }

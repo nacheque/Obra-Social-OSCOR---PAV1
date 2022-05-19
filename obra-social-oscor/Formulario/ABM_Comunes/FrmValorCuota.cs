@@ -1,5 +1,6 @@
 ﻿using obra_social_oscor.AccesoADatos;
 using obra_social_oscor.Entidades;
+using obra_social_oscor.Helpers;
 using obra_social_oscor.Negocio;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 for (int i = 0; i < valoresCuotas.Count; i++)
                 {
                     gdrValoresC.Rows.Add();
+                    gdrValoresC.Rows[i].Cells[0].Value = valoresCuotas[i].TipoAfiliado.CodigoTipoAfiliado;
                     gdrValoresC.Rows[i].Cells[1].Value = valoresCuotas[i].TipoAfiliado.DescripcionTipoAfiliado;
                     gdrValoresC.Rows[i].Cells[2].Value = valoresCuotas[i].EdadDesde;
                     gdrValoresC.Rows[i].Cells[3].Value = valoresCuotas[i].EdadHasta;
@@ -77,7 +79,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             txtEdadDesde.Focus();
         }
 
-        private bool ExisteEnGrilla(string edadDesde, string edadHasta, string tipoAfiliado)
+        private bool ExisteEnGrilla(string edadDesde, string edadHasta, int tipoAfiliado)
         {
             bool resultado = false;
 
@@ -85,7 +87,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             {
                 if (int.Parse(gdrValoresC.Rows[i].Cells["EdadDesde"].Value.ToString()) == int.Parse(edadDesde)
                     && int.Parse(gdrValoresC.Rows[i].Cells["EdadHasta"].Value.ToString()) == int.Parse(edadHasta)
-                    && gdrValoresC.Rows[i].Cells["TipoAfiliado"].Value.ToString().Equals(tipoAfiliado, StringComparison.OrdinalIgnoreCase))
+                    && int.Parse(gdrValoresC.Rows[i].Cells["Codigo"].Value.ToString()) == tipoAfiliado)
                 {
                     resultado = true;
                     break;
@@ -128,7 +130,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             if (!ValidarCamposVacios())
             {
-                if (!ExisteEnGrilla(txtEdadDesde.Text, txtEdadHasta.Text, cmbTipoAfiliado.SelectedItem.ToString()))
+                if (!ExisteEnGrilla(txtEdadDesde.Text, txtEdadHasta.Text, int.Parse(cmbTipoAfiliado.SelectedValue.ToString())))
                 {
                     ValorCuota valorCuota = ObtenerDatosVC();
 
@@ -153,6 +155,83 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             else
             {
                 MessageBox.Show("Debe completar todos los campos...");
+            }
+        }
+
+        private void txtEdadDesde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
+        }
+
+        private void txtEdadHasta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
+        }
+
+        int global_CodigoVC;
+
+        private void gdrValoresC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = gdrValoresC.Rows[indice];
+
+            //global_CodigoVC = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
+            ReiniciarFormulario();
+
+            btnAgregarVC.Enabled = false;
+            btnEditarVC.Enabled = true;
+
+            TipoAfiliado tipoAfiliado = new TipoAfiliado();
+            tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
+            tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["TipoAfiliado"].Value.ToString();
+
+            ValorCuota valorCuota = new ValorCuota();
+            valorCuota.TipoAfiliado = tipoAfiliado;
+            valorCuota.EdadDesde = int.Parse(filaSeleccionada.Cells["EdadDesde"].Value.ToString());
+            valorCuota.EdadHasta = int.Parse(filaSeleccionada.Cells["EdadHasta"].Value.ToString());
+            valorCuota.Monto = float.Parse(filaSeleccionada.Cells["Monto"].Value.ToString());
+
+            CargarCampos(valorCuota);
+        }
+
+        private void CargarCampos(ValorCuota valorCuota)
+        {
+            txtEdadDesde.Text = valorCuota.EdadDesde.ToString();
+            txtEdadHasta.Text = valorCuota.EdadHasta.ToString();
+            txtMonto.Text = valorCuota.Monto.ToString();
+            cmbTipoAfiliado.SelectedIndex = valorCuota.TipoAfiliado.CodigoTipoAfiliado - 1;
+        }
+
+        private void btnEditarVC_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCamposVacios())
+            {
+                if (!ExisteEnGrilla(txtEdadDesde.Text, txtEdadHasta.Text, int.Parse(cmbTipoAfiliado.SelectedValue.ToString())))
+                {
+                    ValorCuota valorCuota = ObtenerDatosVC();
+                    try
+                    {
+                        //llamar a negocio...
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ya hay un valor de cuota para esas edades y tipo de afiliado...");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos...");
             }
         }
     }

@@ -82,5 +82,23 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void EditarVC(ValorCuota valorCuota, int codigoVC)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                //string consulta = "UPDATE VALOR_CUOTA SET ID_TIPO_AFILIADO = @tipoAfiliado, EDAD_DESDE = @edadDesde, EDAD_HASTA = @edadHasta, MONTO = @monto\n"+
+                //    "               WHERE "
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
