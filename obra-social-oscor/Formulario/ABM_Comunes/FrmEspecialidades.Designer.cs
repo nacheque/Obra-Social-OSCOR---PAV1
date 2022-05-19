@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Especialidades));
             this.lbl_Especialidades = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_Nombre_Esp = new System.Windows.Forms.TextBox();
             this.grd_Esp = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Salir_Esp = new System.Windows.Forms.Button();
             this.btn_Limpiar_Esp = new System.Windows.Forms.Button();
             this.btn_Eliminar_Esp = new System.Windows.Forms.Button();
             this.btn_Editar_Esp = new System.Windows.Forms.Button();
             this.btn_Agregar_Esp = new System.Windows.Forms.Button();
             this.tt_Esp = new System.Windows.Forms.ToolTip(this.components);
-            this.txt_Nombre_Esp = new System.Windows.Forms.TextBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Esp)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // txt_Nombre_Esp
+            // 
+            this.txt_Nombre_Esp.Location = new System.Drawing.Point(88, 28);
+            this.txt_Nombre_Esp.Name = "txt_Nombre_Esp";
+            this.txt_Nombre_Esp.Size = new System.Drawing.Size(225, 20);
+            this.txt_Nombre_Esp.TabIndex = 1;
+            this.txt_Nombre_Esp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_Esp_KeyPress);
+            // 
             // grd_Esp
             // 
             this.grd_Esp.AllowUserToAddRows = false;
@@ -81,6 +89,22 @@
             this.grd_Esp.Size = new System.Drawing.Size(332, 183);
             this.grd_Esp.TabIndex = 3;
             this.grd_Esp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Esp_CellClick);
+            this.grd_Esp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Esp_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
             // 
             // btn_Salir_Esp
             // 
@@ -140,29 +164,6 @@
             this.tt_Esp.SetToolTip(this.btn_Agregar_Esp, "Agregar Especialidad");
             this.btn_Agregar_Esp.UseVisualStyleBackColor = true;
             this.btn_Agregar_Esp.Click += new System.EventHandler(this.btn_Agregar_Esp_Click);
-            // 
-            // txt_Nombre_Esp
-            // 
-            this.txt_Nombre_Esp.Location = new System.Drawing.Point(88, 28);
-            this.txt_Nombre_Esp.Name = "txt_Nombre_Esp";
-            this.txt_Nombre_Esp.Size = new System.Drawing.Size(225, 20);
-            this.txt_Nombre_Esp.TabIndex = 1;
-            this.txt_Nombre_Esp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_Esp_KeyPress);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 200;
             // 
             // frm_Especialidades
             // 

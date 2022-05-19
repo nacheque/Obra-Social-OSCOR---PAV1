@@ -49,6 +49,8 @@
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCoberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -152,6 +154,7 @@
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
             this.localidadesToolStripMenuItem,
+            this.practicasToolStripMenuItem,
             this.coberturaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -237,6 +240,22 @@
             this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
             this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
             // 
+            // practicasToolStripMenuItem
+            // 
+            this.practicasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDePracticasToolStripMenuItem});
+            this.practicasToolStripMenuItem.Name = "practicasToolStripMenuItem";
+            this.practicasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.practicasToolStripMenuItem.Text = "Practicas";
+            // 
+            // gestionDePracticasToolStripMenuItem
+            // 
+            this.gestionDePracticasToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.icono_practicas;
+            this.gestionDePracticasToolStripMenuItem.Name = "gestionDePracticasToolStripMenuItem";
+            this.gestionDePracticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDePracticasToolStripMenuItem.Text = "Gestion de Practicas";
+            this.gestionDePracticasToolStripMenuItem.Click += new System.EventHandler(this.gestionDePracticasToolStripMenuItem_Click);
+            // 
             // coberturaToolStripMenuItem
             // 
             this.coberturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -302,6 +321,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem practicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDePracticasToolStripMenuItem;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_estadisticas;
         private System.Windows.Forms.ToolStripMenuItem coberturaToolStripMenuItem;

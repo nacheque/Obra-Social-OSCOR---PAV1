@@ -1,12 +1,12 @@
-﻿using System;
+﻿using obra_social_oscor.AccesoADatos;
+using obra_social_oscor.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using obra_social_oscor.Entidades;
-using obra_social_oscor.AccesoADatos;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace obra_social_oscor.Negocio
 {
@@ -48,7 +48,7 @@ namespace obra_social_oscor.Negocio
         {
             try
             {
-                AD_Cobertura.AgregarCobetura(cobertura);                
+                AD_Cobertura.AgregarCobetura(cobertura);
             }
             catch (Exception)
             {
@@ -56,38 +56,38 @@ namespace obra_social_oscor.Negocio
             }
         }
 
-        //public static void ActualizarCobertura(Cobertura cobertura, int codigoAfiliado)
-        //{
-        //    try
-        //    {
-        //        AD_Cobertura.ActualizarCobertura(cobertura, codigoAfiliado);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+        public static void ActualizarCobertura(Cobertura cobertura, int id_tipo, int id_practica)
+        {
+            try
+            {
+                AD_Cobertura.ActualizarCobertura(cobertura, id_tipo, id_practica);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-        //public static void EliminarCobertura(int codigo)
-        //{
-        //    try
-        //    {
-        //        AD_Cobertura.EliminarCobertura(codigo);
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        if (ex.Errors.Count > 0)
-        //        {
-        //            switch (ex.Errors[0].Number)
-        //            {
-        //                case 547:
-        //                    throw new InvalidOperationException("Foreign Key violation", ex);
-        //                default:
-        //                    throw ex;
-        //            }
-        //        }
+        public static void EliminarCobertura(int id_tipo, int id_practica)
+        {
+            try
+            {
+                AD_Cobertura.EliminarCobertura(id_tipo, id_practica);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Errors.Count > 0)
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547:
+                            throw new InvalidOperationException("Foreign Key violation", ex);
+                        default:
+                            throw ex;
+                    }
+                }
 
-        //    }
-        //}
+            }
+        }
     }
 }

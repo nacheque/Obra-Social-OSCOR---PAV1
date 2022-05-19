@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace obra_social_oscor.Entidades
 {
-    class Practica
+    public class Practica
     {
         private int codigoPractica;
         private string descripcion;
@@ -19,12 +19,12 @@ namespace obra_social_oscor.Entidades
             this.precio = precioPractica;
         }
 
-        public Practica()
+        public Practica() 
         {
 
         }
 
-        public int CodigoPractica
+        public int CodigoPractica 
         {
             get => codigoPractica;
             set => codigoPractica = value;
@@ -41,6 +41,5 @@ namespace obra_social_oscor.Entidades
             set => precio = value;
         }
     }
-
+    
 }
-

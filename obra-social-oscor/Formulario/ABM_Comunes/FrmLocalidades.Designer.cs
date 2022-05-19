@@ -162,6 +162,11 @@
             this.btnReiniciarForm.TabIndex = 6;
             this.btnReiniciarForm.Text = "Reiniciar Formulario";
             this.btnReiniciarForm.UseVisualStyleBackColor = true;
+            this.btnReiniciarForm.Click += new System.EventHandler(this.btnReiniciarForm_Click);
+            // 
+            // ttLocalidades
+            // 
+            this.ttLocalidades.Popup += new System.Windows.Forms.PopupEventHandler(this.ttLocalidades_Popup);
             // 
             // frm_Localidades
             // 

@@ -203,6 +203,10 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void CargarCampos(Especialidad especialidad) {
             txt_Nombre_Esp.Text = especialidad.NombreEspecialidad;
         }
-        
+
+        private void grd_Esp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
