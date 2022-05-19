@@ -49,6 +49,8 @@
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +151,8 @@
             this.afiliadoToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
-            this.localidadesToolStripMenuItem});
+            this.localidadesToolStripMenuItem,
+            this.practicasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
@@ -214,7 +217,7 @@
             // 
             this.gestionDeBarriosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gestionDeBarriosToolStripMenuItem.Image")));
             this.gestionDeBarriosToolStripMenuItem.Name = "gestionDeBarriosToolStripMenuItem";
-            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
             this.gestionDeBarriosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeBarriosToolStripMenuItem_Click);
             // 
@@ -233,6 +236,22 @@
             this.gestionDeLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
             this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
+            // 
+            // practicasToolStripMenuItem
+            // 
+            this.practicasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDePracticasToolStripMenuItem});
+            this.practicasToolStripMenuItem.Name = "practicasToolStripMenuItem";
+            this.practicasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.practicasToolStripMenuItem.Text = "Practicas";
+            // 
+            // gestionDePracticasToolStripMenuItem
+            // 
+            this.gestionDePracticasToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.icono_practicas;
+            this.gestionDePracticasToolStripMenuItem.Name = "gestionDePracticasToolStripMenuItem";
+            this.gestionDePracticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDePracticasToolStripMenuItem.Text = "Gestion de Practicas";
+            this.gestionDePracticasToolStripMenuItem.Click += new System.EventHandler(this.gestionDePracticasToolStripMenuItem_Click);
             // 
             // frm_Escritorio
             // 
@@ -284,6 +303,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem practicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDePracticasToolStripMenuItem;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_estadisticas;
     }

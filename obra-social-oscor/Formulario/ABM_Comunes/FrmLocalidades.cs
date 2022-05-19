@@ -203,5 +203,15 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
             
         }
+
+        private void btnReiniciarForm_Click(object sender, EventArgs e)
+        {
+            ReiniciarFormulario();
+        }
+
+        private void ttLocalidades_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
