@@ -87,7 +87,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             {
                 if (int.Parse(gdrValoresC.Rows[i].Cells["EdadDesde"].Value.ToString()) == int.Parse(edadDesde)
                     && int.Parse(gdrValoresC.Rows[i].Cells["EdadHasta"].Value.ToString()) == int.Parse(edadHasta)
-                    && int.Parse(gdrValoresC.Rows[i].Cells["Codigo"].Value.ToString()) == tipoAfiliado)
+                    && int.Parse(gdrValoresC.Rows[i].Cells["CodigoTipoAfiliado"].Value.ToString()) == tipoAfiliado)
                 {
                     resultado = true;
                     break;
@@ -144,17 +144,17 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("Error al agregar valor de cuota...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ya hay una couta asignada a ese rango de edades...");
+                    MessageBox.Show("Ya hay una couta asignada a ese rango de edades...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                MessageBox.Show("Debe completar todos los campos...");
+                MessageBox.Show("Debe completar todos los campos...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -173,18 +173,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             Validar.SoloNumeros(e);
         }
 
-        int global_CodigoVC;
+        int globalIdTipoAfiliado;
+        int globalEdadDesde;
 
         private void gdrValoresC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = gdrValoresC.Rows[indice];
 
-            //global_CodigoVC = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
+            globalIdTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
+            globalEdadDesde = int.Parse(filaSeleccionada.Cells["EdadDesde"].Value.ToString());
+
             ReiniciarFormulario();
 
             btnAgregarVC.Enabled = false;
             btnEditarVC.Enabled = true;
+            txtEdadDesde.Enabled = false;
+            cmbTipoAfiliado.Enabled = false;
 
             TipoAfiliado tipoAfiliado = new TipoAfiliado();
             tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
@@ -216,22 +221,25 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     ValorCuota valorCuota = ObtenerDatosVC();
                     try
                     {
-                        //llamar a negocio...
+                        NE_ValorCuota.ActualizarVC(valorCuota, globalIdTipoAfiliado, globalEdadDesde);
+                        MessageBox.Show("Valor de Cuota actualizado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
                     }
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("Error al editar valor de cuota...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ya hay un valor de cuota para esas edades y tipo de afiliado...");
+                    MessageBox.Show("Ya hay un valor de cuota para esas edades y tipo de afiliado...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos...");
+                MessageBox.Show("Debe llenar todos los campos...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

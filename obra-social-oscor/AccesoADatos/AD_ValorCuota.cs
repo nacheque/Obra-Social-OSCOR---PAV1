@@ -83,7 +83,7 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
-        public static void EditarVC(ValorCuota valorCuota, int codigoVC)
+        public static void ActualizarVC(ValorCuota valorCuota, int idTipoAfiliado, int edadDesde)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -91,13 +91,33 @@ namespace obra_social_oscor.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                //string consulta = "UPDATE VALOR_CUOTA SET ID_TIPO_AFILIADO = @tipoAfiliado, EDAD_DESDE = @edadDesde, EDAD_HASTA = @edadHasta, MONTO = @monto\n"+
-                //    "               WHERE "
+                string consulta = "UPDATE VALOR_CUOTA SET EDAD_HASTA = @edadHasta, MONTO = @monto\n" +
+                    "               WHERE ID_TIPO_AFILIADO = @idTipoAfiliado AND EDAD_DESDE = @edadDesde";
+
+                cmd.Parameters.Clear();
+
+                cmd.Parameters.AddWithValue("@edadHasta", valorCuota.EdadHasta);
+                cmd.Parameters.AddWithValue("@monto", valorCuota.Monto);
+                cmd.Parameters.AddWithValue("@idTipoAfiliado", idTipoAfiliado);
+                cmd.Parameters.AddWithValue("@edadDesde", edadDesde);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
             }
             catch (Exception)
             {
 
                 throw;
+            }
+            finally
+            {
+                cn.Close();
             }
         }
     }

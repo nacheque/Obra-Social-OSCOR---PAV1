@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmValorCuota));
             this.lblVCEdadDesde = new System.Windows.Forms.Label();
             this.lblVCEdadHasta = new System.Windows.Forms.Label();
@@ -38,17 +39,18 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.cmbTipoAfiliado = new System.Windows.Forms.ComboBox();
             this.gdrValoresC = new System.Windows.Forms.DataGridView();
-            this.btnReiniciarFormVC = new System.Windows.Forms.Button();
-            this.btnSalirVC = new System.Windows.Forms.Button();
-            this.btnEliminarVC = new System.Windows.Forms.Button();
-            this.btnEditarVC = new System.Windows.Forms.Button();
-            this.btnAgregarVC = new System.Windows.Forms.Button();
             this.CodigoTipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoAfiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdadHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReiniciarFormVC = new System.Windows.Forms.Button();
+            this.btnSalirVC = new System.Windows.Forms.Button();
+            this.btnEliminarVC = new System.Windows.Forms.Button();
+            this.btnEditarVC = new System.Windows.Forms.Button();
+            this.btnAgregarVC = new System.Windows.Forms.Button();
+            this.ttValorCuota = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gdrValoresC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,59 +145,6 @@
             this.gdrValoresC.TabIndex = 8;
             this.gdrValoresC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrValoresC_CellClick);
             // 
-            // btnReiniciarFormVC
-            // 
-            this.btnReiniciarFormVC.Location = new System.Drawing.Point(12, 401);
-            this.btnReiniciarFormVC.Name = "btnReiniciarFormVC";
-            this.btnReiniciarFormVC.Size = new System.Drawing.Size(129, 37);
-            this.btnReiniciarFormVC.TabIndex = 13;
-            this.btnReiniciarFormVC.Text = "Reiniciar Formulario";
-            this.btnReiniciarFormVC.UseVisualStyleBackColor = true;
-            this.btnReiniciarFormVC.Click += new System.EventHandler(this.btnReiniciarFormVC_Click);
-            // 
-            // btnSalirVC
-            // 
-            this.btnSalirVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.salir;
-            this.btnSalirVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalirVC.Location = new System.Drawing.Point(501, 385);
-            this.btnSalirVC.Name = "btnSalirVC";
-            this.btnSalirVC.Size = new System.Drawing.Size(59, 53);
-            this.btnSalirVC.TabIndex = 12;
-            this.btnSalirVC.UseVisualStyleBackColor = true;
-            this.btnSalirVC.Click += new System.EventHandler(this.btnSalirVC_Click);
-            // 
-            // btnEliminarVC
-            // 
-            this.btnEliminarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.eliminar;
-            this.btnEliminarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminarVC.Location = new System.Drawing.Point(147, 342);
-            this.btnEliminarVC.Name = "btnEliminarVC";
-            this.btnEliminarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnEliminarVC.TabIndex = 11;
-            this.btnEliminarVC.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarVC
-            // 
-            this.btnEditarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.Editar;
-            this.btnEditarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditarVC.Location = new System.Drawing.Point(82, 342);
-            this.btnEditarVC.Name = "btnEditarVC";
-            this.btnEditarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnEditarVC.TabIndex = 10;
-            this.btnEditarVC.UseVisualStyleBackColor = true;
-            this.btnEditarVC.Click += new System.EventHandler(this.btnEditarVC_Click);
-            // 
-            // btnAgregarVC
-            // 
-            this.btnAgregarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.agregar;
-            this.btnAgregarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarVC.Location = new System.Drawing.Point(17, 342);
-            this.btnAgregarVC.Name = "btnAgregarVC";
-            this.btnAgregarVC.Size = new System.Drawing.Size(59, 53);
-            this.btnAgregarVC.TabIndex = 9;
-            this.btnAgregarVC.UseVisualStyleBackColor = true;
-            this.btnAgregarVC.Click += new System.EventHandler(this.btnAgregarVC_Click);
-            // 
             // CodigoTipoAfiliado
             // 
             this.CodigoTipoAfiliado.HeaderText = "Codigo Tipo Afiliado";
@@ -238,6 +187,64 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             this.Codigo.Visible = false;
+            // 
+            // btnReiniciarFormVC
+            // 
+            this.btnReiniciarFormVC.Location = new System.Drawing.Point(12, 401);
+            this.btnReiniciarFormVC.Name = "btnReiniciarFormVC";
+            this.btnReiniciarFormVC.Size = new System.Drawing.Size(129, 37);
+            this.btnReiniciarFormVC.TabIndex = 13;
+            this.btnReiniciarFormVC.Text = "Reiniciar Formulario";
+            this.ttValorCuota.SetToolTip(this.btnReiniciarFormVC, "Limpiar campos");
+            this.btnReiniciarFormVC.UseVisualStyleBackColor = true;
+            this.btnReiniciarFormVC.Click += new System.EventHandler(this.btnReiniciarFormVC_Click);
+            // 
+            // btnSalirVC
+            // 
+            this.btnSalirVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.salir;
+            this.btnSalirVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalirVC.Location = new System.Drawing.Point(501, 385);
+            this.btnSalirVC.Name = "btnSalirVC";
+            this.btnSalirVC.Size = new System.Drawing.Size(59, 53);
+            this.btnSalirVC.TabIndex = 12;
+            this.ttValorCuota.SetToolTip(this.btnSalirVC, "Salir");
+            this.btnSalirVC.UseVisualStyleBackColor = true;
+            this.btnSalirVC.Click += new System.EventHandler(this.btnSalirVC_Click);
+            // 
+            // btnEliminarVC
+            // 
+            this.btnEliminarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.eliminar;
+            this.btnEliminarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarVC.Location = new System.Drawing.Point(147, 342);
+            this.btnEliminarVC.Name = "btnEliminarVC";
+            this.btnEliminarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnEliminarVC.TabIndex = 11;
+            this.ttValorCuota.SetToolTip(this.btnEliminarVC, "Eliminar un valor de cuota");
+            this.btnEliminarVC.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarVC
+            // 
+            this.btnEditarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.Editar;
+            this.btnEditarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarVC.Location = new System.Drawing.Point(82, 342);
+            this.btnEditarVC.Name = "btnEditarVC";
+            this.btnEditarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnEditarVC.TabIndex = 10;
+            this.ttValorCuota.SetToolTip(this.btnEditarVC, "Editar un valor de cuota");
+            this.btnEditarVC.UseVisualStyleBackColor = true;
+            this.btnEditarVC.Click += new System.EventHandler(this.btnEditarVC_Click);
+            // 
+            // btnAgregarVC
+            // 
+            this.btnAgregarVC.BackgroundImage = global::obra_social_oscor.Properties.Resources.agregar;
+            this.btnAgregarVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregarVC.Location = new System.Drawing.Point(17, 342);
+            this.btnAgregarVC.Name = "btnAgregarVC";
+            this.btnAgregarVC.Size = new System.Drawing.Size(59, 53);
+            this.btnAgregarVC.TabIndex = 9;
+            this.ttValorCuota.SetToolTip(this.btnAgregarVC, "Agregar nuevo Valor de Cuota");
+            this.btnAgregarVC.UseVisualStyleBackColor = true;
+            this.btnAgregarVC.Click += new System.EventHandler(this.btnAgregarVC_Click);
             // 
             // FrmValorCuota
             // 
@@ -293,5 +300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EdadHasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.ToolTip ttValorCuota;
     }
 }

@@ -3,6 +3,7 @@ using obra_social_oscor.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,27 @@ namespace obra_social_oscor.Negocio
             {
 
                 throw;
+            }
+        }
+
+        public static void ActualizarVC(ValorCuota valorCuota, int idTipoAfiliado, int edadDesde)
+        {
+            try
+            {
+                AD_ValorCuota.ActualizarVC(valorCuota, idTipoAfiliado, edadDesde);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Errors.Count > 0)
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547:
+                            throw new InvalidOperationException("Foreign key violation", ex);
+                        default:
+                            throw ex;
+                    }
+                }
             }
         }
     }
