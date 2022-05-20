@@ -21,7 +21,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             InitializeComponent();
         }
 
-        private void btn_salir_afiliado_Click(object sender, EventArgs e)
+        private void btn_salir_cobertura_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -105,7 +105,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private void btn_limpiar_afiliado_Click(object sender, EventArgs e)
+        private void btn_limpiar_cobertura_Click(object sender, EventArgs e)
         {
             ReiniciarFormulario();
         }
@@ -194,7 +194,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             bloquearComboBox();
         }
 
-        private void btn_agregar_afiliado_Click(object sender, EventArgs e)
+        private void btn_agregar_cobertura_Click(object sender, EventArgs e)
         {
             if (cmb_tipo_afiliado.SelectedIndex != -1 && cmb_practica.SelectedIndex != -1 && txtPorcCobertura.Text != "")
             {
@@ -232,7 +232,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private void btn_editar_afiliado_Click(object sender, EventArgs e)
+        private void btn_editar_cobertura_Click(object sender, EventArgs e)
         {
             if (cmb_tipo_afiliado.SelectedIndex != -1 && cmb_practica.SelectedIndex != -1 && txtPorcCobertura.Text != "")
             {
@@ -270,7 +270,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private void btn_borrar_afiliado_Click(object sender, EventArgs e)
+        private void btn_borrar_cobertura_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea eliminar la cobertura seleccionada?", "Advertencia",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -299,7 +299,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             cmb_practica.Enabled = false;
         }
 
-        private void txt_monto_afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_txtPorcCobertura_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validar.SoloNumeros(e);
         }

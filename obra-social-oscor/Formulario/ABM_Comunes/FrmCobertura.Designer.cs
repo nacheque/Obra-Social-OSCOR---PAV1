@@ -58,7 +58,7 @@
             this.btn_limpiar_cobertura.TabIndex = 108;
             this.btn_limpiar_cobertura.Text = "Reiniciar Formulario";
             this.btn_limpiar_cobertura.UseVisualStyleBackColor = true;
-            this.btn_limpiar_cobertura.Click += new System.EventHandler(this.btn_limpiar_afiliado_Click);
+            this.btn_limpiar_cobertura.Click += new System.EventHandler(this.btn_limpiar_cobertura_Click);
             // 
             // grd_cobertura
             // 
@@ -85,7 +85,7 @@
             this.txtPorcCobertura.Name = "txtPorcCobertura";
             this.txtPorcCobertura.Size = new System.Drawing.Size(55, 20);
             this.txtPorcCobertura.TabIndex = 103;
-            this.txtPorcCobertura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_monto_afiliado_KeyPress);
+            this.txtPorcCobertura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_txtPorcCobertura_KeyPress);
             // 
             // lbl_porcentaje
             // 
@@ -141,7 +141,7 @@
             this.btn_salir_cobertura.Size = new System.Drawing.Size(50, 50);
             this.btn_salir_cobertura.TabIndex = 109;
             this.btn_salir_cobertura.UseVisualStyleBackColor = true;
-            this.btn_salir_cobertura.Click += new System.EventHandler(this.btn_salir_afiliado_Click);
+            this.btn_salir_cobertura.Click += new System.EventHandler(this.btn_salir_cobertura_Click);
             // 
             // btn_agregar_cobertura
             // 
@@ -152,7 +152,7 @@
             this.btn_agregar_cobertura.Size = new System.Drawing.Size(50, 50);
             this.btn_agregar_cobertura.TabIndex = 107;
             this.btn_agregar_cobertura.UseVisualStyleBackColor = true;
-            this.btn_agregar_cobertura.Click += new System.EventHandler(this.btn_agregar_afiliado_Click);
+            this.btn_agregar_cobertura.Click += new System.EventHandler(this.btn_agregar_cobertura_Click);
             // 
             // btn_editar_cobertura
             // 
@@ -163,7 +163,7 @@
             this.btn_editar_cobertura.Size = new System.Drawing.Size(50, 50);
             this.btn_editar_cobertura.TabIndex = 106;
             this.btn_editar_cobertura.UseVisualStyleBackColor = true;
-            this.btn_editar_cobertura.Click += new System.EventHandler(this.btn_editar_afiliado_Click);
+            this.btn_editar_cobertura.Click += new System.EventHandler(this.btn_editar_cobertura_Click);
             // 
             // btn_borrar_cobertura
             // 
@@ -174,7 +174,7 @@
             this.btn_borrar_cobertura.Size = new System.Drawing.Size(50, 50);
             this.btn_borrar_cobertura.TabIndex = 105;
             this.btn_borrar_cobertura.UseVisualStyleBackColor = true;
-            this.btn_borrar_cobertura.Click += new System.EventHandler(this.btn_borrar_afiliado_Click);
+            this.btn_borrar_cobertura.Click += new System.EventHandler(this.btn_borrar_cobertura_Click);
             // 
             // CodigoTipoAfiliado
             // 
