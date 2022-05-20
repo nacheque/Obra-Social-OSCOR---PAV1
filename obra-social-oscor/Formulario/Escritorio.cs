@@ -95,5 +95,11 @@ namespace obra_social_oscor
             ventana.ShowDialog();
 
         }
+
+        private void gestionDeCoberturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCobertura ventana = new FrmCobertura();
+            ventana.ShowDialog();
+        }
     }
 }

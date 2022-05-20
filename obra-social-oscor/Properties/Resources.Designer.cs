@@ -83,6 +83,16 @@ namespace obra_social_oscor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cobertura_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("cobertura-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Editar {
             get {
                 object obj = ResourceManager.GetObject("Editar", resourceCulture);
@@ -128,10 +138,10 @@ namespace obra_social_oscor.Properties {
                 object obj = ResourceManager.GetObject("icono_practicas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
-        }
+        }      
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Imagen_Atenciones {
             get {
