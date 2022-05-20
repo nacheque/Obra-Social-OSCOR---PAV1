@@ -266,6 +266,7 @@
             // 
             // gestionDeCoberturaToolStripMenuItem
             // 
+            this.gestionDeCoberturaToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.cobertura_removebg_preview;
             this.gestionDeCoberturaToolStripMenuItem.Name = "gestionDeCoberturaToolStripMenuItem";
             this.gestionDeCoberturaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.gestionDeCoberturaToolStripMenuItem.Text = "Gestion de Cobertura";

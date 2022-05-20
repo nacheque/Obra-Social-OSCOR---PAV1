@@ -125,7 +125,7 @@
             this.txtPorcCobertura.Name = "txtPorcCobertura";
             this.txtPorcCobertura.Size = new System.Drawing.Size(55, 20);
             this.txtPorcCobertura.TabIndex = 103;
-            this.txtPorcCobertura.TextChanged += new System.EventHandler(this.txtPorcCobertura_TextChanged);
+            this.txtPorcCobertura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_monto_afiliado_KeyPress);
             // 
             // lbl_porcentaje
             // 
@@ -165,6 +165,7 @@
             // 
             // cmb_tipo_afiliado
             // 
+            this.cmb_tipo_afiliado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo_afiliado.FormattingEnabled = true;
             this.cmb_tipo_afiliado.Location = new System.Drawing.Point(160, 22);
             this.cmb_tipo_afiliado.Name = "cmb_tipo_afiliado";
@@ -232,6 +233,7 @@
             this.Controls.Add(this.cmb_practica);
             this.Controls.Add(this.lbl_tipo_afiliado);
             this.Controls.Add(this.cmb_tipo_afiliado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCobertura";
             this.Text = "FrmCobertura";
             this.Load += new System.EventHandler(this.FrmCobertura_Load);

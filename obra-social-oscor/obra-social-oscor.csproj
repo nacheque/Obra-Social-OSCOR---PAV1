@@ -247,6 +247,7 @@
     <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cobertura-removebg-preview.ico" />
     <Content Include="Resources\icono_practicas.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

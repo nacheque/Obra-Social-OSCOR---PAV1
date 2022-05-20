@@ -96,6 +96,11 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             txtPorcCobertura.Text = "";
             btn_editar_afiliado.Enabled = false;
             btn_agregar_afiliado.Enabled = true;
+            if (cmb_tipo_afiliado.Enabled == false && cmb_practica.Enabled == false)
+            {
+                cmb_tipo_afiliado.Enabled = true;
+                cmb_practica.Enabled = true;
+            }
         }
 
         private void btn_limpiar_afiliado_Click(object sender, EventArgs e)
@@ -107,7 +112,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             cmb_tipo_afiliado.SelectedValue = cobertura.TipoAfiliado.CodigoTipoAfiliado;
             cmb_practica.SelectedValue = cobertura.Practica.CodigoPractica;
-            txtPorcCobertura.Text = cobertura.Porcentaje.ToString();
+            txtPorcCobertura.Text = cobertura.Porcentaje.ToString();            
         }
 
         private bool ExisteEnGrilla(string id_tipo_afiliado, string id_practica)
@@ -183,31 +188,39 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             cobertura.Porcentaje = int.Parse(filaSeleccionada.Cells["Porcentaje"].Value.ToString());
 
             CargarCampos(cobertura);
+            bloquearComboBox();
         }
 
         private void btn_agregar_afiliado_Click(object sender, EventArgs e)
         {
             if (cmb_tipo_afiliado.SelectedIndex != -1 && cmb_practica.SelectedIndex != -1 && txtPorcCobertura.Text != "")
             {
-                if (!ExisteEnGrilla(cmb_tipo_afiliado.SelectedValue.ToString(), cmb_practica.SelectedValue.ToString()))
+                if (int.Parse(txtPorcCobertura.Text) > 0 && int.Parse(txtPorcCobertura.Text) <= 100)
                 {
-                    Cobertura cobertura = ObtenerDatosCobertura();
-                    try
+                    if (!ExisteEnGrilla(cmb_tipo_afiliado.SelectedValue.ToString(), cmb_practica.SelectedValue.ToString()))
                     {
-                        NE_Cobertura.AgregarCobertura(cobertura);
-                        MessageBox.Show("Cobertura agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ReiniciarFormulario();
-                        CargarGrilla();
-                    }
-                    catch (Exception)
-                    {
+                        Cobertura cobertura = ObtenerDatosCobertura();
+                        try
+                        {
+                            NE_Cobertura.AgregarCobertura(cobertura);
+                            MessageBox.Show("Cobertura agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ReiniciarFormulario();
+                            CargarGrilla();
+                        }
+                        catch (Exception)
+                        {
 
-                        MessageBox.Show("Error al agregar a la Cobertura...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error al agregar a la Cobertura...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe la cobertura que desea agregar");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe la cobertura que desea agregar");
+                    MessageBox.Show("El porcentaje que desea ingresar no es correcto, por favor ingrese un valor entre 1 y 100", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -220,25 +233,32 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             if (cmb_tipo_afiliado.SelectedIndex != -1 && cmb_practica.SelectedIndex != -1 && txtPorcCobertura.Text != "")
             {
-                if (!ExisteEnGrillaEditar(cmb_tipo_afiliado.SelectedValue.ToString(), cmb_practica.SelectedValue.ToString(), int.Parse(txtPorcCobertura.Text)))
+                if (int.Parse(txtPorcCobertura.Text) > 0 && int.Parse(txtPorcCobertura.Text) <= 100)
                 {
-                    Cobertura cobertura = ObtenerDatosCobertura();
-
-                    try
+                    if (!ExisteEnGrillaEditar(cmb_tipo_afiliado.SelectedValue.ToString(), cmb_practica.SelectedValue.ToString(), int.Parse(txtPorcCobertura.Text)))
                     {
-                        NE_Cobertura.ActualizarCobertura(cobertura, int.Parse(cmb_tipo_afiliado.SelectedValue.ToString()), int.Parse(cmb_practica.SelectedValue.ToString()));
-                        MessageBox.Show("Cobertura actualizado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ReiniciarFormulario();
-                        CargarGrilla();
+                        Cobertura cobertura = ObtenerDatosCobertura();
+                        
+                        try
+                        {
+                            NE_Cobertura.ActualizarCobertura(cobertura, int.Parse(cmb_tipo_afiliado.SelectedValue.ToString()), int.Parse(cmb_practica.SelectedValue.ToString()));
+                            MessageBox.Show("Cobertura actualizado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            ReiniciarFormulario();                            
+                            CargarGrilla();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Error al actualizar Cobertura...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception)
+                    else
                     {
-                        MessageBox.Show("Error al actualizar Cobertura...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ya existe la cobertura que desea modificar");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe la cobertura que desea modificar");
+                    MessageBox.Show("El porcentaje que desea modificar no es correcto, por favor ingrese un valor entre 1 y 100", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -270,9 +290,15 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
         }
 
-        private void txtPorcCobertura_TextChanged(object sender, EventArgs e)
+        private void bloquearComboBox()
         {
-            //Validar.SoloNumeros(e);
+            cmb_tipo_afiliado.Enabled = false;
+            cmb_practica.Enabled = false;
+        }
+
+        private void txt_monto_afiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
         }
     }
 }
