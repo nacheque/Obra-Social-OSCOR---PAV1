@@ -49,12 +49,14 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
+    <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="AccesoADatos\AD_Practica.cs" />
     <Compile Include="Entidades\Barrio.cs" />
+    <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
@@ -63,6 +65,12 @@
     <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
       <DependentUpon>FrmAfiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmCobertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmCobertura.Designer.cs">
+      <DependentUpon>FrmCobertura.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.cs">
       <SubType>Form</SubType>
@@ -128,6 +136,7 @@
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
+    <Compile Include="Negocio\NE_Cobertura.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
@@ -139,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmBarrio.resx">
       <DependentUpon>FrmBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmCobertura.resx">
+      <DependentUpon>FrmCobertura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
@@ -235,6 +247,7 @@
     <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cobertura-removebg-preview.ico" />
     <Content Include="Resources\icono_practicas.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

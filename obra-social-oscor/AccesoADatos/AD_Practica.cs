@@ -151,6 +151,5 @@ namespace obra_social_oscor.AccesoADatos
             }
 
         }
-
     }
 }
