@@ -55,7 +55,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         {
             try
             {
-                cmb_practica.DataSource = AD_Practica.obtenerComboPracticas();
+                cmb_practica.DataSource = AD_Practica.obtenerPracticas();
                 cmb_practica.DisplayMember = "DESCRIPCION";
                 cmb_practica.ValueMember = "ID_PRACTICA";
                 cmb_practica.SelectedIndex = -1;
