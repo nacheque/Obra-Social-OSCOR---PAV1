@@ -100,20 +100,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void grd_Tipo_Afiliado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = grd_Tipo_Afiliado.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = grd_Tipo_Afiliado.Rows[indice];
 
-            string nombreTipoAfiliado = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-            global_codigoTipo = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
-            ReiniciarFormulario();
+                string nombreTipoAfiliado = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                global_codigoTipo = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
+                ReiniciarFormulario();
 
-            btn_Editar_Tipo_Afiliado.Enabled = true;
-            btn_Eliminar_Tipo_Afiliado.Enabled = true;
-            btn_Agregar_Tipo_Afiliado.Enabled = false;
+                btn_Editar_Tipo_Afiliado.Enabled = true;
+                btn_Eliminar_Tipo_Afiliado.Enabled = true;
+                btn_Agregar_Tipo_Afiliado.Enabled = false;
 
-            TipoAfiliado tipoAfiliado = new TipoAfiliado();
-            tipoAfiliado.DescripcionTipoAfiliado = nombreTipoAfiliado;
-            
-            CargarCampos(tipoAfiliado);
+                TipoAfiliado tipoAfiliado = new TipoAfiliado();
+                tipoAfiliado.DescripcionTipoAfiliado = nombreTipoAfiliado;
+
+                CargarCampos(tipoAfiliado);
+            }
         }
         
         private void btn_Agregar_Tipo_Afiliado_Click(object sender, EventArgs e)

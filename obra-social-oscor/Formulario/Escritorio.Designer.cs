@@ -53,6 +53,8 @@
             this.gestionDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCoberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valorDeCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +157,8 @@
             this.barriosToolStripMenuItem,
             this.localidadesToolStripMenuItem,
             this.practicasToolStripMenuItem,
+            this.localidadesToolStripMenuItem,
+            this.cuotasToolStripMenuItem,
             this.coberturaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -272,6 +276,22 @@
             this.gestionDeCoberturaToolStripMenuItem.Text = "Gestion de Cobertura";
             this.gestionDeCoberturaToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCoberturaToolStripMenuItem_Click);
             // 
+            // cuotasToolStripMenuItem
+            // 
+            this.cuotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.valorDeCuotaToolStripMenuItem});
+            this.cuotasToolStripMenuItem.Name = "cuotasToolStripMenuItem";
+            this.cuotasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.cuotasToolStripMenuItem.Text = "Cuotas";
+            // 
+            // valorDeCuotaToolStripMenuItem
+            // 
+            this.valorDeCuotaToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources._2203534_cash_coin_money_value_icon;
+            this.valorDeCuotaToolStripMenuItem.Name = "valorDeCuotaToolStripMenuItem";
+            this.valorDeCuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.valorDeCuotaToolStripMenuItem.Text = "Valor de Cuota";
+            this.valorDeCuotaToolStripMenuItem.Click += new System.EventHandler(this.valorDeCuotaToolStripMenuItem_Click);
+            // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +348,8 @@
         private System.Windows.Forms.Button btn_estadisticas;
         private System.Windows.Forms.ToolStripMenuItem coberturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeCoberturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valorDeCuotaToolStripMenuItem;
     }
 }
 

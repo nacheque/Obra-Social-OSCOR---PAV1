@@ -48,20 +48,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void grd_Esp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = grd_Esp.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = grd_Esp.Rows[indice];
 
-            string nombreEspecialidad = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            global_codigoEspecialidad = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
-            ReiniciarFormulario();
+                string nombreEspecialidad = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                global_codigoEspecialidad = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
+                ReiniciarFormulario();
 
-            btn_Editar_Esp.Enabled = true;
-            btn_Eliminar_Esp.Enabled = true;
-            btn_Agregar_Esp.Enabled = false;
+                btn_Editar_Esp.Enabled = true;
+                btn_Eliminar_Esp.Enabled = true;
+                btn_Agregar_Esp.Enabled = false;
 
-            Especialidad especialidad = new Especialidad();
-            especialidad.NombreEspecialidad = nombreEspecialidad;
+                Especialidad especialidad = new Especialidad();
+                especialidad.NombreEspecialidad = nombreEspecialidad;
 
-            CargarCampos(especialidad);
+                CargarCampos(especialidad);
+            }
         }
 
         private void btn_Agregar_Esp_Click(object sender, EventArgs e)

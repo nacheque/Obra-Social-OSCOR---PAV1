@@ -52,6 +52,7 @@
     <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
+    <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="AccesoADatos\AD_Practica.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
+    <Compile Include="Entidades\ValorCuota.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +105,12 @@
     <Compile Include="Formulario\ABM_Comunes\FrmPracticas.Designer.cs">
       <DependentUpon>FrmPracticas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.Designer.cs">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +149,7 @@
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Negocio\NE_Practica.cs" />
+    <Compile Include="Negocio\NE_ValorCuota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
@@ -163,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmPracticas.resx">
       <DependentUpon>FrmPracticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmValorCuota.resx">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
@@ -249,6 +261,9 @@
   <ItemGroup>
     <None Include="Resources\cobertura-removebg-preview.ico" />
     <Content Include="Resources\icono_practicas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2203534_cash_coin_money_value_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

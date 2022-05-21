@@ -58,19 +58,22 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void gdrLocalidades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = gdrLocalidades.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gdrLocalidades.Rows[indice];
 
-            string nombreLocalidad = filaSeleccionada.Cells["NombreLocalidad"].Value.ToString();
-            globalCodigoLoc = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
+                string nombreLocalidad = filaSeleccionada.Cells["NombreLocalidad"].Value.ToString();
+                globalCodigoLoc = int.Parse(filaSeleccionada.Cells["Codigo"].Value.ToString());
 
-            btnAgregarLocalidad.Enabled = false;
-            btnEditarLocalidad.Enabled = true;
-            btnEliminarLocalidad.Enabled = true;
+                btnAgregarLocalidad.Enabled = false;
+                btnEditarLocalidad.Enabled = true;
+                btnEliminarLocalidad.Enabled = true;
 
-            Localidad localidad = new Localidad();
-            localidad.NombreLocalidad = nombreLocalidad;
+                Localidad localidad = new Localidad();
+                localidad.NombreLocalidad = nombreLocalidad;
 
-            CargarCampos(localidad);
+                CargarCampos(localidad);
+            }
         }
 
         private void CargarCampos(Localidad localidad)

@@ -143,22 +143,26 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void dgv_Pract_Cell_Click(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = dgv_Pract.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgv_Pract.Rows[indice];
 
-            string nombrePractica = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-            string precioPractica = filaSeleccionada.Cells["PrecioPract"].Value.ToString();
-            global_codigoPractica = int.Parse(filaSeleccionada.Cells["IdPractica"].Value.ToString());
-            reiniciarFormulario();
+                string nombrePractica = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                string precioPractica = filaSeleccionada.Cells["PrecioPract"].Value.ToString();
+                global_codigoPractica = int.Parse(filaSeleccionada.Cells["IdPractica"].Value.ToString());
+                reiniciarFormulario();
 
-            btn_Editar_Pract.Enabled = true;
-            btn_Eliminar_Pract.Enabled = true;
-            btn_Agregar_Pract.Enabled = false;
+                btn_Editar_Pract.Enabled = true;
+                btn_Eliminar_Pract.Enabled = true;
+                btn_Agregar_Pract.Enabled = false;
 
-            Practica practica = new Practica();
-            practica.DescripcionPractica = nombrePractica;
-            practica.PrecioPractica = float.Parse(precioPractica);
-            cargarCampos(practica);             
+                Practica practica = new Practica();
+                practica.DescripcionPractica = nombrePractica;
+                practica.PrecioPractica = float.Parse(precioPractica);
+                cargarCampos(practica);
+            }
         }
+
         private void cargarCampos(Practica practica)
         {
             txt_Nombre_Pract.Text = practica.DescripcionPractica;
