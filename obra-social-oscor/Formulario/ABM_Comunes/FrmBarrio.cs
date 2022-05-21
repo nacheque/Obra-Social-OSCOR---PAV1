@@ -161,20 +161,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void gdrBarrios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = gdrBarrios.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gdrBarrios.Rows[indice];
 
-            string nombreBarrio = filaSeleccionada.Cells["NombreBarrio"].Value.ToString();
-            globalCodigoBarrio = int.Parse(filaSeleccionada.Cells["CodigoBarrio"].Value.ToString());
-            ReiniciarFormulario();
+                string nombreBarrio = filaSeleccionada.Cells["NombreBarrio"].Value.ToString();
+                globalCodigoBarrio = int.Parse(filaSeleccionada.Cells["CodigoBarrio"].Value.ToString());
+                ReiniciarFormulario();
 
-            btnAgregarBarrio.Enabled = false;
-            btnEditarBarrio.Enabled = true;
-            btnEliminarBarrio.Enabled = true;
+                btnAgregarBarrio.Enabled = false;
+                btnEditarBarrio.Enabled = true;
+                btnEliminarBarrio.Enabled = true;
 
-            Barrio barrio = new Barrio();
-            barrio.NombreBarrio = nombreBarrio;
+                Barrio barrio = new Barrio();
+                barrio.NombreBarrio = nombreBarrio;
 
-            CargarCampos(barrio);
+                CargarCampos(barrio);
+            }
         }
 
         private void CargarCampos(Barrio barrio)

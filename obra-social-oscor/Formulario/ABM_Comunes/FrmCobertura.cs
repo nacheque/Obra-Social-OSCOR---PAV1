@@ -170,28 +170,30 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void grd_cobertura_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = grd_cobertura.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = grd_cobertura.Rows[indice];
 
-            //global_numeroCobertura = int.Parse(filaSeleccionada.Cells["id_tipo_Afiliado"].Value.ToString());
-            ReiniciarFormulario();
+                ReiniciarFormulario();
 
-            btn_editar_cobertura.Enabled = true;
-            btn_borrar_cobertura.Enabled = true;
-            btn_agregar_cobertura.Enabled = false;
+                btn_editar_cobertura.Enabled = true;
+                btn_borrar_cobertura.Enabled = true;
+                btn_agregar_cobertura.Enabled = false;
 
-            Cobertura cobertura = new Cobertura();
-            TipoAfiliado tipoAfiliado = new TipoAfiliado();
-            tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
-            tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["DescripcionTipoAfiliado"].Value.ToString();
-            cobertura.TipoAfiliado = tipoAfiliado;
-            Practica practica = new Practica();
-            practica.CodigoPractica = int.Parse(filaSeleccionada.Cells["CodigoPractica"].Value.ToString());
-            practica.DescripcionPractica = filaSeleccionada.Cells["DescripcionPractica"].Value.ToString();
-            cobertura.Practica = practica;
-            cobertura.Porcentaje = int.Parse(filaSeleccionada.Cells["Porcentaje"].Value.ToString());
+                Cobertura cobertura = new Cobertura();
+                TipoAfiliado tipoAfiliado = new TipoAfiliado();
+                tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
+                tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["DescripcionTipoAfiliado"].Value.ToString();
+                cobertura.TipoAfiliado = tipoAfiliado;
+                Practica practica = new Practica();
+                practica.CodigoPractica = int.Parse(filaSeleccionada.Cells["CodigoPractica"].Value.ToString());
+                practica.DescripcionPractica = filaSeleccionada.Cells["DescripcionPractica"].Value.ToString();
+                cobertura.Practica = practica;
+                cobertura.Porcentaje = int.Parse(filaSeleccionada.Cells["Porcentaje"].Value.ToString());
 
-            CargarCampos(cobertura);
-            bloquearComboBox();
+                CargarCampos(cobertura);
+                bloquearComboBox();
+            }
         }
 
         private void btn_agregar_cobertura_Click(object sender, EventArgs e)
