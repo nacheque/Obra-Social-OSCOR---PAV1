@@ -107,5 +107,11 @@ namespace obra_social_oscor
             FrmValorCuota ventana = new FrmValorCuota();
             ventana.ShowDialog();
         }
+
+        private void gestionDeProfesionalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProfesionales ventana = new FrmProfesionales();
+            ventana.ShowDialog();
+        }
     }
 }

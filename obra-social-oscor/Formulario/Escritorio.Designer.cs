@@ -55,6 +55,8 @@
             this.gestionDeCoberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.valorDeCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeProfesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +161,8 @@
             this.practicasToolStripMenuItem,
             this.localidadesToolStripMenuItem,
             this.cuotasToolStripMenuItem,
-            this.coberturaToolStripMenuItem});
+            this.coberturaToolStripMenuItem,
+            this.profesionalesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1367, 24);
@@ -292,6 +295,22 @@
             this.valorDeCuotaToolStripMenuItem.Text = "Valor de Cuota";
             this.valorDeCuotaToolStripMenuItem.Click += new System.EventHandler(this.valorDeCuotaToolStripMenuItem_Click);
             // 
+            // profesionalesToolStripMenuItem
+            // 
+            this.profesionalesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeProfesionalesToolStripMenuItem});
+            this.profesionalesToolStripMenuItem.Name = "profesionalesToolStripMenuItem";
+            this.profesionalesToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.profesionalesToolStripMenuItem.Text = "Profesionales";
+            // 
+            // gestionDeProfesionalesToolStripMenuItem
+            // 
+            this.gestionDeProfesionalesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.icono_profesionales;
+            this.gestionDeProfesionalesToolStripMenuItem.Name = "gestionDeProfesionalesToolStripMenuItem";
+            this.gestionDeProfesionalesToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.gestionDeProfesionalesToolStripMenuItem.Text = "Gestion de Profesionales";
+            this.gestionDeProfesionalesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeProfesionalesToolStripMenuItem_Click);
+            // 
             // frm_Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +369,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeCoberturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valorDeCuotaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profesionalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeProfesionalesToolStripMenuItem;
     }
 }
 

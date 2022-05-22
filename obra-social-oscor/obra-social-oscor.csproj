@@ -51,6 +51,7 @@
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
+    <Compile Include="AccesoADatos\AD_Profesional.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
     <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
+    <Compile Include="Entidades\Profesional.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
     <Compile Include="Entidades\ValorCuota.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
@@ -80,6 +82,12 @@
     <Compile Include="Entidades\Practica.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.Designer.cs">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmProfesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmProfesionales.Designer.cs">
+      <DependentUpon>FrmProfesionales.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmTipoAfiliado.cs">
       <SubType>Form</SubType>
@@ -146,6 +154,7 @@
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Cobertura.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
+    <Compile Include="Negocio\NE_Profesional.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Negocio\NE_Practica.cs" />
@@ -163,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmProfesionales.resx">
+      <DependentUpon>FrmProfesionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmTipoAfiliado.resx">
       <DependentUpon>FrmTipoAfiliado.cs</DependentUpon>
@@ -264,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2203534_cash_coin_money_value_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_profesionales.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
