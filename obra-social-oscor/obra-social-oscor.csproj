@@ -49,15 +49,20 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
+    <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_Profesional.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
+    <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
+    <Compile Include="AccesoADatos\AD_Practica.cs" />
     <Compile Include="Entidades\Barrio.cs" />
+    <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\Profesional.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
+    <Compile Include="Entidades\ValorCuota.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,9 +70,16 @@
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.Designer.cs">
       <DependentUpon>FrmAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmCobertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmCobertura.Designer.cs">
+      <DependentUpon>FrmCobertura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Entidades\Practica.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmEspecialidades.Designer.cs">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </Compile>
@@ -94,6 +106,18 @@
     </Compile>
     <Compile Include="Formulario\ABM_Comunes\FrmLocalidades.Designer.cs">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmPracticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmPracticas.Designer.cs">
+      <DependentUpon>FrmPracticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.Designer.cs">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
       <SubType>Form</SubType>
@@ -128,10 +152,13 @@
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
+    <Compile Include="Negocio\NE_Cobertura.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\NE_Profesional.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
+    <Compile Include="Negocio\NE_Practica.cs" />
+    <Compile Include="Negocio\NE_ValorCuota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmAfiliado.resx">
@@ -139,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmBarrio.resx">
       <DependentUpon>FrmBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmCobertura.resx">
+      <DependentUpon>FrmCobertura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
@@ -151,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmLocalidades.resx">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmPracticas.resx">
+      <DependentUpon>FrmPracticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Comunes\FrmValorCuota.resx">
+      <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
@@ -233,6 +269,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\287695_location_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cobertura-removebg-preview.ico" />
+    <Content Include="Resources\icono_practicas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2203534_cash_coin_money_value_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono_profesionales.png" />

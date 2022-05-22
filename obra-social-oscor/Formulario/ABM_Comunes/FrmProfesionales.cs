@@ -223,34 +223,37 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void grd_Profesionales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = grd_Profesionales.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = grd_Profesionales.Rows[indice];
 
-            global_matriculaProfesional = int.Parse(filaSeleccionada.Cells["matricula"].Value.ToString());
-            ReiniciarFormulario();
+                global_matriculaProfesional = int.Parse(filaSeleccionada.Cells["matricula"].Value.ToString());
+                ReiniciarFormulario();
 
-            btn_editar_profesional.Enabled = true;
-            btn_borrar_profesional.Enabled = true;
-            btn_agregar_profesional.Enabled = false;
+                btn_editar_profesional.Enabled = true;
+                btn_borrar_profesional.Enabled = true;
+                btn_agregar_profesional.Enabled = false;
 
-            Profesional profesional = new Profesional();
-            profesional.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
-            profesional.Nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
-            profesional.Calle = filaSeleccionada.Cells["calle"].Value.ToString();
-            profesional.NumeroCalle = int.Parse(filaSeleccionada.Cells["nro_calle"].Value.ToString());
-            profesional.Telefono = filaSeleccionada.Cells["telefono"].Value.ToString();
-                        
-            Barrio barrio = new Barrio();
-            barrio.IdBarrio = int.Parse(filaSeleccionada.Cells["id_barrio"].Value.ToString());
-            barrio.NombreBarrio = filaSeleccionada.Cells["barrio"].Value.ToString();
+                Profesional profesional = new Profesional();
+                profesional.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                profesional.Nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                profesional.Calle = filaSeleccionada.Cells["calle"].Value.ToString();
+                profesional.NumeroCalle = int.Parse(filaSeleccionada.Cells["nro_calle"].Value.ToString());
+                profesional.Telefono = filaSeleccionada.Cells["telefono"].Value.ToString();
 
-            Localidad localidad = new Localidad();
-            localidad.IdLocalidad = int.Parse(filaSeleccionada.Cells["id_localidad"].Value.ToString());
-            localidad.NombreLocalidad = filaSeleccionada.Cells["localidad"].Value.ToString();
+                Barrio barrio = new Barrio();
+                barrio.IdBarrio = int.Parse(filaSeleccionada.Cells["id_barrio"].Value.ToString());
+                barrio.NombreBarrio = filaSeleccionada.Cells["barrio"].Value.ToString();
 
-            profesional.Barrio = barrio;
-            profesional.Localidad = localidad;
+                Localidad localidad = new Localidad();
+                localidad.IdLocalidad = int.Parse(filaSeleccionada.Cells["id_localidad"].Value.ToString());
+                localidad.NombreLocalidad = filaSeleccionada.Cells["localidad"].Value.ToString();
 
-            CargarCampos(profesional);
+                profesional.Barrio = barrio;
+                profesional.Localidad = localidad;
+
+                CargarCampos(profesional);
+            }
         }
 
         private void CargarCampos(Profesional profesional)

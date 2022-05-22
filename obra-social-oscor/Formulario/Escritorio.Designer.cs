@@ -49,6 +49,12 @@
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeCoberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valorDeCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeProfesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -152,6 +158,10 @@
             this.especialidadesToolStripMenuItem,
             this.barriosToolStripMenuItem,
             this.localidadesToolStripMenuItem,
+            this.practicasToolStripMenuItem,
+            this.localidadesToolStripMenuItem,
+            this.cuotasToolStripMenuItem,
+            this.coberturaToolStripMenuItem,
             this.profesionalesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -217,7 +227,7 @@
             // 
             this.gestionDeBarriosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gestionDeBarriosToolStripMenuItem.Image")));
             this.gestionDeBarriosToolStripMenuItem.Name = "gestionDeBarriosToolStripMenuItem";
-            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.gestionDeBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
             this.gestionDeBarriosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeBarriosToolStripMenuItem_Click);
             // 
@@ -236,6 +246,54 @@
             this.gestionDeLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
             this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
+            // 
+            // practicasToolStripMenuItem
+            // 
+            this.practicasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDePracticasToolStripMenuItem});
+            this.practicasToolStripMenuItem.Name = "practicasToolStripMenuItem";
+            this.practicasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.practicasToolStripMenuItem.Text = "Practicas";
+            // 
+            // gestionDePracticasToolStripMenuItem
+            // 
+            this.gestionDePracticasToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.icono_practicas;
+            this.gestionDePracticasToolStripMenuItem.Name = "gestionDePracticasToolStripMenuItem";
+            this.gestionDePracticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDePracticasToolStripMenuItem.Text = "Gestion de Practicas";
+            this.gestionDePracticasToolStripMenuItem.Click += new System.EventHandler(this.gestionDePracticasToolStripMenuItem_Click);
+            // 
+            // coberturaToolStripMenuItem
+            // 
+            this.coberturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeCoberturaToolStripMenuItem});
+            this.coberturaToolStripMenuItem.Name = "coberturaToolStripMenuItem";
+            this.coberturaToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.coberturaToolStripMenuItem.Text = "Cobertura";
+            // 
+            // gestionDeCoberturaToolStripMenuItem
+            // 
+            this.gestionDeCoberturaToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources.cobertura_removebg_preview;
+            this.gestionDeCoberturaToolStripMenuItem.Name = "gestionDeCoberturaToolStripMenuItem";
+            this.gestionDeCoberturaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.gestionDeCoberturaToolStripMenuItem.Text = "Gestion de Cobertura";
+            this.gestionDeCoberturaToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCoberturaToolStripMenuItem_Click);
+            // 
+            // cuotasToolStripMenuItem
+            // 
+            this.cuotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.valorDeCuotaToolStripMenuItem});
+            this.cuotasToolStripMenuItem.Name = "cuotasToolStripMenuItem";
+            this.cuotasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.cuotasToolStripMenuItem.Text = "Cuotas";
+            // 
+            // valorDeCuotaToolStripMenuItem
+            // 
+            this.valorDeCuotaToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources._2203534_cash_coin_money_value_icon;
+            this.valorDeCuotaToolStripMenuItem.Name = "valorDeCuotaToolStripMenuItem";
+            this.valorDeCuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.valorDeCuotaToolStripMenuItem.Text = "Valor de Cuota";
+            this.valorDeCuotaToolStripMenuItem.Click += new System.EventHandler(this.valorDeCuotaToolStripMenuItem_Click);
             // 
             // profesionalesToolStripMenuItem
             // 
@@ -303,8 +361,14 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeLocalidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem practicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDePracticasToolStripMenuItem;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_estadisticas;
+        private System.Windows.Forms.ToolStripMenuItem coberturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeCoberturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valorDeCuotaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profesionalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeProfesionalesToolStripMenuItem;
     }

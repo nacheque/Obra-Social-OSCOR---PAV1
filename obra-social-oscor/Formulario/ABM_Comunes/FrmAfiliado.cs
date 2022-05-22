@@ -57,7 +57,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             txt_monto_afiliado.Text = afiliado.MontoInscripcionAfiliado.ToString();
         }
 
-        private void CargarComboTipoAfiliados()
+        public void CargarComboTipoAfiliados()
         {
             try
             {
@@ -157,28 +157,31 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
         private void grd_Afi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = grd_Afi.Rows[indice];
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = grd_Afi.Rows[indice];
 
-            global_numeroAfiliado = int.Parse(filaSeleccionada.Cells["Nro_Afiliado"].Value.ToString());
-            ReiniciarFormulario();
+                global_numeroAfiliado = int.Parse(filaSeleccionada.Cells["Nro_Afiliado"].Value.ToString());
+                ReiniciarFormulario();
 
             btn_editar_afiliado.Enabled = true;
             btn_borrar_afiliado.Enabled = true;
             btn_agregar_afiliado.Enabled = false;
 
-            Afiliado afiliado = new Afiliado();
-            afiliado.ApellidoAfiliado = filaSeleccionada.Cells["Apellido"].Value.ToString();
-            afiliado.NombreAfiliado = filaSeleccionada.Cells["nombre"].Value.ToString();
-            afiliado.FechaNacimientoAfiliado = DateTime.Parse(filaSeleccionada.Cells["fecha_nacimiento"].Value.ToString());
-            afiliado.MontoInscripcionAfiliado = float.Parse(filaSeleccionada.Cells["monto_inscripcion"].Value.ToString());
+                Afiliado afiliado = new Afiliado();
+                afiliado.ApellidoAfiliado = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                afiliado.NombreAfiliado = filaSeleccionada.Cells["nombre"].Value.ToString();
+                afiliado.FechaNacimientoAfiliado = DateTime.Parse(filaSeleccionada.Cells["fecha_nacimiento"].Value.ToString());
+                afiliado.MontoInscripcionAfiliado = float.Parse(filaSeleccionada.Cells["monto_inscripcion"].Value.ToString());
 
-            TipoAfiliado tipoAfiliado = new TipoAfiliado();
-            tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
-            tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["tipo_afiliado"].Value.ToString();
+                TipoAfiliado tipoAfiliado = new TipoAfiliado();
+                tipoAfiliado.CodigoTipoAfiliado = int.Parse(filaSeleccionada.Cells["CodigoTipoAfiliado"].Value.ToString());
+                tipoAfiliado.DescripcionTipoAfiliado = filaSeleccionada.Cells["tipo_afiliado"].Value.ToString();
 
-            afiliado.TipoAfiliado = tipoAfiliado;
+                afiliado.TipoAfiliado = tipoAfiliado;
 
-            CargarCampos(afiliado);
+                CargarCampos(afiliado);
+            }
         }
 
         private void btn_agregar_afiliado_Click(object sender, EventArgs e)

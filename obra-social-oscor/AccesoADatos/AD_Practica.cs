@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 
 namespace obra_social_oscor.AccesoADatos
 {
-    class AD_Localidad
+    public class AD_Practica
     {
-        public static DataTable ObtenerLocalidades()
+        public static DataTable obtenerPracticas()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
-
-                string consulta = "SELECT * FROM LOCALIDADES";
+                string consulta = "SELECT * FROM PRACTICAS";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
@@ -31,7 +30,6 @@ namespace obra_social_oscor.AccesoADatos
 
                 DataTable tabla = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-
                 da.Fill(tabla);
 
                 return tabla;
@@ -47,25 +45,64 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
-        public static void AgregarLocalidad(Localidad localidad)
+        public static void agregarPractica(Practica practica)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO LOCALIDADES (LOCALIDAD) VALUES (@nombreLocalidad)";
+                string consulta = "INSERT INTO PRACTICAS (DESCRIPCION, PRECIO) VALUES (@descripcion, @precioPract)";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreLocalidad", localidad.NombreLocalidad);
+                cmd.Parameters.AddWithValue("@descripcion", practica.DescripcionPractica);
+                cmd.Parameters.AddWithValue("@precioPract", practica.PrecioPractica);
+               
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally 
+            {
+                cn.Close();
+            }
+
+        }
+
+        public static void actualizarPractica(Practica practica, int codigoPractica)
+        {
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                //UPDATE table_name
+                //SET column1 = value1, column2 = value2, ...
+                //WHERE condition;
+                string consulta = "UPDATE PRACTICAS SET DESCRIPCION = @practicaMod, PRECIO = @precioMod WHERE ID_PRACTICA = @codigo";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@practicaMod", practica.DescripcionPractica);
+                cmd.Parameters.AddWithValue("@precioMod", practica.PrecioPractica);
+                cmd.Parameters.AddWithValue("@codigo", codigoPractica);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
                 cn.Open();
                 cmd.Connection = cn;
-
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
@@ -73,75 +110,46 @@ namespace obra_social_oscor.AccesoADatos
 
                 throw;
             }
-            finally
+
+            finally 
             {
                 cn.Close();
             }
         }
 
-        public static void EditarLocalidad(Localidad localidad, int codigoLoc)
+        public static void eliminarPractica(int codigoPractica) 
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE LOCALIDADES SET LOCALIDAD = @nombreLocalidad WHERE ID_LOCALIDAD = @codigoLoc";
+                string consulta = "DELETE FROM PRACTICAS WHERE ID_PRACTICA = @codigo";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreLocalidad", localidad.NombreLocalidad);
-                cmd.Parameters.AddWithValue("@codigoLoc", codigoLoc);
+                cmd.Parameters.AddWithValue("@codigo", codigoPractica);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
                 cn.Open();
                 cmd.Connection = cn;
-
                 cmd.ExecuteNonQuery();
+                
             }
             catch (Exception)
             {
 
                 throw;
             }
-            finally
+
+            finally 
             {
                 cn.Close();
             }
-        }
 
-        public static void EliminarLocalidad(int codigoLoc)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "DELETE FROM LOCALIDADES WHERE ID_LOCALIDAD = @codigoLoc";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codigoLoc", codigoLoc);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
         }
     }
 }
