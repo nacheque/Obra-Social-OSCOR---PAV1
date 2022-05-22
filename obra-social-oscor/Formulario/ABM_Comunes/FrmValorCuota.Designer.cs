@@ -221,6 +221,7 @@
             this.btnEliminarVC.TabIndex = 11;
             this.ttValorCuota.SetToolTip(this.btnEliminarVC, "Eliminar un valor de cuota");
             this.btnEliminarVC.UseVisualStyleBackColor = true;
+            this.btnEliminarVC.Click += new System.EventHandler(this.btnEliminarVC_Click);
             // 
             // btnEditarVC
             // 

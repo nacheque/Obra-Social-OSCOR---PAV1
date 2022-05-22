@@ -120,5 +120,38 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void EliminarVC(int idTipoAfiliado, int edadDesde)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM VALOR_CUOTA WHERE ID_TIPO_AFILIADO = @idTipoAfiliado AND EDAD_DESDE = @edadDesde";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@idTipoAfiliado", idTipoAfiliado);
+                cmd.Parameters.AddWithValue("@edadDesde", edadDesde);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
