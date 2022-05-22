@@ -148,7 +148,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
             TipoAfiliado tipoAfiliado = new TipoAfiliado();
             tipoAfiliado.CodigoTipoAfiliado = (int) cmb_tipo_afiliado.SelectedValue;
-            tipoAfiliado.DescripcionTipoAfiliado = cmb_tipo_afiliado.SelectedItem.ToString();
+            tipoAfiliado.DescripcionTipoAfiliado = cmb_tipo_afiliado.GetItemText(cmb_tipo_afiliado.SelectedItem);
 
             afiliado.TipoAfiliado = tipoAfiliado;
             
