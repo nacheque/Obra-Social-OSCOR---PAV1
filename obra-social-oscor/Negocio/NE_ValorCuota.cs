@@ -76,5 +76,17 @@ namespace obra_social_oscor.Negocio
                 }
             }
         }
+
+        public static void EliminarVC(int idTipoAfiliado, int edadDesde)
+        {
+            try
+            {
+                AD_ValorCuota.EliminarVC(idTipoAfiliado, edadDesde);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

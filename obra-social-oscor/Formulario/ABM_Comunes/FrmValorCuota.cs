@@ -253,5 +253,24 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 MessageBox.Show("Debe llenar todos los campos...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void btnEliminarVC_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que quiere eliminar el Valor seleccionado?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    NE_ValorCuota.EliminarVC(globalIdTipoAfiliado, globalEdadDesde);
+                    MessageBox.Show("Valor de Cuota eliminado con exito!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReiniciarFormulario();
+                    CargarGrilla();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo eliminar el valor...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
