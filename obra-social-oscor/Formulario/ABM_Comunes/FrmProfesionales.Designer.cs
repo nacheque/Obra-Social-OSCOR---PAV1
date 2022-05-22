@@ -205,6 +205,7 @@
             this.btn_editar_profesional.TabIndex = 94;
             this.tt_profesionales.SetToolTip(this.btn_editar_profesional, "Editar Profesional");
             this.btn_editar_profesional.UseVisualStyleBackColor = true;
+            this.btn_editar_profesional.Click += new System.EventHandler(this.btn_editar_profesional_Click);
             // 
             // btn_borrar_profesional
             // 

@@ -117,22 +117,23 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             return resultado;
         }
 
-        private bool ExisteEnGrillaEditar(string nombre, string apellido, string fechaNacimiento, float monto, int id_tipo_afiliado)
+        private bool ExisteEnGrillaEditar(string nombre, string apellido, string fechaNacimiento, int numeroAfiliado)
         {
             bool resultado = false;
 
             for (int i = 0; i < grd_Afi.Rows.Count; i++)
             {
+                if (int.Parse(grd_Afi.Rows[i].Cells["nro_afiliado"].Value.ToString()) == numeroAfiliado) {
+                    continue;
+                }
                 if (grd_Afi.Rows[i].Cells["Nombre"].Value.ToString().Equals(nombre, StringComparison.OrdinalIgnoreCase)
                     && grd_Afi.Rows[i].Cells["Apellido"].Value.ToString().Equals(apellido, StringComparison.OrdinalIgnoreCase)
-                    && grd_Afi.Rows[i].Cells["fecha_nacimiento"].Value.ToString().Equals(fechaNacimiento, StringComparison.OrdinalIgnoreCase)
-                    && float.Parse(grd_Afi.Rows[i].Cells["monto_inscripcion"].Value.ToString()) == monto
-                    && int.Parse(grd_Afi.Rows[i].Cells["CodigoTipoAfiliado"].Value.ToString()) == id_tipo_afiliado)
+                    && grd_Afi.Rows[i].Cells["fecha_nacimiento"].Value.ToString().Equals(fechaNacimiento, StringComparison.OrdinalIgnoreCase))
                 {
                     resultado = true;
                     break;
                 }
-            }
+            }           
 
             return resultado;
         }
@@ -242,8 +243,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             if (!txt_apellido_afiliado.Text.Equals("") && !txt_nombre_afiliado.Text.Equals("") &&
                 !txt_monto_afiliado.Text.Equals("") && !dtp_fecha_nacimiento.Text.Equals("") && cmb_tipo_afiliado.SelectedIndex != -1)
             {
-                if (!ExisteEnGrillaEditar(txt_nombre_afiliado.Text, txt_apellido_afiliado.Text, dtp_fecha_nacimiento.Value.Date.ToShortDateString(),
-                    float.Parse(txt_monto_afiliado.Text), (int) cmb_tipo_afiliado.SelectedValue))
+                if (!ExisteEnGrillaEditar(txt_nombre_afiliado.Text, txt_apellido_afiliado.Text, dtp_fecha_nacimiento.Value.Date.ToShortDateString(), global_numeroAfiliado))
                 {
                     Afiliado afiliado = ObtenerDatosAfiliado();
 

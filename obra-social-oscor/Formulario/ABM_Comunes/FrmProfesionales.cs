@@ -157,6 +157,31 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             return mensajeError;
         }
 
+        private string ExisteEnGrillaEditar(string calle, string numeroCalle, string telefono, int matricula)
+        {
+            string mensajeError = "";
+
+            for (int i = 0; i < grd_Profesionales.Rows.Count; i++)
+            {
+                if (int.Parse(grd_Profesionales.Rows[i].Cells["matricula"].Value.ToString()) == matricula) {
+                    continue;
+                }
+                if (grd_Profesionales.Rows[i].Cells["telefono"].Value.ToString().Equals(telefono))
+                {
+                    mensajeError = "Ya existe un profesional con el mismo telefono";
+                    break;
+                }
+                else if (grd_Profesionales.Rows[i].Cells["Calle"].Value.ToString().Equals(calle, StringComparison.OrdinalIgnoreCase)
+                    && grd_Profesionales.Rows[i].Cells["nro_calle"].Value.ToString().Equals(numeroCalle))
+                {
+                    mensajeError = "Ya existe un profesional con esa direccion";
+                    break;
+                }
+            }
+
+            return mensajeError;
+        }
+
         private Profesional ObtenerDatosProfesional()
         {
             Profesional profesional = new Profesional();
@@ -287,6 +312,39 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                 {
                     MessageBox.Show("Error al eliminar profesional...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btn_editar_profesional_Click(object sender, EventArgs e)
+        {
+            if (!txt_apellido_profesional.Text.Equals("") && !txt_nombre_profesional.Text.Equals("") &&
+               !txt_calle_profesional.Text.Equals("") && !txt_nro_calle_prof.Text.Equals("") && !msk_txt_telefono_prof.Text.Equals(""))
+            {
+                string mensajeError = ExisteEnGrillaEditar(txt_calle_profesional.Text, txt_nro_calle_prof.Text, msk_txt_telefono_prof.Text, global_matriculaProfesional);
+                if (mensajeError == "")
+                {
+                    Profesional profesional = ObtenerDatosProfesional();
+                    try
+                    {
+                        NE_Profesional.EditarProfesional(profesional, global_matriculaProfesional);
+                        MessageBox.Show("Profesional editado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Error al editar Profesional...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(mensajeError, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos para editar un profesional", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

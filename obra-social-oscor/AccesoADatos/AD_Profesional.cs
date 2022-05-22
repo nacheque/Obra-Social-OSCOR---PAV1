@@ -89,6 +89,46 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static void EditarProfesional(Profesional profesional, int matricula)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "UPDATE PROFESIONALES SET APELLIDO = @apellido, NOMBRE = @nombre, CALLE = @calle, NUMERO = @numero, " +
+                    "ID_BARRIO = @id_barrio, ID_LOCALIDAD = @id_localidad, TELEFONO = @telefono WHERE MATRICULA = @matricula";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@matricula", matricula);
+                cmd.Parameters.AddWithValue("@apellido", profesional.Apellido);
+                cmd.Parameters.AddWithValue("@nombre", profesional.Nombre);
+                cmd.Parameters.AddWithValue("@calle", profesional.Calle);
+                cmd.Parameters.AddWithValue("@numero", profesional.NumeroCalle);
+                cmd.Parameters.AddWithValue("@id_barrio", profesional.Barrio.IdBarrio);
+                cmd.Parameters.AddWithValue("@id_localidad", profesional.Localidad.IdLocalidad);
+                cmd.Parameters.AddWithValue("@telefono", profesional.Telefono);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
 
         public static void EliminarProfesional(int matricula)
         {

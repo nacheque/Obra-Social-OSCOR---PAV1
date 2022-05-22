@@ -63,6 +63,18 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static void EditarProfesional(Profesional profesional, int matricula)
+        {
+            try
+            {
+                AD_Profesional.EditarProfesional(profesional, matricula);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static void EliminarProfesional(int matricula)
         {
             try
