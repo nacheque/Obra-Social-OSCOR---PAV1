@@ -49,17 +49,21 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
+    <Compile Include="AccesoADatos\AD_Centro.cs" />
     <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_Profesional.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
     <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
+    <Compile Include="AccesoADatos\AD_EspecialidadPorCentro.cs" />
     <Compile Include="Entidades\Afiliado.cs" />
     <Compile Include="AccesoADatos\AD_Localidad.cs" />
     <Compile Include="AccesoADatos\AD_Practica.cs" />
     <Compile Include="Entidades\Barrio.cs" />
+    <Compile Include="Entidades\Centro.cs" />
     <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
+    <Compile Include="Entidades\EspecialidadPorCentro.cs" />
     <Compile Include="Entidades\Profesional.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
     <Compile Include="Entidades\ValorCuota.cs" />
@@ -125,11 +129,11 @@
     <Compile Include="Formulario\ABM_Procesos\Atencion.Designer.cs">
       <DependentUpon>Atencion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\Centro.cs">
+    <Compile Include="Formulario\ABM_Procesos\FrmCentro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\Centro.Designer.cs">
-      <DependentUpon>Centro.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Procesos\FrmCentro.Designer.cs">
+      <DependentUpon>FrmCentro.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\CuotasPagas.cs">
       <SubType>Form</SubType>
@@ -149,11 +153,14 @@
     <Compile Include="Formulario\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ComboBoxItem.cs" />
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
+    <Compile Include="Negocio\NE_Centro.cs" />
     <Compile Include="Negocio\NE_Cobertura.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
+    <Compile Include="Negocio\NE_EspecialidadPorCentro.cs" />
     <Compile Include="Negocio\NE_Profesional.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
@@ -191,8 +198,8 @@
     <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
       <DependentUpon>Atencion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Procesos\Centro.resx">
-      <DependentUpon>Centro.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\FrmCentro.resx">
+      <DependentUpon>FrmCentro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\CuotasPagas.resx">
       <DependentUpon>CuotasPagas.cs</DependentUpon>
