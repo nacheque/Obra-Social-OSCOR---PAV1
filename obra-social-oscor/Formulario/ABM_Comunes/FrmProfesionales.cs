@@ -97,7 +97,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al obtener listado de barrios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener listado de localidades", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -193,11 +193,11 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
             Barrio barrio = new Barrio();
             barrio.IdBarrio = (int)cmb_barrios_prof.SelectedValue;
-            barrio.NombreBarrio = cmb_barrios_prof.SelectedItem.ToString();
+            barrio.NombreBarrio = cmb_barrios_prof.GetItemText(cmb_barrios_prof.SelectedItem);
 
             Localidad localidad = new Localidad();
             localidad.IdLocalidad = (int)cmb_localidad_prof.SelectedValue;
-            localidad.NombreLocalidad = cmb_localidad_prof.SelectedItem.ToString();
+            localidad.NombreLocalidad = cmb_localidad_prof.GetItemText(cmb_localidad_prof.SelectedItem);
 
             profesional.Barrio = barrio;
             profesional.Localidad = localidad;
