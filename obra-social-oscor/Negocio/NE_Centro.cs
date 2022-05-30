@@ -51,7 +51,7 @@ namespace obra_social_oscor.Negocio
             {
                 throw;
             }
-        }
+        }       
 
         public static void AgregarCentro(Centro centro, List<EspecialidadPorCentro> especialidadesPorCentro)
         {

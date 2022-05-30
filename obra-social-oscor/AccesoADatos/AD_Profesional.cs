@@ -50,6 +50,49 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerProfesionalesPorEspYCen(int codCentro, int codEspecialidad)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT P.MATRICULA, P.APELLIDO + ', ' + P.NOMBRE AS NOMBRE_COMPLETO " +
+                                  " FROM  PROFESIONALES P " +
+                                  " JOIN PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD PCE " +
+                                  " ON P.MATRICULA = PCE.MATRICULA " +
+                                  " WHERE PCE.COD_CENTRO = @cod_centro " +
+                                  " AND PCE.COD_ESPECIALIDAD = @cod_especialidad ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@cod_centro", codCentro);
+                cmd.Parameters.AddWithValue("@cod_especialidad", codEspecialidad);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarProfesional(Profesional profesional)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
