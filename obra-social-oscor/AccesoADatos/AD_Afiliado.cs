@@ -52,6 +52,57 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerAfiliadoBusqueda(string apellido, string nombre, int numeroAfiliado)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Clear();
+
+                string consulta = "SELECT NRO_AFILIADO, APELLIDO + ', ' + NOMBRE AS NOMBRE_COMPLETO " +
+                    " FROM AFILIADOS " +
+                    " WHERE 1=1 ";
+
+                if (numeroAfiliado > 0) {
+                    consulta = consulta + " AND NRO_AFILIADO = @numero_afiliado ";
+                    cmd.Parameters.AddWithValue("@numero_afiliado", numeroAfiliado);
+                }
+                if (apellido != null && !apellido.Equals("")) {
+                    consulta = consulta + " AND APELLIDO LIKE @apellido ";
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                }
+                if (nombre != null && !nombre.Equals(""))
+                {
+                    consulta = consulta + " AND NOMBRE LIKE @nombre ";
+                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                }               
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarAfiliado(Afiliado afiliado)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

@@ -123,11 +123,11 @@
     <Compile Include="Formulario\ABM_Comunes\FrmValorCuota.Designer.cs">
       <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\Atencion.cs">
+    <Compile Include="Formulario\ABM_Procesos\FrmAtencion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\Atencion.Designer.cs">
-      <DependentUpon>Atencion.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Procesos\FrmAtencion.Designer.cs">
+      <DependentUpon>FrmAtencion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\FrmCentro.cs">
       <SubType>Form</SubType>
@@ -153,7 +153,6 @@
     <Compile Include="Formulario\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ComboBoxItem.cs" />
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Barrio.cs" />
@@ -195,8 +194,8 @@
     <EmbeddedResource Include="Formulario\ABM_Comunes\FrmValorCuota.resx">
       <DependentUpon>FrmValorCuota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Procesos\Atencion.resx">
-      <DependentUpon>Atencion.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\FrmAtencion.resx">
+      <DependentUpon>FrmAtencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\FrmCentro.resx">
       <DependentUpon>FrmCentro.cs</DependentUpon>
