@@ -51,31 +51,7 @@ namespace obra_social_oscor.Negocio
             {
                 throw;
             }
-        }
-
-        public static List<Centro> obtenerListadoCentrosConEspYProf()
-        {
-            try
-            {
-                List<Centro> centros = new List<Centro>();
-                DataTable tabla = AD_Centro.ObtenerCentrosConEspYProf();
-
-                foreach (DataRow fila in tabla.Rows)
-                {
-                    Centro centro = new Centro();
-                    centro.CodigoCentro = int.Parse(fila[0].ToString());
-                    centro.Denominacion = fila[1].ToString();
-
-                    centros.Add(centro);
-                }
-
-                return centros;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
+        }       
 
         public static void AgregarCentro(Centro centro, List<EspecialidadPorCentro> especialidadesPorCentro)
         {
