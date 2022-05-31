@@ -278,6 +278,7 @@ namespace obra_social_oscor.Formulario.ABM
             cmb_loc_centro.SelectedIndex = 0;
             cmb_propio.SelectedIndex = 0;
             btn_eliminar_esp.Enabled = false;
+            btn_agregar_centro.Enabled = true;
             grd_esp_centro.Rows.Clear();            
         }
 
@@ -359,7 +360,8 @@ namespace obra_social_oscor.Formulario.ABM
                 global_cod_centro_seleccionado = int.Parse(filaSeleccionada.Cells["cod_centro"].Value.ToString());
                 ReiniciarFormulario();
 
-                btn_eliminar_esp.Enabled = true;                
+                btn_eliminar_esp.Enabled = true;
+                btn_agregar_centro.Enabled = false;
 
                 Centro centro = new Centro();
                 centro.CodigoCentro = int.Parse(filaSeleccionada.Cells["cod_centro"].Value.ToString());

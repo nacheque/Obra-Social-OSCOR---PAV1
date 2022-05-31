@@ -52,6 +52,38 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static int ObtenerIdTipoAfiliado(int idAfiliado)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT ID_TIPO_AFILIADO FROM AFILIADOS WHERE NRO_AFILIADO = @id_afiliado";                   
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_afiliado", idAfiliado);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                int resultado = int.Parse(cmd.ExecuteScalar().ToString());
+                return resultado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static DataTable ObtenerAfiliadoBusqueda(string apellido, string nombre, int numeroAfiliado)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
