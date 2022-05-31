@@ -53,6 +53,40 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static int ObtenerCoberturaPorTipoAfiliadoYPractica(int idPractica, int idTipoAfiliado)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT PORC_COBERTURA FROM COBERTURAS WHERE ID_TIPO_AFILIADO = @id_tipo_afiliado AND ID_PRACTICA = @id_practica";                   
+                
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_tipo_afiliado", idTipoAfiliado);
+                cmd.Parameters.AddWithValue("@id_practica", idPractica);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                int resultado = int.Parse(cmd.ExecuteScalar().ToString());
+                return resultado;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarCobetura(Cobertura cobertura)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

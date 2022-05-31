@@ -45,6 +45,38 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static float obtenerPrecioPorIdPractica(int idPractica)
+        {
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT PRECIO FROM PRACTICAS WHERE ID_PRACTICA = @id_practica";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_practica", idPractica);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                float resultado = float.Parse(cmd.ExecuteScalar().ToString());
+                return resultado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void agregarPractica(Practica practica)
         {
             string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

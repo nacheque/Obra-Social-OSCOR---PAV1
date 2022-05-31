@@ -53,7 +53,7 @@
             this.cmb_prof_atencion = new System.Windows.Forms.ComboBox();
             this.cmb_esp_atencion = new System.Windows.Forms.ComboBox();
             this.cmb_centro_atencion = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grd_atenciones = new System.Windows.Forms.DataGridView();
             this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +69,10 @@
             this.btn_agregar_atencion = new System.Windows.Forms.Button();
             this.btn_limpiar_atencion = new System.Windows.Forms.Button();
             this.btn_salir_atencion = new System.Windows.Forms.Button();
+            this.btn_editar_atencion = new System.Windows.Forms.Button();
             this.grp_atenciones.SuspendLayout();
             this.grp_buscar_afi_atencion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_atenciones)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_atenciones
@@ -91,7 +92,7 @@
             this.grp_atenciones.Controls.Add(this.cmb_centro_atencion);
             this.grp_atenciones.Location = new System.Drawing.Point(12, 12);
             this.grp_atenciones.Name = "grp_atenciones";
-            this.grp_atenciones.Size = new System.Drawing.Size(1096, 198);
+            this.grp_atenciones.Size = new System.Drawing.Size(1145, 198);
             this.grp_atenciones.TabIndex = 0;
             this.grp_atenciones.TabStop = false;
             this.grp_atenciones.Text = "Datos";
@@ -110,7 +111,7 @@
             this.grp_buscar_afi_atencion.Controls.Add(this.lbl_apellido_afi_atencion);
             this.grp_buscar_afi_atencion.Location = new System.Drawing.Point(356, 19);
             this.grp_buscar_afi_atencion.Name = "grp_buscar_afi_atencion";
-            this.grp_buscar_afi_atencion.Size = new System.Drawing.Size(689, 117);
+            this.grp_buscar_afi_atencion.Size = new System.Drawing.Size(780, 117);
             this.grp_buscar_afi_atencion.TabIndex = 100;
             this.grp_buscar_afi_atencion.TabStop = false;
             this.grp_buscar_afi_atencion.Text = "Buscar Afiliado";
@@ -332,12 +333,12 @@
             this.cmb_centro_atencion.TabIndex = 85;
             this.cmb_centro_atencion.SelectionChangeCommitted += new System.EventHandler(this.cmb_centro_atencion_SelectionChangeCommitted);
             // 
-            // dataGridView1
+            // grd_atenciones
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grd_atenciones.AllowUserToAddRows = false;
+            this.grd_atenciones.AllowUserToDeleteRows = false;
+            this.grd_atenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_atenciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro_afiliado,
             this.afiliado,
             this.fecha_hora,
@@ -350,11 +351,12 @@
             this.importe,
             this.id_practica,
             this.practica});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1096, 262);
-            this.dataGridView1.TabIndex = 1;
+            this.grd_atenciones.Location = new System.Drawing.Point(12, 226);
+            this.grd_atenciones.Name = "grd_atenciones";
+            this.grd_atenciones.ReadOnly = true;
+            this.grd_atenciones.Size = new System.Drawing.Size(1145, 262);
+            this.grd_atenciones.TabIndex = 1;
+            this.grd_atenciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_atenciones_CellClick);
             // 
             // nro_afiliado
             // 
@@ -438,6 +440,7 @@
             this.practica.HeaderText = "Practica";
             this.practica.Name = "practica";
             this.practica.ReadOnly = true;
+            this.practica.Width = 150;
             // 
             // btn_agregar_atencion
             // 
@@ -448,36 +451,49 @@
             this.btn_agregar_atencion.Size = new System.Drawing.Size(50, 50);
             this.btn_agregar_atencion.TabIndex = 96;
             this.btn_agregar_atencion.UseVisualStyleBackColor = true;
+            this.btn_agregar_atencion.Click += new System.EventHandler(this.btn_agregar_atencion_Click);
             // 
             // btn_limpiar_atencion
             // 
-            this.btn_limpiar_atencion.Location = new System.Drawing.Point(96, 540);
+            this.btn_limpiar_atencion.Location = new System.Drawing.Point(152, 540);
             this.btn_limpiar_atencion.Name = "btn_limpiar_atencion";
             this.btn_limpiar_atencion.Size = new System.Drawing.Size(112, 23);
             this.btn_limpiar_atencion.TabIndex = 98;
             this.btn_limpiar_atencion.Text = "Reiniciar Formulario";
             this.btn_limpiar_atencion.UseVisualStyleBackColor = true;
+            this.btn_limpiar_atencion.Click += new System.EventHandler(this.btn_limpiar_atencion_Click);
             // 
             // btn_salir_atencion
             // 
             this.btn_salir_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir_atencion.BackgroundImage")));
             this.btn_salir_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_salir_atencion.Location = new System.Drawing.Point(1050, 513);
+            this.btn_salir_atencion.Location = new System.Drawing.Point(1098, 513);
             this.btn_salir_atencion.Name = "btn_salir_atencion";
             this.btn_salir_atencion.Size = new System.Drawing.Size(50, 50);
             this.btn_salir_atencion.TabIndex = 99;
             this.btn_salir_atencion.UseVisualStyleBackColor = true;
             this.btn_salir_atencion.Click += new System.EventHandler(this.btn_salir_atencion_Click);
             // 
+            // btn_editar_atencion
+            // 
+            this.btn_editar_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_editar_atencion.BackgroundImage")));
+            this.btn_editar_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_editar_atencion.Location = new System.Drawing.Point(68, 513);
+            this.btn_editar_atencion.Name = "btn_editar_atencion";
+            this.btn_editar_atencion.Size = new System.Drawing.Size(50, 50);
+            this.btn_editar_atencion.TabIndex = 100;
+            this.btn_editar_atencion.UseVisualStyleBackColor = true;
+            // 
             // frm_Atenciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 575);
+            this.ClientSize = new System.Drawing.Size(1160, 575);
+            this.Controls.Add(this.btn_editar_atencion);
             this.Controls.Add(this.btn_salir_atencion);
             this.Controls.Add(this.btn_limpiar_atencion);
             this.Controls.Add(this.btn_agregar_atencion);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grd_atenciones);
             this.Controls.Add(this.grp_atenciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Atenciones";
@@ -488,7 +504,7 @@
             this.grp_atenciones.PerformLayout();
             this.grp_buscar_afi_atencion.ResumeLayout(false);
             this.grp_buscar_afi_atencion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_atenciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,19 +525,7 @@
         private System.Windows.Forms.Label lbl_importe_atencion;
         private System.Windows.Forms.MaskedTextBox msk_fecha_aten;
         private System.Windows.Forms.Label lbl_fecha_atenc;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nro_afiliado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn afiliado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_centro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn centro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_especialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profesional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_practica;
-        private System.Windows.Forms.DataGridViewTextBoxColumn practica;
+        private System.Windows.Forms.DataGridView grd_atenciones;
         private System.Windows.Forms.Button btn_agregar_atencion;
         private System.Windows.Forms.Button btn_limpiar_atencion;
         private System.Windows.Forms.Button btn_salir_atencion;
@@ -535,5 +539,18 @@
         private System.Windows.Forms.TextBox txt_apellido_afi_atencion;
         private System.Windows.Forms.ComboBox cmb_resultados;
         private System.Windows.Forms.Button btn_limpiar_filtros_aten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn afiliado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_centro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn centro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profesional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_practica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn practica;
+        private System.Windows.Forms.Button btn_editar_atencion;
     }
 }

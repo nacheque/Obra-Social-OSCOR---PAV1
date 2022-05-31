@@ -16,6 +16,7 @@ namespace obra_social_oscor.Entidades
         private Barrio barrio;
         private Localidad localidad;
         private string telefono;
+        private string nombreCompleto;
 
         public int Matricula
         {
@@ -63,6 +64,12 @@ namespace obra_social_oscor.Entidades
         {
             get => telefono;
             set => telefono = value;
+        }
+
+        public string NombreCompleto
+        {
+            get => nombreCompleto;
+            set => nombreCompleto = value;
         }
 
     }

@@ -15,6 +15,7 @@ namespace obra_social_oscor.Entidades
         private TipoAfiliado tipoAfiliado;
         private DateTime fechaInscripcion;
         private float montoInscripcion;
+        private string nombreCompleto;
 
         public Afiliado() { }
 
@@ -58,6 +59,12 @@ namespace obra_social_oscor.Entidades
         {
             get => montoInscripcion;
             set => montoInscripcion = value;
+        }
+
+        public string NombreCompleto
+        {
+            get => nombreCompleto;
+            set => nombreCompleto = value;
         }
     }
 }
