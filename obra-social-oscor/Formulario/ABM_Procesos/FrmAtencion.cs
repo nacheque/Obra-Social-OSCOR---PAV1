@@ -236,7 +236,7 @@ namespace obra_social_oscor.Formulario.ABM
                 try
                 {
                     Atencion atencion = ObtenerDatosAtencion();
-                    if (atencion.Importe != 0)
+                    if (atencion.Importe >= 0)
                     {
                         NE_Atencion.AgregarAtencion(atencion);
                         MessageBox.Show("Atencion agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -317,7 +317,7 @@ namespace obra_social_oscor.Formulario.ABM
                     return resultado = precioPractica;
                 }
                 else {
-                    return 0;
+                    return -1;
                 }                    
             }
             catch (Exception)
