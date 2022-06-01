@@ -85,6 +85,42 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerCentrosConEspSinProf()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT COD_CENTRO, DENOMINACION FROM CENTROS\n" +
+                    "              WHERE COD_CENTRO NOT IN (SELECT COD_CENTRO FROM PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD)\n" +
+                    "              AND COD_CENTRO IN (SELECT COD_CENTRO FROM ESPECIALIDADES_POR_CENTROS)";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static int ObtenerUltimoIdCentro()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
