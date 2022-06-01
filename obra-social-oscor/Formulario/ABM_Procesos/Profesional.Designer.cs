@@ -41,6 +41,11 @@
             this.btnReiniciarFormulario = new System.Windows.Forms.Button();
             this.gdrProfXCentroXEsp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.CodCentro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCentro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProfesional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gdrProfXCentroXEsp)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +105,7 @@
             this.cmbProfesionales.Name = "cmbProfesionales";
             this.cmbProfesionales.Size = new System.Drawing.Size(368, 21);
             this.cmbProfesionales.TabIndex = 5;
+            this.cmbProfesionales.SelectionChangeCommitted += new System.EventHandler(this.cmbProfesionales_SelectionChangeCommitted_1);
             // 
             // btnAgregarPCE
             // 
@@ -110,6 +116,7 @@
             this.btnAgregarPCE.Size = new System.Drawing.Size(56, 49);
             this.btnAgregarPCE.TabIndex = 6;
             this.btnAgregarPCE.UseVisualStyleBackColor = true;
+            this.btnAgregarPCE.Click += new System.EventHandler(this.btnAgregarPCE_Click_1);
             // 
             // btnEditarPCE
             // 
@@ -140,6 +147,7 @@
             this.btnReiniciarFormulario.TabIndex = 9;
             this.btnReiniciarFormulario.Text = "Reiniciar Formulario";
             this.btnReiniciarFormulario.UseVisualStyleBackColor = true;
+            this.btnReiniciarFormulario.Click += new System.EventHandler(this.btnReiniciarFormulario_Click_1);
             // 
             // gdrProfXCentroXEsp
             // 
@@ -147,6 +155,11 @@
             this.gdrProfXCentroXEsp.AllowUserToDeleteRows = false;
             this.gdrProfXCentroXEsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrProfXCentroXEsp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodCentro,
+            this.NombreCentro,
+            this.CodEsp,
+            this.NombreEsp,
+            this.Matricula,
             this.NombreProfesional});
             this.gdrProfXCentroXEsp.Location = new System.Drawing.Point(53, 178);
             this.gdrProfXCentroXEsp.Name = "gdrProfXCentroXEsp";
@@ -159,9 +172,44 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(53, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 13);
+            this.label1.Size = new System.Drawing.Size(256, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Profesionales para la especialidad seleccionada";
+            this.label1.Text = "Profesionales Asignados a la Especialidad del Centro";
+            // 
+            // CodCentro
+            // 
+            this.CodCentro.HeaderText = "CodigoCentro";
+            this.CodCentro.Name = "CodCentro";
+            this.CodCentro.ReadOnly = true;
+            this.CodCentro.Visible = false;
+            // 
+            // NombreCentro
+            // 
+            this.NombreCentro.HeaderText = "NombreCentro";
+            this.NombreCentro.Name = "NombreCentro";
+            this.NombreCentro.ReadOnly = true;
+            this.NombreCentro.Visible = false;
+            // 
+            // CodEsp
+            // 
+            this.CodEsp.HeaderText = "CodigoEspecialidad";
+            this.CodEsp.Name = "CodEsp";
+            this.CodEsp.ReadOnly = true;
+            this.CodEsp.Visible = false;
+            // 
+            // NombreEsp
+            // 
+            this.NombreEsp.HeaderText = "NombreEsp";
+            this.NombreEsp.Name = "NombreEsp";
+            this.NombreEsp.ReadOnly = true;
+            this.NombreEsp.Width = 200;
+            // 
+            // Matricula
+            // 
+            this.Matricula.HeaderText = "Matricula";
+            this.Matricula.Name = "Matricula";
+            this.Matricula.ReadOnly = true;
+            this.Matricula.Visible = false;
             // 
             // NombreProfesional
             // 
@@ -213,7 +261,12 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnReiniciarFormulario;
         private System.Windows.Forms.DataGridView gdrProfXCentroXEsp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProfesional;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodCentro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCentro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodEsp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEsp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProfesional;
     }
 }

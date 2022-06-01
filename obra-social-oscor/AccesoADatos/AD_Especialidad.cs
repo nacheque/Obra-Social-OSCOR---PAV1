@@ -34,7 +34,7 @@ namespace obra_social_oscor.AccesoADatos
                 da.Fill(tabla);
 
                 return tabla;
-               
+
             }
             catch (Exception)
             {
@@ -85,7 +85,7 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
-        public static DataTable ObtenerEspecialidadesPorCentro2(int codCentro)
+        public static DataTable ObtenerEspecialidadesPorCentroSinProf(int codCentro)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -221,5 +221,5 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
     }
-    
+
 }

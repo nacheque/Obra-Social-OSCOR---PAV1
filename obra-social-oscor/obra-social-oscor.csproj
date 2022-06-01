@@ -54,6 +54,7 @@
     <Compile Include="AccesoADatos\AD_Cobertura.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_Profesional.cs" />
+    <Compile Include="AccesoADatos\AD_ProfXCentroXEsp.cs" />
     <Compile Include="AccesoADatos\AD_TipoAfiliado.cs" />
     <Compile Include="AccesoADatos\AD_ValorCuota.cs" />
     <Compile Include="AccesoADatos\AD_EspecialidadPorCentro.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\EspecialidadPorCentro.cs" />
     <Compile Include="Entidades\Profesional.cs" />
+    <Compile Include="Entidades\ProfesionalPorCentroPorEspecialidad.cs" />
     <Compile Include="Entidades\TipoAfiliado.cs" />
     <Compile Include="Entidades\ValorCuota.cs" />
     <Compile Include="Formulario\ABM_Comunes\FrmAfiliado.cs">
@@ -164,6 +166,7 @@
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\NE_EspecialidadPorCentro.cs" />
     <Compile Include="Negocio\NE_Profesional.cs" />
+    <Compile Include="Negocio\NE_ProfXCentroXEsp.cs" />
     <Compile Include="Negocio\Ne_TipoAfiliado.cs" />
     <Compile Include="Negocio\NE_Localidades.cs" />
     <Compile Include="Negocio\NE_Practica.cs" />
