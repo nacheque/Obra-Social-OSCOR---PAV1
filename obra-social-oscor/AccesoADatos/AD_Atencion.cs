@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,7 +97,7 @@ namespace obra_social_oscor.AccesoADatos
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            CultureInfo provider = CultureInfo.InvariantCulture;
+
             string [] fechaHoraSplit = fechaHora.Replace('/', ' ').Split(' ');
             string param_fecha_hora = fechaHoraSplit[2] + "-" + fechaHoraSplit[1] + "-" + fechaHoraSplit[0] + " " + fechaHoraSplit[3];          
 
