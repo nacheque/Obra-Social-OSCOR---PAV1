@@ -1,4 +1,6 @@
 ﻿using obra_social_oscor.AccesoADatos;
+using obra_social_oscor.Entidades;
+using obra_social_oscor.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +55,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             try
             {
-                cmbEspecialidades.DataSource = AD_Especialidad.ObtenerEspecialidadesPorCentro2((int)cmbCentros.SelectedValue);
+                cmbEspecialidades.DataSource = AD_Especialidad.ObtenerEspecialidadesPorCentroSinProf((int)cmbCentros.SelectedValue);
                 cmbEspecialidades.DisplayMember = "NOMBRE";
                 cmbEspecialidades.ValueMember = "COD_ESPECIALIDAD";
                 cmbEspecialidades.SelectedIndex = -1;
@@ -68,7 +70,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             CargarComboProfesionales();
             cmbProfesionales.Enabled = true;
-            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, (int)cmbEspecialidades.SelectedValue);
+            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
         }
 
         private void CargarComboProfesionales()
@@ -87,15 +89,29 @@ namespace obra_social_oscor.Formulario.ABM
             }
         }
 
-        private void CargarGrillaProfXEsp(int codigoCentro, int codigoEspecialidad)
+        private void CargarGrillaProfXEsp(int codigoCentro, string nombreCentro)
         {
             try
             {
-                gdrProfXCentroXEsp.DataSource = AD_Profesional.ObtenerProfesionalesPorEspYCen(codigoCentro, codigoEspecialidad);
+                Centro centro = new Centro();
+                centro.CodigoCentro = codigoCentro;
+                centro.Denominacion = nombreCentro;
+
+                List<ProfesionalPorCentroPorEspecialidad> pces = NE_ProfXCentroXEsp.ObtenerListaDeProfXEspDeCentro(centro);
+                for (int i = 0; i < pces.Count; i++)
+                {
+                    gdrProfXCentroXEsp.Rows.Add();
+                    gdrProfXCentroXEsp.Rows[i].Cells[0].Value = pces[i].Centro.CodigoCentro;
+                    gdrProfXCentroXEsp.Rows[i].Cells[1].Value = pces[i].Centro.Denominacion;
+                    gdrProfXCentroXEsp.Rows[i].Cells[2].Value = pces[i].Especialidad.CodigoEspecialidad;
+                    gdrProfXCentroXEsp.Rows[i].Cells[3].Value = pces[i].Especialidad.NombreEspecialidad;
+                    gdrProfXCentroXEsp.Rows[i].Cells[4].Value = pces[i].Profesional.Matricula;
+                    gdrProfXCentroXEsp.Rows[i].Cells[5].Value = pces[i].Profesional.NombreCompleto;
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al obtener profesionales...");
+                MessageBox.Show("Error al obtener listado de profesionales...");
             }
         }
 
@@ -103,5 +119,83 @@ namespace obra_social_oscor.Formulario.ABM
         {
             this.Close();
         }
+
+        //private void btnAgregarPCE_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        ProfesionalPorCentroPorEspecialidad pce = ObtenerDatosPCE();
+        //        NE_ProfXCentroXEsp.ArgegarProfesionalACentroConEspecialidad(pce);
+        //        MessageBox.Show("Profesional asignado con exito...");
+        //        CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error al asignar profesional...");
+        //    }
+        //}
+
+
+        private void btnAgregarPCE_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ProfesionalPorCentroPorEspecialidad pce = ObtenerDatosPCE();
+                NE_ProfXCentroXEsp.ArgegarProfesionalACentroConEspecialidad(pce);
+                MessageBox.Show("Profesional asignado con exito...");
+                CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al asignar profesional...");
+            }
+        }
+
+        //private void cmbProfesionales_SelectionChangeCommitted(object sender, EventArgs e)
+        //{
+        //    btnAgregarPCE.Enabled = true;
+        //}
+
+        private void cmbProfesionales_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            btnAgregarPCE.Enabled = true;
+        }
+
+        private ProfesionalPorCentroPorEspecialidad ObtenerDatosPCE()
+        {
+            Centro centro = new Centro();
+            centro.CodigoCentro = (int)cmbCentros.SelectedValue;
+
+            Especialidad especialidad = new Especialidad();
+            especialidad.CodigoEspecialidad = (int)cmbEspecialidades.SelectedValue;
+
+            Profesional profesional = new Profesional();
+            profesional.Matricula = (int)cmbProfesionales.SelectedValue;
+
+            ProfesionalPorCentroPorEspecialidad pce = new ProfesionalPorCentroPorEspecialidad();
+            pce.Centro = centro;
+            pce.Especialidad = especialidad;
+            pce.Profesional = profesional;
+
+            return pce;
+
+        }
+
+        private void ReiniciarFormulario()
+        {
+            cmbCentros.SelectedIndex = -1;
+            cmbCentros.Enabled = true;
+            cmbEspecialidades.SelectedIndex = -1;
+            cmbEspecialidades.Enabled = false;
+            cmbProfesionales.SelectedIndex = -1;
+            cmbProfesionales.Enabled = false;
+        }
+
+        private void btnReiniciarFormulario_Click_1(object sender, EventArgs e)
+        {
+            ReiniciarFormulario();
+        }
+
+        
     }
 }
