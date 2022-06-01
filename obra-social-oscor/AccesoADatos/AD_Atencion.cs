@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,49 @@ namespace obra_social_oscor.AccesoADatos
                 cmd.Parameters.AddWithValue("@matricula", atencion.Profesional.Matricula);
                 cmd.Parameters.AddWithValue("@importe", atencion.Importe);
                 cmd.Parameters.AddWithValue("@id_practica", atencion.Practica.CodigoPractica);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void EditarAtencion(Atencion atencion, int nroAfiliado, string fechaHora)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            string [] fechaHoraSplit = fechaHora.Replace('/', ' ').Split(' ');
+            string param_fecha_hora = fechaHoraSplit[2] + "-" + fechaHoraSplit[1] + "-" + fechaHoraSplit[0] + " " + fechaHoraSplit[3];          
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "UPDATE ATENCIONES_POR_AFILIADO SET COD_CENTRO = @cod_centro, " +
+                    "COD_ESPECIALIDAD = @cod_especialidad, MATRICULA = @matricula, IMPORTE = @importe, ID_PRACTICA = @id_practica " +
+                                 " WHERE NRO_AFILIADO = @nro_afiliado AND CONVERT(VARCHAR, FECHA_HORA_ATENCION, 20) = @fecha_hora";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nro_afiliado", nroAfiliado);
+                cmd.Parameters.AddWithValue("@cod_centro", atencion.Centro.CodigoCentro);
+                cmd.Parameters.AddWithValue("@cod_especialidad", atencion.Especialidad.CodigoEspecialidad);
+                cmd.Parameters.AddWithValue("@matricula", atencion.Profesional.Matricula);
+                cmd.Parameters.AddWithValue("@importe", atencion.Importe);
+                cmd.Parameters.AddWithValue("@id_practica", atencion.Practica.CodigoPractica);
+                cmd.Parameters.AddWithValue("@fecha_hora", param_fecha_hora);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

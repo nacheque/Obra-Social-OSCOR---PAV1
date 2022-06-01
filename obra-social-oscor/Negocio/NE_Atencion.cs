@@ -77,5 +77,17 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static void EditarAtencion(Atencion atencion, int nroAfiliado, string fechaHora)
+        {
+            try
+            {
+                AD_Atencion.EditarAtencion(atencion, nroAfiliado, fechaHora);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
