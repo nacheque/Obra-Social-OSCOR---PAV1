@@ -85,6 +85,45 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerEspecialidadesPorCentro2(int codCentro)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT E.COD_ESPECIALIDAD, E.NOMBRE FROM  ESPECIALIDADES E " +
+                                  " JOIN ESPECIALIDADES_POR_CENTROS PCE " +
+                                  " ON E.COD_ESPECIALIDAD = PCE.COD_ESPECIALIDAD " +
+                                  " WHERE PCE.COD_CENTRO = @cod_centro ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@cod_centro", codCentro);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarEspecialidad(Especialidad especialidad)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
