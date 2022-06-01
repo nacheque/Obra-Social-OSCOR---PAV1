@@ -339,6 +339,11 @@ namespace obra_social_oscor.Formulario.ABM
             cmb_resultados.SelectedIndex = -1;
             txt_importe_aten.Text = "";
             cmb_practica_atencion.SelectedIndex = -1;
+            btn_buscar_afi_atencion.Enabled = true;
+            cmb_resultados.Enabled = true;
+            txt_apellido_afi_atencion.Enabled = true;
+            txt_nombre_afi_atencion.Enabled = true;
+            txt_num_afi_ate.Enabled = true;
         }
 
         private void btn_limpiar_atencion_Click(object sender, EventArgs e)
@@ -362,6 +367,11 @@ namespace obra_social_oscor.Formulario.ABM
                 cmb_prof_atencion.Enabled = true;
                 btn_agregar_atencion.Enabled = false;
                 btn_editar_atencion.Enabled = true;
+                btn_buscar_afi_atencion.Enabled = false;
+                cmb_resultados.Enabled = false;
+                txt_apellido_afi_atencion.Enabled = false;
+                txt_nombre_afi_atencion.Enabled = false;
+                txt_num_afi_ate.Enabled = false;
 
                 Atencion atencion = new Atencion();
 
@@ -415,6 +425,35 @@ namespace obra_social_oscor.Formulario.ABM
 
             txt_importe_aten.Text = atencion.Importe.ToString();
             msk_fecha_aten.Text = atencion.FechaHoraAtencion.ToString();            
+        }
+
+        private void btn_editar_atencion_Click(object sender, EventArgs e)
+        {
+            if (cmb_centro_atencion.SelectedIndex != -1 && cmb_esp_atencion.SelectedIndex != -1 && cmb_prof_atencion.SelectedIndex != -1 &&
+                cmb_resultados.SelectedIndex != -1 && cmb_practica_atencion.SelectedIndex != -1)
+            {
+
+                try
+                {
+                    Atencion atencion = ObtenerDatosAtencion();
+                    if (atencion.Importe >= 0)
+                    {
+                        NE_Atencion.EditarAtencion(atencion, global_nro_afiliado_seleccionado, fecha_hora_atencion_seleccionada);
+                        MessageBox.Show("Atencion editada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReiniciarFormulario();
+                        CargarGrilla();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al editar Atencion...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos para editar la Atencion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

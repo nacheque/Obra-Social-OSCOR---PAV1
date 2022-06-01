@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Atenciones));
             this.grp_atenciones = new System.Windows.Forms.GroupBox();
             this.grp_buscar_afi_atencion = new System.Windows.Forms.GroupBox();
@@ -70,6 +71,7 @@
             this.btn_limpiar_atencion = new System.Windows.Forms.Button();
             this.btn_salir_atencion = new System.Windows.Forms.Button();
             this.btn_editar_atencion = new System.Windows.Forms.Button();
+            this.tt_atenciones = new System.Windows.Forms.ToolTip(this.components);
             this.grp_atenciones.SuspendLayout();
             this.grp_buscar_afi_atencion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_atenciones)).BeginInit();
@@ -450,6 +452,7 @@
             this.btn_agregar_atencion.Name = "btn_agregar_atencion";
             this.btn_agregar_atencion.Size = new System.Drawing.Size(50, 50);
             this.btn_agregar_atencion.TabIndex = 96;
+            this.tt_atenciones.SetToolTip(this.btn_agregar_atencion, "Agregar atencion");
             this.btn_agregar_atencion.UseVisualStyleBackColor = true;
             this.btn_agregar_atencion.Click += new System.EventHandler(this.btn_agregar_atencion_Click);
             // 
@@ -471,6 +474,7 @@
             this.btn_salir_atencion.Name = "btn_salir_atencion";
             this.btn_salir_atencion.Size = new System.Drawing.Size(50, 50);
             this.btn_salir_atencion.TabIndex = 99;
+            this.tt_atenciones.SetToolTip(this.btn_salir_atencion, "Salir");
             this.btn_salir_atencion.UseVisualStyleBackColor = true;
             this.btn_salir_atencion.Click += new System.EventHandler(this.btn_salir_atencion_Click);
             // 
@@ -482,7 +486,9 @@
             this.btn_editar_atencion.Name = "btn_editar_atencion";
             this.btn_editar_atencion.Size = new System.Drawing.Size(50, 50);
             this.btn_editar_atencion.TabIndex = 100;
+            this.tt_atenciones.SetToolTip(this.btn_editar_atencion, "Editar una atencion");
             this.btn_editar_atencion.UseVisualStyleBackColor = true;
+            this.btn_editar_atencion.Click += new System.EventHandler(this.btn_editar_atencion_Click);
             // 
             // frm_Atenciones
             // 
@@ -552,5 +558,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_practica;
         private System.Windows.Forms.DataGridViewTextBoxColumn practica;
         private System.Windows.Forms.Button btn_editar_atencion;
+        private System.Windows.Forms.ToolTip tt_atenciones;
     }
 }
