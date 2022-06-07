@@ -93,10 +93,14 @@ namespace obra_social_oscor.AccesoADatos
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT E.COD_ESPECIALIDAD, E.NOMBRE FROM  ESPECIALIDADES E " +
-                                  " JOIN ESPECIALIDADES_POR_CENTROS PCE " +
-                                  " ON E.COD_ESPECIALIDAD = PCE.COD_ESPECIALIDAD " +
-                                  " WHERE PCE.COD_CENTRO = @cod_centro ";
+                string consulta = "Select e.cod_especialidad, e.nombre\n " +
+                    "               From especialidades e\n" +
+                    "               join especialidades_por_centros ec\n" +
+                    "               on e.cod_especialidad = ec.cod_especialidad\n" +
+                    "               Where ec.cod_centro = 19\n" +
+                    "               And(select count(*)\n" +
+                    "               from profesionales_por_centros_por_especialidad pes\n" +
+                    "               where pes.cod_centro = ec.cod_centro and pes.cod_especialidad = ec.cod_especialidad) = 0";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@cod_centro", codCentro);

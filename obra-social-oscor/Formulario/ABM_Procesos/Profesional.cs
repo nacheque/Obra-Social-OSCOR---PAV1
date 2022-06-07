@@ -33,7 +33,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             try
             {
-                cmbCentros.DataSource = AD_Centro.ObtenerCentrosConEspSinProf();
+                cmbCentros.DataSource = AD_Centro.ObtenerCentrosConEsp();
                 cmbCentros.DisplayMember = "DENOMINACION";
                 cmbCentros.ValueMember = "COD_CENTRO";
                 cmbCentros.SelectedIndex = -1;
@@ -46,7 +46,9 @@ namespace obra_social_oscor.Formulario.ABM
 
         private void cmbCentros_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            gdrProfXCentroXEsp.Rows.Clear();
             CargarComboEspecialidades();
+            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
             cmbEspecialidades.Enabled = true;
             cmbProfesionales.Enabled = false;
         }
@@ -70,7 +72,6 @@ namespace obra_social_oscor.Formulario.ABM
         {
             CargarComboProfesionales();
             cmbProfesionales.Enabled = true;
-            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
         }
 
         private void CargarComboProfesionales()
@@ -189,6 +190,7 @@ namespace obra_social_oscor.Formulario.ABM
             cmbEspecialidades.Enabled = false;
             cmbProfesionales.SelectedIndex = -1;
             cmbProfesionales.Enabled = false;
+            gdrProfXCentroXEsp.Rows.Clear();
         }
 
         private void btnReiniciarFormulario_Click_1(object sender, EventArgs e)
