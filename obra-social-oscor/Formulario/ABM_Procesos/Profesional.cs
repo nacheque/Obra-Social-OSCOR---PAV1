@@ -46,6 +46,11 @@ namespace obra_social_oscor.Formulario.ABM
 
         private void cmbCentros_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            CentroSeleccionado();
+        }
+
+        private void CentroSeleccionado()
+        {
             gdrProfXCentroXEsp.Rows.Clear();
             CargarComboEspecialidades();
             CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
@@ -146,7 +151,8 @@ namespace obra_social_oscor.Formulario.ABM
                 ProfesionalPorCentroPorEspecialidad pce = ObtenerDatosPCE();
                 NE_ProfXCentroXEsp.ArgegarProfesionalACentroConEspecialidad(pce);
                 MessageBox.Show("Profesional asignado con exito...");
-                CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+                //CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+                CentroSeleccionado();
             }
             catch (Exception)
             {
@@ -189,8 +195,10 @@ namespace obra_social_oscor.Formulario.ABM
             cmbCentros.SelectedIndex = -1;
             cmbCentros.Enabled = true;
             cmbEspecialidades.SelectedIndex = -1;
+            cmbEspecialidades.Text = "";
             cmbEspecialidades.Enabled = false;
             cmbProfesionales.SelectedIndex = -1;
+            cmbProfesionales.Text = "";
             cmbProfesionales.Enabled = false;
             gdrProfXCentroXEsp.Rows.Clear();
         }
@@ -200,12 +208,20 @@ namespace obra_social_oscor.Formulario.ABM
             ReiniciarFormulario();
         }
 
+        int globalCodigoCentro;
+        int globalCodEsp;
+        int globalMatricula;
+
         private void gdrProfXCentroXEsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             if (indice >= 0)
             {
                 DataGridViewRow filaSeleccionada = gdrProfXCentroXEsp.Rows[indice];
+
+                globalCodigoCentro = int.Parse(filaSeleccionada.Cells["CodigoCentro"].Value.ToString());
+                globalCodEsp = int.Parse(filaSeleccionada.Cells["CodEsp"].Value.ToString());
+                globalMatricula = int.Parse(filaSeleccionada.Cells["Matricula"].Value.ToString());
 
                 Centro centro = new Centro();
                 centro.CodigoCentro = int.Parse(filaSeleccionada.Cells["CodigoCentro"].Value.ToString());
@@ -237,6 +253,26 @@ namespace obra_social_oscor.Formulario.ABM
         {
             cmbEspecialidades.Text = pce.Especialidad.NombreEspecialidad.ToString();
             cmbProfesionales.Text = pce.Profesional.Nombre.ToString();
+        }
+
+        private void btnEliminarrPCE_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea eliminar la asignacion de este profesional a esta especialidad?...",
+                    "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    NE_ProfXCentroXEsp.EliminarAsignacionPCE(globalCodigoCentro, globalCodEsp, globalMatricula);
+                    MessageBox.Show("Asignacion borrada con exito...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //ReiniciarFormulario();
+                    CentroSeleccionado();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
     }
 }

@@ -85,5 +85,37 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void EliminarAsignacionPCE(int codCentro, int codEsp, int matricula)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD\n" + 
+                    "               WHERE COD_CENTRO = @codCentro AND COD_ESPECIALIDAD = @codEsp AND MATRICULA = @matricula";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codCentro", codCentro);
+                cmd.Parameters.AddWithValue("@codEsp", codEsp);
+                cmd.Parameters.AddWithValue("@matricula", matricula);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

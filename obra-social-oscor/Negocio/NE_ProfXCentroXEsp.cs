@@ -51,5 +51,18 @@ namespace obra_social_oscor.Negocio
 
 
         }
+
+        public static void EliminarAsignacionPCE(int codCentro, int codEsp, int matricula)
+        {
+            try
+            {
+                AD_ProfXCentroXEsp.EliminarAsignacionPCE(codCentro, codEsp, matricula);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
