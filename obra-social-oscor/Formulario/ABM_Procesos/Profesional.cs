@@ -24,7 +24,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             CargarComboCentros();
             btnAgregarPCE.Enabled = false;
-            btnEditarPCE.Enabled = false;
+            btnEliminarrPCE.Enabled = false;
             cmbEspecialidades.Enabled = false;
             cmbProfesionales.Enabled = false;
         }
@@ -33,7 +33,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             try
             {
-                cmbCentros.DataSource = AD_Centro.ObtenerCentrosConEspSinProf();
+                cmbCentros.DataSource = AD_Centro.ObtenerCentrosConEsp();
                 cmbCentros.DisplayMember = "DENOMINACION";
                 cmbCentros.ValueMember = "COD_CENTRO";
                 cmbCentros.SelectedIndex = -1;
@@ -46,9 +46,18 @@ namespace obra_social_oscor.Formulario.ABM
 
         private void cmbCentros_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            CentroSeleccionado();
+        }
+
+        private void CentroSeleccionado()
+        {
+            gdrProfXCentroXEsp.Rows.Clear();
             CargarComboEspecialidades();
+            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
             cmbEspecialidades.Enabled = true;
             cmbProfesionales.Enabled = false;
+            cmbEspecialidades.Text = "";
+            cmbProfesionales.Text = "";
         }
 
         private void CargarComboEspecialidades()
@@ -70,7 +79,6 @@ namespace obra_social_oscor.Formulario.ABM
         {
             CargarComboProfesionales();
             cmbProfesionales.Enabled = true;
-            CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
         }
 
         private void CargarComboProfesionales()
@@ -143,7 +151,8 @@ namespace obra_social_oscor.Formulario.ABM
                 ProfesionalPorCentroPorEspecialidad pce = ObtenerDatosPCE();
                 NE_ProfXCentroXEsp.ArgegarProfesionalACentroConEspecialidad(pce);
                 MessageBox.Show("Profesional asignado con exito...");
-                CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+                //CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
+                CentroSeleccionado();
             }
             catch (Exception)
             {
@@ -186,9 +195,12 @@ namespace obra_social_oscor.Formulario.ABM
             cmbCentros.SelectedIndex = -1;
             cmbCentros.Enabled = true;
             cmbEspecialidades.SelectedIndex = -1;
+            cmbEspecialidades.Text = "";
             cmbEspecialidades.Enabled = false;
             cmbProfesionales.SelectedIndex = -1;
+            cmbProfesionales.Text = "";
             cmbProfesionales.Enabled = false;
+            gdrProfXCentroXEsp.Rows.Clear();
         }
 
         private void btnReiniciarFormulario_Click_1(object sender, EventArgs e)
@@ -196,6 +208,71 @@ namespace obra_social_oscor.Formulario.ABM
             ReiniciarFormulario();
         }
 
-        
+        int globalCodigoCentro;
+        int globalCodEsp;
+        int globalMatricula;
+
+        private void gdrProfXCentroXEsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gdrProfXCentroXEsp.Rows[indice];
+
+                globalCodigoCentro = int.Parse(filaSeleccionada.Cells["CodigoCentro"].Value.ToString());
+                globalCodEsp = int.Parse(filaSeleccionada.Cells["CodEsp"].Value.ToString());
+                globalMatricula = int.Parse(filaSeleccionada.Cells["Matricula"].Value.ToString());
+
+                Centro centro = new Centro();
+                centro.CodigoCentro = int.Parse(filaSeleccionada.Cells["CodigoCentro"].Value.ToString());
+                centro.Denominacion = filaSeleccionada.Cells["NombreCentro"].Value.ToString();
+
+                Especialidad esp = new Especialidad();
+                esp.CodigoEspecialidad = int.Parse(filaSeleccionada.Cells["CodEsp"].Value.ToString());
+                esp.NombreEspecialidad = filaSeleccionada.Cells["NombreEsp"].Value.ToString();
+
+                Profesional prof = new Profesional();
+                prof.Matricula = int.Parse(filaSeleccionada.Cells["Matricula"].Value.ToString());
+                prof.Nombre = filaSeleccionada.Cells["NombreProfesional"].Value.ToString();
+
+                ProfesionalPorCentroPorEspecialidad pce = new ProfesionalPorCentroPorEspecialidad();
+                pce.Centro = centro;
+                pce.Especialidad = esp;
+                pce.Profesional = prof;
+
+                //ReiniciarFormulario();
+                CargarCampos(pce);
+                cmbEspecialidades.Enabled = false;
+                cmbProfesionales.Enabled = false;
+                btnAgregarPCE.Enabled = false;
+                btnEliminarrPCE.Enabled = true;
+            }
+        }
+
+        private void CargarCampos(ProfesionalPorCentroPorEspecialidad pce)
+        {
+            cmbEspecialidades.Text = pce.Especialidad.NombreEspecialidad.ToString();
+            cmbProfesionales.Text = pce.Profesional.Nombre.ToString();
+        }
+
+        private void btnEliminarrPCE_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea eliminar la asignacion de este profesional a esta especialidad?...",
+                    "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    NE_ProfXCentroXEsp.EliminarAsignacionPCE(globalCodigoCentro, globalCodEsp, globalMatricula);
+                    MessageBox.Show("Asignacion borrada con exito...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //ReiniciarFormulario();
+                    CentroSeleccionado();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
     }
 }
