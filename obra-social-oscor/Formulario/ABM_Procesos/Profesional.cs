@@ -119,7 +119,7 @@ namespace obra_social_oscor.Formulario.ABM
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al obtener listado de profesionales...");
+                MessageBox.Show("Error al obtener listado de profesionales...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -156,7 +156,7 @@ namespace obra_social_oscor.Formulario.ABM
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al asignar profesional...");
+                MessageBox.Show("Error al asignar profesional...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -267,10 +267,13 @@ namespace obra_social_oscor.Formulario.ABM
                     //ReiniciarFormulario();
                     CentroSeleccionado();
                 }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Error al eliminar Asignación.\nEl Profesional esta asociado a una Atencion registrada...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 catch (Exception)
                 {
-
-                    throw;
+                    MessageBox.Show("Error al eliminar Asignacion de Profesional...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
