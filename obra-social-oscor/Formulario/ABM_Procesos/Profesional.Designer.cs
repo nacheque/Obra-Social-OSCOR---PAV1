@@ -36,12 +36,12 @@
             this.cmbEspecialidades = new System.Windows.Forms.ComboBox();
             this.cmbProfesionales = new System.Windows.Forms.ComboBox();
             this.btnAgregarPCE = new System.Windows.Forms.Button();
-            this.btnEditarPCE = new System.Windows.Forms.Button();
+            this.btnEliminarrPCE = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnReiniciarFormulario = new System.Windows.Forms.Button();
             this.gdrProfXCentroXEsp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.CodCentro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoCentro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCentro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,15 +118,15 @@
             this.btnAgregarPCE.UseVisualStyleBackColor = true;
             this.btnAgregarPCE.Click += new System.EventHandler(this.btnAgregarPCE_Click_1);
             // 
-            // btnEditarPCE
+            // btnEliminarrPCE
             // 
-            this.btnEditarPCE.BackgroundImage = global::obra_social_oscor.Properties.Resources.Editar;
-            this.btnEditarPCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditarPCE.Location = new System.Drawing.Point(74, 422);
-            this.btnEditarPCE.Name = "btnEditarPCE";
-            this.btnEditarPCE.Size = new System.Drawing.Size(56, 49);
-            this.btnEditarPCE.TabIndex = 7;
-            this.btnEditarPCE.UseVisualStyleBackColor = true;
+            this.btnEliminarrPCE.BackgroundImage = global::obra_social_oscor.Properties.Resources.eliminar;
+            this.btnEliminarrPCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarrPCE.Location = new System.Drawing.Point(74, 422);
+            this.btnEliminarrPCE.Name = "btnEliminarrPCE";
+            this.btnEliminarrPCE.Size = new System.Drawing.Size(56, 49);
+            this.btnEliminarrPCE.TabIndex = 7;
+            this.btnEliminarrPCE.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
@@ -155,7 +155,7 @@
             this.gdrProfXCentroXEsp.AllowUserToDeleteRows = false;
             this.gdrProfXCentroXEsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdrProfXCentroXEsp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodCentro,
+            this.CodigoCentro,
             this.NombreCentro,
             this.CodEsp,
             this.NombreEsp,
@@ -166,6 +166,7 @@
             this.gdrProfXCentroXEsp.ReadOnly = true;
             this.gdrProfXCentroXEsp.Size = new System.Drawing.Size(451, 238);
             this.gdrProfXCentroXEsp.TabIndex = 10;
+            this.gdrProfXCentroXEsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrProfXCentroXEsp_CellClick);
             // 
             // label1
             // 
@@ -176,12 +177,12 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Profesionales Asignados a la Especialidad del Centro";
             // 
-            // CodCentro
+            // CodigoCentro
             // 
-            this.CodCentro.HeaderText = "CodigoCentro";
-            this.CodCentro.Name = "CodCentro";
-            this.CodCentro.ReadOnly = true;
-            this.CodCentro.Visible = false;
+            this.CodigoCentro.HeaderText = "CodigoCentro";
+            this.CodigoCentro.Name = "CodigoCentro";
+            this.CodigoCentro.ReadOnly = true;
+            this.CodigoCentro.Visible = false;
             // 
             // NombreCentro
             // 
@@ -227,7 +228,7 @@
             this.Controls.Add(this.gdrProfXCentroXEsp);
             this.Controls.Add(this.btnReiniciarFormulario);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEditarPCE);
+            this.Controls.Add(this.btnEliminarrPCE);
             this.Controls.Add(this.btnAgregarPCE);
             this.Controls.Add(this.cmbProfesionales);
             this.Controls.Add(this.cmbEspecialidades);
@@ -257,12 +258,12 @@
         private System.Windows.Forms.ComboBox cmbEspecialidades;
         private System.Windows.Forms.ComboBox cmbProfesionales;
         private System.Windows.Forms.Button btnAgregarPCE;
-        private System.Windows.Forms.Button btnEditarPCE;
+        private System.Windows.Forms.Button btnEliminarrPCE;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnReiniciarFormulario;
         private System.Windows.Forms.DataGridView gdrProfXCentroXEsp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodCentro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCentro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCentro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodEsp;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEsp;

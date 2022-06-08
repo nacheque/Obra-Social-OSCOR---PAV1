@@ -24,7 +24,7 @@ namespace obra_social_oscor.Formulario.ABM
         {
             CargarComboCentros();
             btnAgregarPCE.Enabled = false;
-            btnEditarPCE.Enabled = false;
+            btnEliminarrPCE.Enabled = false;
             cmbEspecialidades.Enabled = false;
             cmbProfesionales.Enabled = false;
         }
@@ -51,6 +51,8 @@ namespace obra_social_oscor.Formulario.ABM
             CargarGrillaProfXEsp((int)cmbCentros.SelectedValue, cmbCentros.SelectedItem.ToString());
             cmbEspecialidades.Enabled = true;
             cmbProfesionales.Enabled = false;
+            cmbEspecialidades.Text = "";
+            cmbProfesionales.Text = "";
         }
 
         private void CargarComboEspecialidades()
@@ -198,6 +200,43 @@ namespace obra_social_oscor.Formulario.ABM
             ReiniciarFormulario();
         }
 
-        
+        private void gdrProfXCentroXEsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gdrProfXCentroXEsp.Rows[indice];
+
+                Centro centro = new Centro();
+                centro.CodigoCentro = int.Parse(filaSeleccionada.Cells["CodigoCentro"].Value.ToString());
+                centro.Denominacion = filaSeleccionada.Cells["NombreCentro"].Value.ToString();
+
+                Especialidad esp = new Especialidad();
+                esp.CodigoEspecialidad = int.Parse(filaSeleccionada.Cells["CodEsp"].Value.ToString());
+                esp.NombreEspecialidad = filaSeleccionada.Cells["NombreEsp"].Value.ToString();
+
+                Profesional prof = new Profesional();
+                prof.Matricula = int.Parse(filaSeleccionada.Cells["Matricula"].Value.ToString());
+                prof.Nombre = filaSeleccionada.Cells["NombreProfesional"].Value.ToString();
+
+                ProfesionalPorCentroPorEspecialidad pce = new ProfesionalPorCentroPorEspecialidad();
+                pce.Centro = centro;
+                pce.Especialidad = esp;
+                pce.Profesional = prof;
+
+                //ReiniciarFormulario();
+                CargarCampos(pce);
+                cmbEspecialidades.Enabled = false;
+                cmbProfesionales.Enabled = false;
+                btnAgregarPCE.Enabled = false;
+                btnEliminarrPCE.Enabled = true;
+            }
+        }
+
+        private void CargarCampos(ProfesionalPorCentroPorEspecialidad pce)
+        {
+            cmbEspecialidades.Text = pce.Especialidad.NombreEspecialidad.ToString();
+            cmbProfesionales.Text = pce.Profesional.Nombre.ToString();
+        }
     }
 }

@@ -97,13 +97,13 @@ namespace obra_social_oscor.AccesoADatos
                     "               From especialidades e\n" +
                     "               join especialidades_por_centros ec\n" +
                     "               on e.cod_especialidad = ec.cod_especialidad\n" +
-                    "               Where ec.cod_centro = 19\n" +
+                    "               Where ec.cod_centro = @codCentro\n" +
                     "               And(select count(*)\n" +
                     "               from profesionales_por_centros_por_especialidad pes\n" +
                     "               where pes.cod_centro = ec.cod_centro and pes.cod_especialidad = ec.cod_especialidad) = 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@cod_centro", codCentro);
+                cmd.Parameters.AddWithValue("@codCentro", codCentro);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
