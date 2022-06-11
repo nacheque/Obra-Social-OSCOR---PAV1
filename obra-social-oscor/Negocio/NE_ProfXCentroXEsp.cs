@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using obra_social_oscor.Entidades;
 using obra_social_oscor.AccesoADatos;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace obra_social_oscor.Negocio
 {
@@ -58,10 +59,18 @@ namespace obra_social_oscor.Negocio
             {
                 AD_ProfXCentroXEsp.EliminarAsignacionPCE(codCentro, codEsp, matricula);
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-
-                throw;
+                if (ex.Errors.Count > 0)
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547:
+                            throw new InvalidOperationException("Foreign key violation", ex);
+                        default:
+                            throw ex;
+                    }
+                }
             }
         }
     }
