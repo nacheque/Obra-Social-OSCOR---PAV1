@@ -86,6 +86,26 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
             return resultado;
         }
 
+        private string ExisteEnGrillaEditar(int idPractica, string nombrePractica)
+        {
+            string mensajeError = "";
+
+            for (int i = 0; i < dgv_Pract.Rows.Count; i++)
+            {
+                if (int.Parse(dgv_Pract.Rows[i].Cells["idPractica"].Value.ToString()) == idPractica)
+                {
+                    continue;
+                }
+                if (dgv_Pract.Rows[i].Cells["Descripcion"].Value.ToString().Equals(nombrePractica, StringComparison.OrdinalIgnoreCase))
+                {
+                    mensajeError = "Ya existe una practica con el mismo nombre";
+                    break;
+                }              
+            }
+
+            return mensajeError;
+        }
+
         private Practica ObtenerDatosPractica()
         {
             Practica practica = new Practica();
@@ -106,9 +126,7 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
                     try
                     {
                         NE_Practica.agregarPractica(practica);
-                        //NE_Especialidad.AgregarEspecialidad(especialidad);
                         MessageBox.Show("Práctica agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //MessageBox.Show("Especialidad agregada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reiniciarFormulario();
                         cargarGrilla();
                     }
@@ -194,29 +212,29 @@ namespace obra_social_oscor.Formulario.ABM_Comunes
 
         private void btn_Editar_Pract_Click(object sender, EventArgs e)
         {
-            if (!txt_Nombre_Pract.Text.Equals(""))
+            if (!txt_Nombre_Pract.Text.Equals("") && !txt_Precio_Pract.Text.Equals(""))
             {
-                if (!ExisteEnGrilla(txt_Nombre_Pract.Text))
+                string mensajeError = ExisteEnGrillaEditar(global_codigoPractica, txt_Nombre_Pract.Text);
+                if (mensajeError == "")
                 {
-                    Practica practica = ObtenerDatosPractica();                    
+                    Practica practica = ObtenerDatosPractica();
                     try
                     {
-                        NE_Practica.actualizarPractica(practica, global_codigoPractica);                        
+                        NE_Practica.actualizarPractica(practica, global_codigoPractica);
                         MessageBox.Show("Práctica actualizada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reiniciarFormulario();
                         cargarGrilla();
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("Error al actualizar Práctica...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe una Práctica con ese nombre...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    MessageBox.Show(mensajeError, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);                  
+                }    
+                
             }
             else
             {

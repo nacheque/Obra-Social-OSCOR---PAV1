@@ -8,6 +8,7 @@ namespace obra_social_oscor.Entidades
 {
     class Atencion
     {
+        private int idAtencion;
         private Afiliado afiliado;
         private DateTime fechaHoraAtencion;
         private Centro centro;
@@ -56,6 +57,12 @@ namespace obra_social_oscor.Entidades
         {
             get => practica;
             set => practica = value;
+        }
+
+        public int IdAtencion
+        {
+            get => idAtencion;
+            set => idAtencion = value;
         }
     }
 }

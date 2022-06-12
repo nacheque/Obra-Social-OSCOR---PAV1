@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Centro));
             this.grp_centros = new System.Windows.Forms.GroupBox();
+            this.msk_txt_telefono_centro = new System.Windows.Forms.MaskedTextBox();
             this.grp_esp_centro = new System.Windows.Forms.GroupBox();
+            this.btn_eliminar_esp = new System.Windows.Forms.Button();
             this.btn_agregar_esp_centro = new System.Windows.Forms.Button();
             this.grd_esp_centro = new System.Windows.Forms.DataGridView();
             this.id_especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +54,6 @@
             this.txt_calle_centro = new System.Windows.Forms.TextBox();
             this.lbl_barrio_centro = new System.Windows.Forms.Label();
             this.grd_centros = new System.Windows.Forms.DataGridView();
-            this.btn_agregar_centro = new System.Windows.Forms.Button();
-            this.btn_limpiar_centro = new System.Windows.Forms.Button();
-            this.btn_salir_centro = new System.Windows.Forms.Button();
             this.cod_centro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.denominacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +65,11 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.propio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.msk_txt_telefono_centro = new System.Windows.Forms.MaskedTextBox();
-            this.btn_eliminar_esp = new System.Windows.Forms.Button();
+            this.btn_limpiar_centro = new System.Windows.Forms.Button();
+            this.btn_editar_especialidades = new System.Windows.Forms.Button();
+            this.btn_editar_centro = new System.Windows.Forms.Button();
+            this.btn_salir_centro = new System.Windows.Forms.Button();
+            this.btn_agregar_centro = new System.Windows.Forms.Button();
             this.grp_centros.SuspendLayout();
             this.grp_esp_centro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_esp_centro)).BeginInit();
@@ -99,9 +101,21 @@
             this.grp_centros.TabIndex = 0;
             this.grp_centros.TabStop = false;
             this.grp_centros.Text = "Datos";
+            this.grp_centros.Enter += new System.EventHandler(this.grp_centros_Enter);
+            // 
+            // msk_txt_telefono_centro
+            // 
+            this.msk_txt_telefono_centro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_txt_telefono_centro.Location = new System.Drawing.Point(80, 101);
+            this.msk_txt_telefono_centro.Mask = "9999999999999";
+            this.msk_txt_telefono_centro.Name = "msk_txt_telefono_centro";
+            this.msk_txt_telefono_centro.Size = new System.Drawing.Size(204, 23);
+            this.msk_txt_telefono_centro.TabIndex = 112;
+            this.msk_txt_telefono_centro.ValidatingType = typeof(int);
             // 
             // grp_esp_centro
             // 
+            this.grp_esp_centro.Controls.Add(this.btn_editar_especialidades);
             this.grp_esp_centro.Controls.Add(this.btn_eliminar_esp);
             this.grp_esp_centro.Controls.Add(this.btn_agregar_esp_centro);
             this.grp_esp_centro.Controls.Add(this.grd_esp_centro);
@@ -112,6 +126,16 @@
             this.grp_esp_centro.TabIndex = 109;
             this.grp_esp_centro.TabStop = false;
             this.grp_esp_centro.Text = "Especialidades del centro";
+            // 
+            // btn_eliminar_esp
+            // 
+            this.btn_eliminar_esp.Location = new System.Drawing.Point(6, 53);
+            this.btn_eliminar_esp.Name = "btn_eliminar_esp";
+            this.btn_eliminar_esp.Size = new System.Drawing.Size(73, 23);
+            this.btn_eliminar_esp.TabIndex = 112;
+            this.btn_eliminar_esp.Text = "Eliminar";
+            this.btn_eliminar_esp.UseVisualStyleBackColor = true;
+            this.btn_eliminar_esp.Click += new System.EventHandler(this.btn_eliminar_esp_Click);
             // 
             // btn_agregar_esp_centro
             // 
@@ -333,38 +357,6 @@
             this.grd_centros.TabIndex = 1;
             this.grd_centros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_centros_CellClick);
             // 
-            // btn_agregar_centro
-            // 
-            this.btn_agregar_centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_agregar_centro.BackgroundImage")));
-            this.btn_agregar_centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_agregar_centro.Location = new System.Drawing.Point(12, 547);
-            this.btn_agregar_centro.Name = "btn_agregar_centro";
-            this.btn_agregar_centro.Size = new System.Drawing.Size(50, 50);
-            this.btn_agregar_centro.TabIndex = 84;
-            this.btn_agregar_centro.UseVisualStyleBackColor = true;
-            this.btn_agregar_centro.Click += new System.EventHandler(this.btn_agregar_centro_Click);
-            // 
-            // btn_limpiar_centro
-            // 
-            this.btn_limpiar_centro.Location = new System.Drawing.Point(92, 574);
-            this.btn_limpiar_centro.Name = "btn_limpiar_centro";
-            this.btn_limpiar_centro.Size = new System.Drawing.Size(112, 23);
-            this.btn_limpiar_centro.TabIndex = 93;
-            this.btn_limpiar_centro.Text = "Reiniciar Formulario";
-            this.btn_limpiar_centro.UseVisualStyleBackColor = true;
-            this.btn_limpiar_centro.Click += new System.EventHandler(this.btn_limpiar_centro_Click);
-            // 
-            // btn_salir_centro
-            // 
-            this.btn_salir_centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir_centro.BackgroundImage")));
-            this.btn_salir_centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_salir_centro.Location = new System.Drawing.Point(1043, 547);
-            this.btn_salir_centro.Name = "btn_salir_centro";
-            this.btn_salir_centro.Size = new System.Drawing.Size(50, 50);
-            this.btn_salir_centro.TabIndex = 94;
-            this.btn_salir_centro.UseVisualStyleBackColor = true;
-            this.btn_salir_centro.Click += new System.EventHandler(this.btn_salir_centro_Click);
-            // 
             // cod_centro
             // 
             this.cod_centro.HeaderText = "Codigo";
@@ -439,31 +431,65 @@
             this.propio.ReadOnly = true;
             this.propio.Width = 50;
             // 
-            // msk_txt_telefono_centro
+            // btn_limpiar_centro
             // 
-            this.msk_txt_telefono_centro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_txt_telefono_centro.Location = new System.Drawing.Point(80, 101);
-            this.msk_txt_telefono_centro.Mask = "9999999999999";
-            this.msk_txt_telefono_centro.Name = "msk_txt_telefono_centro";
-            this.msk_txt_telefono_centro.Size = new System.Drawing.Size(204, 23);
-            this.msk_txt_telefono_centro.TabIndex = 112;
-            this.msk_txt_telefono_centro.ValidatingType = typeof(int);
+            this.btn_limpiar_centro.Location = new System.Drawing.Point(124, 574);
+            this.btn_limpiar_centro.Name = "btn_limpiar_centro";
+            this.btn_limpiar_centro.Size = new System.Drawing.Size(112, 23);
+            this.btn_limpiar_centro.TabIndex = 93;
+            this.btn_limpiar_centro.Text = "Reiniciar Formulario";
+            this.btn_limpiar_centro.UseVisualStyleBackColor = true;
+            this.btn_limpiar_centro.Click += new System.EventHandler(this.btn_limpiar_centro_Click);
             // 
-            // btn_eliminar_esp
+            // btn_editar_especialidades
             // 
-            this.btn_eliminar_esp.Location = new System.Drawing.Point(6, 53);
-            this.btn_eliminar_esp.Name = "btn_eliminar_esp";
-            this.btn_eliminar_esp.Size = new System.Drawing.Size(73, 23);
-            this.btn_eliminar_esp.TabIndex = 112;
-            this.btn_eliminar_esp.Text = "Eliminar";
-            this.btn_eliminar_esp.UseVisualStyleBackColor = true;
-            this.btn_eliminar_esp.Click += new System.EventHandler(this.btn_eliminar_esp_Click);
+            this.btn_editar_especialidades.Location = new System.Drawing.Point(85, 53);
+            this.btn_editar_especialidades.Name = "btn_editar_especialidades";
+            this.btn_editar_especialidades.Size = new System.Drawing.Size(161, 23);
+            this.btn_editar_especialidades.TabIndex = 113;
+            this.btn_editar_especialidades.Text = "Editar Especialidades";
+            this.btn_editar_especialidades.UseVisualStyleBackColor = true;
+            this.btn_editar_especialidades.Click += new System.EventHandler(this.btn_editar_especialidades_Click);
+            // 
+            // btn_editar_centro
+            // 
+            this.btn_editar_centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_editar_centro.BackgroundImage")));
+            this.btn_editar_centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_editar_centro.Location = new System.Drawing.Point(68, 547);
+            this.btn_editar_centro.Name = "btn_editar_centro";
+            this.btn_editar_centro.Size = new System.Drawing.Size(50, 50);
+            this.btn_editar_centro.TabIndex = 95;
+            this.btn_editar_centro.UseVisualStyleBackColor = true;
+            this.btn_editar_centro.Click += new System.EventHandler(this.btn_editar_centro_Click);
+            // 
+            // btn_salir_centro
+            // 
+            this.btn_salir_centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir_centro.BackgroundImage")));
+            this.btn_salir_centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_salir_centro.Location = new System.Drawing.Point(1043, 547);
+            this.btn_salir_centro.Name = "btn_salir_centro";
+            this.btn_salir_centro.Size = new System.Drawing.Size(50, 50);
+            this.btn_salir_centro.TabIndex = 94;
+            this.btn_salir_centro.UseVisualStyleBackColor = true;
+            this.btn_salir_centro.Click += new System.EventHandler(this.btn_salir_centro_Click);
+            // 
+            // btn_agregar_centro
+            // 
+            this.btn_agregar_centro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_agregar_centro.BackgroundImage")));
+            this.btn_agregar_centro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_agregar_centro.Location = new System.Drawing.Point(12, 547);
+            this.btn_agregar_centro.Name = "btn_agregar_centro";
+            this.btn_agregar_centro.Size = new System.Drawing.Size(50, 50);
+            this.btn_agregar_centro.TabIndex = 84;
+            this.btn_agregar_centro.UseVisualStyleBackColor = true;
+            this.btn_agregar_centro.Click += new System.EventHandler(this.btn_agregar_centro_Click);
             // 
             // frm_Centro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 609);
+            this.Controls.Add(this.btn_editar_centro);
             this.Controls.Add(this.btn_salir_centro);
             this.Controls.Add(this.btn_limpiar_centro);
             this.Controls.Add(this.btn_agregar_centro);
@@ -524,5 +550,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn propio;
         private System.Windows.Forms.MaskedTextBox msk_txt_telefono_centro;
         private System.Windows.Forms.Button btn_eliminar_esp;
+        private System.Windows.Forms.Button btn_editar_especialidades;
+        private System.Windows.Forms.Button btn_editar_centro;
     }
 }
