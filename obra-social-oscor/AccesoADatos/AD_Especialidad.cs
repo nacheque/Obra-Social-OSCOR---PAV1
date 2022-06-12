@@ -184,7 +184,6 @@ namespace obra_social_oscor.AccesoADatos
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
