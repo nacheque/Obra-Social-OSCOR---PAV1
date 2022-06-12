@@ -1,6 +1,7 @@
 ﻿using obra_social_oscor.Formulario.ABM;
 using obra_social_oscor.Formulario.ABM_Comunes;
 using obra_social_oscor.Formulario.ABM_Procesos;
+using obra_social_oscor.Formulario.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,6 +112,12 @@ namespace obra_social_oscor
         private void gestionDeProfesionalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProfesionales ventana = new FrmProfesionales();
+            ventana.ShowDialog();
+        }
+
+        private void btn_reportes_Click(object sender, EventArgs e)
+        {
+            FrmEscritorioReportes ventana = new FrmEscritorioReportes();
             ventana.ShowDialog();
         }
     }
