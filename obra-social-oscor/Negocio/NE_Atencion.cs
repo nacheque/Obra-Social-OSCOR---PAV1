@@ -22,35 +22,37 @@ namespace obra_social_oscor.Negocio
                 {
                     Atencion atencion = new Atencion();
 
+                    atencion.IdAtencion = int.Parse(fila[0].ToString());
+
                     Afiliado afiliado = new Afiliado();
-                    afiliado.NumeroAfiliado = int.Parse(fila[0].ToString());
-                    afiliado.NombreCompleto = fila[1].ToString();
+                    afiliado.NumeroAfiliado = int.Parse(fila[1].ToString());
+                    afiliado.NombreCompleto = fila[2].ToString();
 
                     atencion.Afiliado = afiliado;
-                    atencion.FechaHoraAtencion = DateTime.Parse(fila[2].ToString());
+                    atencion.FechaHoraAtencion = DateTime.Parse(fila[3].ToString());
 
                     Centro centro = new Centro();
-                    centro.CodigoCentro = int.Parse(fila[3].ToString());
-                    centro.Denominacion = fila[4].ToString();
+                    centro.CodigoCentro = int.Parse(fila[4].ToString());
+                    centro.Denominacion = fila[5].ToString();
 
                     atencion.Centro = centro;
 
                     Especialidad especialidad = new Especialidad();
-                    especialidad.CodigoEspecialidad = int.Parse(fila[5].ToString());
-                    especialidad.NombreEspecialidad = fila[6].ToString();
+                    especialidad.CodigoEspecialidad = int.Parse(fila[6].ToString());
+                    especialidad.NombreEspecialidad = fila[7].ToString();
 
                     atencion.Especialidad = especialidad;
 
                     Profesional profesional = new Profesional();
-                    profesional.Matricula = int.Parse(fila[7].ToString());
-                    profesional.NombreCompleto = fila[8].ToString();
+                    profesional.Matricula = int.Parse(fila[8].ToString());
+                    profesional.NombreCompleto = fila[9].ToString();
 
                     atencion.Profesional = profesional;
-                    atencion.Importe = float.Parse(fila[9].ToString());
+                    atencion.Importe = float.Parse(fila[10].ToString());
 
                     Practica practica = new Practica();
-                    practica.CodigoPractica = int.Parse(fila[10].ToString());
-                    practica.DescripcionPractica = fila[11].ToString();
+                    practica.CodigoPractica = int.Parse(fila[11].ToString());
+                    practica.DescripcionPractica = fila[12].ToString();
 
                     atencion.Practica = practica;
                                                                           
@@ -77,11 +79,11 @@ namespace obra_social_oscor.Negocio
             }
         }
 
-        public static void EditarAtencion(Atencion atencion, int nroAfiliado, string fechaHora)
+        public static void EditarAtencion(Atencion atencion, int idAtencion)
         {
             try
             {
-                AD_Atencion.EditarAtencion(atencion, nroAfiliado, fechaHora);
+                AD_Atencion.EditarAtencion(atencion, idAtencion);
             }
             catch (Exception)
             {

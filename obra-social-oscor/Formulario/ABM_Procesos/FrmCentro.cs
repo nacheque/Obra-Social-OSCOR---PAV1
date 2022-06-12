@@ -1,5 +1,6 @@
 ﻿using obra_social_oscor.AccesoADatos;
 using obra_social_oscor.Entidades;
+using obra_social_oscor.Formulario.ABM_Procesos;
 using obra_social_oscor.Helpers;
 using obra_social_oscor.Negocio;
 using System;
@@ -37,6 +38,8 @@ namespace obra_social_oscor.Formulario.ABM
             CargarComboPropio();
             CargarGrilla();
             btn_eliminar_esp.Enabled = false;
+            btn_editar_centro.Enabled = false;
+            btn_editar_especialidades.Enabled = false;
         }
 
         private void CargarComboBarrios()
@@ -219,6 +222,42 @@ namespace obra_social_oscor.Formulario.ABM
             return mensajeError;
         }
 
+        private string ExisteEnGrillaEditar(string telefono, string denominacion, string email, string calle, string numero)
+        {
+            string mensajeError = "";
+
+            for (int i = 0; i < grd_centros.Rows.Count; i++)
+            {
+                if (int.Parse(grd_centros.Rows[i].Cells["cod_centro"].Value.ToString()) == global_cod_centro_seleccionado)
+                {
+                    continue;
+                }
+                if (grd_centros.Rows[i].Cells["telefono"].Value.ToString().Equals(telefono))
+                {
+                    mensajeError = "Ya existe un centro con el mismo telefono";
+                    break;
+                }
+                else if (grd_centros.Rows[i].Cells["denominacion"].Value.ToString().Equals(denominacion))
+                {
+                    mensajeError = "Ya existe un centro con la misma denominacion";
+                    break;
+                }
+                else if (grd_centros.Rows[i].Cells["mail"].Value.ToString().Equals(email))
+                {
+                    mensajeError = "Ya existe un centro con el mismo mail";
+                    break;
+                }
+                else if (grd_centros.Rows[i].Cells["calle"].Value.ToString().Equals(calle, StringComparison.OrdinalIgnoreCase)
+                    && grd_centros.Rows[i].Cells["numero"].Value.ToString().Equals(numero))
+                {
+                    mensajeError = "Ya existe un centro con esa direccion";
+                    break;
+                }
+            }
+
+            return mensajeError;
+        }
+
         private Centro ObtenerDatosCentro()
         {
             Centro centro = new Centro();
@@ -278,7 +317,12 @@ namespace obra_social_oscor.Formulario.ABM
             cmb_loc_centro.SelectedIndex = 0;
             cmb_propio.SelectedIndex = 0;
             btn_eliminar_esp.Enabled = false;
+            btn_agregar_esp_centro.Enabled = true;
             btn_agregar_centro.Enabled = true;
+            btn_editar_centro.Enabled = false;
+            grd_esp_centro.Enabled = true;
+            btn_editar_especialidades.Enabled = false;
+            cmb_esp_centro.Enabled = true;
             grd_esp_centro.Rows.Clear();            
         }
 
@@ -360,8 +404,13 @@ namespace obra_social_oscor.Formulario.ABM
                 global_cod_centro_seleccionado = int.Parse(filaSeleccionada.Cells["cod_centro"].Value.ToString());
                 ReiniciarFormulario();
 
-                btn_eliminar_esp.Enabled = true;
+                btn_eliminar_esp.Enabled = false;
                 btn_agregar_centro.Enabled = false;
+                btn_agregar_esp_centro.Enabled = false;
+                grd_esp_centro.Enabled = false;
+                btn_editar_especialidades.Enabled = true;
+                btn_editar_centro.Enabled = true;
+                cmb_esp_centro.Enabled = false;
 
                 Centro centro = new Centro();
                 centro.CodigoCentro = int.Parse(filaSeleccionada.Cells["cod_centro"].Value.ToString());
@@ -404,6 +453,59 @@ namespace obra_social_oscor.Formulario.ABM
             {
                 grd_esp_centro.Rows.Add(especialidadPorCentro.Especialidad.CodigoEspecialidad, especialidadPorCentro.Especialidad.NombreEspecialidad);
             }            
+        }
+
+        private void btn_editar_especialidades_Click(object sender, EventArgs e)
+        {
+            FrmEditarEspCentro ventana = new FrmEditarEspCentro(global_cod_centro_seleccionado);
+            ventana.ShowDialog();
+        }
+
+        private void btn_editar_centro_Click(object sender, EventArgs e)
+        {
+            if (!txt_denom_centro.Text.Equals("") && !txt_calle_centro.Text.Equals("") &&
+               !txt_nro_calle_centro.Text.Equals("") && !msk_txt_telefono_centro.Text.Equals("") && !txt_mail_centro.Text.Equals(""))
+            {
+                
+                if (Validar.IsValidEmail(txt_mail_centro.Text))
+                {
+                    string mensajeError = ExisteEnGrillaEditar(msk_txt_telefono_centro.Text, txt_denom_centro.Text, txt_mail_centro.Text,
+                        txt_calle_centro.Text, txt_nro_calle_centro.Text);
+                    if (mensajeError == "")
+                    {
+                        Centro centro = ObtenerDatosCentro();
+                        try
+                        {
+                            NE_Centro.EditarCentro(centro, global_cod_centro_seleccionado);
+                            MessageBox.Show("Centro editado con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ReiniciarFormulario();
+                            CargarGrilla();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Error al editar Centro...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensajeError, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de mail invalido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos para dar de editar un centro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void grp_centros_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -248,5 +248,47 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static void EditarCentro(Centro centro, int codigoCentro)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "UPDATE CENTROS SET DENOMINACION = @denominacion, CALLE = @calle, NUMERO = @numero, ID_BARRIO = @id_barrio, " +
+                                 " ID_LOCALIDAD = @id_localidad, TELEFONO = @telefono, MAIL = @mail, PROPIO = @propio " +
+                                 " WHERE COD_CENTRO = @cod_centro";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@denominacion", centro.Denominacion);
+                cmd.Parameters.AddWithValue("@calle", centro.Calle);
+                cmd.Parameters.AddWithValue("@numero", centro.Numero);
+                cmd.Parameters.AddWithValue("@id_barrio", centro.Barrio.IdBarrio);
+                cmd.Parameters.AddWithValue("@id_localidad", centro.Localidad.IdLocalidad);
+                cmd.Parameters.AddWithValue("@telefono", centro.Telefono);
+                cmd.Parameters.AddWithValue("@mail", centro.Mail);
+                cmd.Parameters.AddWithValue("@propio", centro.Propio);
+                cmd.Parameters.AddWithValue("@cod_centro", codigoCentro);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();                
+
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {                
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

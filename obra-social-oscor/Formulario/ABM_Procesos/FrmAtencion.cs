@@ -16,8 +16,7 @@ namespace obra_social_oscor.Formulario.ABM
 {
     public partial class frm_Atenciones : Form
     {
-        int global_nro_afiliado_seleccionado;
-        string fecha_hora_atencion_seleccionada;
+        int global_id_atencion_seleccionada;       
 
         public frm_Atenciones()
         {
@@ -207,18 +206,19 @@ namespace obra_social_oscor.Formulario.ABM
                 for (int i = 0; i < atenciones.Count; i++)
                 {
                     grd_atenciones.Rows.Add();
-                    grd_atenciones.Rows[i].Cells[0].Value = atenciones[i].Afiliado.NumeroAfiliado;
-                    grd_atenciones.Rows[i].Cells[1].Value = atenciones[i].Afiliado.NombreCompleto;
-                    grd_atenciones.Rows[i].Cells[2].Value = atenciones[i].FechaHoraAtencion;
-                    grd_atenciones.Rows[i].Cells[3].Value = atenciones[i].Centro.CodigoCentro;
-                    grd_atenciones.Rows[i].Cells[4].Value = atenciones[i].Centro.Denominacion;
-                    grd_atenciones.Rows[i].Cells[5].Value = atenciones[i].Especialidad.CodigoEspecialidad;
-                    grd_atenciones.Rows[i].Cells[6].Value = atenciones[i].Especialidad.NombreEspecialidad;
-                    grd_atenciones.Rows[i].Cells[7].Value = atenciones[i].Profesional.Matricula;
-                    grd_atenciones.Rows[i].Cells[8].Value = atenciones[i].Profesional.NombreCompleto;
-                    grd_atenciones.Rows[i].Cells[9].Value = atenciones[i].Importe;
-                    grd_atenciones.Rows[i].Cells[10].Value = atenciones[i].Practica.CodigoPractica;
-                    grd_atenciones.Rows[i].Cells[11].Value = atenciones[i].Practica.DescripcionPractica;
+                    grd_atenciones.Rows[i].Cells[0].Value = atenciones[i].IdAtencion;
+                    grd_atenciones.Rows[i].Cells[1].Value = atenciones[i].Afiliado.NumeroAfiliado;
+                    grd_atenciones.Rows[i].Cells[2].Value = atenciones[i].Afiliado.NombreCompleto;
+                    grd_atenciones.Rows[i].Cells[3].Value = atenciones[i].FechaHoraAtencion;
+                    grd_atenciones.Rows[i].Cells[4].Value = atenciones[i].Centro.CodigoCentro;
+                    grd_atenciones.Rows[i].Cells[5].Value = atenciones[i].Centro.Denominacion;
+                    grd_atenciones.Rows[i].Cells[6].Value = atenciones[i].Especialidad.CodigoEspecialidad;
+                    grd_atenciones.Rows[i].Cells[7].Value = atenciones[i].Especialidad.NombreEspecialidad;
+                    grd_atenciones.Rows[i].Cells[8].Value = atenciones[i].Profesional.Matricula;
+                    grd_atenciones.Rows[i].Cells[9].Value = atenciones[i].Profesional.NombreCompleto;
+                    grd_atenciones.Rows[i].Cells[10].Value = atenciones[i].Importe;
+                    grd_atenciones.Rows[i].Cells[11].Value = atenciones[i].Practica.CodigoPractica;
+                    grd_atenciones.Rows[i].Cells[12].Value = atenciones[i].Practica.DescripcionPractica;
                 }
             }
             catch (Exception)
@@ -358,8 +358,7 @@ namespace obra_social_oscor.Formulario.ABM
             {
                 DataGridViewRow filaSeleccionada = grd_atenciones.Rows[indice];
 
-                global_nro_afiliado_seleccionado = int.Parse(filaSeleccionada.Cells["nro_afiliado"].Value.ToString());
-                fecha_hora_atencion_seleccionada = filaSeleccionada.Cells["fecha_hora"].Value.ToString();
+                global_id_atencion_seleccionada = int.Parse(filaSeleccionada.Cells["id_atencion"].Value.ToString());                
 
                 ReiniciarFormulario();
 
@@ -438,7 +437,7 @@ namespace obra_social_oscor.Formulario.ABM
                     Atencion atencion = ObtenerDatosAtencion();
                     if (atencion.Importe >= 0)
                     {
-                        NE_Atencion.EditarAtencion(atencion, global_nro_afiliado_seleccionado, fecha_hora_atencion_seleccionada);
+                        NE_Atencion.EditarAtencion(atencion, global_id_atencion_seleccionada);
                         MessageBox.Show("Atencion editada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReiniciarFormulario();
                         CargarGrilla();

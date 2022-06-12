@@ -64,5 +64,17 @@ namespace obra_social_oscor.Negocio
                 throw;
             }
         }
+
+        public static void EditarCentro(Centro centro, int codigoCentro)
+        {
+            try
+            {
+                AD_Centro.EditarCentro(centro, codigoCentro);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

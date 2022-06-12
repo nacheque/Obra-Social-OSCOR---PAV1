@@ -145,6 +145,12 @@
     <Compile Include="Formulario\ABM_Procesos\CuotasPagas.Designer.cs">
       <DependentUpon>CuotasPagas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\ABM_Procesos\FrmEditarEspCentro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\ABM_Procesos\FrmEditarEspCentro.Designer.cs">
+      <DependentUpon>FrmEditarEspCentro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ABM_Procesos\Profesional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\CuotasPagas.resx">
       <DependentUpon>CuotasPagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\FrmEditarEspCentro.resx">
+      <DependentUpon>FrmEditarEspCentro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\Profesional.resx">
       <DependentUpon>Profesional.cs</DependentUpon>
