@@ -43,6 +43,36 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static List<ValorCuota> ObtenerValorCuotaPorTipoAfiYEdad(int idTipoAfiliado, int edad)
+        {
+            try
+            {
+                List<ValorCuota> valoresCuotas = new List<ValorCuota>();
+                DataTable tabla = AD_ValorCuota.ObtenerValorCoutaPorTipoAfiYEdad(idTipoAfiliado, edad);
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    TipoAfiliado tipoAfiliado = new TipoAfiliado();
+                    tipoAfiliado.CodigoTipoAfiliado = int.Parse(fila[0].ToString());
+
+                    ValorCuota valorCuota = new ValorCuota();
+                    valorCuota.TipoAfiliado = tipoAfiliado;
+                    valorCuota.EdadDesde = int.Parse(fila[1].ToString());
+                    valorCuota.EdadHasta = int.Parse(fila[2].ToString());
+                    valorCuota.Monto = float.Parse(fila[3].ToString());
+
+                    valoresCuotas.Add(valorCuota);
+                }
+
+                return valoresCuotas;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public static void AgregarVC(ValorCuota valorCuota)
         {
             try

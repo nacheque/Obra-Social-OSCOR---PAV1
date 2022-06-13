@@ -80,13 +80,12 @@ namespace obra_social_oscor.Formulario.Reportes.Atenciones
 
             tabla = AD_Atencion.ObtenerAtencionesReporteHistorico(numeroAfiliado, matricula, desde, hasta);
 
-            ReportDataSource ds = new ReportDataSource("DatosReportes", tabla);
+            ReportDataSource ds = new ReportDataSource("DatosReportes", tabla); 
 
             report_aten_historico.LocalReport.DataSources.Clear();
             report_aten_historico.LocalReport.DataSources.Add(ds);
             report_aten_historico.LocalReport.Refresh();
             this.report_aten_historico.RefreshReport();
-
         }
     }
 }
