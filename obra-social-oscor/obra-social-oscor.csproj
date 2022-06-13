@@ -70,6 +70,7 @@
     <Compile Include="AccesoADatos\AD_Barrio.cs" />
     <Compile Include="AccesoADatos\AD_Centro.cs" />
     <Compile Include="AccesoADatos\AD_Cobertura.cs" />
+    <Compile Include="AccesoADatos\AD_CuotaPaga.cs" />
     <Compile Include="AccesoADatos\AD_Especialidad.cs" />
     <Compile Include="AccesoADatos\AD_Profesional.cs" />
     <Compile Include="AccesoADatos\AD_ProfXCentroXEsp.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Centro.cs" />
     <Compile Include="Entidades\Cobertura.cs" />
+    <Compile Include="Entidades\CuotaPaga.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\EspecialidadPorCentro.cs" />
     <Compile Include="Entidades\Profesional.cs" />
@@ -157,11 +159,11 @@
     <Compile Include="Formulario\ABM_Procesos\FrmCentro.Designer.cs">
       <DependentUpon>FrmCentro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\CuotasPagas.cs">
+    <Compile Include="Formulario\ABM_Procesos\FrmCuotasPagas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\ABM_Procesos\CuotasPagas.Designer.cs">
-      <DependentUpon>CuotasPagas.cs</DependentUpon>
+    <Compile Include="Formulario\ABM_Procesos\FrmCuotasPagas.Designer.cs">
+      <DependentUpon>FrmCuotasPagas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ABM_Procesos\FrmEditarEspCentro.cs">
       <SubType>Form</SubType>
@@ -205,6 +207,7 @@
     <Compile Include="Negocio\NE_Barrio.cs" />
     <Compile Include="Negocio\NE_Centro.cs" />
     <Compile Include="Negocio\NE_Cobertura.cs" />
+    <Compile Include="Negocio\NE_CuotaPaga.cs" />
     <Compile Include="Negocio\NE_Especialidad.cs" />
     <Compile Include="Negocio\NE_EspecialidadPorCentro.cs" />
     <Compile Include="Negocio\NE_Profesional.cs" />
@@ -249,8 +252,8 @@
     <EmbeddedResource Include="Formulario\ABM_Procesos\FrmCentro.resx">
       <DependentUpon>FrmCentro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\ABM_Procesos\CuotasPagas.resx">
-      <DependentUpon>CuotasPagas.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\ABM_Procesos\FrmCuotasPagas.resx">
+      <DependentUpon>FrmCuotasPagas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\ABM_Procesos\FrmEditarEspCentro.resx">
       <DependentUpon>FrmEditarEspCentro.cs</DependentUpon>

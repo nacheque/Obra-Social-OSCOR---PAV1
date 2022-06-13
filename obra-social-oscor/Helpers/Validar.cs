@@ -103,5 +103,20 @@ namespace obra_social_oscor.Helpers
             }
         }
 
+        public static int CalcularEdad(DateTime fechaNacimiento)
+        {          
+            DateTime now = DateTime.Today;
+            int edad = DateTime.Today.Year - fechaNacimiento.Year;
+
+            if (DateTime.Today < fechaNacimiento.AddYears(edad))
+            {
+                return --edad;
+            }
+            else
+            {
+                return edad;
+            }           
+        }
+
     }
 }
