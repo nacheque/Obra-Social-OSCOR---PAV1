@@ -58,6 +58,30 @@ namespace obra_social_oscor.Negocio
             }
         }
 
+        public static List<Afiliado> ObtenerAfiliadosReporte()
+        {
+            try
+            {
+                List<Afiliado> afiliados = new List<Afiliado>();
+                DataTable tabla = AD_Afiliado.ObtenerAfiliadosReporte();
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    Afiliado afiliado = new Afiliado();
+                    afiliado.NumeroAfiliado = int.Parse(fila[0].ToString());
+                    afiliado.NombreCompleto = fila[0].ToString();
+
+                    afiliados.Add(afiliado);
+                }
+
+                return afiliados;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static void ActualizarAfiliado(Afiliado afiliado, int codigoAfiliado)
         {
             try

@@ -181,10 +181,15 @@
     <Compile Include="Formulario\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\Reportes\Atenciones\FrmHistoricoAtencionesAfiliado.cs">
+    <Compile Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\Reportes\Atenciones\FrmHistoricoAtencionesAfiliado.Designer.cs">
+    <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.Designer.cs">
       <DependentUpon>FrmHistoricoAtencionesAfiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Reportes\FrmEscritorioReportes.cs">
@@ -193,6 +198,7 @@
     <Compile Include="Formulario\Reportes\FrmEscritorioReportes.Designer.cs">
       <DependentUpon>FrmEscritorioReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Fechas.cs" />
     <Compile Include="Helpers\Validar.cs" />
     <Compile Include="Negocio\Ne_Afiliado.cs" />
     <Compile Include="Negocio\NE_Atencion.cs" />
@@ -255,17 +261,29 @@
     <EmbeddedResource Include="Formulario\Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\Reportes\Atenciones\FrmHistoricoAtencionesAfiliado.resx">
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.resx">
       <DependentUpon>FrmHistoricoAtencionesAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\FrmEscritorioReportes.resx">
       <DependentUpon>FrmEscritorioReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoAtencionesAfiliado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xsc">
+      <DependentUpon>DatosReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xss">
+      <DependentUpon>DatosReportes.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -353,5 +371,6 @@
   <ItemGroup>
     <None Include="Resources\icono_profesionales.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

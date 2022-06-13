@@ -135,6 +135,42 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerAfiliadosReporte()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Clear();
+
+                string consulta = "SELECT NRO_AFILIADO, APELLIDO + ', ' + NOMBRE AS NOMBRE_COMPLETO " +
+                    " FROM AFILIADOS ";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarAfiliado(Afiliado afiliado)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
