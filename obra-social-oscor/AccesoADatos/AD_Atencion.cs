@@ -131,5 +131,61 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static DataTable ObtenerAtencionesReporteHistorico(int numeroAfiliado, int matricula, string desde, string hasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);           
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT AF.APELLIDO + ', ' + AF.NOMBRE AS AFILIADO, " +
+                                  " CONVERT(SMALLDATETIME, AT.FECHA_HORA_ATENCION) AS FECHA, C.DENOMINACION AS CENTRO, E.NOMBRE AS ESPECIALIDAD, " +
+                                  " P.APELLIDO + ', ' + P.NOMBRE AS PROFESIONAL, AT.IMPORTE, " +
+                                  " PR.DESCRIPCION AS PRACTICA" +
+                                  " FROM ATENCIONES_POR_AFILIADO AT " +
+                                  " JOIN AFILIADOS AF ON AF.NRO_AFILIADO = AT.NRO_AFILIADO " +
+                                  " JOIN CENTROS C ON C.COD_CENTRO = AT.COD_CENTRO " +
+                                  " JOIN ESPECIALIDADES E ON E.COD_ESPECIALIDAD = AT.COD_ESPECIALIDAD " +
+                                  " JOIN PROFESIONALES P ON P.MATRICULA = AT.MATRICULA " +
+                                  " JOIN PRACTICAS PR ON PR.ID_PRACTICA = AT.ID_PRACTICA " +
+                                  " WHERE AT.NRO_AFILIADO = @num_afiliado " +
+                                  " AND P.MATRICULA = @matricula " +
+                                  " AND CONVERT(DATE, FECHA_HORA_ATENCION) >= @desde " +
+                                  " AND CONVERT(DATE, FECHA_HORA_ATENCION) <= @hasta ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@num_afiliado", numeroAfiliado);
+                cmd.Parameters.AddWithValue("@matricula", matricula);
+                cmd.Parameters.AddWithValue("@desde", desde);
+                cmd.Parameters.AddWithValue("@hasta", hasta);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
     }
 }
