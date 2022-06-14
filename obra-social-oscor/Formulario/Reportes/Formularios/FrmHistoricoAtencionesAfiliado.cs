@@ -82,7 +82,7 @@ namespace obra_social_oscor.Formulario.Reportes.Atenciones
 
             ReportDataSource ds = new ReportDataSource("DatosReportes", tabla);
 
-            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToLongDateString());
+            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
 
 
             report_aten_historico.LocalReport.DataSources.Clear();
