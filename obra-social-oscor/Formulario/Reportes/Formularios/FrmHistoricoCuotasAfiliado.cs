@@ -52,8 +52,8 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
 
             int numeroAfiliado = (int) cmb_afi_hist_cuota.SelectedValue;            
 
-            string desde = Fechas.ConvertirFechaEnStringParaQuery(dtp_desde_report.Value.ToShortDateString());
-            string hasta = Fechas.ConvertirFechaEnStringParaQuery(dtp_hasta_report.Value.ToShortDateString());
+            string desde = dtp_desde_report.Value.ToShortDateString();
+            string hasta = dtp_hasta_report.Value.ToShortDateString();
 
             tabla = AD_CuotaPaga.ObtenerCuotasPagasReporteHistorico(numeroAfiliado, desde, hasta);
 
