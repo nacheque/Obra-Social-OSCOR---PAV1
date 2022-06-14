@@ -196,10 +196,10 @@ namespace obra_social_oscor.AccesoADatos
                 SqlCommand cmd = new SqlCommand();
 
                 string consulta = " SELECT AF.APELLIDO + ', ' + AF.NOMBRE AS AFILIADO, " +
-                                  " CONVERT(SMALLDATETIME, AT.FECHA_HORA_ATENCION) AS FECHA," +
+                                  " CONVERT(SMALLDATETIME, AT.FECHA_HORA_ATENCION) AS FECHA, " +
                                   " C.DENOMINACION AS CENTRO, E.NOMBRE AS ESPECIALIDAD, " +
                                   " P.APELLIDO + ', ' + P.NOMBRE AS PROFESIONAL, AT.IMPORTE, " +
-                                  " PR.DESCRIPCION AS PRACTICA" +
+                                  " PR.DESCRIPCION AS PRACTICA " +
                                   " FROM ATENCIONES_POR_AFILIADO AT " +
                                   " JOIN AFILIADOS AF ON AF.NRO_AFILIADO = AT.NRO_AFILIADO " +
                                   " JOIN CENTROS C ON C.COD_CENTRO = AT.COD_CENTRO " +

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using obra_social_oscor.AccesoADatos;
+using obra_social_oscor.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,16 +45,19 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
         {
             DataTable tabla = new DataTable();
 
-            int numeroAfiliado = (int)cmb_afiliado.SelectedValue;
+            int numeroAfiliado = (int) cmb_afiliado.SelectedValue;
 
-            string fecha = dtp_fecha.Value.ToString("dd/MM/yyyy");
+            string fecha = Fechas.ConvertirFechaEnStringParaQuery(dtp_fecha.Value.ToShortDateString());
 
             tabla = AD_Atencion.ObtenerReporteAtencionesAfiliado(numeroAfiliado, fecha);
 
             ReportDataSource ds = new ReportDataSource("DatosReportes", tabla);
 
+            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
+
             reportAtencionDiariaAfiliado.LocalReport.DataSources.Clear();
             reportAtencionDiariaAfiliado.LocalReport.DataSources.Add(ds);
+            reportAtencionDiariaAfiliado.LocalReport.SetParameters(fechaHoraReporte);
             reportAtencionDiariaAfiliado.LocalReport.Refresh();
             this.reportAtencionDiariaAfiliado.RefreshReport();
         }

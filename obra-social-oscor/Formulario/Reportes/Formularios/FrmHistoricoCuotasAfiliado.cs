@@ -59,7 +59,7 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
 
             ReportDataSource ds = new ReportDataSource("DatosCuotasHistorico", tabla);
 
-            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToLongDateString());
+            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
 
             report_cuota_historico.LocalReport.DataSources.Clear();
             report_cuota_historico.LocalReport.DataSources.Add(ds);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAtencionDiariaAfiliado));
             this.btn_Salir = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
@@ -94,6 +95,8 @@
             // 
             // reportAtencionDiariaAfiliado
             // 
+            this.reportAtencionDiariaAfiliado.LocalReport.ReportEmbeddedResource = "obra_social_oscor.Formulario.Reportes.Informes.ReporteAtencionDiariaAfiliado.rdlc" +
+    "";
             this.reportAtencionDiariaAfiliado.Location = new System.Drawing.Point(3, 63);
             this.reportAtencionDiariaAfiliado.Name = "reportAtencionDiariaAfiliado";
             this.reportAtencionDiariaAfiliado.ServerReport.BearerToken = null;
@@ -112,8 +115,10 @@
             this.Controls.Add(this.btn_generarReportAfiliado);
             this.Controls.Add(this.cmb_afiliado);
             this.Controls.Add(this.btn_Salir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAtencionDiariaAfiliado";
-            this.Text = "FrmAtencionDiariaAfiliado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reportes Atenciones Diarias";
             this.Load += new System.EventHandler(this.FrmAtencionDiariaAfiliado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
