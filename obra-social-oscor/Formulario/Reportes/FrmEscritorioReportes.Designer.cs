@@ -33,13 +33,16 @@
             this.atencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoDeAtencionesPorAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Salir_reportes = new System.Windows.Forms.Button();
+            this.cuotasPagasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.atencionesToolStripMenuItem});
+            this.atencionesToolStripMenuItem,
+            this.cuotasPagasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(698, 24);
@@ -73,6 +76,21 @@
             this.btn_Salir_reportes.UseVisualStyleBackColor = true;
             this.btn_Salir_reportes.Click += new System.EventHandler(this.btn_Salir_reportes_Click);
             // 
+            // cuotasPagasToolStripMenuItem
+            // 
+            this.cuotasPagasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem});
+            this.cuotasPagasToolStripMenuItem.Name = "cuotasPagasToolStripMenuItem";
+            this.cuotasPagasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.cuotasPagasToolStripMenuItem.Text = "Cuotas Pagas";
+            // 
+            // historicoDeCuotasPagasPorAfiliadoToolStripMenuItem
+            // 
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Name = "historicoDeCuotasPagasPorAfiliadoToolStripMenuItem";
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Text = "Historico de cuotas pagas por afiliado";
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem_Click);
+            // 
             // FrmEscritorioReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,5 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem atencionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historicoDeAtencionesPorAfiliadoToolStripMenuItem;
         private System.Windows.Forms.Button btn_Salir_reportes;
+        private System.Windows.Forms.ToolStripMenuItem cuotasPagasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historicoDeCuotasPagasPorAfiliadoToolStripMenuItem;
     }
 }

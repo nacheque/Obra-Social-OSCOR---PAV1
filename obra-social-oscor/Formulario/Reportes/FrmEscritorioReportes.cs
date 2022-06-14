@@ -1,4 +1,5 @@
 ﻿using obra_social_oscor.Formulario.Reportes.Atenciones;
+using obra_social_oscor.Formulario.Reportes.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,12 @@ namespace obra_social_oscor.Formulario.Reportes
         private void historicoDeAtencionesPorAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmHistoricoAtencionesAfiliado ventana = new FrmHistoricoAtencionesAfiliado();
+            ventana.ShowDialog();
+        }
+
+        private void historicoDeCuotasPagasPorAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmHistoricoCuotasAfiliado ventana = new FrmHistoricoCuotasAfiliado();
             ventana.ShowDialog();
         }
     }

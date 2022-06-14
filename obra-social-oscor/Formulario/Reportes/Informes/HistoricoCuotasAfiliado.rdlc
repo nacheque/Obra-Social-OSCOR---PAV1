@@ -7,11 +7,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f3517858-280f-4ff7-9988-2206cc23f3a9</rd:DataSourceID>
+      <rd:DataSourceID>de5318de-ed22-44e1-895e-86982b387174</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatosReportes">
+    <DataSet Name="DatosCuotasHistorico">
       <Query>
         <DataSourceName>DatosReportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -21,35 +21,31 @@
           <DataField>AFILIADO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FECHA">
-          <DataField>FECHA</DataField>
+        <Field Name="CUOTA">
+          <DataField>CUOTA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CENTRO">
-          <DataField>CENTRO</DataField>
+        <Field Name="AÑO">
+          <DataField>AÑO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ESPECIALIDAD">
-          <DataField>ESPECIALIDAD</DataField>
+        <Field Name="FECHA_PAGO">
+          <DataField>FECHA_PAGO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PROFESIONAL">
-          <DataField>PROFESIONAL</DataField>
+        <Field Name="MONTO_EMERGENCIA">
+          <DataField>MONTO_EMERGENCIA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IMPORTE">
-          <DataField>IMPORTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PRACTICA">
-          <DataField>PRACTICA</DataField>
+        <Field Name="TOTAL_PAGO">
+          <DataField>TOTAL_PAGO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\Desktop\Proyectos\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xsd</rd:SchemaPath>
-        <rd:TableName>HistoricoAtenciones</rd:TableName>
+        <rd:SchemaPath>C:\Users\Guille\Desktop\Proyectos\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xsd</rd:SchemaPath>
+        <rd:TableName>HistoricoCuotas</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -67,7 +63,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Histórico de atenciones para un afiliado y profesional</Value>
+                    <Value>Histórico de cuotas pagas para un afiliado</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>13pt</FontSize>
@@ -79,8 +75,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.52599cm</Top>
-            <Left>2.64203cm</Left>
+            <Top>0.77156cm</Top>
+            <Left>3.79031cm</Left>
             <Height>1.12917cm</Height>
             <Width>10.51688cm</Width>
             <Style>
@@ -94,9 +90,9 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>2.06057cm</Top>
+            <Top>2.20927cm</Top>
             <Height>0cm</Height>
-            <Width>16.17391cm</Width>
+            <Width>16.80719cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -106,29 +102,26 @@
               </Border>
             </Style>
           </Line>
-          <Tablix Name="Tablix3">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.91792cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.16833cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.81208cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.92333cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.76458cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.95854cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.1825cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -137,7 +130,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox41">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -151,7 +144,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox41</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -168,21 +161,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox43">
+                        <Textbox Name="Textbox6">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>FECHA</Value>
+                                  <Value>CUOTA</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox43</rd:DefaultName>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -199,21 +192,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox45">
+                        <Textbox Name="Textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CENTRO</Value>
+                                  <Value>AÑO</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -230,21 +223,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox47">
+                        <Textbox Name="Textbox10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>ESPECIALIDAD</Value>
+                                  <Value>FECHA PAGO</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -261,21 +254,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox49">
+                        <Textbox Name="Textbox12">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>PROFESIONAL</Value>
+                                  <Value>MONTO EMERGENCIA</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox49</rd:DefaultName>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -292,52 +285,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox51">
+                        <Textbox Name="Textbox14">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>IMPORTE</Value>
+                                  <Value>TOTAL PAGO</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox51</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox53">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>PRACTICA</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox53</rd:DefaultName>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -389,21 +351,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="FECHA">
+                        <Textbox Name="CUOTA">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FECHA.Value</Value>
+                                  <Value>=Fields!CUOTA.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>FECHA</rd:DefaultName>
+                          <rd:DefaultName>CUOTA</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -419,21 +381,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CENTRO">
+                        <Textbox Name="AÑO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CENTRO.Value</Value>
+                                  <Value>=Fields!AÑO.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>CENTRO</rd:DefaultName>
+                          <rd:DefaultName>AÑO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -449,21 +411,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ESPECIALIDAD">
+                        <Textbox Name="FECHA_PAGO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ESPECIALIDAD.Value</Value>
+                                  <Value>=Fields!FECHA_PAGO.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ESPECIALIDAD</rd:DefaultName>
+                          <rd:DefaultName>FECHA_PAGO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -479,21 +441,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PROFESIONAL">
+                        <Textbox Name="MONTO_EMERGENCIA">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PROFESIONAL.Value</Value>
+                                  <Value>=Fields!MONTO_EMERGENCIA.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PROFESIONAL</rd:DefaultName>
+                          <rd:DefaultName>MONTO_EMERGENCIA</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -509,51 +471,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="IMPORTE">
+                        <Textbox Name="TOTAL_PAGO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!IMPORTE.Value</Value>
+                                  <Value>=Fields!TOTAL_PAGO.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>IMPORTE</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="PRACTICA">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!PRACTICA.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>PRACTICA</rd:DefaultName>
+                          <rd:DefaultName>TOTAL_PAGO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -579,7 +511,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -592,11 +523,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DatosReportes</DataSetName>
-            <Top>2.9337cm</Top>
-            <Left>0.36724cm</Left>
+            <DataSetName>DatosCuotasHistorico</DataSetName>
+            <Top>3.96558cm</Top>
+            <Left>0.91989cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.72728cm</Width>
+            <Width>15cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -605,35 +536,35 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.35417in</Height>
+        <Height>3.28125in</Height>
         <Style />
       </Body>
-      <Width>6.36768in</Width>
+      <Width>6.617in</Width>
       <Page>
         <PageFooter>
           <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="OverallPageNumber">
+            <Textbox Name="PageNumber">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!OverallPageNumber</Value>
+                      <Value>=Globals!PageNumber</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>OverallPageNumber</rd:DefaultName>
-              <Top>1.05516cm</Top>
-              <Left>13.34821cm</Left>
+              <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0.94933cm</Top>
+              <Left>12.61745cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.74632cm</Width>
+              <Width>2.5cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -659,8 +590,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>fechaReporte</rd:DefaultName>
-              <Top>0.97577cm</Top>
-              <Left>1.42557cm</Left>
+              <Top>0.94933cm</Top>
+              <Left>1.55787cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -713,5 +644,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>19f6d466-ed84-446d-a7e0-609004750bcf</rd:ReportID>
+  <rd:ReportID>194e0ec7-2007-4f57-a6f3-ad636f36a120</rd:ReportID>
 </Report>

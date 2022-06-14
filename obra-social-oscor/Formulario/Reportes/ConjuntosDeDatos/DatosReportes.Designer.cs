@@ -26,6 +26,8 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         
         private HistoricoAtencionesDataTable tableHistoricoAtenciones;
         
+        private HistoricoCuotasDataTable tableHistoricoCuotas;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                 if ((ds.Tables["HistoricoAtenciones"] != null)) {
                     base.Tables.Add(new HistoricoAtencionesDataTable(ds.Tables["HistoricoAtenciones"]));
                 }
+                if ((ds.Tables["HistoricoCuotas"] != null)) {
+                    base.Tables.Add(new HistoricoCuotasDataTable(ds.Tables["HistoricoCuotas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         public HistoricoAtencionesDataTable HistoricoAtenciones {
             get {
                 return this.tableHistoricoAtenciones;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public HistoricoCuotasDataTable HistoricoCuotas {
+            get {
+                return this.tableHistoricoCuotas;
             }
         }
         
@@ -155,6 +170,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                 if ((ds.Tables["HistoricoAtenciones"] != null)) {
                     base.Tables.Add(new HistoricoAtencionesDataTable(ds.Tables["HistoricoAtenciones"]));
                 }
+                if ((ds.Tables["HistoricoCuotas"] != null)) {
+                    base.Tables.Add(new HistoricoCuotasDataTable(ds.Tables["HistoricoCuotas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                     this.tableHistoricoAtenciones.InitVars();
                 }
             }
+            this.tableHistoricoCuotas = ((HistoricoCuotasDataTable)(base.Tables["HistoricoCuotas"]));
+            if ((initTable == true)) {
+                if ((this.tableHistoricoCuotas != null)) {
+                    this.tableHistoricoCuotas.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHistoricoAtenciones = new HistoricoAtencionesDataTable();
             base.Tables.Add(this.tableHistoricoAtenciones);
+            this.tableHistoricoCuotas = new HistoricoCuotasDataTable();
+            base.Tables.Add(this.tableHistoricoCuotas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeHistoricoAtenciones() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeHistoricoCuotas() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void HistoricoAtencionesRowChangeEventHandler(object sender, HistoricoAtencionesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void HistoricoCuotasRowChangeEventHandler(object sender, HistoricoCuotasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -604,6 +639,323 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class HistoricoCuotasDataTable : global::System.Data.TypedTableBase<HistoricoCuotasRow> {
+            
+            private global::System.Data.DataColumn columnAFILIADO;
+            
+            private global::System.Data.DataColumn columnCUOTA;
+            
+            private global::System.Data.DataColumn columnAÑO;
+            
+            private global::System.Data.DataColumn columnFECHA_PAGO;
+            
+            private global::System.Data.DataColumn columnMONTO_EMERGENCIA;
+            
+            private global::System.Data.DataColumn columnTOTAL_PAGO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasDataTable() {
+                this.TableName = "HistoricoCuotas";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal HistoricoCuotasDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected HistoricoCuotasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AFILIADOColumn {
+                get {
+                    return this.columnAFILIADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CUOTAColumn {
+                get {
+                    return this.columnCUOTA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AÑOColumn {
+                get {
+                    return this.columnAÑO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FECHA_PAGOColumn {
+                get {
+                    return this.columnFECHA_PAGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MONTO_EMERGENCIAColumn {
+                get {
+                    return this.columnMONTO_EMERGENCIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TOTAL_PAGOColumn {
+                get {
+                    return this.columnTOTAL_PAGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasRow this[int index] {
+                get {
+                    return ((HistoricoCuotasRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event HistoricoCuotasRowChangeEventHandler HistoricoCuotasRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event HistoricoCuotasRowChangeEventHandler HistoricoCuotasRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event HistoricoCuotasRowChangeEventHandler HistoricoCuotasRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event HistoricoCuotasRowChangeEventHandler HistoricoCuotasRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddHistoricoCuotasRow(HistoricoCuotasRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasRow AddHistoricoCuotasRow(string AFILIADO, string CUOTA, string AÑO, string FECHA_PAGO, string MONTO_EMERGENCIA, string TOTAL_PAGO) {
+                HistoricoCuotasRow rowHistoricoCuotasRow = ((HistoricoCuotasRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AFILIADO,
+                        CUOTA,
+                        AÑO,
+                        FECHA_PAGO,
+                        MONTO_EMERGENCIA,
+                        TOTAL_PAGO};
+                rowHistoricoCuotasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHistoricoCuotasRow);
+                return rowHistoricoCuotasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                HistoricoCuotasDataTable cln = ((HistoricoCuotasDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new HistoricoCuotasDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnAFILIADO = base.Columns["AFILIADO"];
+                this.columnCUOTA = base.Columns["CUOTA"];
+                this.columnAÑO = base.Columns["AÑO"];
+                this.columnFECHA_PAGO = base.Columns["FECHA_PAGO"];
+                this.columnMONTO_EMERGENCIA = base.Columns["MONTO_EMERGENCIA"];
+                this.columnTOTAL_PAGO = base.Columns["TOTAL_PAGO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnAFILIADO = new global::System.Data.DataColumn("AFILIADO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAFILIADO);
+                this.columnCUOTA = new global::System.Data.DataColumn("CUOTA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUOTA);
+                this.columnAÑO = new global::System.Data.DataColumn("AÑO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAÑO);
+                this.columnFECHA_PAGO = new global::System.Data.DataColumn("FECHA_PAGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECHA_PAGO);
+                this.columnMONTO_EMERGENCIA = new global::System.Data.DataColumn("MONTO_EMERGENCIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTO_EMERGENCIA);
+                this.columnTOTAL_PAGO = new global::System.Data.DataColumn("TOTAL_PAGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOTAL_PAGO);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasRow NewHistoricoCuotasRow() {
+                return ((HistoricoCuotasRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new HistoricoCuotasRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(HistoricoCuotasRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.HistoricoCuotasRowChanged != null)) {
+                    this.HistoricoCuotasRowChanged(this, new HistoricoCuotasRowChangeEvent(((HistoricoCuotasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.HistoricoCuotasRowChanging != null)) {
+                    this.HistoricoCuotasRowChanging(this, new HistoricoCuotasRowChangeEvent(((HistoricoCuotasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.HistoricoCuotasRowDeleted != null)) {
+                    this.HistoricoCuotasRowDeleted(this, new HistoricoCuotasRowChangeEvent(((HistoricoCuotasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.HistoricoCuotasRowDeleting != null)) {
+                    this.HistoricoCuotasRowDeleting(this, new HistoricoCuotasRowChangeEvent(((HistoricoCuotasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveHistoricoCuotasRow(HistoricoCuotasRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatosReportes ds = new DatosReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "HistoricoCuotasDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class HistoricoAtencionesRow : global::System.Data.DataRow {
@@ -817,6 +1169,190 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class HistoricoCuotasRow : global::System.Data.DataRow {
+            
+            private HistoricoCuotasDataTable tableHistoricoCuotas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal HistoricoCuotasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableHistoricoCuotas = ((HistoricoCuotasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AFILIADO {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.AFILIADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AFILIADO\' de la tabla \'HistoricoCuotas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.AFILIADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CUOTA {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.CUOTAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CUOTA\' de la tabla \'HistoricoCuotas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.CUOTAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AÑO {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.AÑOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AÑO\' de la tabla \'HistoricoCuotas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.AÑOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FECHA_PAGO {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.FECHA_PAGOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA_PAGO\' de la tabla \'HistoricoCuotas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.FECHA_PAGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string MONTO_EMERGENCIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.MONTO_EMERGENCIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTO_EMERGENCIA\' de la tabla \'HistoricoCuotas\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.MONTO_EMERGENCIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string TOTAL_PAGO {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistoricoCuotas.TOTAL_PAGOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TOTAL_PAGO\' de la tabla \'HistoricoCuotas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoricoCuotas.TOTAL_PAGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAFILIADONull() {
+                return this.IsNull(this.tableHistoricoCuotas.AFILIADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAFILIADONull() {
+                this[this.tableHistoricoCuotas.AFILIADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCUOTANull() {
+                return this.IsNull(this.tableHistoricoCuotas.CUOTAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCUOTANull() {
+                this[this.tableHistoricoCuotas.CUOTAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAÑONull() {
+                return this.IsNull(this.tableHistoricoCuotas.AÑOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAÑONull() {
+                this[this.tableHistoricoCuotas.AÑOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFECHA_PAGONull() {
+                return this.IsNull(this.tableHistoricoCuotas.FECHA_PAGOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFECHA_PAGONull() {
+                this[this.tableHistoricoCuotas.FECHA_PAGOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMONTO_EMERGENCIANull() {
+                return this.IsNull(this.tableHistoricoCuotas.MONTO_EMERGENCIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMONTO_EMERGENCIANull() {
+                this[this.tableHistoricoCuotas.MONTO_EMERGENCIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTOTAL_PAGONull() {
+                return this.IsNull(this.tableHistoricoCuotas.TOTAL_PAGOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTOTAL_PAGONull() {
+                this[this.tableHistoricoCuotas.TOTAL_PAGOColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -836,6 +1372,40 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public HistoricoAtencionesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class HistoricoCuotasRowChangeEvent : global::System.EventArgs {
+            
+            private HistoricoCuotasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasRowChangeEvent(HistoricoCuotasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HistoricoCuotasRow Row {
                 get {
                     return this.eventRow;
                 }

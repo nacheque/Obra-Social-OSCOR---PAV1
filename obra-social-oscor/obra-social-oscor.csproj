@@ -194,6 +194,12 @@
     <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.Designer.cs">
       <DependentUpon>FrmHistoricoAtencionesAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.Designer.cs">
+      <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Reportes\FrmEscritorioReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,10 +273,14 @@
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.resx">
       <DependentUpon>FrmHistoricoAtencionesAfiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.resx">
+      <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\FrmEscritorioReportes.resx">
       <DependentUpon>FrmEscritorioReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoAtencionesAfiliado.rdlc" />
+    <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoCuotasAfiliado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
