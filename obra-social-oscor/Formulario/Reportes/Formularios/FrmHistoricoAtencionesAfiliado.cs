@@ -76,13 +76,13 @@ namespace obra_social_oscor.Formulario.Reportes.Atenciones
             int matricula = (int) cmb_prof_reporte_aten.SelectedValue;
 
             string desde = Fechas.ConvertirFechaEnStringParaQuery(dtp_desde.Value.ToShortDateString());
-            string hasta = Fechas.ConvertirFechaEnStringParaQuery(dtp_hasta.Value.ToShortDateString());
+            string hasta = Fechas.ConvertirFechaEnStringParaQuery(dtp_hasta.Value.ToShortDateString());      
 
             tabla = AD_Atencion.ObtenerAtencionesReporteHistorico(numeroAfiliado, matricula, desde, hasta);
 
             ReportDataSource ds = new ReportDataSource("DatosReportes", tabla);
 
-            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToLongDateString());
+            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
 
 
             report_aten_historico.LocalReport.DataSources.Clear();

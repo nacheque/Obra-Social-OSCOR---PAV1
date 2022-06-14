@@ -35,5 +35,17 @@ namespace obra_social_oscor.Formulario.Reportes
             FrmHistoricoCuotasAfiliado ventana = new FrmHistoricoCuotasAfiliado();
             ventana.ShowDialog();
         }
+
+        private void reporteDeAtencionesDiariaPorAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAtencionDiariaAfiliado ventana = new FrmAtencionDiariaAfiliado();
+            ventana.ShowDialog();
+        }
+
+        private void reporteDeAtencionesDiariaPorCentroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAtencionDiariaCentro ventana = new FrmAtencionDiariaCentro();
+            ventana.ShowDialog();
+        }
     }
 }
