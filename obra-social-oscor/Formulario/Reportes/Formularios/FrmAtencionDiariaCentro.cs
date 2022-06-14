@@ -47,7 +47,7 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
 
             int numeroCentro = (int) cmb_centro.SelectedValue;
 
-            string fecha = Fechas.ConvertirFechaEnStringParaQuery(dtp_fecha.Value.ToShortDateString());
+            string fecha = dtp_fecha.Value.ToShortDateString();
 
             tabla = AD_Atencion.ObtenerReporteAtencionesCentros(numeroCentro, fecha);
 

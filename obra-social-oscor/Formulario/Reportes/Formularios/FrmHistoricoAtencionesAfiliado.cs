@@ -75,8 +75,8 @@ namespace obra_social_oscor.Formulario.Reportes.Atenciones
             int numeroAfiliado = (int) cmb_afiliado_reporte_aten.SelectedValue;
             int matricula = (int) cmb_prof_reporte_aten.SelectedValue;
 
-            string desde = Fechas.ConvertirFechaEnStringParaQuery(dtp_desde.Value.ToShortDateString());
-            string hasta = Fechas.ConvertirFechaEnStringParaQuery(dtp_hasta.Value.ToShortDateString());      
+            string desde = dtp_desde.Value.ToShortDateString();
+            string hasta = dtp_hasta.Value.ToShortDateString();      
 
             tabla = AD_Atencion.ObtenerAtencionesReporteHistorico(numeroAfiliado, matricula, desde, hasta);
 
