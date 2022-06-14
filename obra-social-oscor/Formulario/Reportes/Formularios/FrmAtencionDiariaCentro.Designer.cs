@@ -94,6 +94,7 @@
             // 
             // reportAtencionDiariaCentro
             // 
+            this.reportAtencionDiariaCentro.LocalReport.ReportEmbeddedResource = "obra_social_oscor.Formulario.Reportes.Informes.ReporteAtencionDiariaCentro.rdlc";
             this.reportAtencionDiariaCentro.Location = new System.Drawing.Point(2, 52);
             this.reportAtencionDiariaCentro.Name = "reportAtencionDiariaCentro";
             this.reportAtencionDiariaCentro.ServerReport.BearerToken = null;

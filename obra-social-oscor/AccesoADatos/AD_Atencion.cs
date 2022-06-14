@@ -238,7 +238,7 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
-        public static DataTable ObtenerReporteAtencionesCentros(int numeroAfiliado, string fecha)
+        public static DataTable ObtenerReporteAtencionesCentros(int numeroCentro, string fecha)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -262,7 +262,7 @@ namespace obra_social_oscor.AccesoADatos
                                   " AND CONVERT(DATE, FECHA_HORA_ATENCION) = @fecha ";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@num_centro", numeroAfiliado);
+                cmd.Parameters.AddWithValue("@num_centro", numeroCentro);
                 cmd.Parameters.AddWithValue("@fecha", fecha);
 
                 cmd.CommandType = CommandType.Text;
