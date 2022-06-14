@@ -12,7 +12,7 @@
   <xs:element name="DatosReportes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosReportes" msprop:Generator_UserDSName="DatosReportes">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="HistoricoAtenciones" msprop:Generator_TableClassName="HistoricoAtencionesDataTable" msprop:Generator_TableVarName="tableHistoricoAtenciones" msprop:Generator_TablePropName="HistoricoAtenciones" msprop:Generator_RowDeletingName="HistoricoAtencionesRowDeleting" msprop:Generator_RowChangingName="HistoricoAtencionesRowChanging" msprop:Generator_RowEvHandlerName="HistoricoAtencionesRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoricoAtencionesRowDeleted" msprop:Generator_UserTableName="HistoricoAtenciones" msprop:Generator_RowChangedName="HistoricoAtencionesRowChanged" msprop:Generator_RowEvArgName="HistoricoAtencionesRowChangeEvent" msprop:Generator_RowClassName="HistoricoAtencionesRow">
+        <xs:element name="HistoricoAtenciones" msprop:Generator_TableClassName="HistoricoAtencionesDataTable" msprop:Generator_TableVarName="tableHistoricoAtenciones" msprop:Generator_RowChangedName="HistoricoAtencionesRowChanged" msprop:Generator_TablePropName="HistoricoAtenciones" msprop:Generator_RowDeletingName="HistoricoAtencionesRowDeleting" msprop:Generator_RowChangingName="HistoricoAtencionesRowChanging" msprop:Generator_RowEvHandlerName="HistoricoAtencionesRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoricoAtencionesRowDeleted" msprop:Generator_RowClassName="HistoricoAtencionesRow" msprop:Generator_UserTableName="HistoricoAtenciones" msprop:Generator_RowEvArgName="HistoricoAtencionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AFILIADO" msprop:Generator_ColumnVarNameInTable="columnAFILIADO" msprop:Generator_ColumnPropNameInRow="AFILIADO" msprop:Generator_ColumnPropNameInTable="AFILIADOColumn" msprop:Generator_UserColumnName="AFILIADO" type="xs:string" minOccurs="0" />
@@ -22,6 +22,18 @@
               <xs:element name="PROFESIONAL" msprop:Generator_ColumnVarNameInTable="columnPROFESIONAL" msprop:Generator_ColumnPropNameInRow="PROFESIONAL" msprop:Generator_ColumnPropNameInTable="PROFESIONALColumn" msprop:Generator_UserColumnName="PROFESIONAL" type="xs:string" minOccurs="0" />
               <xs:element name="IMPORTE" msprop:Generator_ColumnVarNameInTable="columnIMPORTE" msprop:Generator_ColumnPropNameInRow="IMPORTE" msprop:Generator_ColumnPropNameInTable="IMPORTEColumn" msprop:Generator_UserColumnName="IMPORTE" type="xs:string" minOccurs="0" />
               <xs:element name="PRACTICA" msprop:Generator_ColumnVarNameInTable="columnPRACTICA" msprop:Generator_ColumnPropNameInRow="PRACTICA" msprop:Generator_ColumnPropNameInTable="PRACTICAColumn" msprop:Generator_UserColumnName="PRACTICA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HistoricoCuotas" msprop:Generator_TableClassName="HistoricoCuotasDataTable" msprop:Generator_TableVarName="tableHistoricoCuotas" msprop:Generator_TablePropName="HistoricoCuotas" msprop:Generator_RowDeletingName="HistoricoCuotasRowDeleting" msprop:Generator_RowChangingName="HistoricoCuotasRowChanging" msprop:Generator_RowEvHandlerName="HistoricoCuotasRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoricoCuotasRowDeleted" msprop:Generator_UserTableName="HistoricoCuotas" msprop:Generator_RowChangedName="HistoricoCuotasRowChanged" msprop:Generator_RowEvArgName="HistoricoCuotasRowChangeEvent" msprop:Generator_RowClassName="HistoricoCuotasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AFILIADO" msprop:Generator_ColumnVarNameInTable="columnAFILIADO" msprop:Generator_ColumnPropNameInRow="AFILIADO" msprop:Generator_ColumnPropNameInTable="AFILIADOColumn" msprop:Generator_UserColumnName="AFILIADO" type="xs:string" minOccurs="0" />
+              <xs:element name="CUOTA" msprop:Generator_ColumnVarNameInTable="columnCUOTA" msprop:Generator_ColumnPropNameInRow="CUOTA" msprop:Generator_ColumnPropNameInTable="CUOTAColumn" msprop:Generator_UserColumnName="CUOTA" type="xs:string" minOccurs="0" />
+              <xs:element name="AÑO" msprop:Generator_ColumnVarNameInTable="columnAÑO" msprop:Generator_ColumnPropNameInRow="AÑO" msprop:Generator_ColumnPropNameInTable="AÑOColumn" msprop:Generator_UserColumnName="AÑO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_PAGO" msprop:Generator_ColumnVarNameInTable="columnFECHA_PAGO" msprop:Generator_ColumnPropNameInRow="FECHA_PAGO" msprop:Generator_ColumnPropNameInTable="FECHA_PAGOColumn" msprop:Generator_UserColumnName="FECHA_PAGO" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTO_EMERGENCIA" msprop:Generator_ColumnVarNameInTable="columnMONTO_EMERGENCIA" msprop:Generator_ColumnPropNameInRow="MONTO_EMERGENCIA" msprop:Generator_ColumnPropNameInTable="MONTO_EMERGENCIAColumn" msprop:Generator_UserColumnName="MONTO_EMERGENCIA" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_PAGO" msprop:Generator_ColumnVarNameInTable="columnTOTAL_PAGO" msprop:Generator_ColumnPropNameInRow="TOTAL_PAGO" msprop:Generator_ColumnPropNameInTable="TOTAL_PAGOColumn" msprop:Generator_UserColumnName="TOTAL_PAGO" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

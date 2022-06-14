@@ -49,6 +49,51 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerCuotasPagasReporteHistorico(int numeroAfiliado, string desde, string hasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT AF.APELLIDO + ', ' + AF.NOMBRE as AFILIADO, " +
+                                  " CP.NRO_CUOTA AS CUOTA, CP.ANIO_CUOTA AS AÑO, CP.FECHA_PAGO, CP.MONTO_EMERGENCIA, " +
+                                  " CP.TOTAL_PAGO " +
+                                  " FROM AFILIADOS AF JOIN CUOTAS_PAGAS CP ON AF.NRO_AFILIADO = CP.NRO_AFILIADO " +
+                                  " WHERE AF.NRO_AFILIADO = @numero_afiliado " +
+                                  " AND CONVERT(DATE, CP.FECHA_PAGO) >= @desde " +
+                                  " AND CONVERT(DATE, CP.FECHA_PAGO) <= @hasta ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@numero_afiliado", numeroAfiliado);
+                cmd.Parameters.AddWithValue("@desde", desde);
+                cmd.Parameters.AddWithValue("@hasta", hasta);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void AgregarCuotaPaga(CuotaPaga cuotaPaga)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
