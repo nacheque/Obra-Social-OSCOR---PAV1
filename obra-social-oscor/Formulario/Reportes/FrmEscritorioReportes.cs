@@ -47,5 +47,11 @@ namespace obra_social_oscor.Formulario.Reportes
             FrmAtencionDiariaCentro ventana = new FrmAtencionDiariaCentro();
             ventana.ShowDialog();
         }
+
+        private void listadoCuotasPagasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCuotasPagas ventana = new FrmListadoCuotasPagas();
+            ventana.ShowDialog();
+        }
     }
 }
