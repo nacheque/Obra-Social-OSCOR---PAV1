@@ -11,6 +11,44 @@ namespace obra_social_oscor.AccesoADatos
 {
     class AD_Centro
     {
+
+        public static DataTable ObtenerCentrosReporteImprimir()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT CE.DENOMINACION AS NOMBRE,CE.CALLE,CE.NUMERO,BA.BARRIO,LO.LOCALIDAD,CE.TELEFONO, CE.PROPIO " +
+                                  " FROM CENTROS CE " +
+                                  " JOIN BARRIOS BA ON CE.ID_BARRIO = BA.ID_BARRIO " +
+                                  " JOIN LOCALIDADES LO ON CE.ID_LOCALIDAD = LO.ID_LOCALIDAD";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public static DataTable ObtenerCentros()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
