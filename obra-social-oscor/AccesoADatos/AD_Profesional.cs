@@ -50,6 +50,45 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerListadoProfesionalesParaReporte()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT P.MATRICULA AS MATRICULA, P.NOMBRE + ',' + P.APELLIDO AS NOMBRE, P.TELEFONO AS TEL, CALLE + ',' + CONVERT(VARCHAR, P.NUMERO) AS DIRECCION," +
+                    "               B.BARRIO + ',' + L.LOCALIDAD AS ZONA" +
+                    "               FROM PROFESIONALES P" +
+                    "               JOIN BARRIOS B ON B.ID_BARRIO = P.ID_BARRIO" +
+                    "               JOIN LOCALIDADES L ON L.ID_LOCALIDAD = P.ID_LOCALIDAD";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static DataTable ObtenerProfesionalesPorEspYCen(int codCentro, int codEspecialidad)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
