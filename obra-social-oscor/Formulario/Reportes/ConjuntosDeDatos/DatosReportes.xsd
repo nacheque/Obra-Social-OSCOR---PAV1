@@ -76,6 +76,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ListadoAfiliados" msprop:Generator_TableClassName="ListadoAfiliadosDataTable" msprop:Generator_TableVarName="tableListadoAfiliados" msprop:Generator_TablePropName="ListadoAfiliados" msprop:Generator_RowDeletingName="ListadoAfiliadosRowDeleting" msprop:Generator_RowChangingName="ListadoAfiliadosRowChanging" msprop:Generator_RowEvHandlerName="ListadoAfiliadosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoAfiliadosRowDeleted" msprop:Generator_UserTableName="ListadoAfiliados" msprop:Generator_RowChangedName="ListadoAfiliadosRowChanged" msprop:Generator_RowEvArgName="ListadoAfiliadosRowChangeEvent" msprop:Generator_RowClassName="ListadoAfiliadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NRO" msprop:Generator_ColumnVarNameInTable="columnNRO" msprop:Generator_ColumnPropNameInRow="NRO" msprop:Generator_ColumnPropNameInTable="NROColumn" msprop:Generator_UserColumnName="NRO" type="xs:string" minOccurs="0" />
+              <xs:element name="AFILIADO" msprop:Generator_ColumnVarNameInTable="columnAFILIADO" msprop:Generator_ColumnPropNameInRow="AFILIADO" msprop:Generator_ColumnPropNameInTable="AFILIADOColumn" msprop:Generator_UserColumnName="AFILIADO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_DE_NACIMIENTO" msprop:Generator_ColumnVarNameInTable="columnFECHA_DE_NACIMIENTO" msprop:Generator_ColumnPropNameInRow="FECHA_DE_NACIMIENTO" msprop:Generator_ColumnPropNameInTable="FECHA_DE_NACIMIENTOColumn" msprop:Generator_UserColumnName="FECHA_DE_NACIMIENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_DE_INSCRIPCION" msprop:Generator_ColumnVarNameInTable="columnFECHA_DE_INSCRIPCION" msprop:Generator_ColumnPropNameInRow="FECHA_DE_INSCRIPCION" msprop:Generator_ColumnPropNameInTable="FECHA_DE_INSCRIPCIONColumn" msprop:Generator_UserColumnName="FECHA_DE_INSCRIPCION" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTO_DE_INSCRIPCION" msprop:Generator_ColumnVarNameInTable="columnMONTO_DE_INSCRIPCION" msprop:Generator_ColumnPropNameInRow="MONTO_DE_INSCRIPCION" msprop:Generator_ColumnPropNameInTable="MONTO_DE_INSCRIPCIONColumn" msprop:Generator_UserColumnName="MONTO_DE_INSCRIPCION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

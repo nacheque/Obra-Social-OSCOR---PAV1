@@ -59,5 +59,11 @@ namespace obra_social_oscor.Formulario.Reportes
             FrmListadoCentros ventana = new FrmListadoCentros();
             ventana.ShowDialog();
         }
+
+        private void listadoDeAfiliadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoAfiliados ventana = new FrmListadoAfiliados();
+            ventana.ShowDialog();
+        }
     }
 }
