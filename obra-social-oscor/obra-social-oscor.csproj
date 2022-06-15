@@ -183,6 +183,9 @@
     <Compile Include="Formulario\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.cs">
+      <DependentUpon>DatosReportes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,6 +214,12 @@
     </Compile>
     <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.Designer.cs">
       <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoAfiliados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoAfiliados.Designer.cs">
+      <DependentUpon>FrmListadoAfiliados.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Reportes\FrmEscritorioReportes.cs">
       <SubType>Form</SubType>
@@ -294,6 +303,9 @@
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.resx">
       <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmListadoAfiliados.resx">
+      <DependentUpon>FrmListadoAfiliados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\FrmEscritorioReportes.resx">
       <DependentUpon>FrmEscritorioReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +313,7 @@
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoCuotasAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteAtencionDiariaAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteAtencionDiariaCentro.rdlc" />
+    <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteListadoAfiliados.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
