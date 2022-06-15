@@ -32,8 +32,11 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
 
             ReportDataSource ds = new ReportDataSource("ListadoAfiliados", tabla);
 
+            ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
+
             reportViewerListadoAfiliados.LocalReport.DataSources.Clear();
             reportViewerListadoAfiliados.LocalReport.DataSources.Add(ds);
+            reportViewerListadoAfiliados.LocalReport.SetParameters(fechaHoraReporte);
             reportViewerListadoAfiliados.LocalReport.Refresh();
         }
 
