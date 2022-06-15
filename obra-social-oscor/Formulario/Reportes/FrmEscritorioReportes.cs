@@ -48,6 +48,18 @@ namespace obra_social_oscor.Formulario.Reportes
             ventana.ShowDialog();
         }
 
+        private void listadoCuotasPagasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCuotasPagas ventana = new FrmListadoCuotasPagas();
+            ventana.ShowDialog();
+        }
+
+        private void listadoDeCentrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCentros ventana = new FrmListadoCentros();
+            ventana.ShowDialog();
+        }
+
         private void listadoDeAfiliadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListadoAfiliados ventana = new FrmListadoAfiliados();

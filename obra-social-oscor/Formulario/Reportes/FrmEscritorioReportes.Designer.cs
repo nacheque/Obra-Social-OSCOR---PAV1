@@ -36,7 +36,10 @@
             this.reporteDeAtencionesDiariaPorCentroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuotasPagasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoCuotasPagasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Salir_reportes = new System.Windows.Forms.Button();
+            this.centrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeCentrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afiliadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeAfiliadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -47,6 +50,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.atencionesToolStripMenuItem,
             this.cuotasPagasToolStripMenuItem,
+            this.centrosToolStripMenuItem,
             this.afiliadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -88,7 +92,8 @@
             // cuotasPagasToolStripMenuItem
             // 
             this.cuotasPagasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem});
+            this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem,
+            this.listadoCuotasPagasToolStripMenuItem});
             this.cuotasPagasToolStripMenuItem.Name = "cuotasPagasToolStripMenuItem";
             this.cuotasPagasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.cuotasPagasToolStripMenuItem.Text = "Cuotas Pagas";
@@ -99,6 +104,13 @@
             this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
             this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Text = "Historico de cuotas pagas por afiliado";
             this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.historicoDeCuotasPagasPorAfiliadoToolStripMenuItem_Click);
+            // 
+            // listadoCuotasPagasToolStripMenuItem
+            // 
+            this.listadoCuotasPagasToolStripMenuItem.Name = "listadoCuotasPagasToolStripMenuItem";
+            this.listadoCuotasPagasToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.listadoCuotasPagasToolStripMenuItem.Text = "Listado Cuotas Pagas";
+            this.listadoCuotasPagasToolStripMenuItem.Click += new System.EventHandler(this.listadoCuotasPagasToolStripMenuItem_Click);
             // 
             // btn_Salir_reportes
             // 
@@ -112,16 +124,27 @@
             this.btn_Salir_reportes.UseVisualStyleBackColor = true;
             this.btn_Salir_reportes.Click += new System.EventHandler(this.btn_Salir_reportes_Click);
             // 
+            // centrosToolStripMenuItem
             // afiliadosToolStripMenuItem
             // 
+            this.centrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoDeCentrosToolStripMenuItem});
+            this.centrosToolStripMenuItem.Name = "centrosToolStripMenuItem";
+            this.centrosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.centrosToolStripMenuItem.Text = "Centros";
             this.afiliadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listadoDeAfiliadosToolStripMenuItem});
             this.afiliadosToolStripMenuItem.Name = "afiliadosToolStripMenuItem";
             this.afiliadosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.afiliadosToolStripMenuItem.Text = "Afiliados";
             // 
+            // listadoDeCentrosToolStripMenuItem
             // listadoDeAfiliadosToolStripMenuItem
             // 
+            this.listadoDeCentrosToolStripMenuItem.Name = "listadoDeCentrosToolStripMenuItem";
+            this.listadoDeCentrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoDeCentrosToolStripMenuItem.Text = "Listado de Centros";
+            this.listadoDeCentrosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeCentrosToolStripMenuItem_Click);
             this.listadoDeAfiliadosToolStripMenuItem.Name = "listadoDeAfiliadosToolStripMenuItem";
             this.listadoDeAfiliadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoDeAfiliadosToolStripMenuItem.Text = "Listado de Afiliados";
@@ -157,6 +180,9 @@
         private System.Windows.Forms.ToolStripMenuItem historicoDeCuotasPagasPorAfiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeAtencionesDiariaPorAfiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeAtencionesDiariaPorCentroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoCuotasPagasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem centrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeCentrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem afiliadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeAfiliadosToolStripMenuItem;
     }

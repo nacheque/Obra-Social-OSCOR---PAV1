@@ -63,6 +63,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ListadoCentros" msprop:Generator_TableClassName="ListadoCentrosDataTable" msprop:Generator_TableVarName="tableListadoCentros" msprop:Generator_TablePropName="ListadoCentros" msprop:Generator_RowDeletingName="ListadoCentrosRowDeleting" msprop:Generator_RowChangingName="ListadoCentrosRowChanging" msprop:Generator_RowEvHandlerName="ListadoCentrosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoCentrosRowDeleted" msprop:Generator_UserTableName="ListadoCentros" msprop:Generator_RowChangedName="ListadoCentrosRowChanged" msprop:Generator_RowEvArgName="ListadoCentrosRowChangeEvent" msprop:Generator_RowClassName="ListadoCentrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" type="xs:string" minOccurs="0" />
+              <xs:element name="CALLE" msprop:Generator_ColumnVarNameInTable="columnCALLE" msprop:Generator_ColumnPropNameInRow="CALLE" msprop:Generator_ColumnPropNameInTable="CALLEColumn" msprop:Generator_UserColumnName="CALLE" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMERO" msprop:Generator_ColumnVarNameInTable="columnNUMERO" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_UserColumnName="NUMERO" type="xs:string" minOccurs="0" />
+              <xs:element name="BARRIO" msprop:Generator_ColumnVarNameInTable="columnBARRIO" msprop:Generator_ColumnPropNameInRow="BARRIO" msprop:Generator_ColumnPropNameInTable="BARRIOColumn" msprop:Generator_UserColumnName="BARRIO" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCALIDAD" msprop:Generator_ColumnVarNameInTable="columnLOCALIDAD" msprop:Generator_ColumnPropNameInRow="LOCALIDAD" msprop:Generator_ColumnPropNameInTable="LOCALIDADColumn" msprop:Generator_UserColumnName="LOCALIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" type="xs:string" minOccurs="0" />
+              <xs:element name="PROPIO" msprop:Generator_ColumnVarNameInTable="columnPROPIO" msprop:Generator_ColumnPropNameInRow="PROPIO" msprop:Generator_ColumnPropNameInTable="PROPIOColumn" msprop:Generator_UserColumnName="PROPIO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="ListadoAfiliados" msprop:Generator_TableClassName="ListadoAfiliadosDataTable" msprop:Generator_TableVarName="tableListadoAfiliados" msprop:Generator_TablePropName="ListadoAfiliados" msprop:Generator_RowDeletingName="ListadoAfiliadosRowDeleting" msprop:Generator_RowChangingName="ListadoAfiliadosRowChanging" msprop:Generator_RowEvHandlerName="ListadoAfiliadosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoAfiliadosRowDeleted" msprop:Generator_UserTableName="ListadoAfiliados" msprop:Generator_RowChangedName="ListadoAfiliadosRowChanged" msprop:Generator_RowEvArgName="ListadoAfiliadosRowChangeEvent" msprop:Generator_RowClassName="ListadoAfiliadosRow">
           <xs:complexType>
             <xs:sequence>

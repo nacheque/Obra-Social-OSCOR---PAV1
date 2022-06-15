@@ -215,6 +215,18 @@
     <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.Designer.cs">
       <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoCentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoCentros.Designer.cs">
+      <DependentUpon>FrmListadoCentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoCuotasPagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmListadoCuotasPagas.Designer.cs">
+      <DependentUpon>FrmListadoCuotasPagas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Reportes\Formularios\FrmListadoAfiliados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +315,12 @@
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoCuotasAfiliado.resx">
       <DependentUpon>FrmHistoricoCuotasAfiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmListadoCentros.resx">
+      <DependentUpon>FrmListadoCentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmListadoCuotasPagas.resx">
+      <DependentUpon>FrmListadoCuotasPagas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmListadoAfiliados.resx">
       <DependentUpon>FrmListadoAfiliados.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +329,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoAtencionesAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoCuotasAfiliado.rdlc" />
+    <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteCentros.rdlc" />
+    <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteCuotasPagas.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteAtencionDiariaAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteAtencionDiariaCentro.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteListadoAfiliados.rdlc" />
