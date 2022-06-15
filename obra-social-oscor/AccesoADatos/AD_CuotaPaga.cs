@@ -49,6 +49,43 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerCuotasPagasReporte()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT AF.APELLIDO + ', ' + AF.NOMBRE AS AFILIADO, " +
+                                  " CP.NRO_CUOTA AS CUOTA, CP.ANIO_CUOTA AS AÑO, CP.FECHA_PAGO, CP.MONTO_EMERGENCIA, CP.TOTAL_PAGO " +
+                                  " FROM CUOTAS_PAGAS CP " + 
+                                  " JOIN AFILIADOS AF ON CP.NRO_AFILIADO = AF.NRO_AFILIADO";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public static DataTable ObtenerCuotasPagasReporteHistorico(int numeroAfiliado, string desde, string hasta)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
