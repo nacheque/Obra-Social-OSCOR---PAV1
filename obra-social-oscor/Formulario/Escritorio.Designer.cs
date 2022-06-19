@@ -47,10 +47,10 @@
             this.gestionDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeLocalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.valorDeCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,6 +150,7 @@
             this.btn_estadisticas.TabIndex = 9;
             this.tt_Form_Principal.SetToolTip(this.btn_estadisticas, "Ver Estadisticas");
             this.btn_estadisticas.UseVisualStyleBackColor = true;
+            this.btn_estadisticas.Click += new System.EventHandler(this.btn_estadisticas_Click);
             // 
             // menuStrip1
             // 
@@ -231,22 +232,6 @@
             this.gestionDeBarriosToolStripMenuItem.Text = "Gestion de Barrios";
             this.gestionDeBarriosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeBarriosToolStripMenuItem_Click);
             // 
-            // localidadesToolStripMenuItem
-            // 
-            this.localidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDeLocalidadesToolStripMenuItem});
-            this.localidadesToolStripMenuItem.Name = "localidadesToolStripMenuItem";
-            this.localidadesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.localidadesToolStripMenuItem.Text = "Localidades";
-            // 
-            // gestionDeLocalidadesToolStripMenuItem
-            // 
-            this.gestionDeLocalidadesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources._287695_location_icon;
-            this.gestionDeLocalidadesToolStripMenuItem.Name = "gestionDeLocalidadesToolStripMenuItem";
-            this.gestionDeLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
-            this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
-            // 
             // practicasToolStripMenuItem
             // 
             this.practicasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -262,6 +247,22 @@
             this.gestionDePracticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDePracticasToolStripMenuItem.Text = "Gestion de Practicas";
             this.gestionDePracticasToolStripMenuItem.Click += new System.EventHandler(this.gestionDePracticasToolStripMenuItem_Click);
+            // 
+            // localidadesToolStripMenuItem
+            // 
+            this.localidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeLocalidadesToolStripMenuItem});
+            this.localidadesToolStripMenuItem.Name = "localidadesToolStripMenuItem";
+            this.localidadesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.localidadesToolStripMenuItem.Text = "Localidades";
+            // 
+            // gestionDeLocalidadesToolStripMenuItem
+            // 
+            this.gestionDeLocalidadesToolStripMenuItem.Image = global::obra_social_oscor.Properties.Resources._287695_location_icon;
+            this.gestionDeLocalidadesToolStripMenuItem.Name = "gestionDeLocalidadesToolStripMenuItem";
+            this.gestionDeLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.gestionDeLocalidadesToolStripMenuItem.Text = "Gestion de Localidades";
+            this.gestionDeLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeLocalidadesToolStripMenuItem_Click);
             // 
             // cuotasToolStripMenuItem
             // 

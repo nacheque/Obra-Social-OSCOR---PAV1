@@ -124,32 +124,35 @@
   <data name="Icono_Afiliados" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono_Afiliados.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Imagen_Pagos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_Pagos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Imagen estadisticas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen estadisticas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono_profesionales" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_profesionales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Imagen_Profesionales" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen_Profesionales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Imagen_Pagos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagen_Pagos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagen_reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagen_reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondo_escritorio_reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo_escritorio_reportes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Imagen_Atenciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen_Atenciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imagen_reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagen_reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono_profesionales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono_profesionales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondo_escritorio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo_escritorio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Imagen_Especialidades" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagen_Especialidades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cobertura-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cobertura-removebg-preview.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,8 @@
   <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agregar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Imagen_Especialidades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_Especialidades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Imagen_Centros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen_Centros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,7 @@
   <data name="icono_practicas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_practicas.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondo_escritorio_reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo_escritorio_reportes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondo_escritorio_estadisticas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo_escritorio_estadisticas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

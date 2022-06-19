@@ -120,5 +120,11 @@ namespace obra_social_oscor
             FrmEscritorioReportes ventana = new FrmEscritorioReportes();
             ventana.ShowDialog();
         }
+
+        private void btn_estadisticas_Click(object sender, EventArgs e)
+        {
+            FrmEscritorioEstadisticas ventana = new FrmEscritorioEstadisticas(); 
+            ventana.ShowDialog();
+        }
     }
 }
