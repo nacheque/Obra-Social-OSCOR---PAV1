@@ -186,6 +186,96 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerCantidadAtencionesPorTipoAfi(string desde, string hasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT TP.DESCRIPCION, COUNT(AT.ID_ATENCION) AS CANTIDAD_ATENCIONES " +
+                                  " FROM ATENCIONES_POR_AFILIADO AT " +
+                                  " JOIN AFILIADOS AF ON AF.NRO_AFILIADO = AT.NRO_AFILIADO " +
+                                  " JOIN TIPOS_AFILIADO TP ON TP.COD_TIPO = AF.ID_TIPO_AFILIADO " +
+                                  " WHERE CONVERT(DATE, FECHA_HORA_ATENCION) >= @desde " +
+                                  " AND CONVERT(DATE, FECHA_HORA_ATENCION) <= @hasta " +
+                                  " GROUP BY TP.DESCRIPCION ";
+
+                cmd.Parameters.Clear();               
+                cmd.Parameters.AddWithValue("@desde", desde);
+                cmd.Parameters.AddWithValue("@hasta", hasta);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);                
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static DataTable ObtenerPorcentajeAtencionesPorTipoAfi(string desde, string hasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " SELECT TP.DESCRIPCION, ((COUNT(AT.ID_ATENCION) * 100) / (SELECT COUNT(*) from ATENCIONES_POR_AFILIADO)) AS CANTIDAD_ATENCIONES " +
+                                  " FROM ATENCIONES_POR_AFILIADO AT " +
+                                  " JOIN AFILIADOS AF ON AF.NRO_AFILIADO = AT.NRO_AFILIADO " +
+                                  " JOIN TIPOS_AFILIADO TP ON TP.COD_TIPO = AF.ID_TIPO_AFILIADO " +
+                                  " WHERE CONVERT(DATE, FECHA_HORA_ATENCION) >= @desde " +
+                                  " AND CONVERT(DATE, FECHA_HORA_ATENCION) <= @hasta " +
+                                  " GROUP BY TP.DESCRIPCION ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@desde", desde);
+                cmd.Parameters.AddWithValue("@hasta", hasta);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static DataTable ObtenerReporteAtencionesAfiliado(int numeroAfiliado, string fecha)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

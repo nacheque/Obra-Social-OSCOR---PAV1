@@ -183,6 +183,11 @@
     <Compile Include="Formulario\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.cs">
       <DependentUpon>DatosReportes.xsd</DependentUpon>
     </Compile>
@@ -202,6 +207,12 @@
     </Compile>
     <Compile Include="Formulario\Reportes\Formularios\FrmAtencionDiariaCentro.Designer.cs">
       <DependentUpon>FrmAtencionDiariaCentro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmCantidadAtenPorTipoAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmCantidadAtenPorTipoAfiliado.Designer.cs">
+      <DependentUpon>FrmCantidadAtenPorTipoAfiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.cs">
       <SubType>Form</SubType>
@@ -238,6 +249,18 @@
     </Compile>
     <Compile Include="Formulario\Reportes\Formularios\FrmListadoProfesionales2.Designer.cs">
       <DependentUpon>FrmListadoProfesionales2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmPorcentajeAtenPorTipoAfi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\Formularios\FrmPorcentajeAtenPorTipoAfi.Designer.cs">
+      <DependentUpon>FrmPorcentajeAtenPorTipoAfi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Reportes\FrmEscritorioEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\Reportes\FrmEscritorioEstadisticas.Designer.cs">
+      <DependentUpon>FrmEscritorioEstadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Reportes\FrmEscritorioReportes.cs">
       <SubType>Form</SubType>
@@ -315,6 +338,9 @@
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmAtencionDiariaCentro.resx">
       <DependentUpon>FrmAtencionDiariaCentro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmCantidadAtenPorTipoAfiliado.resx">
+      <DependentUpon>FrmCantidadAtenPorTipoAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmHistoricoAtencionesAfiliado.resx">
       <DependentUpon>FrmHistoricoAtencionesAfiliado.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,9 +359,17 @@
     <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmListadoProfesionales2.resx">
       <DependentUpon>FrmListadoProfesionales2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Formularios\FrmPorcentajeAtenPorTipoAfi.resx">
+      <DependentUpon>FrmPorcentajeAtenPorTipoAfi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\FrmEscritorioEstadisticas.resx">
+      <DependentUpon>FrmEscritorioEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\Reportes\FrmEscritorioReportes.resx">
       <DependentUpon>FrmEscritorioReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\Reportes\Informes\EstadisticaCantidadAtenPorTipoAfi.rdlc" />
+    <EmbeddedResource Include="Formulario\Reportes\Informes\EstadisticaPorcentajeAtencionesTipoAfi.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoAtencionesAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\HistoricoCuotasAfiliado.rdlc" />
     <EmbeddedResource Include="Formulario\Reportes\Informes\ReporteCentros.rdlc" />
@@ -349,6 +383,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsc">
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xss">
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
+    </None>
     <None Include="Formulario\Reportes\ConjuntosDeDatos\DatosReportes.xsc">
       <DependentUpon>DatosReportes.xsd</DependentUpon>
     </None>
@@ -424,6 +469,7 @@
     <None Include="Resources\287695_location_icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fondo_escritorio_estadisticas.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
