@@ -34,5 +34,17 @@ namespace obra_social_oscor.Formulario.Reportes
             FrmPorcentajeAtenPorTipoAfi ventana = new FrmPorcentajeAtenPorTipoAfi();
             ventana.ShowDialog();
         }
+
+        private void cantidadDeEspecialidadesPorCentroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCantidadEspPorCentro ventana = new FrmCantidadEspPorCentro();
+            ventana.ShowDialog();
+        }
+
+        private void porcentajeDePracticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPorcentajePracticas ventana = new FrmPorcentajePracticas();
+            ventana.ShowDialog();
+        }
     }
 }

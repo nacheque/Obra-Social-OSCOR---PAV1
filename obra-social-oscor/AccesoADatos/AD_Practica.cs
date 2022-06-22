@@ -45,6 +45,42 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerPorcentajeDePracticas()
+        {
+            string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaDeConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = " select pr.DESCRIPCION, ((COUNT(PR.ID_PRACTICA) * 100) / (SELECT COUNT(*) from ATENCIONES_POR_AFILIADO)) AS CANTIDAD_ATENCIONES " +
+                                  " FROM ATENCIONES_POR_AFILIADO AT JOIN PRACTICAS PR ON AT.ID_PRACTICA = PR.ID_PRACTICA " +
+                                  " GROUP BY PR.DESCRIPCION ";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static float obtenerPrecioPorIdPractica(int idPractica)
         {
             string cadenaDeConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

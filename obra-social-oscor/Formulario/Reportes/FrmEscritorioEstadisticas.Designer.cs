@@ -34,6 +34,10 @@
             this.atencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cantidadDeAtencionesPorTipoDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porcentajeDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +56,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.atencionesToolStripMenuItem});
+            this.atencionesToolStripMenuItem,
+            this.especialidadesToolStripMenuItem,
+            this.practicasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(665, 24);
@@ -82,6 +88,36 @@
             this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem.Text = "Porcentaje de atenciones por tipo de afiliado";
             this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem_Click);
             // 
+            // especialidadesToolStripMenuItem
+            // 
+            this.especialidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem});
+            this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
+            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.especialidadesToolStripMenuItem.Text = "Especialidades";
+            // 
+            // cantidadDeEspecialidadesPorCentroToolStripMenuItem
+            // 
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem.Name = "cantidadDeEspecialidadesPorCentroToolStripMenuItem";
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem.Size = new System.Drawing.Size(277, 22);
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem.Text = "Cantidad de Especialidades por Centro";
+            this.cantidadDeEspecialidadesPorCentroToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeEspecialidadesPorCentroToolStripMenuItem_Click);
+            // 
+            // practicasToolStripMenuItem
+            // 
+            this.practicasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porcentajeDePracticasToolStripMenuItem});
+            this.practicasToolStripMenuItem.Name = "practicasToolStripMenuItem";
+            this.practicasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.practicasToolStripMenuItem.Text = "Practicas";
+            // 
+            // porcentajeDePracticasToolStripMenuItem
+            // 
+            this.porcentajeDePracticasToolStripMenuItem.Name = "porcentajeDePracticasToolStripMenuItem";
+            this.porcentajeDePracticasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.porcentajeDePracticasToolStripMenuItem.Text = "Porcentaje de Practicas";
+            this.porcentajeDePracticasToolStripMenuItem.Click += new System.EventHandler(this.porcentajeDePracticasToolStripMenuItem_Click);
+            // 
             // FrmEscritorioEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,5 +146,9 @@
         private System.Windows.Forms.ToolStripMenuItem atencionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cantidadDeAtencionesPorTipoDeAfiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeEspecialidadesPorCentroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem practicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porcentajeDePracticasToolStripMenuItem;
     }
 }
