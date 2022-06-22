@@ -38,6 +38,7 @@
             this.cantidadDeEspecialidadesPorCentroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.practicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porcentajeDePracticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             // 
             this.atencionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cantidadDeAtencionesPorTipoDeAfiliadoToolStripMenuItem,
-            this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem});
+            this.porcentajeDeAtencionesPorTipoDeAfiliadoToolStripMenuItem,
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem});
             this.atencionesToolStripMenuItem.Name = "atencionesToolStripMenuItem";
             this.atencionesToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.atencionesToolStripMenuItem.Text = "Atenciones";
@@ -118,6 +120,13 @@
             this.porcentajeDePracticasToolStripMenuItem.Text = "Porcentaje de Practicas";
             this.porcentajeDePracticasToolStripMenuItem.Click += new System.EventHandler(this.porcentajeDePracticasToolStripMenuItem_Click);
             // 
+            // cantidadDeProfesionaPorCentroMedicoToolStripMenuItem
+            // 
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem.Name = "cantidadDeProfesionaPorCentroMedicoToolStripMenuItem";
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem.Size = new System.Drawing.Size(309, 22);
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem.Text = "Cantidad de Profesional por Centro Medico";
+            this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeProfesionaPorCentroMedicoToolStripMenuItem_Click);
+            // 
             // FrmEscritorioEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem cantidadDeEspecialidadesPorCentroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem practicasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porcentajeDePracticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeProfesionaPorCentroMedicoToolStripMenuItem;
     }
 }
