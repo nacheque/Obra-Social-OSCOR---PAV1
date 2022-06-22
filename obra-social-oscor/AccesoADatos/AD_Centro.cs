@@ -49,6 +49,44 @@ namespace obra_social_oscor.AccesoADatos
                 cn.Close();
             }
         }
+
+        public static DataTable ObtenerCantidadEspPorCentro()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = " select c.denominacion, count(epc.cod_especialidad) as cantidad_especialidades " +
+                                  " from CENTROS c join ESPECIALIDADES_POR_CENTROS epc on c.COD_CENTRO = epc.COD_CENTRO " +
+                                  " group by c.DENOMINACION ";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static DataTable ObtenerCentros()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -95,7 +133,7 @@ namespace obra_social_oscor.AccesoADatos
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT C.COD_CENTRO, C.DENOMINACION\n" +
+                string consulta = "SELECT DISTINCT C.COD_CENTRO, C.DENOMINACION\n" +
                     "              FROM CENTROS C JOIN PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD PCE ON C.COD_CENTRO = PCE.COD_CENTRO;";                   
 
                 cmd.Parameters.Clear();

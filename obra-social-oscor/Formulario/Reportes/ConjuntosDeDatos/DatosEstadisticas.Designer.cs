@@ -26,6 +26,8 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         
         private CantidadAtencionesDataTable tableCantidadAtenciones;
         
+        private CantidadEspecialidadesDataTable tableCantidadEspecialidades;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                 if ((ds.Tables["CantidadAtenciones"] != null)) {
                     base.Tables.Add(new CantidadAtencionesDataTable(ds.Tables["CantidadAtenciones"]));
                 }
+                if ((ds.Tables["CantidadEspecialidades"] != null)) {
+                    base.Tables.Add(new CantidadEspecialidadesDataTable(ds.Tables["CantidadEspecialidades"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         public CantidadAtencionesDataTable CantidadAtenciones {
             get {
                 return this.tableCantidadAtenciones;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CantidadEspecialidadesDataTable CantidadEspecialidades {
+            get {
+                return this.tableCantidadEspecialidades;
             }
         }
         
@@ -155,6 +170,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                 if ((ds.Tables["CantidadAtenciones"] != null)) {
                     base.Tables.Add(new CantidadAtencionesDataTable(ds.Tables["CantidadAtenciones"]));
                 }
+                if ((ds.Tables["CantidadEspecialidades"] != null)) {
+                    base.Tables.Add(new CantidadEspecialidadesDataTable(ds.Tables["CantidadEspecialidades"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
                     this.tableCantidadAtenciones.InitVars();
                 }
             }
+            this.tableCantidadEspecialidades = ((CantidadEspecialidadesDataTable)(base.Tables["CantidadEspecialidades"]));
+            if ((initTable == true)) {
+                if ((this.tableCantidadEspecialidades != null)) {
+                    this.tableCantidadEspecialidades.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCantidadAtenciones = new CantidadAtencionesDataTable();
             base.Tables.Add(this.tableCantidadAtenciones);
+            this.tableCantidadEspecialidades = new CantidadEspecialidadesDataTable();
+            base.Tables.Add(this.tableCantidadEspecialidades);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeCantidadAtenciones() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCantidadEspecialidades() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void CantidadAtencionesRowChangeEventHandler(object sender, CantidadAtencionesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CantidadEspecialidadesRowChangeEventHandler(object sender, CantidadEspecialidadesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -534,6 +569,267 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CantidadEspecialidadesDataTable : global::System.Data.TypedTableBase<CantidadEspecialidadesRow> {
+            
+            private global::System.Data.DataColumn columnDENOMINACION;
+            
+            private global::System.Data.DataColumn columnCANTIDAD_ESPECIALIDADES;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesDataTable() {
+                this.TableName = "CantidadEspecialidades";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CantidadEspecialidadesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CantidadEspecialidadesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DENOMINACIONColumn {
+                get {
+                    return this.columnDENOMINACION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CANTIDAD_ESPECIALIDADESColumn {
+                get {
+                    return this.columnCANTIDAD_ESPECIALIDADES;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesRow this[int index] {
+                get {
+                    return ((CantidadEspecialidadesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CantidadEspecialidadesRowChangeEventHandler CantidadEspecialidadesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CantidadEspecialidadesRowChangeEventHandler CantidadEspecialidadesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CantidadEspecialidadesRowChangeEventHandler CantidadEspecialidadesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CantidadEspecialidadesRowChangeEventHandler CantidadEspecialidadesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCantidadEspecialidadesRow(CantidadEspecialidadesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesRow AddCantidadEspecialidadesRow(string DENOMINACION, int CANTIDAD_ESPECIALIDADES) {
+                CantidadEspecialidadesRow rowCantidadEspecialidadesRow = ((CantidadEspecialidadesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DENOMINACION,
+                        CANTIDAD_ESPECIALIDADES};
+                rowCantidadEspecialidadesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCantidadEspecialidadesRow);
+                return rowCantidadEspecialidadesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CantidadEspecialidadesDataTable cln = ((CantidadEspecialidadesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CantidadEspecialidadesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnDENOMINACION = base.Columns["DENOMINACION"];
+                this.columnCANTIDAD_ESPECIALIDADES = base.Columns["CANTIDAD_ESPECIALIDADES"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnDENOMINACION = new global::System.Data.DataColumn("DENOMINACION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDENOMINACION);
+                this.columnCANTIDAD_ESPECIALIDADES = new global::System.Data.DataColumn("CANTIDAD_ESPECIALIDADES", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDAD_ESPECIALIDADES);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesRow NewCantidadEspecialidadesRow() {
+                return ((CantidadEspecialidadesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CantidadEspecialidadesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CantidadEspecialidadesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CantidadEspecialidadesRowChanged != null)) {
+                    this.CantidadEspecialidadesRowChanged(this, new CantidadEspecialidadesRowChangeEvent(((CantidadEspecialidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CantidadEspecialidadesRowChanging != null)) {
+                    this.CantidadEspecialidadesRowChanging(this, new CantidadEspecialidadesRowChangeEvent(((CantidadEspecialidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CantidadEspecialidadesRowDeleted != null)) {
+                    this.CantidadEspecialidadesRowDeleted(this, new CantidadEspecialidadesRowChangeEvent(((CantidadEspecialidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CantidadEspecialidadesRowDeleting != null)) {
+                    this.CantidadEspecialidadesRowDeleting(this, new CantidadEspecialidadesRowChangeEvent(((CantidadEspecialidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCantidadEspecialidadesRow(CantidadEspecialidadesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatosEstadisticas ds = new DatosEstadisticas();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CantidadEspecialidadesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CantidadAtencionesRow : global::System.Data.DataRow {
@@ -606,6 +902,79 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CantidadEspecialidadesRow : global::System.Data.DataRow {
+            
+            private CantidadEspecialidadesDataTable tableCantidadEspecialidades;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CantidadEspecialidadesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCantidadEspecialidades = ((CantidadEspecialidadesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DENOMINACION {
+                get {
+                    try {
+                        return ((string)(this[this.tableCantidadEspecialidades.DENOMINACIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DENOMINACION\' de la tabla \'CantidadEspecialidades\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCantidadEspecialidades.DENOMINACIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CANTIDAD_ESPECIALIDADES {
+                get {
+                    try {
+                        return ((int)(this[this.tableCantidadEspecialidades.CANTIDAD_ESPECIALIDADESColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDAD_ESPECIALIDADES\' de la tabla \'CantidadEspecialida" +
+                                "des\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCantidadEspecialidades.CANTIDAD_ESPECIALIDADESColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDENOMINACIONNull() {
+                return this.IsNull(this.tableCantidadEspecialidades.DENOMINACIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDENOMINACIONNull() {
+                this[this.tableCantidadEspecialidades.DENOMINACIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCANTIDAD_ESPECIALIDADESNull() {
+                return this.IsNull(this.tableCantidadEspecialidades.CANTIDAD_ESPECIALIDADESColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCANTIDAD_ESPECIALIDADESNull() {
+                this[this.tableCantidadEspecialidades.CANTIDAD_ESPECIALIDADESColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -625,6 +994,40 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CantidadAtencionesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CantidadEspecialidadesRowChangeEvent : global::System.EventArgs {
+            
+            private CantidadEspecialidadesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesRowChangeEvent(CantidadEspecialidadesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CantidadEspecialidadesRow Row {
                 get {
                     return this.eventRow;
                 }

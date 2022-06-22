@@ -454,5 +454,10 @@ namespace obra_social_oscor.Formulario.ABM
                 MessageBox.Show("Debe completar todos los datos para editar la Atencion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void grp_atenciones_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

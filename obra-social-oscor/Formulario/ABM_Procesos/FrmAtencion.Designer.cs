@@ -55,11 +55,6 @@
             this.cmb_esp_atencion = new System.Windows.Forms.ComboBox();
             this.cmb_centro_atencion = new System.Windows.Forms.ComboBox();
             this.grd_atenciones = new System.Windows.Forms.DataGridView();
-            this.btn_agregar_atencion = new System.Windows.Forms.Button();
-            this.btn_limpiar_atencion = new System.Windows.Forms.Button();
-            this.btn_salir_atencion = new System.Windows.Forms.Button();
-            this.btn_editar_atencion = new System.Windows.Forms.Button();
-            this.tt_atenciones = new System.Windows.Forms.ToolTip(this.components);
             this.id_atencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +68,11 @@
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_practica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.practica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_agregar_atencion = new System.Windows.Forms.Button();
+            this.btn_limpiar_atencion = new System.Windows.Forms.Button();
+            this.btn_salir_atencion = new System.Windows.Forms.Button();
+            this.btn_editar_atencion = new System.Windows.Forms.Button();
+            this.tt_atenciones = new System.Windows.Forms.ToolTip(this.components);
             this.grp_atenciones.SuspendLayout();
             this.grp_buscar_afi_atencion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_atenciones)).BeginInit();
@@ -99,6 +99,7 @@
             this.grp_atenciones.TabIndex = 0;
             this.grp_atenciones.TabStop = false;
             this.grp_atenciones.Text = "Datos";
+            this.grp_atenciones.Enter += new System.EventHandler(this.grp_atenciones_Enter);
             // 
             // grp_buscar_afi_atencion
             // 
@@ -362,52 +363,6 @@
             this.grd_atenciones.TabIndex = 1;
             this.grd_atenciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_atenciones_CellClick);
             // 
-            // btn_agregar_atencion
-            // 
-            this.btn_agregar_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_agregar_atencion.BackgroundImage")));
-            this.btn_agregar_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_agregar_atencion.Location = new System.Drawing.Point(12, 513);
-            this.btn_agregar_atencion.Name = "btn_agregar_atencion";
-            this.btn_agregar_atencion.Size = new System.Drawing.Size(50, 50);
-            this.btn_agregar_atencion.TabIndex = 96;
-            this.tt_atenciones.SetToolTip(this.btn_agregar_atencion, "Agregar atencion");
-            this.btn_agregar_atencion.UseVisualStyleBackColor = true;
-            this.btn_agregar_atencion.Click += new System.EventHandler(this.btn_agregar_atencion_Click);
-            // 
-            // btn_limpiar_atencion
-            // 
-            this.btn_limpiar_atencion.Location = new System.Drawing.Point(152, 540);
-            this.btn_limpiar_atencion.Name = "btn_limpiar_atencion";
-            this.btn_limpiar_atencion.Size = new System.Drawing.Size(112, 23);
-            this.btn_limpiar_atencion.TabIndex = 98;
-            this.btn_limpiar_atencion.Text = "Reiniciar Formulario";
-            this.btn_limpiar_atencion.UseVisualStyleBackColor = true;
-            this.btn_limpiar_atencion.Click += new System.EventHandler(this.btn_limpiar_atencion_Click);
-            // 
-            // btn_salir_atencion
-            // 
-            this.btn_salir_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir_atencion.BackgroundImage")));
-            this.btn_salir_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_salir_atencion.Location = new System.Drawing.Point(1098, 513);
-            this.btn_salir_atencion.Name = "btn_salir_atencion";
-            this.btn_salir_atencion.Size = new System.Drawing.Size(50, 50);
-            this.btn_salir_atencion.TabIndex = 99;
-            this.tt_atenciones.SetToolTip(this.btn_salir_atencion, "Salir");
-            this.btn_salir_atencion.UseVisualStyleBackColor = true;
-            this.btn_salir_atencion.Click += new System.EventHandler(this.btn_salir_atencion_Click);
-            // 
-            // btn_editar_atencion
-            // 
-            this.btn_editar_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_editar_atencion.BackgroundImage")));
-            this.btn_editar_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_editar_atencion.Location = new System.Drawing.Point(68, 513);
-            this.btn_editar_atencion.Name = "btn_editar_atencion";
-            this.btn_editar_atencion.Size = new System.Drawing.Size(50, 50);
-            this.btn_editar_atencion.TabIndex = 100;
-            this.tt_atenciones.SetToolTip(this.btn_editar_atencion, "Editar una atencion");
-            this.btn_editar_atencion.UseVisualStyleBackColor = true;
-            this.btn_editar_atencion.Click += new System.EventHandler(this.btn_editar_atencion_Click);
-            // 
             // id_atencion
             // 
             this.id_atencion.HeaderText = "IdAtencion";
@@ -498,6 +453,52 @@
             this.practica.Name = "practica";
             this.practica.ReadOnly = true;
             this.practica.Width = 150;
+            // 
+            // btn_agregar_atencion
+            // 
+            this.btn_agregar_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_agregar_atencion.BackgroundImage")));
+            this.btn_agregar_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_agregar_atencion.Location = new System.Drawing.Point(12, 513);
+            this.btn_agregar_atencion.Name = "btn_agregar_atencion";
+            this.btn_agregar_atencion.Size = new System.Drawing.Size(50, 50);
+            this.btn_agregar_atencion.TabIndex = 96;
+            this.tt_atenciones.SetToolTip(this.btn_agregar_atencion, "Agregar atencion");
+            this.btn_agregar_atencion.UseVisualStyleBackColor = true;
+            this.btn_agregar_atencion.Click += new System.EventHandler(this.btn_agregar_atencion_Click);
+            // 
+            // btn_limpiar_atencion
+            // 
+            this.btn_limpiar_atencion.Location = new System.Drawing.Point(152, 540);
+            this.btn_limpiar_atencion.Name = "btn_limpiar_atencion";
+            this.btn_limpiar_atencion.Size = new System.Drawing.Size(112, 23);
+            this.btn_limpiar_atencion.TabIndex = 98;
+            this.btn_limpiar_atencion.Text = "Reiniciar Formulario";
+            this.btn_limpiar_atencion.UseVisualStyleBackColor = true;
+            this.btn_limpiar_atencion.Click += new System.EventHandler(this.btn_limpiar_atencion_Click);
+            // 
+            // btn_salir_atencion
+            // 
+            this.btn_salir_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir_atencion.BackgroundImage")));
+            this.btn_salir_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_salir_atencion.Location = new System.Drawing.Point(1098, 513);
+            this.btn_salir_atencion.Name = "btn_salir_atencion";
+            this.btn_salir_atencion.Size = new System.Drawing.Size(50, 50);
+            this.btn_salir_atencion.TabIndex = 99;
+            this.tt_atenciones.SetToolTip(this.btn_salir_atencion, "Salir");
+            this.btn_salir_atencion.UseVisualStyleBackColor = true;
+            this.btn_salir_atencion.Click += new System.EventHandler(this.btn_salir_atencion_Click);
+            // 
+            // btn_editar_atencion
+            // 
+            this.btn_editar_atencion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_editar_atencion.BackgroundImage")));
+            this.btn_editar_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_editar_atencion.Location = new System.Drawing.Point(68, 513);
+            this.btn_editar_atencion.Name = "btn_editar_atencion";
+            this.btn_editar_atencion.Size = new System.Drawing.Size(50, 50);
+            this.btn_editar_atencion.TabIndex = 100;
+            this.tt_atenciones.SetToolTip(this.btn_editar_atencion, "Editar una atencion");
+            this.btn_editar_atencion.UseVisualStyleBackColor = true;
+            this.btn_editar_atencion.Click += new System.EventHandler(this.btn_editar_atencion_Click);
             // 
             // frm_Atenciones
             // 

@@ -20,6 +20,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CantidadEspecialidades" msprop:Generator_TableClassName="CantidadEspecialidadesDataTable" msprop:Generator_TableVarName="tableCantidadEspecialidades" msprop:Generator_RowChangedName="CantidadEspecialidadesRowChanged" msprop:Generator_TablePropName="CantidadEspecialidades" msprop:Generator_RowDeletingName="CantidadEspecialidadesRowDeleting" msprop:Generator_RowChangingName="CantidadEspecialidadesRowChanging" msprop:Generator_RowEvHandlerName="CantidadEspecialidadesRowChangeEventHandler" msprop:Generator_RowDeletedName="CantidadEspecialidadesRowDeleted" msprop:Generator_RowClassName="CantidadEspecialidadesRow" msprop:Generator_UserTableName="CantidadEspecialidades" msprop:Generator_RowEvArgName="CantidadEspecialidadesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DENOMINACION" msprop:Generator_ColumnVarNameInTable="columnDENOMINACION" msprop:Generator_ColumnPropNameInRow="DENOMINACION" msprop:Generator_ColumnPropNameInTable="DENOMINACIONColumn" msprop:Generator_UserColumnName="DENOMINACION" type="xs:string" minOccurs="0" />
+              <xs:element name="CANTIDAD_ESPECIALIDADES" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD_ESPECIALIDADES" msprop:Generator_ColumnPropNameInRow="CANTIDAD_ESPECIALIDADES" msprop:Generator_ColumnPropNameInTable="CANTIDAD_ESPECIALIDADESColumn" msprop:Generator_UserColumnName="CANTIDAD_ESPECIALIDADES" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
