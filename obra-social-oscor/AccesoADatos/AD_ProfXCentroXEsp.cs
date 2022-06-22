@@ -93,10 +93,10 @@ namespace obra_social_oscor.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT P.APELLIDO+', '+P.NOMBRE AS Nombres, " + 
-                    " COUNT(pc.MATRICULA) AS Cantidad FROM PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD PC " + 
-                    " JOIN PROFESIONALES P ON P.MATRICULA = PC.MATRICULA " + 
-                    " GROUP BY P.APELLIDO, P.NOMBRE ";
+                string consulta = " select c.denominacion as NOMBRE, count(pce.matricula) AS CANTIDAD " +
+                                  " from PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD pce " +
+                                  " join CENTROS c on c.COD_CENTRO = pce.COD_CENTRO " +
+                                  " group by c.DENOMINACION; ";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;

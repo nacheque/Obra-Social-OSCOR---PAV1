@@ -30,7 +30,7 @@ namespace obra_social_oscor.Formulario.Reportes.Formularios
 
             tabla = AD_ProfXCentroXEsp.ObtenerCantidadProfXCentro();
 
-            ReportDataSource ds = new ReportDataSource("DatosEstaditicas", tabla);
+            ReportDataSource ds = new ReportDataSource("CantidadProfesionalesPorCentro", tabla);
 
             ReportParameter fechaHoraReporte = new ReportParameter("fechaReporte", DateTime.Now.ToString());
 

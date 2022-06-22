@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCantidadAtenDeProfPorCentro));
             this.report_cantidad_profxcentro = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -48,8 +49,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.report_cantidad_profxcentro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmCantidadAtenDeProfPorCentro";
-            this.Text = "Cantidad Atenciones De Profesionales por Centro Medico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cantidad De Profesionales por Centro Medico";
             this.Load += new System.EventHandler(this.FrmCantidadAtenDeProfPorCentro_Load);
             this.ResumeLayout(false);
 

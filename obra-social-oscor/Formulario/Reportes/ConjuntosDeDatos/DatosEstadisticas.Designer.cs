@@ -871,7 +871,7 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CantidadProfPorCentroDataTable : global::System.Data.TypedTableBase<CantidadProfPorCentroRow> {
             
-            private global::System.Data.DataColumn columnNombres;
+            private global::System.Data.DataColumn columnNombre;
             
             private global::System.Data.DataColumn columnCantidad;
             
@@ -910,9 +910,9 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn NombresColumn {
+            public global::System.Data.DataColumn NombreColumn {
                 get {
-                    return this.columnNombres;
+                    return this.columnNombre;
                 }
             }
             
@@ -961,10 +961,10 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CantidadProfPorCentroRow AddCantidadProfPorCentroRow(string Nombres, int Cantidad) {
+            public CantidadProfPorCentroRow AddCantidadProfPorCentroRow(string Nombre, int Cantidad) {
                 CantidadProfPorCentroRow rowCantidadProfPorCentroRow = ((CantidadProfPorCentroRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombres,
+                        Nombre,
                         Cantidad};
                 rowCantidadProfPorCentroRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCantidadProfPorCentroRow);
@@ -988,15 +988,15 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnNombres = base.Columns["Nombres"];
+                this.columnNombre = base.Columns["Nombre"];
                 this.columnCantidad = base.Columns["Cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnNombres = new global::System.Data.DataColumn("Nombres", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombres);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
             }
@@ -1286,17 +1286,17 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Nombres {
+            public string Nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableCantidadProfPorCentro.NombresColumn]));
+                        return ((string)(this[this.tableCantidadProfPorCentro.NombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombres\' de la tabla \'CantidadProfPorCentro\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre\' de la tabla \'CantidadProfPorCentro\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCantidadProfPorCentro.NombresColumn] = value;
+                    this[this.tableCantidadProfPorCentro.NombreColumn] = value;
                 }
             }
             
@@ -1318,14 +1318,14 @@ namespace obra_social_oscor.Formulario.Reportes.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNombresNull() {
-                return this.IsNull(this.tableCantidadProfPorCentro.NombresColumn);
+            public bool IsNombreNull() {
+                return this.IsNull(this.tableCantidadProfPorCentro.NombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNombresNull() {
-                this[this.tableCantidadProfPorCentro.NombresColumn] = global::System.Convert.DBNull;
+            public void SetNombreNull() {
+                this[this.tableCantidadProfPorCentro.NombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

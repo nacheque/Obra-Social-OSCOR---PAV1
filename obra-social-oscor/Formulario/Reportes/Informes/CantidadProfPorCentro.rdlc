@@ -11,14 +11,14 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatosEstaditicas">
+    <DataSet Name="CantidadProfesionalesPorCentro">
       <Query>
         <DataSourceName>DatosEstadisticas</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Nombres">
-          <DataField>Nombres</DataField>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Cantidad">
@@ -28,7 +28,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosEstadisticas</rd:DataSetName>
-        <rd:SchemaPath>D:\Usuario\Documento\Git\compañero\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Usuario\Desktop\Proyectos\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsd</rd:SchemaPath>
         <rd:TableName>CantidadProfPorCentro</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -47,20 +47,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Cantidad de atenciones realizadas de profesional en centro medico</Value>
-                    <Style />
+                    <Value>Cantidad de Profesionales por Centro Medico</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontSize>13pt</FontSize>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.34078cm</Top>
-            <Left>1.74307cm</Left>
-            <Height>0.6cm</Height>
-            <Width>13.63896cm</Width>
+            <Top>0.15557cm</Top>
+            <Left>3.7155cm</Left>
+            <Height>1.12917cm</Height>
+            <Width>10.51688cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -72,13 +74,13 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>1.46113cm</Top>
+            <Top>1.8634cm</Top>
             <Height>0cm</Height>
-            <Width>19.42042cm</Width>
+            <Width>16.83663cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Color>LimeGreen</Color>
+                <Color>Blue</Color>
                 <Style>Solid</Style>
                 <Width>3pt</Width>
               </Border>
@@ -90,15 +92,15 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Nombres.Value</GroupExpression>
+                      <GroupExpression>=Fields!Nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Nombres.Value</Value>
+                      <Value>=Fields!Nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Nombres.Value</Label>
+                  <Label>=Fields!Nombre.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -373,6 +375,10 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <Clustered>true</Clustered>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -400,7 +406,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Cantidad de Profesional</Caption>
+                <Caption>Cantidad de profesionales por centro</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -429,11 +435,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DatosEstaditicas</DataSetName>
-            <Top>2.24578cm</Top>
-            <Left>1.74307cm</Left>
-            <Height>8.70416cm</Height>
-            <Width>16.57583cm</Width>
+            <DataSetName>CantidadProfesionalesPorCentro</DataSetName>
+            <Top>2.48391cm</Top>
+            <Left>2.27224cm</Left>
+            <Height>8.41313cm</Height>
+            <Width>12.68583cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -448,7 +454,7 @@
         <Height>4.55058in</Height>
         <Style />
       </Body>
-      <Width>7.67026in</Width>
+      <Width>6.62859in</Width>
       <Page>
         <PageFooter>
           <Height>2.54cm</Height>
@@ -471,7 +477,7 @@
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
               <Top>1.05897cm</Top>
-              <Left>15.8189cm</Left>
+              <Left>13.33182cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>
