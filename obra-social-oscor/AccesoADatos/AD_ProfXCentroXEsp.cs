@@ -86,6 +86,42 @@ namespace obra_social_oscor.AccesoADatos
             }
         }
 
+        public static DataTable ObtenerCantidadProfXCentro()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT P.APELLIDO+', '+P.NOMBRE AS Nombres, " + 
+                    " COUNT(pc.MATRICULA) AS Cantidad FROM PROFESIONALES_POR_CENTROS_POR_ESPECIALIDAD PC " + 
+                    " JOIN PROFESIONALES P ON P.MATRICULA = PC.MATRICULA " + 
+                    " GROUP BY P.APELLIDO, P.NOMBRE ";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void EliminarAsignacionPCE(int codCentro, int codEsp, int matricula)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

@@ -46,5 +46,11 @@ namespace obra_social_oscor.Formulario.Reportes
             FrmPorcentajePracticas ventana = new FrmPorcentajePracticas();
             ventana.ShowDialog();
         }
+
+        private void cantidadDeProfesionaPorCentroMedicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCantidadAtenDeProfPorCentro ventana = new FrmCantidadAtenDeProfPorCentro();
+            ventana.ShowDialog();
+        }
     }
 }

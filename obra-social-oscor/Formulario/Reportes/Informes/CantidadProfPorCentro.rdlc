@@ -7,29 +7,29 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>4e0d0fda-1afa-48c3-bb50-585f10d369cf</rd:DataSourceID>
+      <rd:DataSourceID>e5a8c304-7d46-4327-a739-4ce539c4a7d7</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="CantidadEspecialidades">
+    <DataSet Name="DatosEstaditicas">
       <Query>
         <DataSourceName>DatosEstadisticas</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="DENOMINACION">
-          <DataField>DENOMINACION</DataField>
+        <Field Name="Nombres">
+          <DataField>Nombres</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CANTIDAD_ESPECIALIDADES">
-          <DataField>CANTIDAD_ESPECIALIDADES</DataField>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosEstadisticas</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\Desktop\Proyectos\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsd</rd:SchemaPath>
-        <rd:TableName>CantidadEspecialidades</rd:TableName>
+        <rd:SchemaPath>D:\Usuario\Documento\Git\compañero\obra-social-oscor\obra-social-oscor\Formulario\Reportes\ConjuntosDeDatos\DatosEstadisticas.xsd</rd:SchemaPath>
+        <rd:TableName>CantidadProfPorCentro</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -47,22 +47,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Cantidad de especialidades por Centro</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontSize>13pt</FontSize>
-                      <TextDecoration>Underline</TextDecoration>
-                    </Style>
+                    <Value>Cantidad de atenciones realizadas de profesional en centro medico</Value>
+                    <Style />
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.30854cm</Top>
-            <Left>4.2401cm</Left>
-            <Height>1.12917cm</Height>
-            <Width>10.51688cm</Width>
+            <Top>0.34078cm</Top>
+            <Left>1.74307cm</Left>
+            <Height>0.6cm</Height>
+            <Width>13.63896cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -74,14 +72,13 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>2.16958cm</Top>
-            <Left>0.02646cm</Left>
+            <Top>1.46113cm</Top>
             <Height>0cm</Height>
-            <Width>16.48354cm</Width>
+            <Width>19.42042cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Color>Blue</Color>
+                <Color>LimeGreen</Color>
                 <Style>Solid</Style>
                 <Width>3pt</Width>
               </Border>
@@ -93,32 +90,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!DENOMINACION.Value</GroupExpression>
+                      <GroupExpression>=Fields!Nombres.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!DENOMINACION.Value</Value>
+                      <Value>=Fields!Nombres.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!DENOMINACION.Value</Label>
+                  <Label>=Fields!Nombres.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>CANTIDAD ESPECIALIDADES</Label>
+                  <Label>Cantidad</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="CANTIDAD_ESPECIALIDADES">
+                <ChartSeries Name="Cantidad">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!CANTIDAD_ESPECIALIDADES.Value)</Y>
+                        <Y>=Sum(Fields!Cantidad.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -403,7 +400,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Cantidad de especialidades por centros</Caption>
+                <Caption>Cantidad de Profesional</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -432,11 +429,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>CantidadEspecialidades</DataSetName>
-            <Top>2.64266cm</Top>
-            <Left>2.58974cm</Left>
-            <Height>7.30188cm</Height>
-            <Width>11.78625cm</Width>
+            <DataSetName>DatosEstaditicas</DataSetName>
+            <Top>2.24578cm</Top>
+            <Left>1.74307cm</Left>
+            <Height>8.70416cm</Height>
+            <Width>16.57583cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -448,13 +445,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.05059in</Height>
+        <Height>4.55058in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>7.67026in</Width>
       <Page>
         <PageFooter>
-          <Height>2.51354cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -473,8 +470,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.00224cm</Top>
-              <Left>12.98787cm</Left>
+              <Top>1.05897cm</Top>
+              <Left>15.8189cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>
@@ -502,8 +499,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>fechaReporte</rd:DefaultName>
-              <Top>1.00224cm</Top>
-              <Left>1.31974cm</Left>
+              <Top>1.05897cm</Top>
+              <Left>1.74307cm</Left>
               <Height>0.6cm</Height>
               <Width>2.65875cm</Width>
               <ZIndex>1</ZIndex>
@@ -537,8 +534,7 @@
   </ReportSections>
   <ReportParameters>
     <ReportParameter Name="fechaReporte">
-      <DataType>DateTime</DataType>
-      <Nullable>true</Nullable>
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -556,5 +552,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>9bf33bf0-e738-4861-96d2-09a2afc548c6</rd:ReportID>
+  <rd:ReportID>0e183e1a-ae76-4310-92fb-1a79f0b8ea0d</rd:ReportID>
 </Report>
