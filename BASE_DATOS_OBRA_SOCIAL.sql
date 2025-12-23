@@ -1,13 +1,11 @@
-USE master;
-GO
--- Borramos la base para asegurarnos que se cree de cero con todas las tablas
-DROP DATABASE IF EXISTS OBRA_SOCIAL;
-GO
-CREATE DATABASE OBRA_SOCIAL;
-GO
+-- SECCION DE INSTALACION (Descomentar solo para resetear de fabrica)
+-- USE master;
+-- DROP DATABASE IF EXISTS OBRA_SOCIAL;
+-- CREATE DATABASE OBRA_SOCIAL;
+-- GO
+
 USE OBRA_SOCIAL;
-GO
--- PEGA AQUI ABAJO TODO EL RESTO DE TU SCRIPT DE CREACION DE TABLAS (Barrios, Afiliados, etc.)
+-- A partir de aqui crea las tablas...
 
 CREATE TABLE BARRIOS (
 Id_Barrio INT NOT NULL IDENTITY (1,1),
